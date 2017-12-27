@@ -1,0 +1,215 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+@font-face {
+    font-family: 'Gotham-Bold';
+    src: url('../fonts/Gotham-Light.TTF') format('truetype');
+    font-weight: bolder;
+    font-style: normal;
+}
+
+.logosBottomRed
+{
+	margin-bottom: 90px;
+}
+
+.logoDiv
+{
+	margin-bottom: 50px;
+	padding: 0px !important;
+	
+}
+
+.logoImg
+{
+
+	margin: 0 auto !important;
+	padding: 0px !important;
+
+}
+
+.firstTitle
+{
+        margin-top: 100px;
+
+}
+
+.logoTitle, .logoTitleGallery
+{
+	background-color: #1aa79e;
+	color: white !important;
+	text-align: center;
+	height: 45px !important;
+	font-family: 'Gotham-Bold', sans-serif;
+    font-size: 35px;
+    text-transform: uppercase;
+    line-height: 50px !important;
+	
+}
+
+@media screen and (max-width: 1100px) {
+    
+    .logoTitle {
+        font-size: 28px;
+        
+    }
+
+}
+
+@media screen and (max-width: 820px) {
+    
+    .logoTitle {
+        font-size: 23px;
+        
+    }
+
+}
+
+@media screen and (max-width: 650px) {
+    
+    .logoTitle {
+        font-size: 19px;
+        
+    }
+
+}
+
+@media screen and (max-width: 550px) {
+    
+    .logoTitle {
+        font-size: 16px;
+        
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    
+    .logoTitle {
+        font-size: 14px;
+        
+    }
+
+}
+
+@media screen and (max-width: 425px) {
+    
+    .logoTitle {
+        font-size: 12px;
+        
+    }
+
+}
+
+.stepRow
+{
+    margin-top: 50px;
+}
+
+
+
+@media screen and (min-width: 992px) { /* veliki ekran*/
+
+.mic
+{
+	
+	margin-left: 20px !important;
+}
+
+.swityRow
+{
+    margin-left: 10vh;
+}
+
+.karuzoRow
+{
+    margin-bottom: 80px;
+}
+
+.sens
+{
+    margin-top: 30px;
+}
+
+.nes
+{
+    margin-top: 10px;
+}
+.ss
+{
+    margin-top: 40px;
+}
+.marbo
+{
+    margin-top: 10px;
+}
+.alfa
+{
+    margin-top: 100px;
+}
+
+.bljesak
+{
+    margin-top: 50px;
+}
+
+.ovcaRow
+{
+    margin-top: 100px;
+}
+
+.studomat
+{
+    width: 80%;
+}
+
+.pad
+{
+    width: 80%;
+}
+
+.pad2
+{
+    width: 90%;
+}
+
+.princess
+{
+    width: 60%;
+}
+
+.sumens
+{
+    margin-top: 25px;
+}
+
+
+.cola
+{
+    margin-top: 20px;
+}
+
+
+
+}
+
+
+@media screen and (max-width: 990px) {
+.karuzo
+{
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+
+.logoDiv
+{
+   margin-bottom: 100px;
+}
+
+}
+
+
+
+
+
+
+
