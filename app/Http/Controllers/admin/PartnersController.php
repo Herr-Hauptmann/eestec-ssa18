@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Post;
+
+use App\Partner;
 use Illuminate\Http\Request;
 
-class PostsController extends Controller
+class PartnersController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -28,15 +29,15 @@ class PostsController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $posts = Post::where('title', 'LIKE', "%$keyword%")
-                ->orWhere('content', 'LIKE', "%$keyword%")
-                ->orWhere('image_url', 'LIKE', "%$keyword%")
+            $partners = Partner::where('name', 'LIKE', "%$keyword%")
+                ->orWhere('logo', 'LIKE', "%$keyword%")
+                ->orWhere('category', 'LIKE', "%$keyword%")
                 ->paginate($perPage);
         } else {
-            $posts = Post::paginate($perPage);
+            $partners = Partner::paginate($perPage);
         }
 
-        return view('posts.index', compact('posts'));
+        return view('admin.partners.index', compact('partners'));
     }
 
     /**
@@ -46,7 +47,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        return view('admin.partners.create');
     }
 
     /**
@@ -61,9 +62,9 @@ class PostsController extends Controller
         
         $requestData = $request->all();
         
-        Post::create($requestData);
+        Partner::create($requestData);
 
-        return redirect('posts')->with('flash_message', 'Post added!');
+        return redirect('admin/partners')->with('flash_message', 'Partner added!');
     }
 
     /**
@@ -75,9 +76,9 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        $post = Post::findOrFail($id);
+        $partner = Partner::findOrFail($id);
 
-        return view('posts.show', compact('post'));
+        return view('admin.partners.show', compact('partner'));
     }
 
     /**
@@ -89,9 +90,9 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        $post = Post::findOrFail($id);
+        $partner = Partner::findOrFail($id);
 
-        return view('posts.edit', compact('post'));
+        return view('admin.partners.edit', compact('partner'));
     }
 
     /**
@@ -107,10 +108,10 @@ class PostsController extends Controller
         
         $requestData = $request->all();
         
-        $post = Post::findOrFail($id);
-        $post->update($requestData);
+        $partner = Partner::findOrFail($id);
+        $partner->update($requestData);
 
-        return redirect('posts')->with('flash_message', 'Post updated!');
+        return redirect('admin/partners')->with('flash_message', 'Partner updated!');
     }
 
     /**
@@ -122,8 +123,8 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        Post::destroy($id);
+        Partner::destroy($id);
 
-        return redirect('posts')->with('flash_message', 'Post deleted!');
+        return redirect('admin/partners')->with('flash_message', 'Partner deleted!');
     }
 }

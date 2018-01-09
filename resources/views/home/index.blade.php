@@ -1,4 +1,4 @@
-@extends('layouts.landing')
+@extends('layouts.home')
 
 @section('content')
     @include('partials.title')

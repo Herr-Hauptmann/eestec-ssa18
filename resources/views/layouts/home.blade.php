@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:type" content="website">
-      <meta property="og:title" content="Soft Skills Academy Sarajevo '17" />
+      <meta property="og:title" content="Soft Skills Academy Sarajevo '18" />
       <meta property="og:description" content="Soft Skills Academy Sarajevo - Besplatna trodnevna radionica ličnih i profesionalnih vještina za studente svih fakulteta u Sarajevu" />
       <meta property="og:image" content="{{ asset('img/greenLogo.jpg') }}" />
       <meta property="og:url" content="." />
@@ -18,6 +18,9 @@
     <link rel="shortcut icon" type="image/jpg" href="{{ asset('img/favicon.png') }}"/>
 
     <!-- Styles -->
+    {{--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">--}}
+
+    <link href="{{ asset('css/bootstrap-theme.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/clanak.css') }}" rel="stylesheet">
     <link href="{{ asset('css/kontakt.css') }}" rel="stylesheet">
@@ -27,11 +30,24 @@
     <link href="{{ asset('css/print.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/treninzi.css') }}" rel="stylesheet">
+
+    @if(request()->route()->named('galerija'))
+        <link href="{{ asset('css/galerija/galerijaMain.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/galerija/ihover.min.css') }}" rel="stylesheet">
+    @elseif(request()->route()->named('album') || request()->route()->named('dan'))
+        <link href="{{ asset('css/galerija/blueimp-gallery.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/galerija/album.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/galerija/galerijaMain.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/galerija/ihover.min.css') }}" rel="stylesheet">
+
+        <link rel='stylesheet prefetch' href='https://cdn.rawgit.com/yairEO/photobox/master/photobox/photobox.css'>
+    @endif
+
 </head>
 <body>
 
     <div>
-        @include('partials.mainmenu')
+        @include(request()->route()->named('home') ? 'partials.mainmenu' : 'partials.mainmenu2')
         @yield('content')
         @include('partials.footer')
     </div>
@@ -45,5 +61,7 @@
     <script src="{{ asset('js/script.js') }}"></script>
     <script src="{{ asset('js/scroll.js') }}"></script>
     <script src="{{ asset('js/select.js') }}"></script>
+
+    <script src='https://cdn.rawgit.com/yairEO/photobox/master/photobox/jquery.photobox.js'></script>
 </body>
 </html>

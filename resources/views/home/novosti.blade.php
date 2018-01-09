@@ -1,9 +1,9 @@
-@extends('layouts.landing')
+@extends('layouts.home')
 
 @section('content')
 
 <section class="container-fluid marginContainer novosti-cont">
-    <p class="sectionHeadline"><b>novosti</b></p>
+    <p class="sectionHeadline"><b>sve novosti</b></p>
     <p class="sectionHeadlineBottomRed"></p>
     <div class="row">
 
@@ -15,8 +15,8 @@
                         <img class='img-responsive newsImg' src="{{ asset('img/proba.jpg') }}" />
                     </div>
                     <div class='newsMainDate'>
-                        <p class='newsDayMargin'>{{  }}</p>
-                     <p>{{ }}</p>
+                        <p class='newsDayMargin'></p>
+                     <p></p>
                      </div>
                      <div>
                         <p class='newsArticleHeader'>{{ $post->title }}</p>
@@ -36,8 +36,8 @@
                 responsiveDateDiv();
             });
 
-            var responsiveDateDiv = function() {
-                var imgHeight = $($(".newsImg")[0]).height();
+            let responsiveDateDiv = function() {
+                let imgHeight = $($(".newsImg")[0]).height();
                 if (imgHeight != 0) {
                     $.each($(".newsMainDate"), function(index, value) {
                         if ($(window).width() > 768) {

@@ -21,7 +21,7 @@
         @endforeach
     </div>
     <div class="container-fluid newsMoreDiv">
-        <p><a class="newsMoreText">Više novosti...</a></p>
+        <p><a class="newsMoreText" href="{{ route('novosti') }}">Više novosti...</a></p>
     </div>
     <script>
         $(function() {
@@ -29,8 +29,8 @@
                 responsiveDateDiv();
             });
 
-            var responsiveDateDiv = function() {
-                var imgHeight = $($(".newsImg")[0]).height();
+            let responsiveDateDiv = function() {
+                let imgHeight = $($(".newsImg")[0]).height();
                 if (imgHeight != 0) {
                     $.each($(".newsMainDate"), function(index, value) {
                         if ($(window).width() > 768) {
