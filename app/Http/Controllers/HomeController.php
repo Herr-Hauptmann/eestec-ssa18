@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use DirectoryIterator;
+use App\Utility\StringUtility;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Post;
-use Illuminate\Support\Facades\File;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Storage;
-use Symfony\Component\Finder\Iterator\RecursiveDirectoryIterator;
 
 class HomeController extends Controller
 {
@@ -16,17 +16,33 @@ class HomeController extends Controller
      * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response
+     * @throws \InvalidArgumentException
      */
     public function index()
     {
-        $perPage = 3;
-        $posts = Post::paginate($perPage);
+
+        /** @var LengthAwarePaginator $posts */
+        $posts = Post::paginate(config('ssa.home.landing.post_pagination', 3));
+
+        $posts->each(function ($post) {
+           $post->content = StringUtility::shortenString($post->content, 48);
+           $post->title = StringUtility::shortenString($post->title, 17);
+
+        });
+
         return view('home.index', compact('posts'));
     }
 
     public function novosti() {
-        $perPage = 6;
-        $posts = Post::paginate($perPage);
+
+        /** @var LengthAwarePaginator $posts */
+        $posts = Post::paginate(config('ssa.home.landing.post_pagination', 3));
+
+        $posts->each(function ($post) {
+            $post->content = StringUtility::shortenString($post->content, 48);
+            $post->title = StringUtility::shortenString($post->title, 17);
+
+        });
         return view('home.novosti', compact('posts'));
     }
 

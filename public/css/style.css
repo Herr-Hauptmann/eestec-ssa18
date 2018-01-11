@@ -358,6 +358,7 @@ html {
 .navbarList2
 {
      margin-bottom: 25px !important;
+    min-height: 58px;
 }
 
 .navbarList {
@@ -679,6 +680,7 @@ html {
 }
 
 .navbarList>li:hover {
+    padding-bottom: 6px;
     border-bottom: 6px solid white !important;
 }
 

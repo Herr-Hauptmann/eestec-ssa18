@@ -9,8 +9,8 @@
                     <img class="img-responsive newsImg" src="{{ asset('img/proba.jpg') }}" />
                 </div>
                 <div class="newsMainDate">
-                    <p class="newsDayMargin">14.</p>
-                    <p>Dec</p>
+                    <p class="newsDayMargin">{{ $post->created_at->day }}.</p>
+                    <p>{{ jdmonthname($post->created_at->month, 2) }}</p>
                 </div>
                 <div>
                     <p class="newsArticleHeader">{{ $post->title }}</p>

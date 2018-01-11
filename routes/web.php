@@ -65,13 +65,15 @@ Route::get('album/{godina}/{dan}', 'HomeController@dan')->name('dan');
 ###############################################################
 
 Route::get('kontakt', 'HomeController@kontakt')->name('kontakt');
-Route::post('posalji-mail', 'ContactController@sendMail')->name('posalji-mail');
+//Route::post('posalji-mail', 'ContactController@sendMail')->name('posalji-mail');
 
 ###############################################################
 #######//////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\#########
 ######(                ADMIN PANEL                    )########
 #######\\\\\\\\\\\\\\\\\\\\\\/////////////////////////#########
 ###############################################################
+
+//Route::get('admin', '')
 
 Route::resource('admin/posts', 'PostsController');
 Route::resource('admin/media', 'MediaController');
