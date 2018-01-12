@@ -16,8 +16,8 @@ $(document).ready(function() {
         if (!$item.hasClass('disabled')) {
             navListItems.closest('li').removeClass('active');
             $item.addClass('active');
-            allWells.hide();
-            $target.show();
+            allWells.hide('slow');
+            $target.show('slow');
         }
     });
     
@@ -39,8 +39,8 @@ $('.sljedeci').click(function(e)
     $activeStep.removeClass('active');
     var $nextStep = $activeStep.next();
     $nextStep.addClass('active');
-    $($activeStep.find('a').attr('href')).hide();
-    $($nextStep.find('a').attr('href')).show();
+    $($activeStep.find('a').attr('href')).hide('slow');
+    $($nextStep.find('a').attr('href')).show('slow');
     
 
 });
@@ -53,8 +53,8 @@ $('.prethodni').click(function(e)
     $activeStep.removeClass('active');
     var $prevStep = $activeStep.prev();
     $prevStep.addClass('active');
-    $($activeStep.find('a').attr('href')).hide();
-    $($prevStep.find('a').attr('href')).show();
+    $($activeStep.find('a').attr('href')).hide('slow');
+    $($prevStep.find('a').attr('href')).show('slow');
     
 
 });
@@ -89,7 +89,7 @@ $(document).on('click', '.btn-select', function (e) {
     }
     else {
         $('.btn-select').not(this).each(function () {
-            $(this).removeClass("active").find("ul").hide();
+            $(this).removeClass("active").find("ul").hide('slow');
         });
         ul.slideDown(300);
         $(this).addClass("active");
@@ -99,7 +99,7 @@ $(document).on('click', '.btn-select', function (e) {
 $(document).on('click', function (e) {
     var target = $(e.target).closest(".btn-select");
     if (!target.length) {
-        $(".btn-select").removeClass("active").find("ul").hide();
+        $(".btn-select").removeClass("active").find("ul").hide('slow');
     }
 });
 

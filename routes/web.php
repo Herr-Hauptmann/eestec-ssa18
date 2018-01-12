@@ -68,6 +68,15 @@ Route::get('kontakt', 'HomeController@kontakt')->name('kontakt');
 //Route::post('posalji-mail', 'ContactController@sendMail')->name('posalji-mail');
 
 ###############################################################
+########/////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\########
+#######( Rute za prijave, nemaju veze sa admin panelom )#######
+########\\\\\\\\\\\\\\\\\\\\\//////////////////////////########
+###############################################################
+
+Route::get('prijava', 'PrijavaController@create')->name('prijava.create');
+Route::post('prijava', 'PrijavaController@store')->name('prijava.store');
+
+###############################################################
 #######//////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\#########
 ######(                ADMIN PANEL                    )########
 #######\\\\\\\\\\\\\\\\\\\\\\/////////////////////////#########
