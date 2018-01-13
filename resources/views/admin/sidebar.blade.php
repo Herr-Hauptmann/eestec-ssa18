@@ -16,6 +16,9 @@
                     <button class="btn btn-success btn-block" onclick="location.href = '{{ route('posts.index') }}'">
                         Novosti
                     </button>
+                    <button class="btn btn-success btn-block" onclick="location.href = '{{ route('kontakt.index') }}'">
+                        Kontakt
+                    </button>
                     
 
 
