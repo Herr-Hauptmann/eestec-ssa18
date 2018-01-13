@@ -11,7 +11,7 @@ class Participant extends Model
      *
      * @var string
      */
-    protected $table = 'Participant';
+    protected $table = 'participanti';
 
     /**
     * The database primary key value.
@@ -27,6 +27,8 @@ class Participant extends Model
      */
     protected $fillable = ['ime', 'prezime', 'datum_rodjenja', 'broj_telefona', 'email', 'velicina_majice', 'engleski_govor', 'engleski_razumijevanje', 'motivaciono', 'ranije_ucesce_na_ssa', 'kako_ste_saznali', 'radno_iskustvo', 'trenutno_zaposlenje', 'ucesce_na_treninzima', 'ucesce_na_seminarima', 'nvo_iskustvo', 'dodatne_napomene'];
 
-    
+    public function fakulteti() {
+        return $this->belongsToMany(Faculty::class, 'fakultet_participant');
+    }
     
 }

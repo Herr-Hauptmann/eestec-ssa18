@@ -15,7 +15,11 @@ class CreateFacultyTable extends Migration
         Schema::create('fakulteti', function (Blueprint $table) {
             $table->increments('id');
             
-            $table->string('name');
+            $table->string('naziv')->nullable();
+            // $table->integer('godina')->nullable();
+            // $table->string('odsjek')->nullable();
+            // $table->integer('participant_id')->unsigned();
+            // $table->foreign('participant_id')->references('id')->on('participanti');
             $table->timestamps();
         });
     }

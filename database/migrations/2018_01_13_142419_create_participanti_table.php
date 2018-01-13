@@ -3,16 +3,17 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateParticipantTable extends Migration
+class CreateParticipantiTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
+
     public function up()
     {
-        Schema::create('participant', function (Blueprint $table) {
+        Schema::create('participanti', function (Blueprint $table) {
             $table->increments('id');
             
             $table->string('ime');
@@ -32,10 +33,8 @@ class CreateParticipantTable extends Migration
             $table->longText('ucesce_na_seminarima')->nullable();
             $table->longText('nvo_iskustvo')->nullable();
             $table->text('dodatne_napomene')->nullable();
-            $table->integer('fakultet_id')->unsigned();
-            $table->foreign('fakultet_id')->references('id')->on('fakulteti');
 
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
@@ -48,6 +47,6 @@ class CreateParticipantTable extends Migration
      */
     public function down()
     {
-        Schema::drop('participant');
+        Schema::drop('participanti');
     }
 }

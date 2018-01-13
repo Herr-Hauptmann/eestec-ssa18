@@ -6,8 +6,8 @@
             <div id="links">
                @foreach($images as $image)
                    <div class="slika">
-                       <a href="{{ $image }}" data-gallery>
-                           <img src="{{ asset($image) }}" />
+                       <a href="{{ '../../' . $image }}" data-gallery>
+                           <img src="{{ '../../' . $image }}" />
                        </a>
                    </div>
                 @endforeach
