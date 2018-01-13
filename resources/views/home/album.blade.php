@@ -7,7 +7,12 @@
                @foreach($images as $image)
                    <div class="slika">
                        <a href="{{ $image }}" data-gallery>
-                           <img src="{{ asset($image) }}" />
+                      
+                         <!--  <img src="{{$image }}" />
+                          <img src="{{ url($image) }}> -->
+                            <img src="{{asset($image) }}" />
+                       
+                        
                        </a>
                    </div>
                 @endforeach
