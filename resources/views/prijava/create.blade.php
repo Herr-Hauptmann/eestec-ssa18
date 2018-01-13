@@ -3,13 +3,14 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <p class="naslov">Prijavi se Budi korak ispred!</p>
+                <p class="naslov" style="color: grey">Prijavi se Budi korak ispred!</p>
                 <p class="@isset($valid) {{ $valid ? $errorMessage : $confMessage }} @endisset">@isset($message) {{ $message }} @endisset</p>
             </div>
         </div>
 
         <form name="prijavaForm" id="prijavaForm" method="post"
               action="{{ route('prijava.store') }}" enctype="multipart/form-data">
+              {{ csrf_field() }}
             <div class="row form-group">
                 <div class="col-xs-12 col-md-4">
                     <ul class="nav nav-pills nav-stacked  thumbnail setup-panel koraci">
@@ -86,7 +87,7 @@
                                     Veličina majice*</label>
                                 <a id="majicaLista" class=" listbox btn btn-info btn-select btn-select-light">
                                     <input type="hidden" class="btn-select-input" id="majica" name="majica" value="S"/>
-                                    <span class="btn-select-value">Select an Item</span>
+                                    <span class="btn-select-value">Izaberi</span>
                                     <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
                                     <ul class="selectLista">
                                         <li class="selected listItem">S</li>
@@ -123,8 +124,8 @@
                                             Fakultet*</label>
                                         <a class=" listbox btn btn-info btn-select btn-select-light">
                                             <input type="hidden" class="btn-select-input" id="fakultet0"
-                                                   name="fakultet0" value="0"/>
-                                            <span class="btn-select-value">Select an Item</span>
+                                                   name="fakulteti[0][naziv]" value="0"/>
+                                            <span class="btn-select-value">Izaberi</span>
                                             <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
                                             <ul class="selectLista">
                                                 <li class="selected listItem">blee</li>
@@ -137,9 +138,9 @@
                                         <label for="godinaStudija">
                                             Godina studija*</label>
                                         <a class=" listbox btn btn-info btn-select btn-select-light">
-                                            <input type="hidden" class="btn-select-input" id="godina0" name="godina0"
+                                            <input type="hidden" class="btn-select-input" id="godina0" name="fakulteti[0][godina]"
                                                    value="1."/>
-                                            <span class="btn-select-value">Select an Item</span>
+                                            <span class="btn-select-value">Izaberi</span>
                                             <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
                                             <ul class="selectLista">
                                                 <li class="selected listItem">1.</li>
@@ -157,13 +158,13 @@
                                     <div class="form-group col-xs-12 col-md-6 prviFaks">
                                         <label for="odsjek">
                                             Odsjek</label>
-                                        <input type="text" class="form-control" id="odsjek0" name="odsjek0"/>
+                                        <input type="text" class="form-control" id="odsjek0" name="fakulteti[0][odsjek]"/>
                                         <p class="error" id="errorOdsjek0"></p>
                                     </div>
 
                                 </div>
 
-                                <div id="addr1"></div>
+                                
 
                             </div>
 
@@ -259,7 +260,7 @@
                                     Ranije učešće na SSA*</label>
                                 <a id="ranijeLista" class=" listbox btn btn-info btn-select btn-select-light">
                                     <input type="hidden" class="btn-select-input" id="ranije" name="ranije" value="NE"/>
-                                    <span class="btn-select-value">Select an Item</span>
+                                    <span class="btn-select-value">Izaberi</span>
                                     <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
                                     <ul class="selectLista">
                                         <li class="selected listItem">NE</li>
@@ -275,7 +276,7 @@
                                 <a class=" listbox btn btn-info btn-select btn-select-light">
                                     <input type="hidden" class="btn-select-input" id="kakostesaznali"
                                            name="kakostesaznali" value="Promocija na fakultetu"/>
-                                    <span class="btn-select-value">Select an Item</span>
+                                    <span class="btn-select-value">Izaberi</span>
                                     <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
                                     <ul class="selectLista">
                                         <li class="selected listItem">Promocija na fakultetu</li>
@@ -307,7 +308,7 @@
                                 <a class=" listbox btn btn-info btn-select btn-select-light">
                                     <input type="hidden" class="btn-select-input" id="trenutno" name="trenutno"
                                            value="NE"/>
-                                    <span class="btn-select-value">Select an Item</span>
+                                    <span class="btn-select-value">Izaberi</span>
                                     <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
                                     <ul class="selectLista">
                                         <li class="selected listItem">NE</li>

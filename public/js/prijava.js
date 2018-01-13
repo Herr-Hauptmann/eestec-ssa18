@@ -147,11 +147,12 @@ $(document).on('click', function (e) {
 
 
      $("#add_row").click(function(){
+            $('#sviFaksovi').append('<div id="addr' + (i) +'" style="display: none;"></div>');
               $('#addr'+i).html('<div class="form-group col-xs-12 col-md-9">\
                             <label for="fakultet">\
                                 Fakultet*</label>\
                                 <a class=" listbox btn btn-info btn-select btn-select-light">\
-    <input type="hidden" class="btn-select-input" id="fakultet' + i +'" name="fakultet' + i + '" value="Akademija likovnih umjetnosti" />\
+    <input type="hidden" class="btn-select-input" id="fakultet' + i +'" name="fakulteti[' + i + '][naziv]" value="Akademija likovnih umjetnosti" />\
     <span class="btn-select-value">Akademija likovnih umjetnosti</span>\
     <span class="btn-select-arrow glyphicon glyphicon-chevron-down"></span>\
     <ul class="selectLista">\
@@ -166,7 +167,7 @@ $(document).on('click', function (e) {
                             <label for="godinaStudija">\
                                 Godina studija*</label>\
                                 <a class=" listbox btn btn-info btn-select btn-select-light">\
-    <input type="hidden" class="btn-select-input" id="godina' + i +'" name="godina' + i + '" value="1." />\
+    <input type="hidden" class="btn-select-input" id="godina' + i +'" name="fakulteti[' + i + '][godina]" value="1." />\
     <span class="btn-select-value">1.</span>\
     <span class="btn-select-arrow glyphicon glyphicon-chevron-down"></span>\
     <ul class="selectLista">\
@@ -185,7 +186,7 @@ $(document).on('click', function (e) {
                         <div class="form-group col-xs-12 col-md-6">\
                             <label for="odsjek">\
                                 Odsjek</label>\
-                            <input type="text" class="form-control" id="odsjek' + i +'" name="odsjek' + i + '"  />\
+                            <input type="text" class="form-control" id="odsjek' + i +'" name="fakulteti[' + i + '][odsjek]"  />\
                             <p class="error error' + i +'"></p>\
                         </div>\
                           <div class="form-group col-xs-12 col-md-6">\
@@ -198,20 +199,27 @@ $(document).on('click', function (e) {
 
       //$('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='name"+i+"' type='text' placeholder='Name' class='form-control input-md'  /> </td><td><input  name='sur"+i+"' type='text' placeholder='Surname'  class='form-control input-md'></td><td><input  name='email"+i+"' type='text' placeholder='Email'  class='form-control input-md'></td><td><select type='text' name='gender"+i+"' class='form-control'><option name='male"+i+"' value='male'>Male</option><option name='Female"+i+"' value='Female'>Female</option><option name='3rdgen"+i+"' value='none'>None</option></select></td>");
 
-      $('#sviFaksovi').append('<div id="addr' + (i+1) +'"></div>');
+      
+
+      $('#addr' + (i)).show('slow');
       
       $(".delete_row" + i).click(function(){
         var Addrid = $(this).attr('id');
          if(i>=1){
-         $("#addr"+(Addrid)).html('');
-         //i--;
+             $("#addr"+(Addrid)).hide('slow', function() {
+                $(this).remove();
+             });
+             i--;
          }
      });
+      
       i++; 
   });
      
 
 });
+
+
 
 
  $(document).ready(function(){
@@ -316,19 +324,20 @@ $('.listItem').on('click', function(){
     }
 
     //datum
-    var regexDatum = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})\.?$/
+    // var regexDatum = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})\.?$/
     if($('#datum').val() == '')
     {
+        console.log($('#datum'));
         $('#errorDatum').html('Molimo unesite Vaš datum rođenja.');
         $('#datum').addClass('tbError');
         valid1 = false;
     }
-    else if(!regexDatum.test($('#datum').val()))
-    {
-        $('#errorDatum').html('Molimo unesite validan datum.');
-        $('#datum').addClass('tbError');
-        valid1 = false;
-    }
+    // else if(!regexDatum.test($('#datum').val()))
+    // {
+    //     $('#errorDatum').html('Molimo unesite validan datum.');
+    //     $('#datum').addClass('tbError');
+    //     valid1 = false;
+    // }
     else
     {   
         $('#errorDatum').html('');

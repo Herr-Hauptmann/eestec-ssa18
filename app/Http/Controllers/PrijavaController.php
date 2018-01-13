@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Participant;
 
 class PrijavaController extends Controller
 {
@@ -48,9 +49,9 @@ class PrijavaController extends Controller
         
         $requestData = $request->all();
 
-        dd($requestData);
-//
-//        ::create($requestData);
+        Participant::create([
+            
+        ]);
 
         return redirect('')->with('flash_message', ' added!');
     }
