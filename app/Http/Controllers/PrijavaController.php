@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Participant;
 use App\Faculty;
+use Illuminate\Support\Facades\DB;
 
 class PrijavaController extends Controller
 {
@@ -73,9 +74,14 @@ class PrijavaController extends Controller
         ]);
 
         foreach ($request->fakulteti as $fakultet) {
-            $fakultet['participant_id'] = $participant->id;
-            Faculty::create($fakultet);
+            DB::table('fakultet_participant')->insert([
+                'participant_id' => $participant->id,
+                'fakultet_id' => Faculty::where('naziv', 'LIKE', $fakultet['naziv'])->first()->id,
+                'godina' => $fakultet['godina'],
+                'odsjek' => $fakultet['odsjek'],
+            ]);
         }
+
 
         // poslati mail potvrde prijave
 

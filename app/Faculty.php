@@ -27,9 +27,9 @@ class Faculty extends Model
      */
     protected $fillable = ['naziv'];
 
-    public function participant() 
+    public function participanti() 
     {
-        return $this->belongsToMany(Participant::class, 'fakultet_participant');
+        return $this->belongsToMany(Participant::class, 'fakultet_participant', 'fakultet_id', 'participant_id');
     }
     
 }

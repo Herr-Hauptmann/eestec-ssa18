@@ -128,7 +128,10 @@
                                             <span class="btn-select-value">Izaberi</span>
                                             <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
                                             <ul class="selectLista">
-                                                <li class="selected listItem">blee</li>
+                                                <li class="selected listItem">{{ $fakulteti->first()->naziv }}</li>
+                                                @foreach($fakulteti->slice(1) as $fakultet)
+                                                    <li class="listItem">{{ $fakultet->naziv }}</li>
+                                                @endforeach
                                             </ul>
                                         </a>
                                         <p class="error" id="errorFakultet0"></p>
