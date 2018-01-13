@@ -87,3 +87,4 @@ Route::post('prijava', 'PrijavaController@store')->name('prijava.store');
 Route::resource('admin/posts', 'PostsController');
 Route::resource('admin/media', 'MediaController');
 Route::resource('admin/partners', 'PartnersController');
+Route::resource('admin/kontakt', 'Admin\\KontaktController');
