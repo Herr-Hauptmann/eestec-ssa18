@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Participant;
+use App\Faculty;
 
 class PrijavaController extends Controller
 {
@@ -47,13 +48,38 @@ class PrijavaController extends Controller
     public function store(Request $request)
     {
         
-        $requestData = $request->all();
+        $data = $request->all();
 
-        Participant::create([
-            
+        $participant = Participant::create([
+            'ime' => $request->ime,
+            'prezime' => $request->prezime,
+            'datum_rodjenja' => $request->datum,
+            'broj_telefona' => $request->telefon,
+            'email' => $request->email,
+            'velicina_majice' => $request->majica,
+            'engleski_govor' => $request->govor,
+            'engleski_razumijevanje' => $request->raz,
+            'motivaciono' => $request->pismo,
+            'ranije_ucesce_na_ssa' => $request->ranije === 'DA',
+            'kako_ste_saznali' => $request->kakostesaznali,
+            'radno_iskustvo' => $request->radno,
+            'trenutno_zaposlenje' => $request->trenutno === 'DA',
+            'ucesce_na_treninzima' => $request->softUcesce,
+            'ucesce_na_seminarima' => $request->seminari,
+            'nvo_iskustvo' => $request->nvo,
+            'dodatne_napomene' => $request->dodatne,
+            ###### naknadno odraditi za user_id #######
+        
         ]);
 
-        return redirect('')->with('flash_message', ' added!');
+        foreach ($request->fakulteti as $fakultet) {
+            $fakultet['participant_id'] = $participant->id;
+            Faculty::create($fakultet);
+        }
+
+        // poslati mail potvrde prijave
+
+        return back();
     }
 
     /**

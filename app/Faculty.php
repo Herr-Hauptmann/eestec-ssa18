@@ -11,7 +11,7 @@ class Faculty extends Model
      *
      * @var string
      */
-    protected $table = 'Faculty';
+    protected $table = 'fakulteti';
 
     /**
     * The database primary key value.
@@ -25,7 +25,11 @@ class Faculty extends Model
      *
      * @var array
      */
-    protected $fillable = ['name'];
+    protected $fillable = ['naziv'];
 
+    public function participant() 
+    {
+        return $this->belongsToMany(Participant::class, 'fakultet_participant');
+    }
     
 }
