@@ -36,7 +36,8 @@ class PrijavaController extends Controller
      */
     public function create()
     {
-        return view('prijava.create');
+        $fakulteti = Faculty::all();
+        return view('prijava.create', compact('fakulteti'));
     }
 
     /**
@@ -48,6 +49,14 @@ class PrijavaController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'ime' => 'required',
+            'prezime' => 'required',
+            'datum_rodjenja' => 'required|date|before:today',
+            'email' => 'required|email',
+            'pismo' => 'required|filled'
+        ]);
         
         $data = $request->all();
 
@@ -82,6 +91,7 @@ class PrijavaController extends Controller
             ]);
         }
 
+        $participant->notify(new PrijavaUspjesna());
 
         // poslati mail potvrde prijave
 
