@@ -51,7 +51,7 @@
                             <label class="gr">{{ $kontakt->email }}<br>
                                 <abbr title="Phone">
                                 </abbr>
-                                +387 61 894 696</label>
+                                {{ $kontakt->telefon}}</label>
                         </address>
 
                     </div>

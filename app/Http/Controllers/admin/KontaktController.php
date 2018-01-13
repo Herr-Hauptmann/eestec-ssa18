@@ -119,6 +119,7 @@ class KontaktController extends Controller
 
         return redirect('admin/kontakt')->with('flash_message', 'Kontakt deleted!');
     }
+    
     public function sendMail(Request $request)
     {
         dd($request->all());

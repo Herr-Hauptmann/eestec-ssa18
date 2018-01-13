@@ -23,7 +23,13 @@
         {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
-
+<div class="form-group {{ $errors->has('telefon') ? 'has-error' : ''}}">
+    <label for="email" class="col-md-4 control-label">{{ 'Telefon' }}</label>
+    <div class="col-md-6">
+        <input class="form-control" name="telefon" type="text" id="telefon" value="{{ $kontakt->telefon or ''}}" >
+        {!! $errors->first('telefon', '<p class="help-block">:message</p>') !!}
+    </div>
+</div>
 <div class="form-group">
     <div class="col-md-offset-4 col-md-4">
         <input class="btn btn-primary" type="submit" value="{{ $submitButtonText or 'Create' }}">
