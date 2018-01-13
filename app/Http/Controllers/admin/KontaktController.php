@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 
 use App\Kontakt;
 use Illuminate\Http\Request;
@@ -119,5 +118,10 @@ class KontaktController extends Controller
         Kontakt::destroy($id);
 
         return redirect('admin/kontakt')->with('flash_message', 'Kontakt deleted!');
+    }
+    public function sendMail(Request $request)
+    {
+        dd($request->all());
+        return view();
     }
 }

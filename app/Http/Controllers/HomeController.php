@@ -6,6 +6,7 @@ use App\Utility\StringUtility;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Post;
+use App\Kontakt;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Storage;
 
@@ -117,8 +118,10 @@ class HomeController extends Controller
     }
 
     public function kontakt(Request $request)
-    {
-        return view('home.kontakt');
+    { 
+        
+      $kontakti=Kontakt::all();
+        return view('home.kontakt',compact('kontakti'));
     }
 
 }

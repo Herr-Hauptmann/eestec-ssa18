@@ -65,7 +65,11 @@ Route::get('album/{godina}/{dan}', 'HomeController@dan')->name('dan');
 ###############################################################
 
 Route::get('kontakt', 'HomeController@kontakt')->name('kontakt');
-//Route::post('posalji-mail', 'ContactController@sendMail')->name('posalji-mail');
+//Route::post('posalji-mail', 'KontaktController@sendMail')->name('posalji-mail');
+Route::post('posalji-mail', function(Request $request) {
+    dd($request->all());
+})->name('posalji-mail');
+
 
 ###############################################################
 ########/////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\########
@@ -87,4 +91,4 @@ Route::post('prijava', 'PrijavaController@store')->name('prijava.store');
 Route::resource('admin/posts', 'PostsController');
 Route::resource('admin/media', 'MediaController');
 Route::resource('admin/partners', 'PartnersController');
-Route::resource('admin/kontakt', 'Admin\\KontaktController');
+Route::resource('admin/kontakt', 'KontaktController');

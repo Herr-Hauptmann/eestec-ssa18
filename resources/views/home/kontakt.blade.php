@@ -41,12 +41,14 @@
             <form>
                 <legend><span class="glyphicon glyphicon-globe"></span> Organizacioni odbor</legend>
 
+                <?php $prvi = $kontakti->first() ?>
                 <div class="row">
+                    @foreach ($kontakti as $kontakt)
                     <div class="col-md-6">
                         <address>
-                            <strong>Marijana Udovčić</strong><br>
-                            Glavna organizatorica<br>
-                            <label class="gr">marijana.udovcic@softskillsacademy.ba<br>
+                            <strong>{{ $kontakt->ime . ' ' . $kontakt->prezime }}</strong><br>
+                            {{ $kontakt->pozicija }}<br>
+                            <label class="gr">{{ $kontakt->email }}<br>
                                 <abbr title="Phone">
                                 </abbr>
                                 +387 61 894 696</label>
@@ -54,7 +56,7 @@
 
                     </div>
 
-                    <div class="col-md-6">
+                    <!-- <div class="col-md-6">
 
                         <address>
                             <strong>Zlatan Peleksić</strong><br>
@@ -119,7 +121,8 @@
                                 +387 62 969 560</label>
                         </address>
 
-                    </div>
+                    </div> -->
+                    @endforeach
                 </div>
             </form>
         </div>
