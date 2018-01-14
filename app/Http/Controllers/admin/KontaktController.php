@@ -6,7 +6,7 @@ use App\Http\Requests;
 
 use App\Kontakt;
 use Illuminate\Http\Request;
-use App\Notifications\KontaktFormaController;
+use App\Notifications\KontaktFormaEmail;
 
 class KontaktController extends Controller
 {
@@ -156,7 +156,7 @@ class KontaktController extends Controller
             mail($primi, $subject, $message, $headers);
         } else {
             foreach ($kontakti as $kontakt) {
-                $kontakt->notify(new KontakFormaEmail($request->ime, $request->email, $request->poruka));
+                $kontakt->notify(new KontaktFormaEmail($request->ime, $request->email, $request->poruka));
             }
         }
 
