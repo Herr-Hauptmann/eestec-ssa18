@@ -5,7 +5,7 @@
             <div class="col-xs-12">
                 <p class="naslov" style="color: grey">Prijavi se - Budi korak ispred!</p>
                 @if ($errors->any())
-                    <p class="errorMessage">Neki podaci su neispravni ili nedostaju.</p>
+                    <p class="errorMessage">Neki podaci su neispravni ili nedostaju. Molimo provjerite SVE podatke</p>
                 @elseif ($message = Session::get('success'))
                     <p class="confMessage">{{ $message }}</p>
                 @endif
@@ -18,7 +18,7 @@
             <div class="row form-group">
                 <div class="col-xs-12 col-md-4">
                     <ul class="nav nav-pills nav-stacked  thumbnail setup-panel koraci">
-                        <li class="active"><a class="korak" href="#step-1" id="korak1">
+                        <li class="active"><a class="korak  @if ($errors->any()) korakError @endif" href="#step-1" id="korak1">
                                 <h4 class="list-group-item-heading tekstKoraka ">Korak 1</h4>
                                 <p class="list-group-item-text tekstKoraka">Osnovni podaci</p>
                             </a></li>
@@ -55,42 +55,43 @@
                             <div class="form-group prvaForma col-xs-12 col-md-6">
                                 <label for="ime">
                                     Ime*</label>
-                                <input type="text" class="form-control" id="ime" name="ime" maxlength="30"/>
+                                <input type="text" class="form-control" id="ime" name="ime" maxlength="30" autofocus value="{{ old('ime') }}" />
                                 <p class="error" id="errorIme"></p>
 
                             </div>
                             <div class="form-group prvaForma col-xs-12 col-md-6">
                                 <label for="prezime">
                                     Prezime*</label>
-                                <input type="text" class="form-control" id="prezime" name="prezime" maxlength="30"/>
+                                <input type="text" class="form-control" value="{{ old('prezime') }}" id="prezime" name="prezime" maxlength="30"/>
                                 <p class="error" id="errorPrezime"></p>
                             </div>
                             <div class="form-group prvaForma col-xs-12 col-md-6">
                                 <label for="datum">
                                     Datum rođenja*</label>
-                                <input type="date" class="form-control" id="datum" name="datum" maxlength="15"/>
-                                {{--<input type="text" class="form-control" id="datum" name="datum" maxlength="15"/>--}}
-                                <p class="error" id="errorDatum"></p>
+                                <input type="date" class="form-control @if ($errors->has('datum')) {{ 'tbError' }} @endif" id="datum" name="datum" maxlength="15"  value="{{ old('datum') }}" />
+                                <p class="error" id="errorDatum">
+                                    @if ($errors->has('datum')) {{ 'Neispravan datum' }} @endif
+                                </p>
                             </div>
                             <div class="form-group prvaForma col-xs-12 col-md-6">
                                 <label for="telefon">
                                     Broj telefona*</label>
-                                <input type="tel" class="form-control" id="telefon" name="telefon" maxlength="20"/>
+                                <input type="tel" value="{{ old('telefon') }}" class="form-control" id="telefon" name="telefon" maxlength="20"/>
                                 {{--<input type="text" class="form-control" id="telefon" name="telefon" maxlength="20"/>--}}
                                 <p class="error" id="errorTelefon"></p>
                             </div>
                             <div class="form-group prvaForma col-xs-12 col-md-6">
                                 <label for="email">
                                     Email*</label>
-                                <input type="text" class="form-control" id="email" name="email"/>
+                                <input type="text"  value="{{ old('email') }}" class="form-control" id="email" name="email"/>
 
                                 <p class="error" id="errorEmail"></p>
                             </div>
                             <div class="form-group  prvaForma col-xs-12 col-md-6">
                                 <label for="majica">
                                     Veličina majice*</label>
-                                <a id="majicaLista" class=" listbox btn btn-info btn-select btn-select-light">
-                                    <input type="hidden" class="btn-select-input" id="majica" name="majica" value="S"/>
+                                <a id="majicaLista" class=" listbox btn btn-info btn-select btn-select-light @if ($errors->any()) tbError @endif">
+                                    <input type="hidden" value="{{ old('majica', 'S') }}" class="btn-select-input" id="majica" name="majica"/>
                                     <span class="btn-select-value">Izaberi</span>
                                     <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
                                     <ul class="selectLista">
@@ -101,7 +102,11 @@
                                         <li class="majica listItem">XXL</li>
                                     </ul>
                                 </a>
-                                <p class="error" id="errorMajica"></p>
+                                <p class="error" id="errorMajica">
+                                    @if ($errors->any())
+                                        Ponovite unos
+                                    @endif
+                                </p>
                             </div>
 
 
@@ -126,7 +131,7 @@
                                     <div class="form-group col-xs-12 col-md-9">
                                         <label for="fakultet">
                                             Fakultet*</label>
-                                        <a class=" listbox btn btn-info btn-select btn-select-light">
+                                        <a class=" listbox btn btn-info btn-select btn-select-light @if ($errors->any()) tbError @endif">
                                             <input type="hidden" class="btn-select-input" id="fakultet0"
                                                    name="fakulteti[0][naziv]" value="0"/>
                                             <span class="btn-select-value">Izaberi</span>
@@ -144,7 +149,7 @@
                                     <div class="form-group col-xs-12 col-md-3">
                                         <label for="godinaStudija">
                                             Godina studija*</label>
-                                        <a class=" listbox btn btn-info btn-select btn-select-light">
+                                        <a class=" listbox btn btn-info btn-select btn-select-light @if ($errors->any()) tbError @endif">
                                             <input type="hidden" class="btn-select-input" id="godina0" name="fakulteti[0][godina]"
                                                    value="1."/>
                                             <span class="btn-select-value">Izaberi</span>
@@ -201,7 +206,7 @@
 
                                 </div>
                                 <p class="error" id="errorGovor"></p>
-                                <input type="hidden" name="govor" id="govor" value="1">
+                                <input type="hidden" name="govor"  value="{{ old('govor', 1) }}"  id="govor">
                             </div>
 
                             <div class="form-group col-xs-12 col-md-6">
@@ -217,7 +222,7 @@
 
                                 </div>
                                 <p class="error" id="errorRaz"></p>
-                                <input type="hidden" name="raz" id="raz" value="1">
+                                <input type="hidden" value="{{ old('raz', 1) }}" name="raz" id="raz">
                             </div>
 
 
@@ -242,7 +247,7 @@
                                 <label for="pismo">
                                     Motivaciono pismo*</label>
                                 <textarea name="pismo" id="pismo" class="form-control" rows="12" cols="25"
-                                ></textarea>
+                                >{{ old('pismo') }}</textarea>
                                 <p class="error" id="errorPismo"></p>
                             </div>
 
@@ -266,7 +271,7 @@
                                 <label for="ranijeUcesce">
                                     Ranije učešće na SSA*</label>
                                 <a id="ranijeLista" class=" listbox btn btn-info btn-select btn-select-light">
-                                    <input type="hidden" class="btn-select-input" id="ranije" name="ranije" value="NE"/>
+                                    <input type="hidden" class="btn-select-input" id="ranije" name="ranije" value="{{ old('ranije', 'NE') }}"/>
                                     <span class="btn-select-value">Izaberi</span>
                                     <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
                                     <ul class="selectLista">
@@ -282,7 +287,7 @@
                                     Kako ste saznali za SSA*</label>
                                 <a class=" listbox btn btn-info btn-select btn-select-light">
                                     <input type="hidden" class="btn-select-input" id="kakostesaznali"
-                                           name="kakostesaznali" value="Promocija na fakultetu"/>
+                                           name="kakostesaznali" value="{{ old('kakostesaznali', 'Promocija na fakultetu') }}"/>
                                     <span class="btn-select-value">Izaberi</span>
                                     <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
                                     <ul class="selectLista">
@@ -304,7 +309,7 @@
                                 <label for="radno">
                                     Radno iskustvo</label>
                                 <textarea name="radno" id="radno" class="form-control" rows="9" cols="25"
-                                ></textarea>
+                                >{{ old('radno') }}</textarea>
                                 <p class="error" id="errorRadno"></p>
                             </div>
 
@@ -314,7 +319,7 @@
                                     Trenutno zaposlenje*</label>
                                 <a class=" listbox btn btn-info btn-select btn-select-light">
                                     <input type="hidden" class="btn-select-input" id="trenutno" name="trenutno"
-                                           value="NE"/>
+                                           value="{{ old('trenutno', 'NE') }}"/>
                                     <span class="btn-select-value">Izaberi</span>
                                     <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
                                     <ul class="selectLista">
@@ -330,7 +335,7 @@
                                 <label for="softUcesce">
                                     Učešće na soft skills treninzima</label>
                                 <textarea name="softUcesce" id="softUcesce" class="form-control" rows="9" cols="25"
-                                ></textarea>
+                                >{{ old('softUcesce') }}</textarea>
                                 <p class="error" id="errorUcesce"></p>
                             </div>
 
@@ -339,7 +344,7 @@
                                 <label for="seminari">
                                     Učešće na seminarima</label>
                                 <textarea name="seminari" id="seminari" class="form-control" rows="9" cols="25"
-                                ></textarea>
+                                >{{ old('seminari') }}</textarea>
                                 <p class="error" id="errorSeminari"></p>
                             </div>
 
@@ -347,7 +352,7 @@
                                 <label for="nvo">
                                     Iskustvo u NVO</label>
                                 <textarea name="nvo" id="nvo" class="form-control" rows="9" cols="25"
-                                ></textarea>
+                                >{{ old('nvo') }}</textarea>
                                 <p class="error" id="errorNvo"></p>
                             </div>
 
@@ -371,7 +376,7 @@
                             <div class="form-group col-xs-12">
                                 <label for="pismo">
                                     Dodatne napomene</label>
-                                <textarea name="dodatne" id="dodatne" class="form-control" rows="9" cols="25"></textarea>
+                                <textarea name="dodatne" id="dodatne" class="form-control" rows="9" cols="25">{{ old('dodatne') }}</textarea>
                                 <p class="error" id="errorDodatne"></p>
                             </div>
 
