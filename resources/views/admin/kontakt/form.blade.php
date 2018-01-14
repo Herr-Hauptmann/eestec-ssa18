@@ -33,7 +33,7 @@
 <div class="form-group {{ $errors->has('pozicija_short') ? 'has-error' : ''}}">
     <label for="email" class="col-md-4 control-label">{{ 'Kratki naziv pozicije' }}</label>
     <div class="col-md-6">
-        {{ Form::select('pozicija_short', ['GLORG', 'HR', 'PR', 'FR', 'IT', 'DIZAJN'], old('pozicija_short', $kontakt ? $kontakt->pozicija_short : 'GLORG'), ['class' => 'form-control', 'required' => true]) }}
+        {{ Form::select('pozicija_short', ['GLORG', 'HR', 'PR', 'FR', 'IT', 'DIZAJN'], old('pozicija_short', isset($kontakt) ? $kontakt->pozicija_short : 'GLORG'), ['class' => 'form-control', 'required' => true]) }}
         {!! $errors->first('pozicija_short', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
