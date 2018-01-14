@@ -132,7 +132,7 @@ class KontaktController extends Controller
 
         $kontakti = Kontakt::all();
 
-        if ($kontakti->empty()) {
+        if ($kontakti->isEmpty()) {
 
             $primi = 'info@softskillsacademy.ba';
 
