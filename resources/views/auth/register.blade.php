@@ -61,6 +61,20 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('keyword') ? ' has-error' : '' }}">
+                            <label for="keyword" class="col-md-4 control-label">Keyword</label>
+
+                            <div class="col-md-6">
+                                <input id="keyword" type="password" class="form-control" name="keyword" value="{{ old('name') }}" required>
+
+                                @if ($errors->has('keyword'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('keyword') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

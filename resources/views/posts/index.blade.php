@@ -37,7 +37,7 @@
                                 @foreach($posts as $item)
                                     <tr>
                                         <td>{{ $loop->iteration or $item->id }}</td>
-                                        <td>{{ $item->title }}</td><td>{{ strip_tags($post->content) }}</td>
+                                        <td>{{ $item->title }}</td><td>{{ strip_tags($item->content) }}</td>
                                         <td>
                                             <a href="{{ route('posts.show', [$item->id]) }}" title="View Post"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ route('posts.edit', [$item->id]) }}" title="Edit Post"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
