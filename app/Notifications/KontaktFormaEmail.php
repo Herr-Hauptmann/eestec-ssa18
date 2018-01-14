@@ -48,10 +48,11 @@ class KontaktFormaEmail extends Notification
     {
         return (new MailMessage)
                     ->subject('[SSA] Kontakt forma')
+                    ->greeting('Novi upit!')
                     ->line('Poslao/la: ' . $this->ime)
                     ->line('Email: ' . $this->email)
                     ->line('Poruka: <br/>' . $this->poruka)
-                    ->salutation('');
+                    ->salute('Pogledaj kroz prozor');
     }
 
     /**
