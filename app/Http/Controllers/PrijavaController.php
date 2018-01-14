@@ -91,9 +91,7 @@ class PrijavaController extends Controller
             ]);
         }
 
-        // $participant->notify(new PrijavaUspjesna());
-
-        // poslati mail potvrde prijave
+        $participant->notify(new PrijavaUspjesna());
 
         return back()->with('success', 'Prijava je uspješno pohranjena.');
     }
