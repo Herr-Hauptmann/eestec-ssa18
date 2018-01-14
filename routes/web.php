@@ -65,10 +65,7 @@ Route::get('album/{godina}/{dan}', 'HomeController@dan')->name('dan');
 ###############################################################
 
 Route::get('kontakt', 'HomeController@kontakt')->name('kontakt');
-//Route::post('posalji-mail', 'KontaktController@sendMail')->name('posalji-mail');
-Route::post('posalji-mail', function(Request $request) {
-    dd($request->all());
-})->name('posalji-mail');
+Route::post('posalji-mail', 'KontaktController@sendMail')->name('posalji-mail');
 
 
 ###############################################################
