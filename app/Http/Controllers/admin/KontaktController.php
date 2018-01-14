@@ -6,6 +6,7 @@ use App\Http\Requests;
 
 use App\Kontakt;
 use Illuminate\Http\Request;
+use App\Notifications\KontaktFormaController;
 
 class KontaktController extends Controller
 {
@@ -129,26 +130,35 @@ class KontaktController extends Controller
             'poruka' => 'required'
         ]);
 
-        $primi = 'info@softskillsacademy.ba';
+        $kontakti = Kontakt::all();
 
-        $subject = '[SSA] Kontakt forma';
-        $eol = PHP_EOL;
+        if ($kontakti->empty()) {
 
-        $message = '<html><body>';
-        $message .= 'Od '.$request->ime.'<br />';
-        $message .= 'Email: '.$request->email.'<br /><br />';
-        $message .= $request->poruka;
-        $message .= '</body></html>';
+            $primi = 'info@softskillsacademy.ba';
 
-        $headers = 'From: softskillsacademy.ba <noreply@softskillsacademy.ba> ' . "\r\n" .
-                        'Reply-To: softskillsacademy.ba <noreply@softskillsacademy.ba>' . "\r\n" .
-                        'X-Mailer: PHP/' . phpversion();
-        $headers .= "MIME-Version: 1.0\r\n";
-        $headers .= "Content-Type: text/html; charset=\"UTF-8\"".$eol;
-        $headers .= "Content-Transfer-Encoding: 8bit".$eol.$eol;
+            $subject = '[SSA] Kontakt forma';
+            $eol = PHP_EOL;
 
-        
-        mail($primi, $subject, $message, $headers);
+            $message = '<html><body>';
+            $message .= 'Od '.$request->ime.'<br />';
+            $message .= 'Email: '.$request->email.'<br /><br />';
+            $message .= $request->poruka;
+            $message .= '</body></html>';
+
+            $headers = 'From: Soft Skills Academy Sarajevo <noreply@softskillsacademy.ba> ' . "\r\n" .
+                            'Reply-To: softskillsacademy.ba <noreply@softskillsacademy.ba>' . "\r\n" .
+                            'X-Mailer: PHP/' . phpversion();
+            $headers .= "MIME-Version: 1.0\r\n";
+            $headers .= "Content-Type: text/html; charset=\"UTF-8\"".$eol;
+            $headers .= "Content-Transfer-Encoding: 8bit".$eol.$eol;
+
+            
+            mail($primi, $subject, $message, $headers);
+        } else {
+            foreach ($kontakti as $kontakt) {
+                $kontakt->notify(new KontakFormaEmail($request->ime, $request->email, $request->poruka));
+            }
+        }
 
         return back()->with('success', 'Hvala što ste nas kontaktirali. Naš tim će nastojati da u što kraćem roku odgovori na Vašu poruku.');
     }
