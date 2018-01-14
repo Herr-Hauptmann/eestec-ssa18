@@ -51,8 +51,7 @@ class KontaktFormaEmail extends Notification
                     ->greeting('Novi upit!')
                     ->line('Poslao/la: ' . $this->ime)
                     ->line('Email: ' . $this->email)
-                    ->line('Poruka: <br/>' . $this->poruka)
-                    ->salute('Pogledaj kroz prozor');
+                    ->line('Poruka: <br/>' . $this->poruka);
     }
 
     /**
