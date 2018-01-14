@@ -19,8 +19,8 @@ class CreateFakultetParticipantTable extends Migration
             $table->foreign('participant_id')->references('id')->on('participanti')->onDelete('cascade');
             $table->integer('fakultet_id')->unsigned();
             $table->foreign('fakultet_id')->references('id')->on('fakulteti')->onDelete('cascade');
-            $table->integer('godina');
-            $table->string('odsjek');
+            $table->integer('godina')->nullable();
+            $table->string('odsjek')->nullable();
         });
     }
 

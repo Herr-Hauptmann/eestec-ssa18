@@ -53,7 +53,7 @@ class PrijavaController extends Controller
         $request->validate([
             'ime' => 'required',
             'prezime' => 'required',
-            'datum_rodjenja' => 'required|date|before:today',
+            'datum' => 'required|date|before:today',
             'email' => 'required|email',
             'pismo' => 'required|filled'
         ]);
@@ -91,11 +91,11 @@ class PrijavaController extends Controller
             ]);
         }
 
-        $participant->notify(new PrijavaUspjesna());
+        // $participant->notify(new PrijavaUspjesna());
 
         // poslati mail potvrde prijave
 
-        return back();
+        return back()->with('success', 'Prijava je uspješno pohranjena.');
     }
 
     /**

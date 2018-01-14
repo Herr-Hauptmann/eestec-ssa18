@@ -4,15 +4,10 @@
         <div class="row">
             <div class="col-xs-12">
                 <p class="naslov" style="color: grey">Prijavi se - Budi korak ispred!</p>
-                <p class="@isset($valid) {{ $valid ? $errorMessage : $confMessage }} @endisset">@isset($message) {{ $message }} @endisset</p>
                 @if ($errors->any())
-                    <ul class="alert alert-danger">
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                @else
-                    <p class="confMessage">Prijava je uspješno pohranjena.</p>
+                    <p class="errorMessage">Neki podaci su neispravni ili nedostaju.</p>
+                @elseif ($message = Session::get('success'))
+                    <p class="confMessage">{{ $message }}</p>
                 @endif
             </div>
         </div>
