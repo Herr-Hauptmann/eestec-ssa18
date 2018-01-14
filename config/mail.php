@@ -57,7 +57,7 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'noreply@softskillsacademy.ba'),
-        'name' => env('MAIL_FROM_NAME', 'SSA \'' . date('y')),
+        'name' => env('MAIL_FROM_NAME', 'Soft Skills Academy Sarajevo'),
     ],
 
     /*

@@ -39,9 +39,9 @@
         <link href="{{ asset('css/galerija/album.css') }}" rel="stylesheet">
         <link href="{{ asset('css/galerija/galerijaMain.css') }}" rel="stylesheet">
         <link href="{{ asset('css/galerija/ihover.min.css') }}" rel="stylesheet">
-
-        <link rel='stylesheet prefetch' href='https://cdn.rawgit.com/yairEO/photobox/master/photobox/photobox.css'>
     @endif
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 </head>
 <body>
