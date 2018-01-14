@@ -21,7 +21,7 @@
                         </div>
                         <div>
                             <p class='newsArticleHeader'>{{ $post->title }}</p>
-                            <p class='newsArticleText'>{!! $post->content !!}</p>
+                            <div class='newsArticleText'>{!! $post->content !!}</div>
                         </div>
                     </div>
                 </a>
