@@ -9,20 +9,22 @@
 
             @foreach($posts as $post)
 
-            <div class='col-md-6 novostiDiv' data-href="{{ route('jednaNovost', [$post->id]) }}">
-                <div class='mainNewsDiv'>
-                    <div>
-                        <img class='img-responsive newsImg' src="{{ asset('img/proba.jpg') }}"/>
+            <div class='col-md-6 novostiDiv'>
+                <a href="{{ route('jednaNovost', $post->id) }}" class="a-mainNewsDiv">
+                    <div class='mainNewsDiv'>
+                        <div>
+                            <img class='img-responsive newsImg' src="{{ asset($post->image_url) }}"/>
+                        </div>
+                        <div class="newsMainDate">
+                            <p class="newsDayMargin">{{ $post->created_at->day }}.</p>
+                            <p>{{ jdmonthname($post->created_at->month, 2) }}</p>
+                        </div>
+                        <div>
+                            <p class='newsArticleHeader'>{{ $post->title }}</p>
+                            <p class='newsArticleText'>{!! $post->content !!}</p>
+                        </div>
                     </div>
-                    <div class="newsMainDate">
-                        <p class="newsDayMargin">{{ $post->created_at->day }}.</p>
-                        <p>{{ jdmonthname($post->created_at->month, 2) }}</p>
-                    </div>
-                    <div>
-                        <p class='newsArticleHeader'>{{ $post->title }}</p>
-                        <p class='newsArticleText'>{{ $post->content }}</p>
-                    </div>
-                </div>
+                </a>
             </div>
             @endforeach
         </div>

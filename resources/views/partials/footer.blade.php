@@ -10,19 +10,19 @@
 
             <div class="socialWrapper">
                 <a target="_blank" class="col-xs-3" href="https://www.facebook.com/SoftSkillsAcademySarajevo/">
-                    <img alt="Facebook" class="socialImage img-responsive" src="img/facebookTest.png" />
+                    <img alt="Facebook" class="socialImage img-responsive" src="{{ asset('img/facebookTest.png') }}" />
                 </a>
 
                 <a target="_blank" class="col-xs-3" href="https://twitter.com/eestecsarajevo">
-                    <img alt="Twitter" class="socialImage  img-responsive" src="img/twitterTest.png" />
+                    <img alt="Twitter" class="socialImage  img-responsive" src="{{ asset('img/twitterTest.png') }}" />
                 </a>
 
                 <a target="_blank" class="col-xs-3" href="https://www.instagram.com/softskillsacademy_sa">
-                    <img alt="Instagram" class="socialImage  img-responsive" src="img/instagramTest.png" />
+                    <img alt="Instagram" class="socialImage  img-responsive" src="{{ asset('img/instagramTest.png') }}" />
                 </a>
 
                 <a target="_blank" class="col-xs-3" href="https://ba.linkedin.com/in/eestec-lc-sarajevo-347390a0">
-                    <img alt="Linkedin" class="socialImage  img-responsive" src="img/linkedinTest.png"  />
+                    <img alt="Linkedin" class="socialImage  img-responsive" src="{{ asset('img/linkedinTest.png') }}"  />
                 </a>
 
             </div>

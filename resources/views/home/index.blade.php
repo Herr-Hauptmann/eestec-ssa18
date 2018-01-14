@@ -8,6 +8,6 @@
     @include('partials.timeline')
     @include('partials.oprojektu')
     @include('partials.drugionama')
-    @include('partials.raspored')
-    @include('partials.participanti')
+    {{-- @include('partials.raspored') --}
+    {{-- @include('partials.participanti') --}}
 @endsection

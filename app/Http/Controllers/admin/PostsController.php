@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use App\Utility\StringUtility;
 
 class PostsController extends Controller
 {
@@ -30,11 +32,15 @@ class PostsController extends Controller
         if (!empty($keyword)) {
             $posts = Post::where('title', 'LIKE', "%$keyword%")
                 ->orWhere('content', 'LIKE', "%$keyword%")
-                ->orWhere('image_url', 'LIKE', "%$keyword%")
                 ->paginate($perPage);
         } else {
             $posts = Post::paginate($perPage);
         }
+
+        $posts->each(function ($post) {
+            $post->content = StringUtility::shortenString($post->content, 13);
+
+        });
 
         return view('posts.index', compact('posts'));
     }
@@ -61,9 +67,18 @@ class PostsController extends Controller
         
         $requestData = $request->all();
         
-        Post::create($requestData);
+        $post = Post::create([
+            'title' => $request->title,
+            'content' => $request->content
+        ]);
 
-        return redirect('posts')->with('flash_message', 'Post added!');
+        Storage::disk('public')->putFileAs('/uploads/novosti/' . $post->id, $requestData['image'], $requestData['image']->getClientOriginalName());
+
+        $post->update([
+            'image_url' => '/uploads/novosti/' . $post->id . '/' . $requestData['image']->getClientOriginalName()
+        ]);
+
+        return redirect()->route('posts.index')->with('flash_message', 'Post added!');
     }
 
     /**
@@ -110,7 +125,7 @@ class PostsController extends Controller
         $post = Post::findOrFail($id);
         $post->update($requestData);
 
-        return redirect('posts')->with('flash_message', 'Post updated!');
+        return redirect()->route('posts.show', $id)->with('flash_message', 'Post updated!');
     }
 
     /**
@@ -124,6 +139,6 @@ class PostsController extends Controller
     {
         Post::destroy($id);
 
-        return redirect('posts')->with('flash_message', 'Post deleted!');
+        return redirect()->route('posts.index')->with('flash_message', 'Post deleted!');
     }
 }

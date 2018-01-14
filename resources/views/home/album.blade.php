@@ -7,17 +7,8 @@
                @foreach($images as $image)
                    <div class="slika">
 
-                       <a href="{{ $image }}" data-gallery>
-                      
-                         <!--  <img src="{{$image }}" />
-                          <img src="{{ url($image) }}> -->
-                            <img src="{{asset($image) }}" />
-                       
-                        
-
-                   <!--    <a href="{{ '../../' . $image }}" data-gallery>
-                           <img src="{{ '../../' . $image }}" /> -->
-
+                       <a href="{{ asset($image) }}" data-gallery>
+                            <img src="{{ asset($image) }}" />
                        </a>
                    </div>
                 @endforeach
@@ -69,7 +60,5 @@
                 links = this.getElementsByTagName('a');
             window.blueimp.Gallery(links, options);
         };
-
-        $('#gallery').photobox('a', { thumbs:true });
     </script>
 @endsection

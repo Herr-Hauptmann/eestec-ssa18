@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body>
     <div id="app">
@@ -75,7 +76,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://use.fontawesome.com/719876f143.js"></script>
+    <script src="{{ asset('ckeditor5-build-classic/ckeditor.js') }}"></script>
 </body>
 </html>

@@ -43,6 +43,8 @@
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
+    <script src="{{ asset('js/app.js') }}"></script>
+
 </head>
 <body>
 
@@ -53,7 +55,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://use.fontawesome.com/719876f143.js"></script>
     <script src="{{ asset('js/carousel.js') }}"></script>
     <script src="{{ asset('js/jquery.redirect.js') }}"></script>
