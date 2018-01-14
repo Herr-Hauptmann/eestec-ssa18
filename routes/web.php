@@ -84,7 +84,7 @@ Route::post('prijava', 'PrijavaController@store')->name('prijava.store');
 ###############################################################
 
 Route::get('admin', function() {
-	return redirect()->route('admin.posts');
+	return redirect()->route('posts.index');
 })->name('admin.dashboard');
 
 Route::resource('admin/posts', 'PostsController');
