@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Participant;
 use App\Faculty;
 use Illuminate\Support\Facades\DB;
+use App\Notifications\PrijavaUspjesna;
 
 class PrijavaController extends Controller
 {
