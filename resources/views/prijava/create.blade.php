@@ -3,8 +3,17 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <p class="naslov" style="color: grey">Prijavi se Budi korak ispred!</p>
+                <p class="naslov" style="color: grey">Prijavi se - Budi korak ispred!</p>
                 <p class="@isset($valid) {{ $valid ? $errorMessage : $confMessage }} @endisset">@isset($message) {{ $message }} @endisset</p>
+                @if ($errors->any())
+                    <ul class="alert alert-danger">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                @else
+                    <p class="confMessage">Prijava je uspješno pohranjena.</p>
+                @endif
             </div>
         </div>
 
