@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Storage;
 class HomeController extends Controller
 {
 
+    public $pr;
+    public $glorg;
+
+    public function __construct() {
+        $this->pr = Kontakt::where('pozicija_short', 'PR')->first();
+        $this->glorg = Kontakt::where('pozicija_short', 'GLORG')->first();
+    }
+
     /**
      * Show the application dashboard.
      *

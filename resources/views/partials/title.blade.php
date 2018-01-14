@@ -10,7 +10,7 @@
 	            <p>Soft skills academy Sarajevo</p>
 	        </div>
 	        <div class="title-text-three">
-	            <p>10-12. mart 2017. godine</p>
+	            <p>9 - 11. mart 2018. godine</p>
 	        </div>
 	        </div>
 

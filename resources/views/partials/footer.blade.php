@@ -17,7 +17,7 @@
                     <img alt="Twitter" class="socialImage  img-responsive" src="img/twitterTest.png" />
                 </a>
 
-                <a target="_blank" class="col-xs-3" href="https://www.instagram.com/eestec_lc_sarajevo/">
+                <a target="_blank" class="col-xs-3" href="https://www.instagram.com/softskillsacademy_sa">
                     <img alt="Instagram" class="socialImage  img-responsive" src="img/instagramTest.png" />
                 </a>
 
@@ -37,18 +37,18 @@
 
             <div class="kontaktOsobe">
                 <p class="kontaktIme">
-                    Emina Sikira
+                    Zlatan Peleksić
                 </p>
                 <p class="kontaktPozicija prvaKontakt">
-                    Koordinatorica tima za odnose sa javnošću<br>
-                     <b>emina.sikira@softskillsacademy.ba</b>
+                    Koordinator tima za odnose sa javnošću<br>
+                     <b>zlatan.peleksic@softskillsacademy.ba</b>
                 </p>
                 <p class="kontaktIme">
-                    Adina Omerović
+                    Marijana Udovčić
                 </p>
                 <p class="kontaktPozicija">
                     Glavna organizatorica<br>
-                    <b>adina.omerovic@softskillsacademy.ba</b>
+                    <b>marijana.udovcic@softskillsacademy.ba</b>
                 </p>
             </div>
 
@@ -67,7 +67,7 @@
 <div class="container-fluid subFooter">
 	<div class="row">
 		<div class="subFooter-wrapper col-xs-12">
-<p>Copyright (C) EESTEC LC Sarajevo 2017</p>
+<p>Copyright (C) EESTEC LC Sarajevo {{ date('Y') }}</p>
 
 </div>
 </div>

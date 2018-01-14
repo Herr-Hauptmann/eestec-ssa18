@@ -25,7 +25,7 @@ class Kontakt extends Model
      *
      * @var array
      */
-    protected $fillable = ['pozicija', 'ime', 'prezime', 'email', 'telefon'];
+    protected $fillable = ['pozicija', 'ime', 'prezime', 'email', 'telefon', 'pozicija_short'];
 
     
 }
