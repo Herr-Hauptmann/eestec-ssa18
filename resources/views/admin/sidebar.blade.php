@@ -19,7 +19,9 @@
                     <button class="btn btn-success btn-block" onclick="location.href = '{{ route('kontakt.index') }}'">
                         Kontakt
                     </button>
-                    
+                    <button class="btn btn-info btn-block" onclick="location.href = '{{ route('participants.index') }}'">
+                        Participanti
+                    </button>
 
 
                 </li>
