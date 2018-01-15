@@ -1,10 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Merriweather);
 @import url(https://fonts.googleapis.com/css?family=Roboto);
+
 body,
 html {
     margin: 0 !important;
     padding: 0 !important;
 }
+
 @font-face {
     font-family: 'Gotham-Black';
     src: url('../fonts/Gotham-Black.ttf') format('truetype');
@@ -27,24 +29,24 @@ html {
 }
 
 .ghost-button {
-  display: inline-block;
-  background-color: transparent;
-  width: 250px;
-  height: auto;
-  padding: 8px;
-  color: #fff;
-  border: 2px solid #1aa699;
-  text-align: center;
-  font-size: 1.5em;
-  outline: none;
-  text-decoration: none;
+    display: inline-block;
+    background-color: transparent;
+    width: 250px;
+    height: auto;
+    padding: 8px;
+    color: #fff;
+    border: 2px solid #1aa699;
+    text-align: center;
+    font-size: 1.5em;
+    outline: none;
+    text-decoration: none;
 }
 
 .ghost-button:hover,
 .ghost-button:active {
-  background-color: #1aa699;
-  text-decoration: none;
-  color: #fff;
+    background-color: #1aa699;
+    text-decoration: none;
+    color: #fff;
 }
 
 .marginContainer {
@@ -58,7 +60,7 @@ html {
 .sectionHeadline {
     font-family: 'Gotham-Bold', sans-serif;
     font-size: 35px;
-    
+
     color: #1aa699;
     text-transform: uppercase;
     border-bottom: 10px #1aa79e solid;
@@ -80,23 +82,21 @@ html {
     margin-top: 70px !important;
 }
 
-.mainNewsDiv:hover
-{
+.mainNewsDiv:hover {
     cursor: pointer;
-    
+
 }
 
 .a-mainNewsDiv:hover {
     text-decoration: none;
 }
 
-
 .newsImg {
     max-height: 40%;
 }
 
-.newsImgOne{
-    width:100%;
+.newsImgOne {
+    width: 100%;
 }
 
 .mainNewsDivOne {
@@ -137,7 +137,6 @@ html {
     left: 40px;
     font-family: 'Merriweather', serif;
 }
-
 
 .newsDayMargin {
     margin-bottom: -10px;
@@ -188,11 +187,10 @@ html {
 .newsMoreText {
     color: #1aa79e;
     font-size: 20px;
-    text-decoration: none!important;
+    text-decoration: none !important;
 }
 
-.newsMoreText:hover
-{
+.newsMoreText:hover {
     cursor: pointer;
 }
 
@@ -272,10 +270,12 @@ html {
     .marginContainer {
         margin: 10px 3% 10px 3%;
     }
+
     .sectionHeadline {
         font-size: 28px;
         border-bottom: 8px #1aa699 solid;
     }
+
     .newsMainDate {
         font-size: 20px;
         width: 60px;
@@ -284,6 +284,7 @@ html {
         top: 45%;
         left: 20px;
     }
+
     .newsMainDateOne {
         font-size: 20px;
         width: 60px;
@@ -292,82 +293,90 @@ html {
         top: 10%;
         left: 20px;
     }
+
     .newsArticleHeader {
         font-size: 16px;
         margin-top: 35px;
         padding: 5px;
     }
+
     .newsArticleHeaderOne {
         font-size: 16px;
         margin-top: 35px;
         padding: 5px;
     }
+
     .newsArticleText {
         font-size: 14px;
         padding: 5px;
     }
+
     .newsArticleTextOne {
         font-size: 11px;
         padding: 5px;
     }
+
     .newsMoreDiv {
         margin: 10px 0% 10px 5%;
     }
+
     .newsMoreText {
         font-size: 18px;
     }
+
     .aboutProjectTextHeader {
         font-size: 28px;
     }
+
     .aboutProjectTextTop {
         font-size: 14px;
     }
+
     .aboutProjectTextBottom {
         font-size: 14px;
         margin-top: 15px;
     }
+
     .newsDayMargin {
         margin-bottom: 0px;
         font-size: 18px;
     }
+
     .scheduleTba {
         font-size: 50px;
     }
 }
 
-  .carousel-inner > .item > .citat {
-      width: 70%;
-      margin: auto;
-      font-family: 'Merriweather';
-      font-size: 21px;
-      color: #333131;
-      font-style: italic;
-      font-weight: bold;
-      text-align: left;
-  }
+.carousel-inner > .item > .citat {
+    width: 70%;
+    margin: auto;
+    font-family: 'Merriweather';
+    font-size: 21px;
+    color: #333131;
+    font-style: italic;
+    font-weight: bold;
+    text-align: left;
+}
 
-  .carousel-inner > .item > .citat > .ime-Osobe {
-      color:#d52027;
-      text-align: right;
-  }
+.carousel-inner > .item > .citat > .ime-Osobe {
+    color: #d52027;
+    text-align: right;
+}
 
+#myCarousel > .carousel-control {
 
-  
-#myCarousel > .carousel-control{
-    
-    background:transparent;
+    background: transparent;
 }
 
 /*Boja strelice se ne prikazuje zbog opacity-a parenta, ne znam kako popraviti*/
-  #myCarousel > .carousel-control > .glyphicon{
-      position: absolute;
-      z-index: 50;
-      color: #d52027;
+#myCarousel > .carousel-control > .glyphicon {
+    position: absolute;
+    z-index: 50;
+    color: #d52027;
 }
 
-.mainNavbar
-{
-    
+.mainNavbar {
+
     border-radius: 0px !important;
     background: #1AA79E;
     border: 0px;
@@ -376,14 +385,12 @@ html {
     z-index: 1000 !important;
 }
 
-.mainNavbar .navbar-toggle
-{
+.mainNavbar .navbar-toggle {
     margin-bottom: 50px;
 }
 
-.navbarList2
-{
-     margin-bottom: 25px !important;
+.navbarList2 {
+    margin-bottom: 25px !important;
     min-height: 58px;
 }
 
@@ -391,16 +398,13 @@ html {
     margin-top: 25px;
 }
 
-
-.mainNavbar1
-{
+.mainNavbar1 {
     background-color: transparent !important;
     background: #1AA79E;
     height: 100px;
 }
 
-.mainNavbar2
-{
+.mainNavbar2 {
     background-color: #1AA79E !important;
     height: 115px;
     z-index: 1000;
@@ -408,29 +412,27 @@ html {
 
 .mainNavbar .navbar-toggle {
     margin-top: 30px;
-    
+
     width: 50px;
 }
 
-.mainNavbar1 .navbar-toggle
-{
+.mainNavbar1 .navbar-toggle {
     margin-bottom: 50px;
 }
 
-.mainNavbar2 .navbar-toggle
-{
-    margin-bottom: 31px;   
+.mainNavbar2 .navbar-toggle {
+    margin-bottom: 31px;
 
 }
 
-.mainNavbar2 .navbar-collapse
-{
+.mainNavbar2 .navbar-collapse {
     border: none !important;
 }
 
 .mainNavbar .navbar-toggle .icon-bar {
     background-color: white;
-    margin-left: -7px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .secondNavbar {
@@ -442,7 +444,7 @@ html {
     box-shadow: none !important;
     padding-bottom: 0px !important;
     border-bottom: 1px solid rgb(200, 200, 200);
-    
+
 }
 
 .secondNavbar .navbar-toggle {
@@ -451,123 +453,129 @@ html {
 
 .secondNavbar .navbar-toggle .icon-bar {
     background-color: #1AA79E !important;
-
-}
-
-
-
-.logo-img
-{
-    width: 160px !important;
-    margin-left: 5%;
-    position: absolute;
-    
-}
-
-.second-logo-img
-{
-    position: absolute;
-    width: 130px !important;
-    margin-left: 5%;
-    margin-bottom: 0px !important;
-    padding-bottom: 0px !important;
-
-}
-
-@media only screen and (max-width: 400px) {
-
-.logo-img
-{
-    width: 120px !important;
-    margin-left: 5%;
-}
-
-.second-logo-img
-{
-    width: 95px !important;
-    margin-left: 5%;
-    
-}
-
-
-
-.mainNavbar .navbar-toggle
-{
-    margin-top: 25px;
-    width: 30px;
-    height: 35px;
-    padding-top: 10px;
-}
-
-.mainNavbar .navbar-toggle .icon-bar 
-{
-    background-color: white;
-    margin-left: -12px;
-    
-}
-
-.affix-top .navbar-toggle
-{
-    margin-top: 30px;
-    width: 30px;
-    height: 35px;
-    padding-top: 10px;
-}
-
-.secondNavbar .navbar-toggle .icon-bar
-{
-    margin-left: -12px;
-
-}
-
-.affix .navbar-toggle
-{
-    margin-top: 30px;
-    width: 30px;
-    height: 35px;
-    padding-top: 10px;
+    margin-left: -7px;
+    margin-right: auto;
 }
 
 .logo-img {
     width: 160px !important;
-    margin-left: 30%;
+    margin-left: 5%;
+    position: absolute;
+
 }
 
 .second-logo-img {
+    position: absolute;
     width: 130px !important;
-    margin-left: 33%;
+    margin-left: 5%;
     margin-bottom: 0px !important;
     padding-bottom: 0px !important;
+
 }
 
-@media only screen and (max-width: 400px) {}
+@media only screen and (max-width: 768px) {
+    .mainNavbar1 .navbar-collapse {
+        background: rgb(26, 167, 158);
+        margin: 0 -9vw;
+    }
+
+    .secondNavbarList {
+        margin-left: -45px;
+        width: 100vw;
+        border-bottom: 1px solid rgb(200, 200, 200);
+        border-top: 1px solid rgb(200, 200, 200);
+    }
+
+    .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+        border-color: #fff;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+
     .logo-img {
         width: 120px !important;
         margin-left: 5%;
     }
+
     .second-logo-img {
         width: 95px !important;
         margin-left: 5%;
+
     }
+
     .mainNavbar .navbar-toggle {
         margin-top: 25px;
         width: 30px;
         height: 35px;
         padding-top: 10px;
     }
+
     .mainNavbar .navbar-toggle .icon-bar {
         background-color: white;
-        margin-left: -12px;
+
     }
+
     .affix-top .navbar-toggle {
         margin-top: 30px;
         width: 30px;
         height: 35px;
         padding-top: 10px;
     }
-    .secondNavbar .navbar-toggle .icon-bar {
-        margin-left: -12px;
+
+    .affix .navbar-toggle {
+        margin-top: 30px;
+        width: 30px;
+        height: 35px;
+        padding-top: 10px;
     }
+
+    .logo-img {
+        width: 160px !important;
+        margin-left: 30%;
+    }
+
+    .second-logo-img {
+        width: 130px !important;
+        margin-left: 33%;
+        margin-bottom: 0px !important;
+        padding-bottom: 0px !important;
+    }
+
+    .logo-img {
+        width: 120px !important;
+        margin-left: 5%;
+    }
+
+    .second-logo-img {
+        width: 95px !important;
+        margin-left: 5%;
+    }
+
+    .mainNavbar .navbar-toggle {
+        margin-top: 25px;
+        width: 30px;
+        height: 35px;
+        padding-top: 10px;
+    }
+
+    .mainNavbar .navbar-toggle .icon-bar {
+        background-color: white;
+        margin-left: -7px;
+    }
+
+    .affix-top .navbar-toggle {
+        margin-top: 30px;
+        width: 30px;
+        height: 35px;
+        padding-top: 10px;
+    }
+
+    .secondNavbar .navbar-toggle .icon-bar {
+        margin-left: -7px;
+
+    }
+
     .affix .navbar-toggle {
         margin-top: 30px;
         width: 30px;
@@ -578,45 +586,30 @@ html {
 
 @media only screen and (max-width: 1100px) and (min-width: 400px) {
 
-.affix-top .navbar-toggle
-{
-    margin-top: 30px;
-    width: 30px;
-    height: 35px;
-    padding-top: 10px;
-}
+    .affix-top .navbar-toggle {
+        margin-top: 30px;
+        width: 30px;
+        height: 35px;
+        padding-top: 10px;
+    }
 
-.affix-top .navbar-toggle .icon-bar
-{
-    margin-left: -12px;
+    .affix .navbar-toggle {
+        margin-top: 30px;
+        width: 30px;
+        height: 35px;
+        padding-top: 10px;
+    }
 
-}
+    .logo-img {
+        width: 160px !important;
+        margin-left: 5%;
+    }
 
-.affix .navbar-toggle .icon-bar
-{
-    margin-left: -12px;
-}
+    .second-logo-img {
+        width: 110px !important;
+        margin-left: 5%;
 
-.affix .navbar-toggle
-{
-    margin-top: 30px;
-    width: 30px;
-    height: 35px;
-    padding-top: 10px;
-}
-
-.logo-img
-{
-    width: 160px !important;
-    margin-left: 5%;
-}
-
-.second-logo-img
-{
-    width: 110px !important;
-    margin-left: 5%;
-    
-}
+    }
 
     .affix-top .navbar-toggle {
         margin-top: 30px;
@@ -624,26 +617,21 @@ html {
         height: 35px;
         padding-top: 10px;
     }
-    .affix-top .navbar-toggle .icon-bar {
-        margin-left: -12px;
-    }
-    .affix .navbar-toggle .icon-bar {
-        margin-left: -12px;
-    }
+
     .affix .navbar-toggle {
         margin-top: 30px;
         width: 30px;
         height: 35px;
         padding-top: 10px;
     }
-    
+
     .second-logo-img {
         width: 110px !important;
         margin-left: 5%;
     }
 }
 
-.navbarList>li>a {
+.navbarList > li > a {
     text-transform: none;
     color: white !important;
     font-size: 19px !important;
@@ -651,49 +639,29 @@ html {
     padding-top: 5px !important;
     margin-top: 15px;
 
-    /*margin-right: 10px !important;*/ 
-
+    /*margin-right: 10px !important;*/
 
 }
-
-
-
 
 .secondNavbarList {
     background-color: white !important;
     position: absolute;
-    margin-left: 15%;
-    
 }
-
-
 
 @media only screen and (max-width: 1100px) {
 
-    .secondNavbarList
-    {
-        width: 100% !important;
-        margin-left: -5% !important;
+    /*.mainNavbar2 .navbar-collapse {*/
+        /*width: 100% !important;*/
+        /*margin-left: 0px !important;*/
+        /*margin-right: 0px !important;*/
+        /*background-color: #1AA79E !important;*/
+        /*padding-bottom: 20px;*/
 
-    }
+    /*}*/
 
-   
+}
 
-    .mainNavbar2 .navbar-collapse
-    {
-        width: 100% !important;
-        margin-left: 0px !important;
-        margin-right: 0px !important;
-        background-color: #1AA79E !important;
-        padding-bottom: 20px;
-
-    }
-
-
-
-    }
-
-    .countdown-timer {
+.countdown-timer {
     font-family: 'Merriweather';
     /* font-size: 13pt; */
     color: white;
@@ -706,30 +674,30 @@ html {
     }
 }
 
-.secondNavbarList>li>a {
+.secondNavbarList > li > a {
     text-transform: uppercase;
     color: gray !important;
     font-size: 12pt !important;
 }
 
-.navbarList>li>a:hover,
-.navbarList>li>a:focus {
+.navbarList > li > a:hover,
+.navbarList > li > a:focus {
     background-color: transparent !important;
     color: white;
 }
 
-.navbarList>li:hover {
+.navbarList > li:hover {
     padding-bottom: 6px;
     border-bottom: 6px solid white !important;
 }
 
-.secondNavbarList>li>a:hover,
-.secondNavbarList>li>a:focus {
+.secondNavbarList > li > a:hover,
+.secondNavbarList > li > a:focus {
     background-color: transparent !important;
     color: #1AA79E !important;
 }
 
-.secondNavbarList>li:hover {
+.secondNavbarList > li:hover {
     border-bottom: 2px solid #1AA79E !important;
 }
 
@@ -756,8 +724,7 @@ html {
 }
 
 @media only screen and (max-width: 1100px) {
-    .title-text
-    {
+    .title-text {
         margin-left: 30px;
         margin-top: 30px;
     }
@@ -765,8 +732,7 @@ html {
 }
 
 @media only screen and (min-width: 1500px) {
-    .title
-    {
+    .title {
         height: 1000px;
     }
 
@@ -777,46 +743,41 @@ html {
     padding: 0;
 }
 
-.title-text-one > p
-{
+.title-text-one > p {
     font-family: 'Merriweather';
     font-size: 13pt;
     color: white;
 }
 
-.title-text-two> p
-{
+.title-text-two > p {
     font-family: 'Gotham-Light';
     font-size: 23pt;
     color: white;
     text-transform: uppercase;
-    
+
 }
 
-.title-text-three> p
-{
+.title-text-three > p {
     font-family: 'Gotham-Light';
     font-size: 19pt;
     color: white;
-    
+
 }
 
 .affix {
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  /*background-color: gray !important;*/
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    /*background-color: gray !important;*/
 
 }
 
 .affix-top {
-  width: 100%;
+    width: 100%;
     top: 0;
     z-index: 1000;
     /*background-color: gray !important;*/
 }
-
-
 
 .affix-bottom {
     position: absolute;
@@ -827,13 +788,11 @@ html {
     margin-top: 30px;
 }
 
-.affix .secondNavbarList li
-{
+.affix .secondNavbarList li {
     margin-top: 30px;
 }
 
-.affix-top .secondNavbarList li
-{
+.affix-top .secondNavbarList li {
     margin-top: 30px;
 }
 
@@ -841,16 +800,13 @@ html {
     margin: 0 auto !important;
 }
 
-.onama-title-text
-{
+.onama-title-text {
     font-family: 'Merriaweather';
     font-size: 16pt;
     text-align: center;
     color: #d52027;
 
-
 }
-
 
 .onama-paragraph-text {
     font-family: 'Roboto';
@@ -877,13 +833,12 @@ html {
 
 @media only screen and (max-width: 1000px) {
 
-    .timelineImage
-    {
+    .timelineImage {
         padding: 0px;
 
     }
 
-    }
+}
 
 .footer {
     background-color: rgb(50, 50, 50);
@@ -896,15 +851,13 @@ html {
         margin-left: 40px;
     }
 
-
-
 }
 
 @media only screen and (max-width: 1000px) {
 
     .socialWrapper {
-       margin-left: 200px auto !important;
-}
+        margin-left: 200px auto !important;
+    }
 
 }
 
@@ -928,7 +881,7 @@ html {
     margin-bottom: 5%;
 }
 
-.footerNaslov>p {
+.footerNaslov > p {
     text-transform: uppercase;
     color: white;
     font-family: 'Gotham-Light';
@@ -941,14 +894,12 @@ html {
     font-family: 'Roboto';
 }
 
-.kontaktIme, .subFooter-wrapper > p
-{
+.kontaktIme, .subFooter-wrapper > p {
     font-weight: bold;
     font-size: 12pt;
 }
 
-.subFooter-wrapper > p
-{
+.subFooter-wrapper > p {
     text-align: center;
     color: white;
     vertical-align: middle;
@@ -959,7 +910,7 @@ html {
     font-size: 12pt;
 }
 
-.subFooter-wrapper>p {
+.subFooter-wrapper > p {
     text-align: center;
     color: white;
     vertical-align: middle;
@@ -980,21 +931,17 @@ html {
     cursor: pointer;
 }
 
-.subFooter
-{
-    background-color: rgb(20,20,20);
+.subFooter {
+    background-color: rgb(20, 20, 20);
     border-radius: none;
 }
 
-
-.navbarList > li
-{
+.navbarList > li {
     font-family: 'Gotham-Light';
 
 }
 
-.secondNavbarList > li
-{
+.secondNavbarList > li {
     font-family: 'Gotham-Light';
 }
 
@@ -1004,22 +951,21 @@ html {
     padding-bottom: 7px;
 }
 
-.navbarList>li {
+.navbarList > li {
     font-family: 'Gotham-Light';
 }
 
-.secondNavbarList>li {
+.secondNavbarList > li {
     font-family: 'Gotham-Light';
 
 }
-
 
 #return-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
     background: #1AA79E;
-    
+
     width: 50px;
     height: 50px;
     display: block;
@@ -1034,6 +980,7 @@ html {
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
+
 #return-to-top i {
     color: #fff;
     margin: 0;
@@ -1047,89 +994,75 @@ html {
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
+
 #return-to-top:hover {
     background: #1AA79E;
 }
+
 #return-to-top:hover i {
     color: #fff;
     top: 5px;
 }
 
-
 @media only screen and (max-width: 950px) {
-    #return-to-top
-    {
+    #return-to-top {
         display: none !important;
     }
 }
 
-.prijavaSlika
-{
+.prijavaSlika {
     margin-bottom: 5px !important;
     margin-top: 170px !important;
     padding: 0px !important;
     margin: 0 auto;
     width: 300px;
-    
+
 }
 
-.prijavaTekst, .prijavaTekst2
-{
+.prijavaTekst, .prijavaTekst2 {
     color: white;
     font-family: 'Gotham-Light';
     font-weight: bold;
     margin: 0 auto !important;
     padding: 0px !important;
     text-align: center;
-    
+
 }
 
-.prijavaTekst2
-{
+.prijavaTekst2 {
     font-size: 16px;
 }
 
-.prijavaSlika
-{
+.prijavaSlika {
     padding-bottom: 45px !important;
 }
 
 @media only screen and (max-width: 950px) {
-    .prijavaSlika
-    {
+    .prijavaSlika {
         margin-top: 220px !important;
     }
 }
 
 @media only screen and (min-width: 1170px) {
-    
-        .prijavaTekst
-        {
-            display: none;
-        }
 
-        .prijavaSlika
-        {
-            margin-top: 18vh !important;
-        }
-    }
-
-
-@media only screen and (max-width: 1170px) {
-
-    .timerDiv, .prijavaTekst2
-    {
+    .prijavaTekst {
         display: none;
     }
 
+    .prijavaSlika {
+        margin-top: 18vh !important;
+    }
+}
 
+@media only screen and (max-width: 1170px) {
+
+    .timerDiv, .prijavaTekst2 {
+        display: none;
+    }
 
 }
 
-
-
-.timerBroj, .timerDvotacka
-{
+.timerBroj, .timerDvotacka {
     font-size: 53px;
     font-weight: bold;
     padding-right: 10px;
@@ -1139,21 +1072,18 @@ html {
     margin-top: 30px;
 }
 
-.timerBroj
-{
+.timerBroj {
 
 }
 
-.timerTekst
-{
+.timerTekst {
     font-size: 12px;
     padding: 0px;
     font-family: 'Roboto';
 
 }
 
-.timerBroj, .timerDvotacka
-{
+.timerBroj, .timerDvotacka {
     text-align: center;
     color: white;
     font-family: 'Roboto';
@@ -1161,44 +1091,36 @@ html {
 
 }
 
-.proba
-{
+.proba {
     text-align: center;
 }
 
-
 @media screen and (max-width: 991px) {
 
-.clanakText
-{
-    margin-right: 30px;
-    margin-left: 30px;
-    margin-top: 50px;
-}
+    .clanakText {
+        margin-right: 30px;
+        margin-left: 30px;
+        margin-top: 50px;
+    }
 
-.clanakText2
-{
-    padding-left: 45px;
-    padding-right: 45px;
-    margin-top: -40px;
-}
-
+    .clanakText2 {
+        padding-left: 45px;
+        padding-right: 45px;
+        margin-top: -40px;
+    }
 
 }
-
 
 @media screen and (min-width: 991px) {
-.clanakText2
-{
-    padding-left: 120px;
-    padding-right: 120px;
-    margin-top: -45px;
-}
+    .clanakText2 {
+        padding-left: 120px;
+        padding-right: 120px;
+        margin-top: -45px;
+    }
 
 }
 
-.raspImage
-{
+.raspImage {
     margin-top: 100px;
 }
 

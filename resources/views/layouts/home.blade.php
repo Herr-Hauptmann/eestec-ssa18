@@ -64,5 +64,17 @@
     <script src="{{ asset('js/select.js') }}"></script>
 
     <script src='https://cdn.rawgit.com/yairEO/photobox/master/photobox/jquery.photobox.js'></script>
+
+    <script>
+        $(document).ready(function () {
+            $(document).click(function (event) {
+                let clickover = $(event.target);
+                let _opened = $(".navbar-collapse").hasClass("in");
+                if (_opened === true && !clickover.hasClass("navbar-toggle")) {
+                    $("button.navbar-toggle").click();
+                }
+            });
+        });
+    </script>
 </body>
 </html>

@@ -16,7 +16,7 @@
 
 
                         <!-- <li><a href="#">Novosti</a></li> -->
-                        <li><a href="{{ route('treninzi-i-treneri') }}">Treninzi i treneri</a></li>
+{{--                        <li><a href="{{ route('treninzi-i-treneri') }}">Treninzi i treneri</a></li>--}}
                         <li><a href="{{ route('mediji') }}">Mediji</a></li>
                         <li><a href="{{ route('partneri') }}"> Partneri</a></li>
                         <li><a href="{{ route('galerija') }}">Galerija</a></li>

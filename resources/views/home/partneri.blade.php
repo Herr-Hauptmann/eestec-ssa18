@@ -3,7 +3,7 @@
 @section('content')
     <div class="marginContainer">
         <div class="container-fluid">
-            <p class="logoTitle firstTitle"><b>Generalni godišnji partneri</b></p>
+            <p class="logoTitle firstTitle"><b>Generalni godišnji partner</b></p>
             <p class="sectionHeadlineBottomRed logosBottomRed"></p>
 
 
