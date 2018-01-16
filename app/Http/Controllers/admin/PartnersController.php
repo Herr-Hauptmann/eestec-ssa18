@@ -32,7 +32,7 @@ class PartnersController extends Controller
 
         if (!empty($keyword)) {
             $partners = Partner::where('name', 'LIKE', "%$keyword%")
-                ->orWhere('logo', 'LIKE', "%$keyword%")
+                ->orWhere('website', 'LIKE', "%$keyword%")
                 ->orWhere('category', 'LIKE', "%$keyword%")
                 ->paginate($perPage);
         } else {
@@ -69,7 +69,7 @@ class PartnersController extends Controller
         $partner = Partner::create([
             'name' => $request->name,
             'category' => $request->category,
-            'website' => StringUtility::parseUrl($request->website)
+            'website' => $request->website
         ]);
 
         Storage::disk('public')->putFileAs('/uploads/partneri/' . $partner->id, $requestData['logo'], $requestData['logo']->getClientOriginalName());
@@ -122,11 +122,18 @@ class PartnersController extends Controller
     {
         
         $requestData = $request->all();
-        
+
         $partner = Partner::findOrFail($id);
+
+        if (isset($requestData['logo'])) {
+            Storage::disk('public')->delete($partner->logo);
+            Storage::disk('public')->putFileAs('/uploads/partneri/' . $id, $requestData['logo'], $requestData['logo']->getClientOriginalName());       
+            $requestData['logo'] = '/uploads/partneri/' . $id . '/' . $requestData['logo']->getClientOriginalName();
+        } 
+        
         $partner->update($requestData);
 
-        return redirect('admin/partners')->with('flash_message', 'Partner updated!');
+        return redirect()->route('partners.show', $id)->with('flash_message', 'Partner updated!');
     }
 
     /**
@@ -138,8 +145,12 @@ class PartnersController extends Controller
      */
     public function destroy($id)
     {
+        // $partner = Partner::findOrFail($id);
+
+        Storage::disk('public')->deleteDirectory('/uploads/partneri/' . $id);
+
         Partner::destroy($id);
 
-        return redirect('admin/partners')->with('flash_message', 'Partner deleted!');
+        return redirect()->route('partners.index')->with('flash_message', 'Partner deleted!');
     }
 }

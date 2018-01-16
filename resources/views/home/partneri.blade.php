@@ -9,29 +9,27 @@
 
 
             <div class="row logoContainer center-hv">
-                <!-- <div class="logoDiv-medij col-md-4 col-sm-4 col-xs-6">
-                    <a href="https://www.infobip.com/" target="_blank"><img alt="Infobip" class="img-responsive logoImg-medij" src="img/partneri/infobip.png"></img></a>
-                </div>
-
-                <div class="logoDiv-medij col-md-4 col-sm-4 col-xs-6">
-                    <a href="https://www.microsoft.com/bs-ba/" target="_blank"><img alt="Microsoft" class="img-responsive logoImg-medij mic" src="img/partneri/microsoft.png"></img></a>
-                </div> -->
-
-               <!--  <div class="col-xs-10 col-xs-offset-1 col-md-4 col-sm-4 col-xs-6 col-md-offset-4 logoDiv-medij col-md-4 col-sm-4 col-xs-6">
-                    <a href="https://www.authoritypartners.com/" target="_blank"><img alt="Authority Partners" class="img-responsive logoImg-medij" src="img/partneri/api.png"></img></a>
-                </div> -->
-                <div class="logoDiv-medij col-md-4 col-sm-4 col-xs-6">
-                    <a href="https://www.authoritypartners.com/" target="_blank">
-                        <img alt="Authority Partners" class="img-responsive logoImg-medij" src="img/partneri/api.png"></img>
-                    </a>
-                </div>
+                @foreach ($generalni as $item)
+                    <div class="logoDiv-medij col-md-4 col-sm-4 col-xs-6">
+                        <a href="{{ $item->website }}" target="_blank">
+                            <div alt="{{ $item->name }}" class="div-responsive_img" style="background-image: url({{ asset($item->logo) }})" }}"></div>
+                        </a>
+                    </div>
+                @endforeach
             </div>
 
             <p class="logoTitle"><b>Partneri radionice</b></p>
             <p class="sectionHeadlineBottomRed logosBottomRed"></p>
 
             <div class="logoContainer center-hv">
+                @foreach ($obicni as $item)
                     <div class="logoDiv-medij col-md-4 col-sm-4 col-xs-6">
+                        <a href="{{ $item->website }}" target="_blank">
+                            <div alt="{{ $item->name }}" class="div-responsive_img" style="background-image: url({{ asset($item->logo) }})" }}"></div>
+                        </a>
+                    </div>
+                @endforeach
+                    <!-- <div class="logoDiv-medij col-md-4 col-sm-4 col-xs-6">
                         <a href="http://www.dzajic-commerce.com/" target="_blank"><img alt="Rauch" class="img-responsive logoImg-medij pad" src="img/partneri/rauch.png"></img></a>
                     </div>
 
@@ -96,7 +94,7 @@
                     <div class="logoDiv-medij col-md-4 col-sm-4 col-xs-6">
                         <a href="http://sumens.com/" target="_blank"><img alt="Šumens" class="img-responsive logoImg-medij pad2" src="img/partneri/sumens.png"></img></a>
                     </div>
-
+ -->
             </div>
 
         </div>

@@ -1167,5 +1167,12 @@ html {
     margin-top: 100px;
 }
 
+.div-responsive_img {
+    height: 100%;
+    /*width: 33.333333%;*/
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 
 

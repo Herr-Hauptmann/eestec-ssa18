@@ -7,6 +7,8 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Kontakt;
+use App\Partner;
+use App\Medium;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Storage;
 
@@ -17,6 +19,7 @@ class HomeController extends Controller
     public $glorg;
 
     public function __construct() {
+        // Trenutno beskorisno, mozda se iskoristi kasnije za footer
         $this->pr = Kontakt::where('pozicija_short', 'PR')->first();
         $this->glorg = Kontakt::where('pozicija_short', 'GLORG')->first();
     }
@@ -65,12 +68,15 @@ class HomeController extends Controller
 
     public function mediji(Request $request)
     {
+
         return view('home.mediji');
     }
 
     public function partneri(Request $request)
     {
-        return view('home.partneri');
+        $generalni = Partner::where('category', 'generalni')->get();
+        $obicni = Partner::where('category', 'obicni')->get();
+        return view('home.partneri', compact('generalni', 'obicni'));
     }
 
     public function galerija(Request $request)

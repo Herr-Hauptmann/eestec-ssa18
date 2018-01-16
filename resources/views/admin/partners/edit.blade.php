@@ -7,9 +7,9 @@
 
             <div class="col-md-9">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Edit Partner #{{ $partner->id }}</div>
+                    <div class="panel-heading">Izmjeni partnera '{{ $partner->name }}'</div>
                     <div class="panel-body">
-                        <a href="{{ url('/admin/partners') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <a href="{{ back()->getTargetUrl() }}" title="Nazad"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Nazad</button></a>
                         <br />
                         <br />
 
@@ -25,7 +25,7 @@
                             {{ method_field('PATCH') }}
                             {{ csrf_field() }}
 
-                            @include ('admin.partners.form', ['submitButtonText' => 'Update'])
+                            @include ('admin.partners.form', ['submitButtonText' => 'Izmjeni'])
 
                         </form>
 
