@@ -37,6 +37,10 @@ class PrijavaController extends Controller
      */
     public function create()
     {
+        if (! config('ssa.prijave_otvorene')) {
+            return back()->with('closed', 'Prijave su zatvorene');
+        }
+
         $fakulteti = Faculty::all();
         return view('prijava.create', compact('fakulteti'));
     }
@@ -50,6 +54,9 @@ class PrijavaController extends Controller
      */
     public function store(Request $request)
     {
+        if (! config('ssa.prijave_otvorene')) {
+            abort(403, 'Prijave su zatvorene');
+        }
 
         $request->validate([
             'ime' => 'required',

@@ -54,6 +54,12 @@
         @include('partials.footer')
     </div>
 
+    @if (Session::has('closed'))
+        <script>
+            alert('Prijave su zatvorene');
+        </script>
+    @endif
+
     <!-- Scripts -->
     <script src="https://use.fontawesome.com/719876f143.js"></script>
     <script src="{{ asset('js/carousel.js') }}"></script>

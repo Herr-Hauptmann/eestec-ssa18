@@ -10,6 +10,10 @@
 
                 </h1>
             </div>
+        @else
+            <div class="row text-center countdown-timer">
+                <h1 style="font-weight: bolder;">Prijave su zatvorene</h1>
+            </div>
         @endif
         <div class="row">
 
