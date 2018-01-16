@@ -2,7 +2,8 @@
 @section('content')
     <div class="marginContainer">
         <div class="container-fluid">
-            <div class="logoTitleGallery firstTitle"><b>SSA '{{ substr($godina, 2) }}</b></div>
+            <div class="logoTitleGallery"><b>SSA '{{ substr($godina, 2) }}</b></div>
+      
             <div id="album-container">
                 @foreach ($albums as $day => $cover)
                     <div class="col-lg-4 col-md-6 col-sm-12 col-centered">

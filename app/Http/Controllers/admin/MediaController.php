@@ -36,7 +36,7 @@ class MediaController extends Controller
             $media = Medium::paginate($perPage);
         }
 
-        return view('media.index', compact('media'));
+        return view('admin.media.index', compact('media'));
     }
 
     /**
@@ -46,7 +46,7 @@ class MediaController extends Controller
      */
     public function create()
     {
-        return view('media.create');
+        return view('admin.media.create');
     }
 
     /**
@@ -77,7 +77,7 @@ class MediaController extends Controller
     {
         $medium = Medium::findOrFail($id);
 
-        return view('media.show', compact('medium'));
+        return view('admin.media.show', compact('medium'));
     }
 
     /**
@@ -91,7 +91,7 @@ class MediaController extends Controller
     {
         $medium = Medium::findOrFail($id);
 
-        return view('media.edit', compact('medium'));
+        return view('admin.media.edit', compact('medium'));
     }
 
     /**
@@ -110,7 +110,7 @@ class MediaController extends Controller
         $medium = Medium::findOrFail($id);
         $medium->update($requestData);
 
-        return redirect('media')->with('flash_message', 'Medium updated!');
+        return redirect()->route('media.index')->with('flash_message', 'Medium updated!');
     }
 
     /**
@@ -124,6 +124,6 @@ class MediaController extends Controller
     {
         Medium::destroy($id);
 
-        return redirect('media')->with('flash_message', 'Medium deleted!');
+        return redirect()->route('media.index')->with('flash_message', 'Medium deleted!');
     }
 }

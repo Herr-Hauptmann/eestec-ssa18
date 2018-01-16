@@ -14,7 +14,7 @@
 
 .logoDiv-medij
 {
-	margin-bottom: 50px;
+	margin: 20px auto;
 	padding: 0px !important;
 	
 }
@@ -38,15 +38,22 @@
 	background-color: #1aa79e;
 	color: white !important;
 	text-align: center;
-	height: 45px !important;
+	/*height: 45px !important;*/
 	font-family: 'Gotham-Bold', sans-serif;
-    font-size: 35px;
+    font-size: 2rem;
     text-transform: uppercase;
-    line-height: 50px !important;
+    line-height: 5rem;
 	
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 403px) {
+    .logoTitle, .logoTitleGallery {
+        line-height: 4rem;
+    }
+}
+
+
+/*@media screen and (max-width: 1100px) {
     
     .logoTitle {
         font-size: 28px;
@@ -98,7 +105,7 @@
         
     }
 
-}
+}*/
 
 .stepRow
 {

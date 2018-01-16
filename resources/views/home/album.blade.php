@@ -2,7 +2,7 @@
 @section('content')
     <div class="marginContainer">
         <div class="container-fluid">
-            <div class="logoTitleGallery firstTitle"><b>{{ $dan }}. DAN</b></div>
+            <div class="logoTitleGallery"><b>{{ $dan }}. DAN</b></div>
             <div id="links">
                @foreach($images as $image)
                    <div class="slika">

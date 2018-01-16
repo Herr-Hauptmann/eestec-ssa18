@@ -54,7 +54,14 @@ html {
 }
 
 .logoContainer {
-    margin: 10px 15% 10px 15%;
+    margin: 10px auto;
+}
+
+.center-hv {
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .sectionHeadline {
