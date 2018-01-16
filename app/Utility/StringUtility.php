@@ -40,4 +40,16 @@ class StringUtility
         }
         return $text;
     }
+
+    /**
+     * Always generates a full URL from any given link
+     *
+     * @param string $url
+     * @return string
+     */
+    public static function parseUrl(string $url)
+    {
+        // Maybe check if passed url is valid first?
+        return ! \str_contains('http', $url) ? 'http://' . $url : $url;
+    }
 }

@@ -25,7 +25,7 @@ class Medium extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'logo'];
+    protected $fillable = ['name', 'logo', 'website', 'category'];
 
     
 }

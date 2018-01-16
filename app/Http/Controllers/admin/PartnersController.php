@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 
 use App\Partner;
+use App\Utility\StringUtility;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PartnersController extends Controller
 {
@@ -59,10 +61,23 @@ class PartnersController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $requestData = $request->all();
-        
-        Partner::create($requestData);
+
+
+        /** @var Partner $partner */
+        $partner = Partner::create([
+            'name' => $request->name,
+            'category' => $request->category,
+            'website' => StringUtility::parseUrl($request->website)
+        ]);
+
+        Storage::disk('public')->putFileAs('/uploads/partneri/' . $partner->id, $requestData['logo'], $requestData['logo']->getClientOriginalName());
+
+        $partner->update([
+            'logo' => '/uploads/partneri/' . $partner->id . '/' . $requestData['logo']->getClientOriginalName()
+        ]);
+
 
         return redirect('admin/partners')->with('flash_message', 'Partner added!');
     }
