@@ -79,7 +79,7 @@ class PartnersController extends Controller
         ]);
 
 
-        return redirect('admin/partners')->with('flash_message', 'Partner added!');
+        return redirect()->route('partners.index')->with('flash_message', 'Partner added!');
     }
 
     /**
@@ -145,8 +145,6 @@ class PartnersController extends Controller
      */
     public function destroy($id)
     {
-        // $partner = Partner::findOrFail($id);
-
         Storage::disk('public')->deleteDirectory('/uploads/partneri/' . $id);
 
         Partner::destroy($id);

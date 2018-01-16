@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Medium;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MediaController extends Controller
 {
@@ -30,7 +31,8 @@ class MediaController extends Controller
 
         if (!empty($keyword)) {
             $media = Medium::where('name', 'LIKE', "%$keyword%")
-                ->orWhere('logo', 'LIKE', "%$keyword%")
+                ->orWhere('category', 'LIKE', "%$keyword%")
+                ->orWhere('website', 'LIKE', "%$keyword%")
                 ->paginate($perPage);
         } else {
             $media = Medium::paginate($perPage);
@@ -61,9 +63,21 @@ class MediaController extends Controller
         
         $requestData = $request->all();
         
-        Medium::create($requestData);
+        /** @var Medium $media */
+        $media = Medium::create([
+            'name' => $request->name,
+            'category' => $request->category,
+            'website' => $request->website
+        ]);
 
-        return redirect('media')->with('flash_message', 'Medium added!');
+        Storage::disk('public')->putFileAs('/uploads/mediji/' . $media->id, $requestData['logo'], $requestData['logo']->getClientOriginalName());
+
+        $media->update([
+            'logo' => '/uploads/mediji/' . $media->id . '/' . $requestData['logo']->getClientOriginalName()
+        ]);
+
+
+        return redirect()->route('media.index')->with('flash_message', 'Medium added!');
     }
 
     /**
@@ -75,9 +89,9 @@ class MediaController extends Controller
      */
     public function show($id)
     {
-        $medium = Medium::findOrFail($id);
+        $media = Medium::findOrFail($id);
 
-        return view('admin.media.show', compact('medium'));
+        return view('admin.media.show', compact('media'));
     }
 
     /**
@@ -89,9 +103,9 @@ class MediaController extends Controller
      */
     public function edit($id)
     {
-        $medium = Medium::findOrFail($id);
+        $media = Medium::findOrFail($id);
 
-        return view('admin.media.edit', compact('medium'));
+        return view('admin.media.edit', compact('media'));
     }
 
     /**
@@ -107,10 +121,18 @@ class MediaController extends Controller
         
         $requestData = $request->all();
         
-        $medium = Medium::findOrFail($id);
-        $medium->update($requestData);
+        /** @var Medium $media */
+        $media = Medium::findOrFail($id);
 
-        return redirect()->route('media.index')->with('flash_message', 'Medium updated!');
+        if (isset($requestData['logo'])) {
+            Storage::disk('public')->delete($media->logo);
+            Storage::disk('public')->putFileAs('/uploads/mediji/' . $id, $requestData['logo'], $requestData['logo']->getClientOriginalName());       
+            $requestData['logo'] = '/uploads/mediji/' . $id . '/' . $requestData['logo']->getClientOriginalName();
+        } 
+        
+        $media->update($requestData);
+
+        return redirect()->route('media.show', $id)->with('flash_message', 'Medium updated!');
     }
 
     /**
@@ -122,6 +144,8 @@ class MediaController extends Controller
      */
     public function destroy($id)
     {
+        Storage::disk('public')->deleteDirectory('/uploads/mediji/' . $id);
+
         Medium::destroy($id);
 
         return redirect()->route('media.index')->with('flash_message', 'Medium deleted!');

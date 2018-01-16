@@ -10,10 +10,10 @@
                     <div class="panel-heading">Partner '{{ $partner->name }}'</div>
                     <div class="panel-body">
 
-                        <a href="{{ url('/admin/partners') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Nazad</button></a>
-                        <a href="{{ url('/admin/partners/' . $partner->id . '/edit') }}" title="Edit Partner"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Izmjeni</button></a>
+                        <a href="{{ back()->getTargetUrl() }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Nazad</button></a>
+                        <a href="{{ route('partners.edit', $partner->id) }}" title="Edit Partner"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Izmjeni</button></a>
 
-                        <form method="POST" action="{{ url('admin/partners' . '/' . $partner->id) }}" accept-charset="UTF-8" style="display:inline">
+                        <form method="POST" action="{{ route('partners.destroy', $partner->id) }}" accept-charset="UTF-8" style="display:inline">
                             {{ method_field('DELETE') }}
                             {{ csrf_field() }}
                             <button type="submit" class="btn btn-danger btn-xs" title="Delete Partner" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Obrisi</button>

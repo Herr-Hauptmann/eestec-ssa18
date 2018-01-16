@@ -3,7 +3,7 @@
 @section('content')
     <div class="marginContainer">
         <div class="container-fluid">
-            <p class="logoTitle"><b>Generalni godišnji partner</b></p>
+            <p class="logoTitle"><b>Generalni godišnji partner{{ ($generalni->count() > 1) ? 'i' : '' }}</b></p>
             <p class="sectionHeadlineBottomRed logosBottomRed"></p>
 
 

@@ -68,8 +68,9 @@ class HomeController extends Controller
 
     public function mediji(Request $request)
     {
-
-        return view('home.mediji');
+        $generalni = Medium::where('category', 'generalni')->get();
+        $obicni = Medium::where('category', 'obicni')->get();
+        return view('home.mediji', compact('generalni', 'obicni'));
     }
 
     public function partneri(Request $request)
