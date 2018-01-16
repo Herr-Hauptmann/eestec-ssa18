@@ -78,5 +78,10 @@
     <!-- Scripts -->
     <script src="https://use.fontawesome.com/719876f143.js"></script>
     <script src="{{ asset('ckeditor5-build-classic/ckeditor.js') }}"></script>
+    @if (Session::has('error_permission_to_manipulate_with_prijava'))
+        <script>
+            alert('Treba ti jos pure za ovo');
+        </script>
+    @endif
 </body>
 </html>

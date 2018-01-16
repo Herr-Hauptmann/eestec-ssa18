@@ -167,6 +167,10 @@ class PrijavaController extends Controller
 
     public function zatvoriPrijave()
     {
+        if (\Auth::user()->email !== 'mary.udovcic@gmail.com' && \Auth::user()->email !== 'tarik.upss@gmail.com') {
+            return back()->with('error_permission_to_manipulate_with_prijava', 'Nemas pravo na ovo');
+        }
+
         $data = file(config_path('ssa.php'));
 
         foreach ($data as &$item) {
@@ -180,6 +184,10 @@ class PrijavaController extends Controller
 
     public function otvoriPrijave()
     {
+        if (\Auth::user()->email !== 'mary.udovcic@gmail.com' && \Auth::user()->email !== 'tarik.upss@gmail.com') {
+            return back()->with('error_permission_to_manipulate_with_prijava', 'Nemas pravo na ovo');
+        }
+
         $data = file(config_path('ssa.php'));
 
         foreach ($data as &$item) {
