@@ -29,7 +29,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-
         /** @var LengthAwarePaginator $posts */
         $posts = Post::paginate(config('ssa.home.landing.post_pagination', 3));
 

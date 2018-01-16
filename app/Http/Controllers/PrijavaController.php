@@ -157,4 +157,30 @@ class PrijavaController extends Controller
 
         return redirect('')->with('flash_message', ' deleted!');
     }
+
+    public function zatvoriPrijave()
+    {
+        $data = file(config_path('ssa.php'));
+
+        foreach ($data as &$item) {
+            if (($pos = stripos($item, '\'prijave_otvorene\' => ')) !== FALSE) {
+                $item = str_replace('true', 'false', $item);
+            }
+        }
+        file_put_contents(config_path('ssa.php'), $data);
+        return back();
+    }
+
+    public function otvoriPrijave()
+    {
+        $data = file(config_path('ssa.php'));
+
+        foreach ($data as &$item) {
+            if (($pos = stripos($item, '\'prijave_otvorene\' => ')) !== FALSE) {
+                $item = str_replace('false', 'true', $item);
+            }
+        }
+        file_put_contents(config_path('ssa.php'), $data);
+        return back();
+    }
 }

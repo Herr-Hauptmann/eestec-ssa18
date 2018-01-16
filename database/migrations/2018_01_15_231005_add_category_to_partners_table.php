@@ -13,8 +13,13 @@ class AddCategoryToPartnersTable extends Migration
      */
     public function up()
     {
-        Schema::table('partners', function (Blueprint $table) {
+        Schema::table('media', function (Blueprint $table) {
             $table->string('category')->nullable();
+            $table->string('website')->nullable();
+        });
+
+        Schema::table('partners', function (Blueprint $table) {
+            $table->string('website')->nullable();
         });
     }
 
@@ -25,8 +30,13 @@ class AddCategoryToPartnersTable extends Migration
      */
     public function down()
     {
-        Schema::table('partners', function (Blueprint $table) {
+        Schema::table('media', function (Blueprint $table) {
             $table->removeColumn('category');
+            $table->removeColumn('website');
+        });
+
+        Schema::table('partners', function (Blueprint $table) {
+            $table->removeColumn('website');
         });
     }
 }

@@ -38,8 +38,8 @@ class PostsController extends Controller
         }
 
         $posts->each(function ($post) {
-            $post->content = StringUtility::shortenString($post->content, 13);
-
+            $post->content = StringUtility::shortenString($post->content, 10);
+            $post->title = StringUtility::shortenString($post->title, 5);
         });
 
         return view('posts.index', compact('posts'));
@@ -69,7 +69,7 @@ class PostsController extends Controller
         
         $post = Post::create([
             'title' => $request->title,
-            'content' => $request->content
+            'content' => $requestData['content']
         ]);
 
         Storage::disk('public')->putFileAs('/uploads/novosti/' . $post->id, $requestData['image'], $requestData['image']->getClientOriginalName());

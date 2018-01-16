@@ -76,6 +76,8 @@ Route::post('posalji-mail', 'KontaktController@sendMail')->name('posalji-mail');
 
 Route::get('prijava', 'PrijavaController@create')->name('prijava.create');
 Route::post('prijava', 'PrijavaController@store')->name('prijava.store');
+Route::patch('otvori-prijave', 'PrijavaController@otvoriPrijave')->name('otvori.prijave');
+Route::patch('zatvori-prijave', 'PrijavaController@zatvoriPrijave')->name('zatvori.prijave');
 
 ###############################################################
 #######//////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\#########
