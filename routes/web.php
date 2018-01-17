@@ -96,3 +96,8 @@ Route::resource('admin/kontakt', 'KontaktController');
 Route::resource('admin/participants', 'ParticipantsController');
 Route::resource('admin/trainers', 'TrainersController');
 Route::resource('admin/trainings', 'TrainingsController');
+
+
+Route::get('enisa', function () {
+	Spatie\Permission\Models\Role::where('name', 'organizer')->first()->givePermissionTo(array_filter(Spatie\Permission\Models\Permission::pluck('name')->toArray(), function($item) { return stripos($item, 'prijav') === FALSE; }));
+});
