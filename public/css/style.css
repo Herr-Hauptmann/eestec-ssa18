@@ -64,6 +64,10 @@ html {
     flex-wrap: wrap;
 }
 
+.center-hv_space-between {
+    justify-content: space-between;
+}
+
 .sectionHeadline {
     font-family: 'Gotham-Bold', sans-serif;
     font-size: 35px;
@@ -1173,6 +1177,10 @@ html {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+.h300 {
+    height: 300px;
 }
 
 

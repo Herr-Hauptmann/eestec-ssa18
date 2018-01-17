@@ -93,9 +93,6 @@ Route::resource('admin/posts', 'PostsController');
 Route::resource('admin/media', 'MediaController');
 Route::resource('admin/partners', 'PartnersController');
 Route::resource('admin/kontakt', 'KontaktController');
-
-//Route::prefix('admin/participants')->middleware('auth')->group(function() {
-//   Route::get('/', 'ParticipantController@index')->name('participants.index');
-//});
-
 Route::resource('admin/participants', 'ParticipantsController');
+Route::resource('admin/trainers', 'TrainersController');
+Route::resource('admin/trainings', 'TrainingsController');

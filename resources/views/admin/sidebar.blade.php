@@ -50,6 +50,23 @@
                         Mediji
                     </button>
 
+                    <button class="btn btn-primary btn-block" onclick="location.href = '{{ route('trainers.index') }}'">
+                        Treneri
+                    </button>
+
+                    <?php
+                        $treneri = \App\Trainer::all();
+                    ?>
+                    @if ($treneri->isNotEmpty())
+                        <button class="btn btn-primary btn-block" onclick="location.href = '{{ route('trainings.index') }}'">
+                            Treninzi
+                        </button>
+                    @else
+                        <button class="btn btn-primary btn-block" onclick="alert('A ko ce ti drzat trening?');">
+                            Treninzi
+                        </button>
+                    @endif
+
                 </li>
             </ul>
         </div>

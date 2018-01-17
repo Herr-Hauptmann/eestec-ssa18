@@ -30,8 +30,10 @@
                                     <tr><th> Naziv </th><td> {{ $partner->name }} </td></tr>
                                     <tr>
                                         <th> Logo </th>
-                                        <td> <img class="img-responsive" src="{{ asset($partner->logo) }}" style="height: 150px;" /> </td>
-                                    </tr><tr><th> Kategorija </th><td> {{ $partner->category }} </td></tr>
+                                        <td> <img class="img-responsive" src="{{ asset($partner->logo) }}" style="height: 150px;" /> 
+                                        </td>
+                                    </tr>
+                                    <tr><th> Kategorija </th><td> {{ $partner->category }} </td></tr>
                                 </tbody>
                             </table>
                         </div>

@@ -10,6 +10,17 @@ use App\Notifications\PrijavaUspjesna;
 
 class PrijavaController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth')->except('create', 'store');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -18,6 +29,7 @@ class PrijavaController extends Controller
      */
     public function index(Request $request)
     {
+        $this->middleware('auth');
         $keyword = $request->get('search');
         $perPage = 25;
 

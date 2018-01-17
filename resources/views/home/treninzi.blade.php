@@ -6,13 +6,11 @@
 
             <!-- 1 tt -->
 
-            <div class="row treningRow">
-                <div  class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="imgWrap">
-                        <img class="img-responsive treningImg meetings" src="img/tt/meetings.png">
-                    </div>
+            <div class="row center-hv center-hv_spade-inside">
+                <div  class="col-lg-4 col-md-4 col-sm-4 col-xs-12 match-height h300">
+                    <div class="div-responsive_img" style="background-image: url(img/tt/meetings.png)"></div>
                 </div>
-                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 treningText">
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 treningText match-height">
                     <h3 class="treningHeadline">Meetings</h3>
                     <p class="treningAbout">Mnogo puta smo završili sastanak sa osjećajem da 90% vremena, sastanak nije služio svrsi, i da bi kompaniji/organizaciji bilo bolje da izbaci sastanke nego da ih očajno pokušava održati. Ali postoji razlog zbog čega ljudi žele da održe toliko sastanaka: osjećaj da se radi nešto korisno.
                         Doista, atmosfera na sastanku (i sama priprema: urediti salu za sastanke, ponekad odrediti budžet za jelo i piće, pozivnice itd.) čini da se osjećate kao da ste dio nečeg važnog. Ovaj osjećaj je od izuzetnog značaja za održavanje velike kompanije na nogama, inače ljudi izgube motivaciju veoma brzo.</p>
@@ -21,7 +19,7 @@
 
             </div>
 
-            <div class="row treningRow">
+            <div class="row center-hv center-hv_spade-inside">
 
                 <div  class="col-lg-4 col-md-4  col-xs-12 col-md-push-8">
                     <div class="imgWrap">
@@ -39,14 +37,14 @@
 
             </div>
 
-            <div class="lineWrap">
+           <!--  <div class="lineWrap">
                 <hr class="line">
                 <img class="logoImg" src="img/favicon.png">
-            </div>
+            </div> -->
 
             <!-- 2 tt -->
 
-            <div class="row treningRow">
+            <div class="row center-hv center-hv_spade-inside">
                 <div  class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="imgWrap">
                         <img class="img-responsive treningImg time" src="img/tt/time.png">
@@ -60,7 +58,7 @@
 
             </div>
 
-            <div class="row treningRow">
+            <div class="row center-hv center-hv_spade-inside">
 
                 <div  class="col-lg-4 col-md-4  col-xs-12 col-md-push-8">
                     <div class="imgWrap">
@@ -78,15 +76,15 @@
             </div>
 
 
-            <div class="lineWrap">
+            <!-- <div class="lineWrap">
                 <hr class="line">
                 <img class="logoImg" src="img/favicon.png">
-            </div>
+            </div> -->
 
 
             <!-- 3 tt -->
 
-            <div class="row treningRow">
+            <div class="row center-hv center-hv_spade-inside">
                 <div  class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="imgWrap">
                         <img class="img-responsive treningImg leader" src="img/tt/leadership.png">
@@ -108,7 +106,7 @@
 
             </div>
 
-            <div class="row treningRow">
+            <div class="row center-hv center-hv_spade-inside">
 
 
 
@@ -126,14 +124,14 @@
 
             </div>
 
-            <div class="lineWrap">
+           <!--  <div class="lineWrap">
                 <hr class="line">
                 <img class="logoImg" src="img/favicon.png">
-            </div>
+            </div> -->
 
             <!-- 4 tt -->
 
-            <div class="row treningRow">
+            <div class="row center-hv center-hv_spade-inside">
                 <div  class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="imgWrap">
                         <img class="img-responsive treningImg stress" src="img/tt/stress.png">
@@ -156,7 +154,7 @@
 
             </div>
 
-            <div class="row treningRow">
+            <div class="row center-hv center-hv_spade-inside">
 
                 <div  class="col-lg-4 col-md-4  col-xs-12 col-md-push-8">
                     <div class="imgWrap">
@@ -176,15 +174,15 @@
             </div>
 
 
-            <div class="lineWrap">
+            <!-- <div class="lineWrap">
                 <hr class="line">
                 <img class="logoImg" src="img/favicon.png">
-            </div>
+            </div> -->
 
 
             <!-- 5 tt -->
 
-            <div class="row treningRow">
+            <div class="row center-hv center-hv_spade-inside">
                 <div  class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="imgWrap">
                         <img class="img-responsive treningImg mot" src="img/tt/motivation.png">
@@ -209,7 +207,7 @@
 
             </div>
 
-            <div class="row treningRow">
+            <div class="row center-hv center-hv_spade-inside">
 
                 <div  class="col-lg-4 col-md-4  col-xs-12 col-md-push-8">
                     <div class="imgWrap">
