@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Utility\StringUtility;
 
@@ -49,9 +50,13 @@ class PostsController extends Controller
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\View\View
+     * @throws \Spatie\Permission\Exceptions\UnauthorizedException
      */
     public function create()
     {
+        if (! Auth::user()->can('dodati novost')) {
+            throw new \Spatie\Permission\Exceptions\UnauthorizedException(403);
+        }
         return view('posts.create');
     }
 

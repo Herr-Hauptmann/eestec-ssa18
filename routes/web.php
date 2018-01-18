@@ -96,8 +96,9 @@ Route::resource('admin/kontakt', 'KontaktController');
 Route::resource('admin/participants', 'ParticipantsController');
 Route::resource('admin/trainers', 'TrainersController');
 Route::resource('admin/trainings', 'TrainingsController');
+Route::resource('admin/users', 'UsersController');
 
+Route::patch('admin/change-permissions/{user}', 'UsersController@changePermissions')->middleware(['auth', 'role:root'])->name('permissions.indirect.change');
+Route::patch('admin/change-direct-permissions/{user}', 'UsersController@changeDirectPermissions')->middleware(['auth', 'role:root'])->name('permissions.direct.change');
 
-Route::get('enisa', function () {
-	Spatie\Permission\Models\Role::where('name', 'organizer')->first()->givePermissionTo(array_filter(Spatie\Permission\Models\Permission::pluck('name')->toArray(), function($item) { return stripos($item, 'prijav') === FALSE; }));
-});
+Route::get('admin/permissions/{user}', 'UsersController@getMissingPermissions')->middleware(['auth', 'role:root'])->name('permissions.getMissingJson');

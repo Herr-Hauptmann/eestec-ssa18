@@ -48,6 +48,10 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if ($exception instanceof \Spatie\Permission\Exceptions\UnauthorizedException) {
+            return back()->with('permission_missing', 'Treba ti jos pure za ovo ili ti ga nemas dovoljno ovlasti.');
+        }
+
         return parent::render($request, $exception);
     }
 }

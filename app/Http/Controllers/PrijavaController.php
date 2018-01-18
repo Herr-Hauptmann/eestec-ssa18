@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Participant;
 use App\Faculty;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Notifications\PrijavaUspjesna;
 
@@ -50,7 +51,7 @@ class PrijavaController extends Controller
     public function create()
     {
         if (! config('ssa.prijave_otvorene')) {
-            return back()->with('closed', 'Prijave su zatvorene');
+            return redirect('/')->with('closed', 'Prijave su zatvorene');
         }
 
         $fakulteti = Faculty::all();
@@ -179,8 +180,8 @@ class PrijavaController extends Controller
 
     public function zatvoriPrijave()
     {
-        if (\Auth::user()->email !== 'mary.udovcic@gmail.com' && \Auth::user()->email !== 'tarik.upss@gmail.com') {
-            return back()->with('error_permission_to_manipulate_with_prijava', 'Nemas pravo na ovo');
+        if (! Auth::user()->hasDirectPermission('zatvori prijave') && ! Auth::user()->hasRole('root')) {
+            return back()->with('permission_missing', 'Treba ti jos pure');
         }
 
         $data = file(config_path('ssa.php'));
@@ -196,8 +197,8 @@ class PrijavaController extends Controller
 
     public function otvoriPrijave()
     {
-        if (\Auth::user()->email !== 'mary.udovcic@gmail.com' && \Auth::user()->email !== 'tarik.upss@gmail.com') {
-            return back()->with('error_permission_to_manipulate_with_prijava', 'Nemas pravo na ovo');
+        if (! Auth::user()->hasDirectPermission('otvori prijave') && ! Auth::user()->hasRole('root')) {
+            return back()->with('permission_missing', 'Treba ti jos pure');
         }
 
         $data = file(config_path('ssa.php'));
