@@ -34,9 +34,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <?php $counter = ($participants->currentPage() - 1) * $perPage + 1 ?>
                                 @foreach($participants as $item)
                                     <tr>
-                                        <td>{{ $loop->iteration or $item->id }}</td>
+                                        <td>{{ $counter++ }}</td>
                                         <td>{{ $item->ime }}</td><td>{{ $item->prezime }}</td><td>{{ $item->email }}</td>
                                         <td>
                                             {{--<a href="{{ url('/admin/participants/' . $item->id) }}" title="View participant"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>--}}

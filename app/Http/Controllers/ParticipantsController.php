@@ -21,12 +21,12 @@ class ParticipantsController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $participants = Participant::paginate($perPage);
+            $participants = Participant::whereYear('created_at', date('Y'))->paginate($perPage);
         } else {
-            $participants = Participant::paginate($perPage);
+            $participants = Participant::whereYear('created_at', date('Y'))->paginate($perPage);
         }
 
-        return view('participants.index', compact('participants'));
+        return view('participants.index', compact('participants', 'perPage'));
     }
 
     /**
