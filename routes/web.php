@@ -69,15 +69,24 @@ Route::post('posalji-mail', 'KontaktController@sendMail')->name('posalji-mail');
 
 
 ###############################################################
-########/////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\########
-#######( Rute za prijave, nemaju veze sa admin panelom )#######
-########\\\\\\\\\\\\\\\\\\\\\//////////////////////////########
+######################///////\\\\\\\\\\########################
+#####################( Rute za prijave )#######################
+######################\\\\\\\//////////########################
 ###############################################################
 
 Route::get('prijava', 'PrijavaController@create')->name('prijava.create');
 Route::post('prijava', 'PrijavaController@store')->name('prijava.store');
-Route::patch('otvori-prijave', 'PrijavaController@otvoriPrijave')->name('otvori.prijave');
-Route::patch('zatvori-prijave', 'PrijavaController@zatvoriPrijave')->name('zatvori.prijave');
+Route::patch('admin/otvori-prijave', 'PrijavaController@otvoriPrijave')->name('otvori.prijave');
+Route::patch('admin/zatvori-prijave', 'PrijavaController@zatvoriPrijave')->name('zatvori.prijave');
+
+############# ADMIN PANEL PRIJAVE ##############
+Route::get('admin/prijave', 'PrijavaController@index')->name('prijava.index')->middleware('can:pregledaj prijave');
+
+Route::get('admin/prijave/bodovi', 'PrijavaController@bodovi')->name('prijava.bodovi')->middleware('can:pregledaj prijave');
+
+Route::get('admin/prijave/{participant}', 'PrijavaController@show')->name('prijava.show')->middleware('can:pregledaj prijave');
+Route::post('admin/prijave/{participant}', 'PrijavaController@boduj')->name('prijava.boduj')->middleware('can:pregledaj prijave');
+
 
 ###############################################################
 #######//////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\#########

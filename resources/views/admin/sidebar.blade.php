@@ -40,9 +40,14 @@
                     <button class="btn btn-success btn-block" onclick="location.href = '{{ route('kontakt.index') }}'">
                         Kontakt
                     </button>
-                    <button class="btn btn-info btn-block" onclick="location.href = '{{ route('participants.index') }}'">
-                        Participanti
-                    </button>
+                    @can('pregledaj prijave')
+                        <button class="btn btn-info btn-block" onclick="location.href = '{{ route('prijava.index') }}'">
+                            Prijave
+                        </button>
+                        <button class="btn btn-info btn-block" onclick="location.href = '{{ route('prijava.bodovi') }}'">
+                            Ranking lista
+                        </button>
+                    @endcan
                     <button class="btn btn-default btn-block" onclick="location.href = '{{ route('partners.index') }}'">
                         Partneri
                     </button>

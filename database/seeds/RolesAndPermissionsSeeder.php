@@ -63,6 +63,7 @@ class RolesAndPermissionsSeeder extends Seeder
 
         $role = Role::create(['name' => 'organizer']);
         $role->givePermissionTo(array_filter(Permission::pluck('name')->toArray(), function($item) { return stripos($item, 'prijav') === FALSE; }));
+        $role->givePermissionTo('pregledaj prijave');
 
         $role = Role::create(['name' => 'participant']);
     }

@@ -32,4 +32,9 @@ class User extends Authenticatable
     {
         return $this->roles->first();
     }
+
+    public function points()
+    {
+        return $this->hasMany(Point::class);
+    }
 }

@@ -26,7 +26,7 @@ class ParticipantsController extends Controller
             $participants = Participant::whereYear('created_at', date('Y'))->paginate($perPage);
         }
 
-        return view('participants.index', compact('participants', 'perPage'));
+        return view('prijava.index', compact('participants', 'perPage'));
     }
 
     /**

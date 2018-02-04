@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Participant;
 use App\Faculty;
+use App\Point;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Notifications\PrijavaUspjesna;
+use Carbon\Carbon;
 
 class PrijavaController extends Controller
 {
@@ -30,17 +32,30 @@ class PrijavaController extends Controller
      */
     public function index(Request $request)
     {
-        $this->middleware('auth');
         $keyword = $request->get('search');
         $perPage = 25;
+        $participants = Participant::whereYear('created_at', date('Y'));
 
         if (!empty($keyword)) {
-//            $ = ::paginate($perPage);
-        } else {
-//            $ = ::paginate($perPage);
+            $participants = $participants
+                    ->where('ime', 'LIKE', "%$keyword%")
+                    ->orWhere('prezime', 'LIKE', "%$keyword%")
+                    ->orWhere('email', 'LIKE', "%$keyword%");
+        } 
+
+        $participants = $participants->paginate($perPage);
+
+        foreach ($participants as $key => $participant) {
+            $glasano = Point::where('participant_id', $participant->id)
+                    ->where('user_id', \Auth::user()->id)->count() ? true : false;
+            if ($request->has('hide_scored') && $glasano) {
+                $participants->forget($key);
+            } else {
+                $participant->glasano = $glasano;
+            }
         }
 
-        return view('.index', compact(''));
+        return view('prijava.index', compact('participants', 'perPage'));
     }
 
     /**
@@ -124,11 +139,100 @@ class PrijavaController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function show($id)
+    public function show(Request $request, Participant $participant)
     {
-//        $ = ::findOrFail($id);
+        if (\Auth::user()->cant('zatvori prijave')) {
+            return back()->with('flash_message', 'Još malo ...');    
+        }
+        
 
-        return view('.show', compact(''));
+        $participant->datum_rodjenja = Carbon::createFromFormat('Y-m-d', $participant->datum_rodjenja)
+            ->toFormattedDateString();
+
+        $glasano = Point::where('participant_id', $participant->id)->where('user_id', \Auth::user()->id)->first();
+
+        return view('prijava.show', compact('participant', 'glasano'));
+    }
+
+    public function boduj(Request $request, Participant $participant)
+    {
+        $glasano = Point::where('participant_id', $participant->id)->where('user_id', \Auth::user()->id)->first();
+
+        if ($glasano !== null) {
+            return back()->with('flash_message', 'Vec si bodovao/la');
+        }
+
+        $requestData = $request->all();
+
+        $requestData['participant_id'] = $participant->id;
+        $requestData['user_id'] = \Auth::user()->id;
+
+        $requestData['bodovi'] = $requestData['engleski'] + $requestData['motivaciono']
+            + $requestData['trenutno_zaposlenje'] + $requestData['ucesce_na_treninzima']
+            + $requestData['ucesce_na_seminarima'] + $requestData['nvo_iskustvo'];
+
+        if ($request->has('asterix')) {
+            $requestData['asterix'] = '1';
+        }
+
+        Point::create($requestData);
+
+        $pointsPerUser = Point::where('participant_id', $participant->id)->get();
+
+        $sumOfPoints = 0;
+
+        $pointsCount = $pointsPerUser->count();
+
+        foreach ($pointsPerUser as $p) {
+            $sumOfPoints += $p->bodovi;
+        }
+
+        $participant->ukupno_bodova = $sumOfPoints / $pointsCount;
+        $participant->glasali_count = $pointsCount;
+
+        if ($request->has('asterix') && ! $participant->asterix) {
+            $participant->asterix = '1';
+        }
+        $participant->save();
+
+        // dd($requestData, $pointsPerUser, $sumOfPoints, $pointsCount);
+        return redirect()->route('prijava.index')->with('flash_message', 'Bodovi uspjesno spaseni');
+    }
+
+    public function bodovi(Request $request)
+    {
+        $keyword = $request->get('search');
+        $perPage = 25;
+
+        $participants = Participant::whereYear('created_at', date('Y'))
+                ->orderBy('ukupno_bodova', 'DESC');
+
+        if ($request->has('show_with_asterix')) {
+            $participants = $participants->where('asterix', '1');
+        }
+
+        if (!empty($keyword)) {
+            $participants = $participants
+                    ->where('ime', 'LIKE', "%$keyword%")
+                    ->orWhere('prezime', 'LIKE', "%$keyword%"); 
+        }
+
+        $participants = $participants->paginate($perPage);
+
+        $points = Point::select('participant_id', 'user_id')->get();
+
+        // dd($points->where('participant_id', '4'));
+
+        foreach ($participants as $participant) {
+            $participantPoints = $points->where('participant_id', $participant->id);
+            foreach ($participantPoints as $p) {
+                $participant->glasali .= explode(' ', $p->user->name)[0] . ', ';
+            }
+
+            $participant->glasali = substr($participant->glasali, 0, -2);
+        }
+
+        return view('prijava.rank-list', compact('participants', 'perPage'));
     }
 
     /**

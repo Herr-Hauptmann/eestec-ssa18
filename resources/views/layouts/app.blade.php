@@ -24,9 +24,15 @@
     <!-- Scripts -->
     <script src="https://use.fontawesome.com/719876f143.js"></script>
     <script src="{{ asset('ckeditor5-build-classic/ckeditor.js') }}"></script>
+    <script src="{{ asset('js/admin.js') }}"></script>
     @if (Session::has('permission_missing'))
         <script>
             alert('{{ Session::get('permission_missing') }}');
+        </script>
+    @endif
+    @if (Session::has('flash_message'))
+        <script>
+            alert('{{ Session::get('flash_message') }}');
         </script>
     @endif
 </body>

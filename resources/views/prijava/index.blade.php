@@ -10,6 +10,12 @@
                     <div class="panel-heading">Prijave</div>
                     <div class="panel-body">
                         <form method="GET" action="{{ url()->current() }}" accept-charset="UTF-8" class="navbar-form navbar-right" role="search">
+                            <div class="form-group">
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="hide_scored" id="hide_scored" title="Hide project costs"{{ request()->has('hide_scored') ? 'checked' : ''}}>
+                                    Prikaži samo prijave koje nisi bodovao/la   
+                                </label>
+                            </div>
                             <div class="input-group">
                                 <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
                                 <span class="input-group-btn">
@@ -22,6 +28,7 @@
 
                         <br/>
                         <br/>
+                        <br/>
                         <div class="table-responsive">
                             <table class="table table-borderless">
                                 <thead>
@@ -32,11 +39,11 @@
                                 <tbody>
                                 <?php $counter = ($participants->currentPage() - 1) * $perPage + 1 ?>
                                 @foreach($participants as $item)
-                                    <tr>
+                                    <tr {{ $item->glasano ? 'style=background-color:#02ddc9' : '' }}>
                                         <td>{{ $counter++ }}</td>
                                         <td>{{ $item->ime }}</td><td>{{ $item->prezime }}</td><td>{{ $item->email }}</td>
                                         <td>
-                                            {{--<a href="{{ url('/admin/participants/' . $item->id) }}" title="View participant"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>--}}
+                                            <a href="{{ route('prijava.show', $item->id) }}" title="View participant"><button class="btn btn-info btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Boduj</button></a>
                                             {{--<a href="{{ url('/admin/participants/' . $item->id . '/edit') }}" title="Edit participant"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>--}}
 
                                             {{--<form method="POST" action="{{ url('/admin/participants' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">--}}
