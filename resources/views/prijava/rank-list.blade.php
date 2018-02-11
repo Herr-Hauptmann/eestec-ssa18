@@ -40,7 +40,11 @@
                                 <tbody>
                                 <?php $counter = ($participants->currentPage() - 1) * $perPage + 1 ?>
                                 @foreach($participants as $item)
-                                    <tr {{ $counter <= 40 ? 'style=background-color:#02ddc9;' : '' }}>
+                                    @if ($counter <= 40)
+                                        <tr title="Pozadina je drugačija jer spada u top 40" data-toggle="tooltip" style="background-color:#02ddc9">
+                                    @else 
+                                        <tr>
+                                    @endif
                                         <td>{{ $counter++ }}</td>
                                         <td>
                                             <a href="{{ route('prijava.show', $item->id) }}">

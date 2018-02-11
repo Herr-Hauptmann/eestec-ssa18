@@ -39,18 +39,15 @@
                                 <tbody>
                                 <?php $counter = ($participants->currentPage() - 1) * $perPage + 1 ?>
                                 @foreach($participants as $item)
-                                    <tr {{ $item->glasano ? 'style=background-color:#02ddc9' : '' }}>
+                                    @if ($item->glasano)
+                                        <tr title="Već si bodovao/la ovu prijavu" data-toggle="tooltip" style="background-color:#02ddc9">
+                                    @else 
+                                        <tr>
+                                    @endif
                                         <td>{{ $counter++ }}</td>
                                         <td>{{ $item->ime }}</td><td>{{ $item->prezime }}</td><td>{{ $item->email }}</td>
                                         <td>
                                             <a href="{{ route('prijava.show', $item->id) }}" title="View participant"><button class="btn btn-info btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Boduj</button></a>
-                                            {{--<a href="{{ url('/admin/participants/' . $item->id . '/edit') }}" title="Edit participant"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>--}}
-
-                                            {{--<form method="POST" action="{{ url('/admin/participants' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">--}}
-                                                {{--{{ method_field('DELETE') }}--}}
-                                                {{--{{ csrf_field() }}--}}
-                                                {{--<button type="submit" class="btn btn-danger btn-xs" title="Delete participant" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>--}}
-                                            {{--</form>--}}
                                         </td>
                                     </tr>
                                 @endforeach

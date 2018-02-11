@@ -48,3 +48,5 @@ $('#hide_scored').click(function () {
         document.location.search = removeURLParameter(document.location.search, 'hide_scored');
     }
 });
+
+$('[data-toggle="tooltip"]').tooltip(); 

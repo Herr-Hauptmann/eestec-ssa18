@@ -95,7 +95,7 @@ Route::post('admin/prijave/{participant}', 'PrijavaController@boduj')->name('pri
 ###############################################################
 
 Route::get('admin', function() {
-	return redirect()->route('posts.index');
+	return redirect()->route('prijava.index');
 })->name('admin.dashboard');
 
 Route::resource('admin/posts', 'PostsController');
@@ -111,3 +111,99 @@ Route::patch('admin/change-permissions/{user}', 'UsersController@changePermissio
 Route::patch('admin/change-direct-permissions/{user}', 'UsersController@changeDirectPermissions')->middleware(['auth', 'role:root'])->name('permissions.direct.change');
 
 Route::get('admin/permissions/{user}', 'UsersController@getMissingPermissions')->middleware(['auth', 'role:root'])->name('permissions.getMissingJson');
+
+Route::get('/admin/temp', function(\Illuminate\Http\Request $request) {
+
+	// funkcija migrira podatke iz dvije stare baze o prijavama kako bi mogli znati ko se nekad prijavio
+	// i ko je mozda prisustvovao SSA
+
+	if ($request->get('keyword') !== 'mehkevjestine') {
+		return response('Ne mere', 403);
+	}
+
+	$data = \DB::connection('mysql2')->table('applications_application')
+		->leftJoin('applications_acceptedapplication', 'applications_application.id', '=', 'applications_acceptedapplication.application_id')
+		->select(\DB::raw('CONCAT(applications_application.ime, \' \', applications_application.prezime) AS name'), 'applications_application.email', 'applications_application.vrijeme_prijave AS created_at', 'applications_acceptedapplication.accepted')
+		->get()->toArray();
+
+	$data2 = \DB::connection('mysql3')->table('participant')
+		->select(\DB::raw('CONCAT(ime, \' \', prezime) AS name'), 'email')
+		->get()->toArray();
+
+	$blee = "Emina Đapo
+Alma Mujanović
+Emin Šehić
+Anja Bećirspahić
+Rijad Pedljak
+Selma Imamović
+Nermina Žigić
+Lejla Fatušić
+Ena Žunić
+Fatima Kovačević
+Amina Mehanović
+Mak Fišić
+Sulejman Ćerimović
+Nejra Šteta
+Dino Hašimbegović
+Benjamin Hadžić
+Amina Bralić
+Durmo Mršo
+Irhad Halilović
+Tarik Bučan
+Nedret Bećirović
+Ana-Marija Milisav
+Damir Medunjanin
+Aida Masleša
+Fatima Pobrklić
+Adina Šahinović
+Adisa Čopra
+Alma Karačić
+Elma Kupusović
+Lejla Džanko
+Dina Sarajlić
+Jasmin Pašić
+Rasim Šabanović
+Dino Šporer
+Haris Arslanagić
+Amila Bjelopoljak 
+Fikreta Duranović
+Amar Burić
+Darko Vrbičić";
+
+	$ssa17_participanti = preg_split("/\\r\\n|\\r|\\n/", $blee);
+
+	foreach($data2 as &$item) {
+		$item->created_at = '2017-02-05';
+		if (\in_array($item->name, $ssa17_participanti)) {
+			$item->accepted = 1;
+		}
+		else {
+			$item->accepted = null;
+		}
+	}
+
+	unset($item);
+
+	// $data3 = App\Participant::select(\DB::raw('CONCAT(ime, \' \', prezime) AS name'), 'email', 'created_at')
+	// 	->get()->toArray();
+
+	// foreach ($data3 as &$item) {
+	// 	$item = (object) $item;
+	// }
+
+	// unset($item);
+
+	$full = array_merge($data, $data2);
+
+	foreach ($full as &$item) {
+		$item = (array) $item;
+	}
+	unset($item);
+
+	// dd($full);
+
+	\DB::table('old_applications')->insert($full);
+	
+	return response('SUCCESS');
+
+});

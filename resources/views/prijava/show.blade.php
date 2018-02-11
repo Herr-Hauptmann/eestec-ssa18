@@ -13,10 +13,23 @@
                         <div class="row" style="margin: 0;">
                             <div class="col-md-12 text-center" style="background-color: #ff8989;">
                                 <h2>
-                                    @if ($glasano !== null)
-                                        Već si bodovao/la ovog participanta. Bodovi se ne mogu mijenjati.
-                                    @else
+                                    @if ($glasano === null)
                                         PAŽNJA! Dobro se skoncentriši prilikom bodovanja jer se bodovi ne mogu mijenjati naknadno.
+                                        <br/><br/>
+                                    @elseif ($glasano !== null && $postojiPrijava !== null && $postojiPrijava->accepted != '1')
+                                        Već si bodovao/la ovog participanta. Bodovi se ne mogu mijenjati.
+                                        <br/><br/>
+                                    @endif
+                                    @if ($postojiPrijava !== null)
+                                        <b><i>
+                                        @if ($postojiPrijava->accepted == '1')
+                                            Osoba je već prisustvovao/la na SSA '{{ date('y', strtotime($postojiPrijava->created_at)) }}
+                                            <br/>
+                                            Prijava je automatski odbijena ali i dalje je možeš pregledati ukoliko to želiš
+                                        @else 
+                                            Osoba je i prije aplicirala na SSA (zadnja aplikacija je bila {{ date('Y', strtotime($postojiPrijava->created_at)) }}. godine)
+                                        @endif
+                                        </i></b>
                                     @endif
                                 </h2>
                             </div>

@@ -141,38 +141,71 @@ class PrijavaController extends Controller
      */
     public function show(Request $request, Participant $participant)
     {
-        if (\Auth::user()->cant('zatvori prijave')) {
-            return back()->with('flash_message', 'Još malo ...');    
-        }
+        // ako nije jos dozvoljeno bodovanje samo odkomentarisati ovo ispod
+        // if (\Auth::user()->cant('zatvori prijave')) {
+        //     return back()->with('flash_message', 'Još malo ...');    
+        // }
         
 
         $participant->datum_rodjenja = Carbon::createFromFormat('Y-m-d', $participant->datum_rodjenja)
             ->toFormattedDateString();
 
+        $postojiPrijava = $this->hasAppliedBefore($participant->email);
+
+        // sluzi samo za uslova ispod, da se ne bi bodovanje registrovalo opet slucajno
+
+        $glasanoBefore = Point::where('participant_id', $participant->id)->where('user_id', \Auth::user()->id)->first();
+
+        if ($postojiPrijava !== null && $postojiPrijava->accepted == '1' && $glasanoBefore === null) {
+            $this->boduj($request, $participant, true);
+        }
+
+        // sluzi za view
         $glasano = Point::where('participant_id', $participant->id)->where('user_id', \Auth::user()->id)->first();
 
-        return view('prijava.show', compact('participant', 'glasano'));
+        return view('prijava.show', compact('participant', 'glasano', 'postojiPrijava'));
     }
 
-    public function boduj(Request $request, Participant $participant)
+    public function boduj(Request $request, Participant $participant, $automaticDiscard = false)
     {
         $glasano = Point::where('participant_id', $participant->id)->where('user_id', \Auth::user()->id)->first();
 
-        if ($glasano !== null) {
+        if ($glasano !== null && ! $automaticDiscard) {
             return back()->with('flash_message', 'Vec si bodovao/la');
         }
+
+
 
         $requestData = $request->all();
 
         $requestData['participant_id'] = $participant->id;
         $requestData['user_id'] = \Auth::user()->id;
 
-        $requestData['bodovi'] = $requestData['engleski'] + $requestData['motivaciono']
-            + $requestData['trenutno_zaposlenje'] + $requestData['ucesce_na_treninzima']
-            + $requestData['ucesce_na_seminarima'] + $requestData['nvo_iskustvo'];
+        $old = $this->hasAppliedBefore($participant->email);
 
-        if ($request->has('asterix')) {
-            $requestData['asterix'] = '1';
+        $hasAppliedBefore = $old !== null;
+
+        if ($hasAppliedBefore && $old->accepted == '1') {
+            
+            unset($requestData['trenutno_zaposlenje'], $requestData['engleski'],
+                    $requestData['motivaciono'], $requestData['ucesce_na_seminarima'],
+                    $requestData['ucesce_na_treninzima'], $requestData['nvo_iskustvo']);
+
+            // dakle, ako je vec prisustvovao/la na SSA odma je diskvalifikovan/na
+            $participant->accepted = 0;
+        } else {
+            $requestData['bodovi'] = $requestData['engleski'] + $requestData['motivaciono']
+                + $requestData['trenutno_zaposlenje'] + $requestData['ucesce_na_treninzima']
+                + $requestData['ucesce_na_seminarima'] + $requestData['nvo_iskustvo'];
+
+            if ($request->has('asterix')) {
+                $requestData['asterix'] = '1';
+            }
+        }
+
+        // ako se vec prijavljivao a odbijen/a
+        if ($hasAppliedBefore && $old->accepted != '1') {
+            $requestData['bodovi']++;
         }
 
         Point::create($requestData);
@@ -196,7 +229,12 @@ class PrijavaController extends Controller
         $participant->save();
 
         // dd($requestData, $pointsPerUser, $sumOfPoints, $pointsCount);
-        return redirect()->route('prijava.index')->with('flash_message', 'Bodovi uspjesno spaseni');
+        if ($automaticDiscard) {
+            redirect()->route('prijava.index');
+        }
+        else {
+            return redirect()->route('prijava.index')->with('flash_message', 'Bodovi uspjesno spaseni');
+        }
     }
 
     public function bodovi(Request $request)
@@ -233,6 +271,11 @@ class PrijavaController extends Controller
         }
 
         return view('prijava.rank-list', compact('participants', 'perPage'));
+    }
+
+    protected function hasAppliedBefore($email)
+    {
+        return \DB::table('old_applications')->where('email', '=', $email)->get()->last();
     }
 
     /**
@@ -287,6 +330,13 @@ class PrijavaController extends Controller
         if (! Auth::user()->hasDirectPermission('zatvori prijave') && ! Auth::user()->hasRole('root')) {
             return back()->with('permission_missing', 'Treba ti jos pure');
         }
+
+        // prvo smjestimo sve prijave u old_applications tabelu
+
+        $svePrijave = Participant::select(\DB::raw('CONCAT(ime, \' \', prezime) AS name'), 'email', 'created_at', 'accepted')
+            ->get()->toArray();
+
+        \DB::table('old_applications')->insert($svePrijave);
 
         $data = file(config_path('ssa.php'));
 
