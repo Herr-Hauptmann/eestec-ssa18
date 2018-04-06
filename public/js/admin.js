@@ -6,6 +6,7 @@ let $showWithAsterix = $('#show_with_asterix').click(function () {
         } else {
             document.location.search += '?show_with_asterix=on';
         }
+        // todo: refactor -> document.location.search += document.location.search ? '&show_with_asterix=on' : '?show_with_asterix=on';
     } else {
         console.log(toString(document.location));
         document.location.search = removeURLParameter(document.location.search, 'show_with_asterix');

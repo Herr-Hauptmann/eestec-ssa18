@@ -37,4 +37,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Point::class);
     }
+
+    public function participant()
+    {
+        return $this->hasOne(Participant::class);
+    }
 }

@@ -1,0 +1,276 @@
+@import url(https://fonts.googleapis.com/css?family=Mukta+Malar);
+
+* {
+	font-family: 'Mukta Malar', sans-serif;
+}
+
+
+body {
+	margin-top: 35px;
+	margin-left: 100px;
+	margin-right: 100px;
+	margin-bottom: 35px;
+}	
+
+@media (min-width: 1200px) {
+	body {
+		margin-left: 120px;
+		margin-right: 120px;
+	}	
+}
+
+@media (max-width: 450px) {
+	body {
+		margin-left: 20px;
+		margin-right: 20px;
+	}	
+}
+
+
+
+.profile-img {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: contain;
+	height: 200px;
+	width: 100%;
+}
+
+/* Buttons styles */
+input::-moz-focus-inner,
+button::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+input[type="submit"].btn,
+button.btn {
+	cursor: pointer;
+}
+
+a.btn,.btn {
+	display: inline-block;
+	outline: none;
+	*zoom: 1;
+	text-align: center;
+	text-decoration: none;
+	font-family: inherit;
+	font-weight: 300;
+	letter-spacing: 1px;
+	vertical-align: middle;
+	border: 1px solid;
+	transition: all 0.2s ease;
+	box-sizing: border-box;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.01);
+	text-transform: uppercase;
+}
+
+/* Radius */
+.btn-radius {
+  border-radius: 5px;
+}
+/* Sizes */
+.btn-small {
+	font-size: 0.8125em;
+	padding: 0.4125em 1.25em;
+}
+.btn-medium {
+	font-size: 0.9375em;
+	padding: 0.5375em 1.375em;
+}
+.btn-large {
+	font-size: 1.5625em;
+	padding: 0.2625em 1em 0.1em;
+}
+
+/* Colors */
+.btn-green {
+	color: #1aa79e;
+	border-color: #1aa79e;
+}
+.btn-green:hover {
+  background: #1aa79e;
+  color: #fff;
+  border-color: #1aa79e;		
+}
+
+.btn-green_fill {
+	background: #1aa79e;
+  color: #fff;
+  border-color: #1aa79e;
+}
+
+.btn-green_fill:hover {
+	background-color: #fff;
+	color: #1aa79e;
+}
+
+.btn-blue {
+	color: #4682B4;
+	border-color: #4682B4;
+}
+.btn-blue:hover {
+  background: #4682B4;
+  color: #fff;
+  border-color: #4682B4;		
+}
+
+.btn-orange {
+	color: #FF8C00;
+	border-color: #FF8C00;
+}
+.btn-orange:hover {
+  background: #FF8C00;
+  color: #fff;
+  border-color: #FF8C00;		
+}
+
+.btn-red {
+	color: #B22222;
+	border-color: #B22222;
+}
+.btn-red:hover {
+  background: #B22222;
+  color: #fff;
+  border-color: #B22222;	
+}
+
+.btn-gray {
+	color: #808080;
+	border-color: #808080;
+}
+.btn-gray:hover {
+  background: #808080;
+  color: #fff;
+  border-color: #808080;	
+}
+
+.section-heading {
+	font-weight: 800;
+	color: #000;
+	font-size: 3em;
+}
+
+.basic-info p {
+	margin-bottom: 10px;
+}
+
+.basic-info {
+	font-size: 1.7em;
+}
+
+.text-impact_blue {
+	color: #1aa79e;
+	font-weight: bold;
+}
+
+.basic-info_special {
+	text-align: right;
+}
+
+@media (max-width: 767px) {
+	.basic-info_special {
+		text-align: left;
+	}
+}
+
+.section-title {
+  font-family: MuktaMalar;
+  font-size: 1.4em;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.38;
+  letter-spacing: normal;
+  text-align: left;
+  color: #aaaaaa;
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+
+.section-title_line {
+	height: 1px;
+	background-color: #acacac;
+	flex-grow: 1;
+}
+
+.flex-row_nowrap {
+	display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: center;
+}
+
+.section-subtitle {
+	font-family: MuktaMalar;
+	font-size: 1.6em;
+	font-weight: bold;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.06;
+	letter-spacing: normal;
+	text-align: left;
+	color: #000000;
+	text-transform: uppercase;
+}
+
+.section-subtitle_second {
+	font-family: MuktaMalar;
+	font-size: 1.4em;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.2;
+	letter-spacing: normal;
+	text-align: left;
+	color: #4f4f4f;
+}
+
+.section {
+	margin-top: 20px;
+}
+
+.subsection {
+	margin-top: 15px;
+}
+
+@media (min-width: 992px) {
+	.subsection {
+		width: 80%;
+	}
+}
+
+.section-subtitle_period {
+	font-size: 1.2em;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.29;
+	letter-spacing: normal;
+	text-align: left;
+	color: #737373;
+}
+
+.section-content {
+	font-family: Georgia;
+	font-size: 1em;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.5;
+	letter-spacing: normal;
+	text-align: left;
+	color: #5a5a5a;
+	margin-top: 10px;
+}
+
+.flex-center {
+	display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}

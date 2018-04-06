@@ -365,4 +365,22 @@ class PrijavaController extends Controller
         file_put_contents(config_path('ssa.php'), $data);
         return back();
     }
+
+    public function mailParticipantima()
+    {
+        if (\Auth::user()->cant('zatvori prijave')) {
+            return back()->with('flash_message', 'Samo par ljudi može koristiti ovu funkcionalnost');    
+        }
+
+        return view('prijava.mail');
+    }
+
+    public function sendMail(Request $request)
+    {
+        if (\Auth::user()->cant('zatvori prijave')) {
+            return back()->with('flash_message', 'Samo par osoba može koristiti ovu funkcionalnost');    
+        }
+
+        
+    }
 }

@@ -112,6 +112,28 @@ Route::patch('admin/change-direct-permissions/{user}', 'UsersController@changeDi
 
 Route::get('admin/permissions/{user}', 'UsersController@getMissingPermissions')->middleware(['auth', 'role:root'])->name('permissions.getMissingJson');
 
+
+###############################################################
+#######//////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\#########
+######(          PARTICIPANTI PLATFORMA               )########
+#######\\\\\\\\\\\\\\\\\\\\\\/////////////////////////#########
+###############################################################
+
+Route::prefix('participant')->group(function() {
+	Route::get('login', 'ParticipantsController@showLoginFormParticipant')->name('participant.login.show');
+	Route::post('login', 'ParticipantsController@loginParticipant')->name('participant.login');
+	
+	Route::get('profil', 'ParticipantsController@profile')->name('participant.profile');
+
+
+});
+
+
+
+
+
+
+
 Route::get('/admin/temp', function(\Illuminate\Http\Request $request) {
 
 	// funkcija migrira podatke iz dvije stare baze o prijavama kako bi mogli znati ko se nekad prijavio

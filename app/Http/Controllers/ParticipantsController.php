@@ -6,10 +6,22 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Participant;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class ParticipantsController extends Controller
 {
+    use AuthenticatesUsers;
+
+    /**
+     * Where to redirect users after login.
+     *
+     * @var string
+     */
+    protected $redirectTo = '/participant/profil';
+
     /**
      * Display a listing of the resource.
      *
@@ -115,5 +127,27 @@ class ParticipantsController extends Controller
         Participant::destroy($id);
 
         return redirect('admin/participants')->with('flash_message', 'Participant deleted!');
+    }
+
+    ######## PLATFORMA ########
+    public function showLoginFormParticipant()
+    {
+        return view('participants.platform.login');
+    }
+
+    public function loginParticipant(Request $request)
+    {
+        // get user by email
+        // $user = User::where('email', $request->email)->first();
+        // Auth::login($user);
+        return $this->login($request);
+        // dd($request->all());
+
+    }
+
+    public function profile()
+    {
+
+        return view('participants.platform.profile');
     }
 }
