@@ -6,7 +6,8 @@
                 <div class="col-md-4">
                     <label for="permissions[{{ $permission }}]">
                         <input name="permissions[{{ $permission }}]" type="checkbox" id="permissions[{{ $permission }}]"
-                            {{ $user->hasPermissionTo($permission) ? 'checked' : '' }}>
+                            {{ $user->hasPermissionTo($permission) ? 'checked ' : '' }}
+                            {!! $directPermissions->contains($permission) ? 'disabled' : '' !!}>
                         {{ $permission }}
                     </label>
                 </div>

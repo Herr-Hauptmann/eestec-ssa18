@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 use App\Participant;
 use App\User;
+use App\Faculty;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -147,7 +148,7 @@ class ParticipantsController extends Controller
 
     public function profile()
     {
-
-        return view('participants.platform.profile');
+        $faculties = Faculty::pluck('naziv', 'id');
+        return view('participants.platform.profile', compact('faculties'));
     }
 }

@@ -8,10 +8,12 @@
 					</div>
 				</div>
 				<div class="col-md-12 col-md-offset-0 col-sm-offset-3 col-xs-8 col-xs-offset-2 col-sm-6 match-height flex-center">
-					<a class="btn btn-large btn-green btn-block btn-radius" href="#">
-						<span class="glyphicon glyphicon-pencil"></span> Uredi profil
+					<button class="btn btn-large btn-green btn-block btn-radius" data-toggle="modal" data-target="#edit-profile">
+						<i class="fas fa-pencil-alt"></i> Uredi profil
+					</button>
+					<a class="btn btn-large btn-green_fill btn-block btn-radius" href="#"> 
+						<i class="fas fa-link"></i> Kopiraj link
 					</a>
-					<a class="btn btn-large btn-green_fill btn-block btn-radius" href="#"> Kopiraj link</a>
 				</div>
 			</div>
 		</div>
@@ -23,10 +25,10 @@
 			</div>
 			<div class="row basic-info">
 				<div class="col-md-6 col-sm-6 col-xs-12">
-					03.10.1997.<br/>
-					Sarajevo, Mustafe Busuladžića 12<br/>
-					060 319 1256<br/>
-					adipandzic@gmail.com<br/>
+					<i class="far fa-calendar-alt"></i> 03.10.1997.<br/>
+					<i class="fas fa-map-marker"></i> &nbsp;Sarajevo, Mustafe Busuladžića 12<br/>
+					<i class="fas fa-phone"></i> 060 319 1256<br/>
+					<i class="far fa-envelope"></i> adipandzic@gmail.com<br/>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<div class="row">
@@ -196,4 +198,5 @@
 			</div>
 		</div>
 	</div>
+	@include('participants.platform.editprofile')
 @endsection

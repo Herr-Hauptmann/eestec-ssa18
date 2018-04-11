@@ -94,9 +94,11 @@ class UsersController extends Controller
         /** @var User $user */
         $user = User::findOrFail($id);
 
-        $permissions = Permission::all();
+        $permissions = Permission::all()->pluck('name')->toArray();
 
-        $permissions = $permissions->diff($user->getPermissionsViaRoles())->pluck('name')->toArray();
+        $directPermissions = $user->getPermissionsViaRoles()->pluck('name');
+
+        // $permissions = $permissions->diff($user->getPermissionsViaRoles())->pluck('name')->toArray();
 
         //Uredimo malo po tipu permisije
         foreach ($permissions as $i => $permission) {
@@ -121,7 +123,7 @@ class UsersController extends Controller
             unset($permissions[$i]);
         }
 
-        return view('admin.users.edit', compact('user', 'permissions'));
+        return view('admin.users.edit', compact('user', 'permissions', 'directPermissions'));
     }
 
     /**

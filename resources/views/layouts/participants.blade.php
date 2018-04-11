@@ -12,6 +12,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    
     <link href="{{ asset('css/platform.css') }}" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}"></script>
 </head>
@@ -21,12 +23,13 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://use.fontawesome.com/719876f143.js"></script>
+    <!-- <script src="https://use.fontawesome.com/719876f143.js"></script> -->
     <script src="{{ asset('js/jquery.matchHeight.js') }}" type="text/javascript"></script>
     <script type="text/javascript">
         $(function() {
             $('.match-height').matchHeight();
         });
     </script>
+    <script src="{{ asset('js/platform.js') }}"></script>
 </body>
 </html>

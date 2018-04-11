@@ -10,6 +10,7 @@ body {
 	margin-left: 100px;
 	margin-right: 100px;
 	margin-bottom: 35px;
+	font-family: 'Mukta Malar';
 }	
 
 @media (min-width: 1200px) {
@@ -87,6 +88,7 @@ a.btn,.btn {
 .btn-green {
 	color: #1aa79e;
 	border-color: #1aa79e;
+	background-color: transparent;
 }
 .btn-green:hover {
   background: #1aa79e;
@@ -175,7 +177,7 @@ a.btn,.btn {
 }
 
 .section-title {
-  font-family: MuktaMalar;
+  font-family: 'Mukta Malar';
   font-size: 1.4em;
   font-weight: 300;
   font-style: normal;
@@ -204,7 +206,7 @@ a.btn,.btn {
 }
 
 .section-subtitle {
-	font-family: MuktaMalar;
+	/*font-family: MuktaMalar;*/
 	font-size: 1.6em;
 	font-weight: bold;
 	font-style: normal;
@@ -217,7 +219,7 @@ a.btn,.btn {
 }
 
 .section-subtitle_second {
-	font-family: MuktaMalar;
+	/*font-family: MuktaMalar;*/
 	font-size: 1.4em;
 	font-weight: normal;
 	font-style: normal;
@@ -254,7 +256,7 @@ a.btn,.btn {
 }
 
 .section-content {
-	font-family: Georgia;
+	font-family: 'Serif';
 	font-size: 1em;
 	font-weight: normal;
 	font-style: normal;
@@ -273,4 +275,29 @@ a.btn,.btn {
     justify-content: center;
     align-content: center;
     align-items: center;
+}
+
+.cool-input {
+	outline: 0;
+	border-width: 0 0 1px 0;
+	border-color: black;
+	width: 100%;
+	max-width: 100%;
+	transition: linear 1.5s;
+}
+
+.cool-input:focus {
+	border-color: #1aa79e;
+	/*border-bottom-width: 2px;*/
+}
+
+.upload-btn-wrapper input[type=file] {
+	position: absolute;
+	left: 0;
+	top: -50px;
+	opacity: 0;
+}
+
+.upload-btn-wrapper {
+	width: 100%;
 }
