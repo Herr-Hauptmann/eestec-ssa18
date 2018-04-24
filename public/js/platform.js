@@ -1,11 +1,6 @@
 (function() {
 	// $("#slika").change(function() { // bCheck is a input type button
-	//     var fileName = $(this).val();
-
-	//     if(fileName) { // returns true if the string is not empty
-	//         alert(fileName + " was selected");
-	//     } 
-	// });
+	let csrf_token = $('[name=csrf-token]').attr('content');
 
 	$('#btn-upload').click(function(e) {
 		e.preventDefault();
@@ -22,5 +17,34 @@
 		} else {
 			$('#slikaText').hide('slow');
 		}
-	})
+	});
+
+	// provjera da li email postoji u bazi, za registraciju
+
+	let emailCheckUrl = $('#checkEmailForm').attr('action');
+	$('#checkEmailForm').on('submit', function(e) {
+		e.preventDefault();
+		$.post(
+			emailCheckUrl,
+			{
+				_token: csrf_token,
+				email: $('#emailTry').val()
+			},
+			function(res) {
+				console.log(res, res.ime);
+				if (! res.error) {
+					$('#name').val(res.ime);
+					$('#email').val(res.email);
+					$('#registrationModalEmail').fadeOut(500);
+					setTimeout(function() {
+						$('#registrationModalEmail').modal('hide');
+					}, 500);
+				} else {
+					$('#emailTryError').html(`<b>${res.error}</b>`).show();
+					$('#emailTry').parent().addClass('has-error');
+				}
+			}
+		);
+	});
+
 })()

@@ -11,6 +11,7 @@ use App\Faculty;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Validator;
 
 class ParticipantsController extends Controller
 {
@@ -84,20 +85,6 @@ class ParticipantsController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     *
-     * @return \Illuminate\View\View
-     */
-    public function edit($id)
-    {
-        $participant = Participant::findOrFail($id);
-
-        return view('participants.edit', compact('participant'));
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
@@ -131,6 +118,17 @@ class ParticipantsController extends Controller
     }
 
     ######## PLATFORMA ########
+    ######## PLATFORMA ########
+    ######## PLATFORMA ########
+    ######## PLATFORMA ########
+    ######## PLATFORMA ########
+    ######## PLATFORMA ########
+    ######## PLATFORMA ########
+    ######## PLATFORMA ########
+    ######## PLATFORMA ########
+    ######## PLATFORMA ########
+    ######## PLATFORMA ########
+
     public function showLoginFormParticipant()
     {
         return view('participants.platform.login');
@@ -146,9 +144,88 @@ class ParticipantsController extends Controller
 
     }
 
+    public function showRegistrationFormParticipant()
+    {
+        return view('participants.platform.register');
+    }
+
+    public function registerParticipant(Request $request)
+    {
+        $messages = [
+            'required' => 'Polje \':attribute\' je obavezno.',
+            'max' => ':attribute ne smije sadržavati više od :max znakova.',
+            'email.unique' => 'Već postoji korisnik sa ovom email adresom. ' . '<a href="' . route('participant.login.show') . '"> Login?</a>',
+            'password.confirmed' => 'Unesene šifre se ne podudaraju.',
+            'password.min' => 'Šifra mora sazdržavati minimalno :min znakova.',
+            'name.required' => 'Polje \'Ime i prezime\' je obavezno.'
+        ];
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6|confirmed',
+            'password_confirmation' => 'required'
+        ], $messages);
+
+        // dd($validator->fails());
+
+        if ($validator->fails()) {
+            if (! session()->has('emailRemembered')) {
+                session()->put('emailRemembered', $request->email);    
+            }
+            
+            return redirect('participant/register')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+        session()->flush('emailRemembered');
+
+        /** @var User $user */
+        $user =  User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+        ]);
+        $participant = Participant::where('email', $request->email)->first();
+        $participant->update(['user_id' => $user->id]);
+
+        $user->assignRole('participant');
+
+        Auth::login($user, true);
+
+        return redirect('participant/profil');
+    }
+
+    public function emailCheck(Request $request)
+    {
+        $participant = Participant::select('email', \DB::raw('CONCAT(ime, \' \', prezime) as ime'))
+                ->where('email', $request->get('email'))->first();
+
+        if ($participant) {
+            session(['emailRemembered' => true]);
+        }
+
+        return response()->json($participant ?? ['error' => 'Email adresa ne zadovoljava kriterije']);
+    }
+
     public function profile()
     {
+        $user = \Auth::user();
         $faculties = Faculty::pluck('naziv', 'id');
         return view('participants.platform.profile', compact('faculties'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function edit()
+    {
+        // $participant = Participant::findOrFail($);
+        $faculties = Faculty::pluck('naziv', 'id');
+
+        // dd($id);
+        return view('participants.platform.edit', compact('faculties'));
     }
 }

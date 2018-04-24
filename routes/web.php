@@ -122,8 +122,16 @@ Route::get('admin/permissions/{user}', 'UsersController@getMissingPermissions')-
 Route::prefix('participant')->group(function() {
 	Route::get('login', 'ParticipantsController@showLoginFormParticipant')->name('participant.login.show');
 	Route::post('login', 'ParticipantsController@loginParticipant')->name('participant.login');
+	Route::get('register', 'ParticipantsController@showRegistrationFormParticipant')->name('participant.register.show');
+	Route::post('register', 'ParticipantsController@registerParticipant')->name('participant.register');
 	
-	Route::get('profil', 'ParticipantsController@profile')->name('participant.profile');
+	Route::prefix('profil')->group(function() {
+		Route::get('/', 'ParticipantsController@profile')->name('participant.profile');
+		Route::get('edit', 'ParticipantsController@edit')->name('participant.edit');
+	});
+	
+	Route::post('emailCheck', 'ParticipantsController@emailCheck')->name('emailCheck');
+
 
 
 });

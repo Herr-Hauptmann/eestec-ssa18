@@ -1,14 +1,13 @@
-@extends('layouts.participants')
-@section('content')
+<?php $__env->startSection('content'); ?>
 	<div class="row">
 		<div class="col-md-4 col-xs-12">
 			<div class="row">
 				<div class="col-md-12 col-md-offset-0 col-sm-offset-3 col-xs-8 col-xs-offset-2 col-sm-6 match-height">
-					<div class="profile-img" style="background-image: url({{ asset('img/tarik_sahinovic.jpg') }}); margin-bottom: 20px;">
+					<div class="profile-img" style="background-image: url(<?php echo e(asset('img/tarik_sahinovic.jpg')); ?>); margin-bottom: 20px;">
 					</div>
 				</div>
 				<div class="col-md-12 col-md-offset-0 col-sm-offset-3 col-xs-8 col-xs-offset-2 col-sm-6 match-height flex-center">
-					<a class="btn btn-large btn-green btn-block btn-radius" href="{{ route('participant.edit') }}">
+					<a class="btn btn-large btn-green btn-block btn-radius" href="<?php echo e(route('participant.edit')); ?>">
 						<i class="fas fa-pencil-alt"></i> Uredi profil
 					</a>
 					<a class="btn btn-large btn-green_fill btn-block btn-radius" href="#"> 
@@ -198,4 +197,5 @@
 			</div>
 		</div>
 	</div>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.participants', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

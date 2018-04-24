@@ -1,15 +1,6 @@
 <!-- Modal -->
-
-  <div class="modal fade" id="edit-profile" role="dialog">
-    <div class="modal-dialog modal-lg">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h3 class="modal-title"><b>Uredi profil</b></h3>
-        </div>
-        <div class="modal-body">
+@extends('layouts.participants')
+@section('content')
           <form method="POST" action="#" id="edit-profile_form">
             {{ csrf_field() }}
             <div class="row">
@@ -52,10 +43,10 @@
                 </div>
                 <div class="form-group row">
                   <div class="control-label col-xs-4 text-right">
-                    <label for="adresa">Adresa:</label>
+                    <label for="mjesto_prebivalista">Adresa:</label>
                   </div>
                   <div class="col-xs-8">
-                    <input type="text" class="cool-input" name="adresa" id="adresa" />
+                    <input type="text" class="cool-input" name="mjesto_prebivalista" id="mjesto_prebivalista" />
                   </div>
                 </div>
                 <div class="form-group row">
@@ -92,7 +83,6 @@
                 </div>
               </div>
             </div>
-          </form>
               <div class="row">
                 <div class="col-xs-12">
                   <section class="section">
@@ -106,59 +96,42 @@
                     </div>
                     <div class="subsection">
                       <div class="row">
-                        <div class="col-xs-12">
+                        <div class="col-xs-12 flex-row_nowrap">
                           <span class="section-subtitle">
-                            soft skills academy sarajevo 2017
+                            <!-- soft skills academy sarajevo 2017 -->
+                            <input type="text" class="cool-input" value="soft skills academy sarajevo 2017"  />
                           </span>
                           &nbsp;&nbsp;&minus;&nbsp;&nbsp;
                           <span class="section-subtitle_second">
-                            Design Team Leader
+                            <!-- Design Team Leader -->
+                            <input type="text" class="cool-input" value="Design Team Leader" />
                           </span>
                         </div>
                       </div>
                       <div class="row">
                         <div class="col-xs-12">
-                          <span class="section-subtitle_period">
-                            November 2016 - March 2017
+                          <span class="section-subtitle_period flex-row_nowrap">
+                            Od: &nbsp;&nbsp; 
+                            {!! Form::select('radno_iskustvo[0][mjesec_start]', ['Januar', 'Februrar', 'Mart', 'April', 'Maj', 'Juni', 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'], null, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
+                            {!! Form::select('radno_iskustvo[0][mjesec_godina]', range(date('Y'), 1990), null, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
+                              &nbsp;&nbsp;&nbsp;&nbsp;
+                              Do: &nbsp;&nbsp; 
+                            {!! Form::select('radno_iskustvo[0][mjesec_start]', ['Januar', 'Februrar', 'Mart', 'April', 'Maj', 'Juni', 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'], null, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
+                            {!! Form::select('radno_iskustvo[0][mjesec_godina]', range(date('Y'), 1990), null, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
                           </span>
                         </div>
                       </div>
                       <div class="row">
                         <div class="col-xs-12">
                           <p class="section-content">
-                            Leading a team of experienced and new designers who came together to create a whole new visual identity for a workshop held in Sarajevo and designing material ranging from brochures to application and website UI
+                            <!-- Leading a team of experienced and new designers who came together to create a whole new visual identity for a workshop held in Sarajevo and designing material ranging from brochures to application and website UI -->
+                            <textarea rows="5" class="cool-input">Leading a team of experienced and new designers who came together to create a whole new visual identity for a workshop held in Sarajevo and designing material ranging from brochures to application and website UILeading a team of experienced and new designers who came together to create a whole new visual identity for a workshop held in Sarajevo and designing material ranging from brochures to application and website UILeading a team of experienced and new designers who came together to create a whole new visual identity for a workshop held in Sarajevo and designing material ranging from brochures to application and website UI</textarea>
                           </p>
                         </div>
                       </div>
                     </div>
 
-                    <div class="subsection">
-                      <div class="row">
-                        <div class="col-xs-12">
-                          <span class="section-subtitle">
-                            soft skills academy sarajevo 2017
-                          </span>
-                          &nbsp;&nbsp;&minus;&nbsp;&nbsp;
-                          <span class="section-subtitle_second">
-                            Design Team Leader
-                          </span>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-xs-12">
-                          <span class="section-subtitle_period">
-                            November 2016 - March 2017
-                          </span>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-xs-12">
-                          <p class="section-content">
-                            Leading a team of experienced and new designers who came together to create a whole new visual identity for a workshop held in Sarajevo and designing material ranging from brochures to application and website UI
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                  
                   </section>
 
 
@@ -177,14 +150,16 @@
                       <div class="row">
                         <div class="col-xs-12">
                           <span class="section-subtitle">
-                            EESTEC LC SARAJEVO
+                            <!-- EESTEC LC SARAJEVO -->
+                            <input type="text" class="cool-input" value="EESTEC LC SARAJEVO"  />
                           </span>
                         </div>
                       </div>
                       <div class="row">
                         <div class="col-xs-12">
                           <p class="section-content">
-                            By being a member of this organization, I’ve been participating in creating visual identities and creating all sorts of designs for promotional material for this organizations’ events as well as being part of teams who created websites and applications dating back from July 2016. I’ve also been mentoring and educating younger and less experienced designers who wanted to learn more and are today considered to be a vital part of the designer climate in the organization.
+                            <!-- By being a member of this organization, I’ve been participating in creating visual identities and creating all sorts of designs for promotional material for this organizations’ events as well as being part of teams who created websites and applications dating back from July 2016. I’ve also been mentoring and educating younger and less experienced designers who wanted to learn more and are today considered to be a vital part of the designer climate in the organization. -->
+                            <textarea class="cool-input" rows="5">By being a member of this organization, I’ve been participating in creating visual identities and creating all sorts of designs for promotional material for this organizations’ events as well as being part of teams who created websites and applications dating back from July 2016. I’ve also been mentoring and educating younger and less experienced designers who wanted to learn more and are today considered to be a vital part of the designer climate in the organization.</textarea>
                           </p>
                         </div>
                       </div>
@@ -240,16 +215,5 @@
                   </section>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-  <script>
-    $('#edit-profile').modal();
-  </script>
+            </form>
+            @endsection

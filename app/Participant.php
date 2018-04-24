@@ -28,7 +28,7 @@ class Participant extends Model
      * @var array
      */
     protected $fillable = ['ime', 'prezime', 'datum_rodjenja', 'broj_telefona', 'email', 'velicina_majice', 'engleski_govor', 'engleski_razumijevanje', 'motivaciono', 'ranije_ucesce_na_ssa', 'kako_ste_saznali', 'radno_iskustvo', 'trenutno_zaposlenje', 'ucesce_na_treninzima', 'ucesce_na_seminarima', 'nvo_iskustvo', 'dodatne_napomene', 
-        'accepted', 'ukupno_bodova', 'asterix', 'glasali_count', 'status'];
+        'accepted', 'ukupno_bodova', 'asterix', 'glasali_count', 'status', 'mjesto_prebivalista', 'user_id'];
 
     public function fakulteti() {
         return $this->belongsToMany(Faculty::class, 'fakultet_participant', 'participant_id', 'fakultet_id');

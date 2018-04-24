@@ -15,6 +15,7 @@ class AddStatusToParticipantsTable extends Migration
     {
         Schema::table('participanti', function (Blueprint $table) {
             $table->string('status')->default('Student');
+            $table->string('mjesto_prebivalista')->nullable();
         });
     }
 
