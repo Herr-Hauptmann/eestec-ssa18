@@ -13,21 +13,24 @@
 					<a class="btn btn-large btn-green_fill btn-block btn-radius" href="#"> 
 						<i class="fas fa-link"></i> Kopiraj link
 					</a>
+					<a class="btn btn-large btn-green_fill btn-block btn-radius" href="<?php echo e(route('logout')); ?>"> 
+						<i class="fas fa-sign-out-alt"></i> Logout
+					</a>
 				</div>
 			</div>
 		</div>
 		<div class="col-md-8 col-xs-12" id="participant-info">
 			<div class="row">
 				<div class="col-md-12">
-					<div class="section-heading">Adi Pandzic</div>
+					<div class="section-heading"><?php echo e($participant->ime . ' ' . $participant->prezime); ?></div>
 				</div>
 			</div>
 			<div class="row basic-info">
 				<div class="col-md-6 col-sm-6 col-xs-12">
-					<i class="far fa-calendar-alt"></i> 03.10.1997.<br/>
-					<i class="fas fa-map-marker"></i> &nbsp;Sarajevo, Mustafe Busuladžića 12<br/>
-					<i class="fas fa-phone"></i> 060 319 1256<br/>
-					<i class="far fa-envelope"></i> adipandzic@gmail.com<br/>
+					<i class="far fa-calendar-alt"></i> <?php echo e(date('d.m.Y.', strtotime($participant->datum_rodjenja))); ?><br/>
+					<i class="fas fa-map-marker"></i> &nbsp;<?php echo $participant->mjesto_prebivalista ?? '<i>Nije uneseno</i>'; ?><br/>
+					<i class="fas fa-phone"></i> <?php echo e($participant->broj_telefona); ?><br/>
+					<i class="far fa-envelope"></i> <?php echo e($participant->email); ?><br/>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<div class="row">
@@ -35,7 +38,8 @@
 							Status:
 						</div>
 						<div class="col-sm-8 col-xs-9 text-left text-impact_blue">
-							Student
+							<?php echo $participant->status ?? '<i>Nije uneseno</i>'; ?>
+
 						</div>
 					</div>
 					<div class="row">
@@ -43,7 +47,8 @@
 							Fakultet:
 						</div>
 						<div class="col-sm-8 col-xs-9 text-left text-impact_blue">
-							Elektrotehnicki fakultet
+							<?php echo e($participant->fakulteti->first()->naziv); ?>
+
 						</div>
 					</div>
 				</div>

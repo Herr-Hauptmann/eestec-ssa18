@@ -126,14 +126,21 @@ Route::prefix('participant')->group(function() {
 	Route::post('register', 'ParticipantsController@registerParticipant')->name('participant.register');
 	
 	Route::prefix('profil')->group(function() {
-		Route::get('/', 'ParticipantsController@profile')->name('participant.profile');
-		Route::get('edit', 'ParticipantsController@edit')->name('participant.edit');
+		Route::get('/', 'ParticipantsController@profile')->name('participant.profile')->middleware('auth');
+		Route::get('edit', 'ParticipantsController@edit')->name('participant.edit')->middleware('auth');
 	});
 	
 	Route::post('emailCheck', 'ParticipantsController@emailCheck')->name('emailCheck');
 
 
 
+});
+
+
+Route::prefix('kompanija')->group(function() {
+	//TODO: login, registracija
+	Route::get('/pretraga', 'CompaniesController@index')->name('company.index');
+	Route::get('profil', 'CompaniesController@profile')->name('company.profile');
 });
 
 

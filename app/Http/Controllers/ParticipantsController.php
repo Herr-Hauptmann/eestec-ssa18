@@ -201,6 +201,8 @@ class ParticipantsController extends Controller
         $participant = Participant::select('email', \DB::raw('CONCAT(ime, \' \', prezime) as ime'))
                 ->where('email', $request->get('email'))->first();
 
+        // TODO: Dodati provjeru da li je prihvacena aplikacija bila (accepted kolona)
+
         if ($participant) {
             session(['emailRemembered' => true]);
         }
@@ -211,8 +213,10 @@ class ParticipantsController extends Controller
     public function profile()
     {
         $user = \Auth::user();
+        $participant = $user->participant;
+        $experiences = $participant->experiences;
         $faculties = Faculty::pluck('naziv', 'id');
-        return view('participants.platform.profile', compact('faculties'));
+        return view('participants.platform.profile', compact('faculties', 'experiences', 'participant'));
     }
 
     /**
@@ -222,10 +226,12 @@ class ParticipantsController extends Controller
      */
     public function edit()
     {
-        // $participant = Participant::findOrFail($);
+        $user = \Auth::user();
+        $participant = $user->participant;
+        $experiences = $participant->experiences;
         $faculties = Faculty::pluck('naziv', 'id');
 
         // dd($id);
-        return view('participants.platform.edit', compact('faculties'));
+        return view('participants.platform.edit', compact('faculties', 'user', 'participant', 'experiences'));
     }
 }

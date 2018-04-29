@@ -11,7 +11,7 @@ class Certificate extends Model
      *
      * @var string
      */
-    protected $table = 'Certificate';
+    protected $table = 'certificates';
 
     /**
     * The database primary key value.

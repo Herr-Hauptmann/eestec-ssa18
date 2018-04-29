@@ -46,11 +46,11 @@ class Participant extends Model
 
     public function experiences()
     {
-        return $this->hasMore(Experience::class);
+        return $this->hasMany(Experience::class);
     }
     
     public function certificates()
     {
-        return $this->hasManyThrough(Experience::class);
+        return $this->hasManyThrough(Certificate::class, Experience::class);
     }
 }

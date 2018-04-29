@@ -31,7 +31,7 @@
                     <label for="ime_i_prezime">Ime i prezime:</label>
                   </div>
                   <div class="col-xs-8">
-                    <input type="text" class="cool-input" name="ime_i_prezime" id="ime_i_prezime" />
+                    <input type="text" class="cool-input" name="ime_i_prezime" id="ime_i_prezime" value="<?php echo e(old('ime_i_prezime') ?? $participant->ime . ' ' . $participant->prezime); ?>" />
                   </div>
                 </div>
                 <div class="form-group row">
@@ -39,15 +39,15 @@
                     <label for="datum_rodjenja">Datum rođenja:</label>
                   </div>
                   <div class="col-xs-8">
-                    <input type="date" class="cool-input" name="datum_rodjenja" id="datum_rodjenja" />
+                    <input type="date" class="cool-input" name="datum_rodjenja" id="datum_rodjenja" value="<?php echo e(old('datum_rodjenja') ?? date('Y-m-d', strtotime($participant->datum_rodjenja))); ?>" />
                   </div>
                 </div>
                 <div class="form-group row">
                   <div class="control-label col-xs-4 text-right">
-                    <label for="adresa">Adresa:</label>
+                    <label for="mjesto_prebivalista">Mjesto prebivališta:</label>
                   </div>
                   <div class="col-xs-8">
-                    <input type="text" class="cool-input" name="adresa" id="adresa" />
+                    <input type="text" class="cool-input" name="mjesto_prebivalista" id="mjesto_prebivalista" value="<?php echo e(old('mjesto_prebivalista') ?? $participant->mjesto_prebivalista); ?>" />
                   </div>
                 </div>
                 <div class="form-group row">
@@ -55,7 +55,7 @@
                     <label for="broj_telefona">Broj telefona:</label>
                   </div>
                   <div class="col-xs-8">
-                    <input type="tel" class="cool-input" name="broj_telefona" id="broj_telefona" />
+                    <input type="tel" class="cool-input" name="broj_telefona" id="broj_telefona" value="<?php echo e(old('broj_telefona') ?? $participant->broj_telefona); ?>" />
                   </div>
                 </div>
                 <div class="form-group row">
@@ -63,7 +63,7 @@
                     <label for="email">Email:</label>
                   </div>
                   <div class="col-xs-8">
-                    <input type="email" class="cool-input" name="email" id="email" />
+                    <input type="email" class="cool-input" name="email" id="email" value="<?php echo e(old('email') ?? $participant->email); ?>" />
                   </div>
                 </div>
                 <div class="form-group row">
@@ -71,7 +71,7 @@
                     <label for="status">Status:</label>
                   </div>
                   <div class="col-xs-8">
-                    <?php echo Form::select('status', ['Student', 'Student Bachelor', 'Student Master', 'Doktor', 'Zaposlen/a'], null, ['class' => 'cool-input']); ?>
+                    <?php echo Form::select('status', config('platforma.statusi'), old('status') ?? $participant->status, ['class' => 'cool-input']); ?>
 
                   </div>
                 </div>
@@ -80,7 +80,7 @@
                     <label for="fakulteti">Fakulteti:</label>
                   </div>
                   <div class="col-xs-8">
-                    <?php echo Form::select('fakulteti', $faculties, null, ['class' => 'form-control', 'multiple' => true]); ?>
+                    <?php echo Form::select('fakulteti', $faculties, old('fakulteti') ?? $participant->fakulteti, ['class' => 'form-control', 'multiple' => true, 'style' => 'height: 200px;']); ?>
 
                   </div>
                 </div>

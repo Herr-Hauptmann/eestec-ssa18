@@ -11,7 +11,7 @@ class Experience extends Model
      *
      * @var string
      */
-    protected $table = 'Experience';
+    protected $table = 'experiences';
 
     /**
     * The database primary key value.
