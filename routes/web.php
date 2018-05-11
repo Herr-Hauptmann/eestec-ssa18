@@ -119,6 +119,7 @@ Route::get('admin/permissions/{user}', 'UsersController@getMissingPermissions')-
 #######\\\\\\\\\\\\\\\\\\\\\\/////////////////////////#########
 ###############################################################
 
+
 Route::prefix('participant')->group(function() {
 	Route::get('login', 'ParticipantsController@showLoginFormParticipant')->name('participant.login.show');
 	Route::post('login', 'ParticipantsController@loginParticipant')->name('participant.login');
@@ -139,7 +140,7 @@ Route::prefix('participant')->group(function() {
 
 Route::prefix('kompanija')->group(function() {
 	//TODO: login, registracija
-	Route::get('/pretraga', 'CompaniesController@index')->name('company.index');
+	Route::get('pretraga', 'CompaniesController@index')->name('company.index');
 	Route::get('profil', 'CompaniesController@profile')->name('company.profile');
 });
 

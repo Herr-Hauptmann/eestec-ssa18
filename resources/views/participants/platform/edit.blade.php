@@ -85,7 +85,7 @@
             </div>
               <div class="row">
                 <div class="col-xs-12">
-                  <section class="section">
+                  <section class="section" id="radnaIskustva">
                     <div class="row">
                       <div class="col-xs-12 flex-row_nowrap">
                         <span class="section-title">
@@ -94,43 +94,54 @@
                         <div class="section-title_line"></div>
                       </div>
                     </div>
-                    <div class="subsection">
-                      <div class="row">
-                        <div class="col-xs-12 flex-row_nowrap">
-                          <span class="section-subtitle">
-                            <!-- soft skills academy sarajevo 2017 -->
-                            <input type="text" class="cool-input" value="soft skills academy sarajevo 2017"  />
-                          </span>
-                          &nbsp;&nbsp;&minus;&nbsp;&nbsp;
-                          <span class="section-subtitle_second">
-                            <!-- Design Team Leader -->
-                            <input type="text" class="cool-input" value="Design Team Leader" />
-                          </span>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-xs-12">
-                          <span class="section-subtitle_period flex-row_nowrap">
-                            Od: &nbsp;&nbsp; 
-                            {!! Form::select('radno_iskustvo[0][mjesec_start]', ['Januar', 'Februrar', 'Mart', 'April', 'Maj', 'Juni', 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'], null, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
-                            {!! Form::select('radno_iskustvo[0][mjesec_godina]', range(date('Y'), 1990), null, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
-                              &nbsp;&nbsp;&nbsp;&nbsp;
-                              Do: &nbsp;&nbsp; 
-                            {!! Form::select('radno_iskustvo[0][mjesec_start]', ['Januar', 'Februrar', 'Mart', 'April', 'Maj', 'Juni', 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'], null, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
-                            {!! Form::select('radno_iskustvo[0][mjesec_godina]', range(date('Y'), 1990), null, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
-                          </span>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-xs-12">
-                          <p class="section-content">
-                            <!-- Leading a team of experienced and new designers who came together to create a whole new visual identity for a workshop held in Sarajevo and designing material ranging from brochures to application and website UI -->
-                            <textarea rows="5" class="cool-input">Leading a team of experienced and new designers who came together to create a whole new visual identity for a workshop held in Sarajevo and designing material ranging from brochures to application and website UILeading a team of experienced and new designers who came together to create a whole new visual identity for a workshop held in Sarajevo and designing material ranging from brochures to application and website UILeading a team of experienced and new designers who came together to create a whole new visual identity for a workshop held in Sarajevo and designing material ranging from brochures to application and website UI</textarea>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
 
+                    <a class="btn btn-large btn-green_fill btn-radius" href="#" id="btnDodajRadnoIskustvo"> 
+                      <i class="fas fa-plus"></i> Dodaj
+                    </a>
+
+                    @forelse ($experiences->where('type', 'work') as $experience)
+                      <div class="subsection">
+                        <div class="row">
+                          <div class="col-xs-12 flex-row_nowrap">
+                            <span class="section-subtitle">
+                              <!-- soft skills academy sarajevo 2017 -->
+                              <input type="text" class="cool-input" value="soft skills academy sarajevo 2017"  />
+                            </span>
+                            &nbsp;&nbsp;&minus;&nbsp;&nbsp;
+                            <span class="section-subtitle_second">
+                              <!-- Design Team Leader -->
+                              <input type="text" class="cool-input" value="Design Team Leader" />
+                            </span>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-12">
+                            <span class="section-subtitle_period flex-row_nowrap">
+                              Od: &nbsp;&nbsp; 
+                              {!! Form::select('radno_iskustvo[0][mjesec_start]', ['Januar', 'Februrar', 'Mart', 'April', 'Maj', 'Juni', 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'], null, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
+                              {!! Form::select('radno_iskustvo[0][mjesec_godina]', range(date('Y'), 1990), null, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                Do: &nbsp;&nbsp; 
+                              {!! Form::select('radno_iskustvo[0][mjesec_start]', ['Januar', 'Februrar', 'Mart', 'April', 'Maj', 'Juni', 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'], null, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
+                              {!! Form::select('radno_iskustvo[0][mjesec_godina]', range(date('Y'), 1990), null, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
+                            </span>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-12">
+                            <p class="section-content">
+                              <!-- Leading a team of experienced and new designers who came together to create a whole new visual identity for a workshop held in Sarajevo and designing material ranging from brochures to application and website UI -->
+                              <textarea rows="5" class="cool-input">Leading a team of experienced and new designers who came together to create a whole new visual identity for a workshop held in Sarajevo and designing material ranging from brochures to application and website UILeading a team of experienced and new designers who came together to create a whole new visual identity for a workshop held in Sarajevo and designing material ranging from brochures to application and website UILeading a team of experienced and new designers who came together to create a whole new visual identity for a workshop held in Sarajevo and designing material ranging from brochures to application and website UI</textarea>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    @empty
+                    <br/>
+                      <span class="section-subtitle_second">
+                        Nema
+                      </span>
+                    @endforelse
                   
                   </section>
 
@@ -216,4 +227,44 @@
                 </div>
               </div>
             </form>
+
+<div style="display: none;">
+  <div class="subsection" id="workExample">
+    <div class="row">
+      <div class="col-xs-12 flex-row_nowrap">
+        <span class="section-subtitle">
+          <!-- soft skills academy sarajevo 2017 -->
+          <input type="text" class="cool-input" value="soft skills academy sarajevo 2017"  />
+        </span>
+        &nbsp;&nbsp;&minus;&nbsp;&nbsp;
+        <span class="section-subtitle_second">
+          <!-- Design Team Leader -->
+          <input type="text" class="cool-input" value="Design Team Leader" />
+        </span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <span class="section-subtitle_period flex-row_nowrap">
+          Od: &nbsp;&nbsp; 
+          {!! Form::select('radno_iskustvo[0][mjesec_start]', ['Januar', 'Februrar', 'Mart', 'April', 'Maj', 'Juni', 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'], null, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
+          {!! Form::select('radno_iskustvo[0][mjesec_godina]', range(date('Y'), 1990), null, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            Do: &nbsp;&nbsp; 
+          {!! Form::select('radno_iskustvo[0][mjesec_start]', ['Januar', 'Februrar', 'Mart', 'April', 'Maj', 'Juni', 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'], null, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
+          {!! Form::select('radno_iskustvo[0][mjesec_godina]', range(date('Y'), 1990), null, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
+        </span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <p class="section-content">
+          <!-- Leading a team of experienced and new designers who came together to create a whole new visual identity for a workshop held in Sarajevo and designing material ranging from brochures to application and website UI -->
+          <textarea rows="5" class="cool-input">Leading a team of experienced and new designers who came together to create a whole new visual identity for a workshop held in Sarajevo and designing material ranging from brochures to application and website UILeading a team of experienced and new designers who came together to create a whole new visual identity for a workshop held in Sarajevo and designing material ranging from brochures to application and website UILeading a team of experienced and new designers who came together to create a whole new visual identity for a workshop held in Sarajevo and designing material ranging from brochures to application and website UI</textarea>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
             @endsection

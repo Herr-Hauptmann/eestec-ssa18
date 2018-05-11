@@ -7,5 +7,11 @@ return [
 		'Student Master', 
 		'Doktor', 
 		'Zaposlen/a'
+	],
+	'iskustva' => [
+		'work',
+		'ngo',
+		'extra_educations',
+		'extra'
 	]
 ];
