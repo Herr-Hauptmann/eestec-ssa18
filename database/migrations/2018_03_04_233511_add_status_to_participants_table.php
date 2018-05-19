@@ -14,8 +14,9 @@ class AddStatusToParticipantsTable extends Migration
     public function up()
     {
         Schema::table('participanti', function (Blueprint $table) {
-            $table->string('status')->default('Student');
+            $table->string('status')->default(config('platforma.statusi')[0]);
             $table->string('mjesto_prebivalista')->nullable();
+            $table->string('slika')->nullable();
         });
     }
 
@@ -27,7 +28,7 @@ class AddStatusToParticipantsTable extends Migration
     public function down()
     {
         Schema::table('participanti', function (Blueprint $table) {
-            $table->removeColumn('status');
+            $table->dropColumn(['status', 'mjesto_prebivalista', 'slika']);
         });
     }
 }

@@ -129,6 +129,7 @@ Route::prefix('participant')->group(function() {
 	Route::prefix('profil')->group(function() {
 		Route::get('/', 'ParticipantsController@profile')->name('participant.profile')->middleware('auth');
 		Route::get('edit', 'ParticipantsController@edit')->name('participant.edit')->middleware('auth');
+		Route::put('edit', 'ParticipantsController@update')->name('participant.update')->middleware('auth');
 	});
 	
 	Route::post('emailCheck', 'ParticipantsController@emailCheck')->name('emailCheck');

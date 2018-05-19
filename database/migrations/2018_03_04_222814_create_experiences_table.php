@@ -16,8 +16,10 @@ class CreateExperiencesTable extends Migration
             $table->increments('id');
             $table->string('title')->nullable();
             $table->string('position')->nullable();
-            $table->date('from_month')->nullable();
-            $table->date('to_month')->nullable();
+            $table->integer('from_month')->nullable();
+            $table->integer('to_month')->nullable();
+            $table->integer('from_year')->nullable();
+            $table->integer('to_year')->nullable();
             $table->text('content')->nullable();
             $table->string('type')->nullable();
             $table->integer('participant_id')->unsigned();

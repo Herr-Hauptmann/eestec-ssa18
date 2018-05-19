@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Participant;
 use App\User;
 use App\Faculty;
+use App\Experience;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -83,26 +84,7 @@ class ParticipantsController extends Controller
 
         return view('participants.show', compact('participant'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param  int  $id
-     *
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     */
-    public function update(Request $request, $id)
-    {
-        
-        $requestData = $request->all();
-        
-        $participant = Participant::findOrFail($id);
-        $participant->update($requestData);
-
-        return redirect('admin/participants')->with('flash_message', 'Participant updated!');
-    }
-
+   
     /**
      * Remove the specified resource from storage.
      *
@@ -226,12 +208,59 @@ class ParticipantsController extends Controller
      */
     public function edit()
     {
+        // $arr = range(date('Y'), 1990);
+        // array_walk($arr, function($key, &$value) {
+        //     // var_dump($key, $value);
+        //     $value = $key;
+        // });
+
+        // dd($arr);
+
         $user = \Auth::user();
         $participant = $user->participant;
         $experiences = $participant->experiences;
+        // dd(\DateTime::createFromFormat('Y-m-d', $experiences->first()->from_month));
         $faculties = Faculty::pluck('naziv', 'id');
 
         // dd($id);
         return view('participants.platform.edit', compact('faculties', 'user', 'participant', 'experiences'));
     }
+
+    public function update(Request $request)
+    {
+        $user = Auth::user();
+        
+        $requestData = $request->all();
+        
+        // dd($requestData);
+
+        $participant = $user->participant;
+        $experiences = $participant->experiences;
+
+        $participant->update($request->except(['fakulteti', 'radno_iskustvo']));
+
+        if ($request->has('slika') && $requestData['slika']) {
+            //TODO: Spasi sliku
+        }
+
+
+        // TODO: dodati polje id i method u formu, type
+        if ($requestData['radno_iskustvo']) {
+            foreach ($requestData['radno_iskustvo'] as $item) {
+                // dd($request->all());
+                if (isset($item['method'])) {
+                    if ($item['method'] === 'new') {
+                        $participant->experiences()->save(new Experience($item));
+                    } else if($item['method'] === 'update' && isset($item['id'])) {
+                        Experience::find($item['id'])->update($item);
+                    } else if($item['method'] === 'delete' && isset($item['id'])) {
+                        Experience::find($item['id'])->delete();
+                    }
+                }
+            }
+        }
+
+        return redirect()->route('participant.edit')->with('flash_message', 'Cao musi');
+    }
+
 }

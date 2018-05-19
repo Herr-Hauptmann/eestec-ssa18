@@ -25,7 +25,7 @@ class Experience extends Model
      *
      * @var array
      */
-    protected $fillable = ['title', 'position', 'from_month', 'to_month', 'content', 'type', 'participant_id'];
+    protected $fillable = ['title', 'position', 'from_month', 'to_month', 'from_year', 'to_year', 'content', 'type', 'participant_id'];
 
     public function participant()
     {

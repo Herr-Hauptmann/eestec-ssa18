@@ -1,8 +1,8 @@
 <!-- Modal -->
 @extends('layouts.participants')
 @section('content')
-          <form method="POST" action="#" id="edit-profile_form">
-            {{ csrf_field() }}
+          {!! Form::model($participant, ['route' => 'participant.update', 'id' => 'edit-profile_form', 'files' => true, 'method' => 'PUT']) !!}
+            <input type="hidden" value="PUT" name="_method">
             <div class="row">
               <div class="col-md-4 col-xs-12">
                 <div class="row">
@@ -78,7 +78,7 @@
                     <label for="fakulteti">Fakulteti:</label>
                   </div>
                   <div class="col-xs-8">
-                    {!! Form::select('fakulteti', $faculties, old('fakulteti') ?? $participant->fakulteti, ['class' => 'form-control', 'multiple' => true, 'style' => 'height: 200px;']) !!}
+                    {!! Form::select('fakulteti[]', $faculties, old('fakulteti') ?? $participant->fakulteti, ['class' => 'form-control', 'multiple' => true, 'style' => 'height: 200px;']) !!}
                   </div>
                 </div>
               </div>
@@ -95,35 +95,45 @@
                       </div>
                     </div>
 
-                    <a class="btn btn-large btn-green_fill btn-radius" href="#" id="btnDodajRadnoIskustvo"> 
+                    <button type="button" class="btn btn-large btn-green_fill btn-radius" id="btnDodajRadnoIskustvo"> 
                       <i class="fas fa-plus"></i> Dodaj
-                    </a>
+                    </button>
 
                     @forelse ($experiences->where('type', 'work') as $experience)
-                      <div class="subsection">
+                      <div class="subsection" id="{{ 'radno_iskustvo-' . $loop->index }}">
+                        <input type="hidden" name='{{ "radno_iskustvo[$loop->index][method]" }}' value="update">
+                        <input type="hidden" name='{{ "radno_iskustvo[$loop->index][id]" }}' value="{{ $experience->id }}">
                         <div class="row">
-                          <div class="col-xs-12 flex-row_nowrap">
+                          <div class="col-xs-10 flex-row_nowrap">
                             <span class="section-subtitle">
                               <!-- soft skills academy sarajevo 2017 -->
-                              <input type="text" class="cool-input" value="soft skills academy sarajevo 2017"  />
+                              <!-- <input type="text" class="cool-input" value="soft skills academy sarajevo 2017"  /> -->
+                              {!! Form::text("radno_iskustvo[$loop->index][title]", old("radno_iskustvo[$loop->index][title]") ?? $experience->title, ['class' => 'cool-input']) !!}
                             </span>
                             &nbsp;&nbsp;&minus;&nbsp;&nbsp;
                             <span class="section-subtitle_second">
                               <!-- Design Team Leader -->
-                              <input type="text" class="cool-input" value="Design Team Leader" />
+                              {!! Form::text("radno_iskustvo[$loop->index][position]", old("radno_iskustvo[$loop->index][position]") ?? $experience->position, ['class' => 'cool-input']) !!}
                             </span>
+                          </div>
+                          <div class="col-xs-2">
+                            <button type="button" class="btn btn-large btn-red btn-block btn-radius btn-hide" data-id="{{ $loop->index }}">
+                              <i class="fas fa-thrash"></i> Ukloni
+                            </button>
                           </div>
                         </div>
                         <div class="row">
                           <div class="col-xs-12">
                             <span class="section-subtitle_period flex-row_nowrap">
                               Od: &nbsp;&nbsp; 
-                              {!! Form::select('radno_iskustvo[0][mjesec_start]', ['Januar', 'Februrar', 'Mart', 'April', 'Maj', 'Juni', 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'], null, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
-                              {!! Form::select('radno_iskustvo[0][mjesec_godina]', range(date('Y'), 1990), null, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
+                              {!! Form::select("radno_iskustvo[$loop->index][from_month]", ['Januar', 'Februrar', 'Mart', 'April', 'Maj', 'Juni', 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'], old("radno_iskustvo[$loop->index][from_month]") ?? $experience->from_month, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
+
+                              {!! Form::select("radno_iskustvo[$loop->index][from_year]", config('platforma.godine'), old("radno_iskustvo[$loop->index][from_year]") ?? $experience->from_year, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
                                 &nbsp;&nbsp;&nbsp;&nbsp;
                                 Do: &nbsp;&nbsp; 
-                              {!! Form::select('radno_iskustvo[0][mjesec_start]', ['Januar', 'Februrar', 'Mart', 'April', 'Maj', 'Juni', 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'], null, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
-                              {!! Form::select('radno_iskustvo[0][mjesec_godina]', range(date('Y'), 1990), null, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
+                              {!! Form::select("radno_iskustvo[$loop->index][to_month]", ['Januar', 'Februrar', 'Mart', 'April', 'Maj', 'Juni', 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'], old("radno_iskustvo[$loop->index][to_month]") ?? $experience->to_month, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
+
+                              {!! Form::select("radno_iskustvo[$loop->index][to_year]", config('platforma.godine'), old("radno_iskustvo[$loop->index][to_year]") ?? $experience->to_year, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
                             </span>
                           </div>
                         </div>
@@ -131,7 +141,7 @@
                           <div class="col-xs-12">
                             <p class="section-content">
                               <!-- Leading a team of experienced and new designers who came together to create a whole new visual identity for a workshop held in Sarajevo and designing material ranging from brochures to application and website UI -->
-                              <textarea rows="5" class="cool-input">Leading a team of experienced and new designers who came together to create a whole new visual identity for a workshop held in Sarajevo and designing material ranging from brochures to application and website UILeading a team of experienced and new designers who came together to create a whole new visual identity for a workshop held in Sarajevo and designing material ranging from brochures to application and website UILeading a team of experienced and new designers who came together to create a whole new visual identity for a workshop held in Sarajevo and designing material ranging from brochures to application and website UI</textarea>
+                              <textarea rows="5" class="cool-input">{{ $experience->content }}</textarea>
                             </p>
                           </div>
                         </div>
@@ -226,45 +236,13 @@
                   </section>
                 </div>
               </div>
-            </form>
-
-<div style="display: none;">
-  <div class="subsection" id="workExample">
-    <div class="row">
-      <div class="col-xs-12 flex-row_nowrap">
-        <span class="section-subtitle">
-          <!-- soft skills academy sarajevo 2017 -->
-          <input type="text" class="cool-input" value="soft skills academy sarajevo 2017"  />
-        </span>
-        &nbsp;&nbsp;&minus;&nbsp;&nbsp;
-        <span class="section-subtitle_second">
-          <!-- Design Team Leader -->
-          <input type="text" class="cool-input" value="Design Team Leader" />
-        </span>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <span class="section-subtitle_period flex-row_nowrap">
-          Od: &nbsp;&nbsp; 
-          {!! Form::select('radno_iskustvo[0][mjesec_start]', ['Januar', 'Februrar', 'Mart', 'April', 'Maj', 'Juni', 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'], null, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
-          {!! Form::select('radno_iskustvo[0][mjesec_godina]', range(date('Y'), 1990), null, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            Do: &nbsp;&nbsp; 
-          {!! Form::select('radno_iskustvo[0][mjesec_start]', ['Januar', 'Februrar', 'Mart', 'April', 'Maj', 'Juni', 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'], null, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
-          {!! Form::select('radno_iskustvo[0][mjesec_godina]', range(date('Y'), 1990), null, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
-        </span>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <p class="section-content">
-          <!-- Leading a team of experienced and new designers who came together to create a whole new visual identity for a workshop held in Sarajevo and designing material ranging from brochures to application and website UI -->
-          <textarea rows="5" class="cool-input">Leading a team of experienced and new designers who came together to create a whole new visual identity for a workshop held in Sarajevo and designing material ranging from brochures to application and website UILeading a team of experienced and new designers who came together to create a whole new visual identity for a workshop held in Sarajevo and designing material ranging from brochures to application and website UILeading a team of experienced and new designers who came together to create a whole new visual identity for a workshop held in Sarajevo and designing material ranging from brochures to application and website UI</textarea>
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
+              <div class="row">
+                <div class="col-md-12 text-center">
+                    <button type="submit" class="btn btn-large btn-green_fill btn-radius"> 
+                      <i class="fas fa-save"></i> Spasi
+                    </button>
+                </div>
+              </div>
+            {!! Form::close() !!}
 
             @endsection
