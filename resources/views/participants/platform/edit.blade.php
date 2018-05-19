@@ -102,6 +102,7 @@
                     @forelse ($experiences->where('type', 'work') as $experience)
                       <div class="subsection" id="{{ 'radno_iskustvo-' . $loop->index }}">
                         <input type="hidden" name='{{ "radno_iskustvo[$loop->index][method]" }}' value="update">
+                        <input type="hidden" name='{{ "radno_iskustvo[$loop->index][type]" }}' value="work">
                         <input type="hidden" name='{{ "radno_iskustvo[$loop->index][id]" }}' value="{{ $experience->id }}">
                         <div class="row">
                           <div class="col-xs-10 flex-row_nowrap">
@@ -117,7 +118,7 @@
                             </span>
                           </div>
                           <div class="col-xs-2">
-                            <button type="button" class="btn btn-large btn-red btn-block btn-radius btn-hide" data-id="{{ $loop->index }}">
+                            <button type="button" class="btn btn-large btn-red btn-block btn-radius btn-hide" data-id="{{ $loop->index }}" data-type="radno_iskustvo">
                               <i class="fas fa-thrash"></i> Ukloni
                             </button>
                           </div>
@@ -131,9 +132,13 @@
                               {!! Form::select("radno_iskustvo[$loop->index][from_year]", config('platforma.godine'), old("radno_iskustvo[$loop->index][from_year]") ?? $experience->from_year, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
                                 &nbsp;&nbsp;&nbsp;&nbsp;
                                 Do: &nbsp;&nbsp; 
-                              {!! Form::select("radno_iskustvo[$loop->index][to_month]", ['Januar', 'Februrar', 'Mart', 'April', 'Maj', 'Juni', 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'], old("radno_iskustvo[$loop->index][to_month]") ?? $experience->to_month, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
+                              {!! Form::select("radno_iskustvo[$loop->index][to_month]", [null, 'Januar', 'Februrar', 'Mart', 'April', 'Maj', 'Juni', 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'], old("radno_iskustvo[$loop->index][to_month]") ?? $experience->to_month, ['class' => 'cool-input', 'style' => 'width: auto', 'disabled' => $experience->to_month === null]) !!}
 
-                              {!! Form::select("radno_iskustvo[$loop->index][to_year]", config('platforma.godine'), old("radno_iskustvo[$loop->index][to_year]") ?? $experience->to_year, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
+                              {!! Form::select("radno_iskustvo[$loop->index][to_year]", [null] + config('platforma.godine'), old("radno_iskustvo[$loop->index][to_year]") ?? $experience->to_year, ['class' => 'cool-input', 'style' => 'width: auto', 'disabled' => $experience->to_year === null]) !!}
+                              &nbsp;&nbsp; 
+                              {!! Form::checkbox("radno_iskustvo[$loop->index][present]", old("radno_iskustvo[$loop->index][present]"), ! $experience->to_year && ! $experience->to_month, ['class' => 'cool-input work-check', 'style' => 'width: auto; margin: 0;'] ) !!}
+                              &nbsp;
+                              Traje
                             </span>
                           </div>
                         </div>
@@ -141,7 +146,7 @@
                           <div class="col-xs-12">
                             <p class="section-content">
                               <!-- Leading a team of experienced and new designers who came together to create a whole new visual identity for a workshop held in Sarajevo and designing material ranging from brochures to application and website UI -->
-                              <textarea rows="5" class="cool-input">{{ $experience->content }}</textarea>
+                              <textarea rows="5" class="cool-input" name='{{ "radno_iskustvo[$loop->index][content]" }}'>{{ $experience->content }}</textarea>
                             </p>
                           </div>
                         </div>
@@ -158,7 +163,7 @@
 
                   <!-- ---------------------------- -->
 
-                  <section class="section">
+                  <section class="section" id="nvoIskustva">
                     <div class="row">
                       <div class="col-xs-12 flex-row_nowrap">
                         <span class="section-title">
@@ -167,24 +172,42 @@
                         <div class="section-title_line"></div>
                       </div>
                     </div>
-                    <div class="subsection">
-                      <div class="row">
-                        <div class="col-xs-12">
-                          <span class="section-subtitle">
-                            <!-- EESTEC LC SARAJEVO -->
-                            <input type="text" class="cool-input" value="EESTEC LC SARAJEVO"  />
-                          </span>
+                    <button type="button" class="btn btn-large btn-green_fill btn-radius" id="btnDodajNvoIskustvo"> 
+                      <i class="fas fa-plus"></i> Dodaj
+                    </button>
+                    @forelse ($experiences->where('type', 'ngo') as $experience)
+                      <div class="subsection" id="{{ 'nvo-' . $loop->index }}">
+                        <input type="hidden" name='{{ "nvo[$loop->index][method]" }}' value="update">
+                        <input type="hidden" name='{{ "nvo[$loop->index][type]" }}' value="ngo">
+                        <input type="hidden" name='{{ "nvo[$loop->index][id]" }}' value="{{ $experience->id }}">
+                        <div class="row">
+                          <div class="col-xs-10">
+                            <span class="section-subtitle">
+                              <!-- EESTEC LC SARAJEVO -->
+                              {!! Form::text("nvo[$loop->index][title]", old("nvo[$loop->index][title]") ?? $experience->title, ['class' => 'cool-input', 'placeholder' => 'Organizacija']) !!}
+                            </span>
+                          </div>
+                          <div class="col-xs-2">
+                            <button type="button" class="btn btn-large btn-red btn-block btn-radius btn-hide" data-id="{{ $loop->index }}" data-type="nvo">
+                              <i class="fas fa-thrash"></i> Ukloni
+                            </button>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-12">
+                            <p class="section-content">
+                              <!-- By being a member of this organization, I’ve been participating in creating visual identities and creating all sorts of designs for promotional material for this organizations’ events as well as being part of teams who created websites and applications dating back from July 2016. I’ve also been mentoring and educating younger and less experienced designers who wanted to learn more and are today considered to be a vital part of the designer climate in the organization. -->
+                              <textarea rows="5" class="cool-input" name='{{ "nvo[$loop->index][content]" }}'>{{ $experience->content }}</textarea>
+                            </p>
+                          </div>
                         </div>
                       </div>
-                      <div class="row">
-                        <div class="col-xs-12">
-                          <p class="section-content">
-                            <!-- By being a member of this organization, I’ve been participating in creating visual identities and creating all sorts of designs for promotional material for this organizations’ events as well as being part of teams who created websites and applications dating back from July 2016. I’ve also been mentoring and educating younger and less experienced designers who wanted to learn more and are today considered to be a vital part of the designer climate in the organization. -->
-                            <textarea class="cool-input" rows="5">By being a member of this organization, I’ve been participating in creating visual identities and creating all sorts of designs for promotional material for this organizations’ events as well as being part of teams who created websites and applications dating back from July 2016. I’ve also been mentoring and educating younger and less experienced designers who wanted to learn more and are today considered to be a vital part of the designer climate in the organization.</textarea>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                    @empty
+                      <br/>
+                      <span class="section-subtitle_second">
+                        Nema
+                      </span>
+                    @endforelse
                   </section>
 
 

@@ -243,12 +243,22 @@ class ParticipantsController extends Controller
             //TODO: Spasi sliku
         }
 
-
         // TODO: dodati polje id i method u formu, type
         if ($requestData['radno_iskustvo']) {
-            foreach ($requestData['radno_iskustvo'] as $item) {
+            $iskustva = $requestData['radno_iskustvo'];
+            if($requestData['nvo']) {
+                $iskustva = array_merge($iskustva, $requestData['nvo']);
+            }
+
+            // dd($iskustva);
+
+            foreach ($iskustva as $item) {
                 // dd($request->all());
                 if (isset($item['method'])) {
+                    if(isset($item['present'])) {
+                        $item['to_month'] = null;
+                        $item['to_year'] = null;
+                    }
                     if ($item['method'] === 'new') {
                         $participant->experiences()->save(new Experience($item));
                     } else if($item['method'] === 'update' && isset($item['id'])) {

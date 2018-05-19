@@ -52,6 +52,7 @@
 	let godine = '';
 	let mjeseci = '';
 	let mjeseciArray = [
+		'',
 		'Januar',
 		'Februrar',
 		'Mart',
@@ -72,13 +73,16 @@
 		godine += `<option value="${i}"` + (i === currentYear ? ' selected' : '') + `>${i}</option>`;
 	}
 
-	for(let i = 0; i < 12; i++) {
-		mjeseci += `<option value="${i}"` + (i === 0 ? ' selected' : '')  + `>${mjeseciArray[i]}</option>`;
+	for(let i = 0; i < 13; i++) {
+		mjeseci += `<option value="${i}"` + (i === 1 ? ' selected' : '')  + `>${mjeseciArray[i]}</option>`;
 	}
 
 	$('#btnDodajRadnoIskustvo').click(function(e) {
 		e.preventDefault();
 		let index = $('#radnaIskustva').find('.subsection').length;
+		if (index === 0) {
+			$('#radnaIskustva').find('button.btn-green_fill').siblings('span.section-subtitle_second').hide('fast').remove();
+		}
 		let item = $(`<div class="subsection" style="display: none;" id="radno_iskustvo-${index}">
 			<input type="hidden" name="radno_iskustvo[${index}][method]" value="new"/>
 			<input type="hidden" name="radno_iskustvo[${index}][type]" value="work"/>
@@ -93,7 +97,7 @@
 		        </span>
 		      </div>
 		      <div class="col-xs-2">
-		      	<button type="button" class="btn btn-large btn-red btn-block btn-radius btn-hide" data-id="${index}">
+		      	<button type="button" class="btn btn-large btn-red btn-block btn-radius btn-hide" data-id="${index}" data-type="radno_iskustvo">
                   <i class="fas fa-thrash"></i> Ukloni
                 </button>
 		      </div>
@@ -108,6 +112,11 @@
 		            Do: &nbsp;&nbsp; 
 		          <select class="cool-input" style="width: auto" name="radno_iskustvo[${index}][to_month]" required>${mjeseci}</select>
 		          <select class="cool-input" style="width: auto" name="radno_iskustvo[${index}][to_year]" required>${godine}</select>
+		        	&nbsp;&nbsp;
+		        	<input class="cool-input work-check" style="width: auto; margin: 0;" 
+		        			name="radno_iskustvo[${index}][present]" type="checkbox">
+	                  &nbsp;
+	                  Traje
 		        </span>
 		      </div>
 		    </div>
@@ -122,11 +131,59 @@
 		$('#radnaIskustva').append(item).find('.subsection:last-child').slideDown();
 	});
 
+	$('#btnDodajNvoIskustvo').click(function(e) {
+		e.preventDefault();
+		let index = $('#nvoIskustva').find('.subsection').length;
+		if (index === 0) {
+			$('#nvoIskustva').find('button.btn-green_fill').siblings('span.section-subtitle_second').hide('fast').remove();
+		}
+		let item = $(`<div class="subsection" style="display: none;" id="nvo-${index}">
+                        <input type="hidden" name="nvo[${index}][method]" value="new">
+                        <input type="hidden" name="nvo[${index}][type]" value="ngo"/>
+                        <div class="row">
+                          <div class="col-xs-10">
+                            <span class="section-subtitle">
+                              <input class="cool-input" name="nvo[${index}][title]" placeholder="Organizacija">
+                            </span>
+                          </div>
+                          <div class="col-xs-2">
+                            <button type="button" class="btn btn-large btn-red btn-block btn-radius btn-hide" data-id="${index}" data-type="nvo">
+                              <i class="fas fa-thrash"></i> Ukloni
+                            </button>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-12">
+                            <p class="section-content">
+                              <textarea rows="5" class="cool-input" name="nvo[${index}][content]" placeholder="Detaljan opis"></textarea>
+                            </p>
+                          </div>
+                        </div>
+                      </div>`);
+
+		$('#nvoIskustva').append(item).find('.subsection:last-child').slideDown();
+
+	});
+
 	$(document).on('click', '.btn-hide', function(e) {
 		e.preventDefault();
 		let id = $(this).attr('data-id');
-		$('#radno_iskustvo-' + id).slideUp();
-		$('input[name="radno_iskustvo[' + id + '][method]"]').val('delete');
+			let type = $(this).attr('data-type');
+		if (confirm('Sigurno želiš ukloniti \'' + $('input[name="' + type + '[' + id + '][title]"]').val() + '\'?')) {
+			$('#' + type + '-' + id).slideUp();
+			$('input[name="' + type + '[' + id + '][method]"]').val('delete');
+		}
+	});
+
+	$(document).on('click', '.work-check', function(e) {
+		let $checkbox = $(this);
+		if (this.checked) {
+			$checkbox.prev().attr('disabled', true);
+			$checkbox.prev().prev().attr('disabled', true);
+		} else {
+			$checkbox.prev().removeAttr('disabled');
+			$checkbox.prev().prev().removeAttr('disabled');
+		}
 	});
 
 })()
