@@ -31,5 +31,10 @@
         });
     </script>
     <script src="{{ asset('js/platform.js') }}"></script>
+    @if (Session::has('flash_message'))
+        <script>
+            setTimeout(alert('{{ Session::get('flash_message') }}'), 1300);
+        </script>
+    @endif
 </body>
 </html>

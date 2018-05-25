@@ -13,13 +13,13 @@
                   <div class="col-md-12 col-md-offset-0 col-sm-offset-3 col-xs-8 col-xs-offset-2 col-sm-6 match-height flex-center">
                     <div class="upload-btn-wrapper">
 
-                      <button class="btn btn-large btn-green btn-block btn-radius" id="btn-upload">
+                      <button class="btn btn-large btn-green btn-block btn-radius btn-upload">
                         <i class="fas fa-upload"></i> Upload
                       </button>
-                      <input type="file" name="slika" id="slika" />
+                      <input type="file" name="slika" class="file-upload" />
                     </div>
 
-                    <span class="lead" id="slikaText" style="display: none;"></span>
+                    <span class="lead file-text" style="display: none;"></span>
 
                   </div>
                 </div>
@@ -30,7 +30,7 @@
                     <label for="ime_i_prezime">Ime i prezime:</label>
                   </div>
                   <div class="col-xs-8">
-                    <input type="text" class="cool-input" name="ime_i_prezime" id="ime_i_prezime" value="{{ old('ime_i_prezime') ?? $participant->ime . ' ' . $participant->prezime  }}" />
+                    <input type="text" class="cool-input" name="ime_i_prezime" id="ime_i_prezime" value="{{ old('ime_i_prezime') ?? $participant->ime . ' ' . $participant->prezime  }}" required/>
                   </div>
                 </div>
                 <div class="form-group row">
@@ -62,7 +62,7 @@
                     <label for="email">Email:</label>
                   </div>
                   <div class="col-xs-8">
-                    <input type="email" class="cool-input" name="email" id="email" value="{{ old('email') ?? $participant->email }}" />
+                    <input type="email" class="cool-input" name="email" id="email" value="{{ old('email') ?? $participant->email }}" required />
                   </div>
                 </div>
                 <div class="form-group row">
@@ -70,7 +70,7 @@
                     <label for="status">Status:</label>
                   </div>
                   <div class="col-xs-8">
-                    {!! Form::select('status', config('platforma.statusi'), old('status') ?? $participant->status, ['class' => 'cool-input']) !!}
+                    {!! Form::select('status', config('platforma.statusi'), old('status') ?? $participant->status, ['class' => 'cool-input', 'required']) !!}
                   </div>
                 </div>
                 <div class="form-group row">
@@ -78,7 +78,7 @@
                     <label for="fakulteti">Fakulteti:</label>
                   </div>
                   <div class="col-xs-8">
-                    {!! Form::select('fakulteti[]', $faculties, old('fakulteti') ?? $participant->fakulteti, ['class' => 'form-control', 'multiple' => true, 'style' => 'height: 200px;']) !!}
+                    {!! Form::select('fakulteti[]', $faculties, old('fakulteti') ?? $participant->fakulteti, ['class' => 'form-control', 'multiple' => true, 'style' => 'height: 200px;', 'required']) !!}
                   </div>
                 </div>
               </div>
@@ -105,21 +105,18 @@
                         <input type="hidden" name='{{ "radno_iskustvo[$loop->index][type]" }}' value="work">
                         <input type="hidden" name='{{ "radno_iskustvo[$loop->index][id]" }}' value="{{ $experience->id }}">
                         <div class="row">
-                          <div class="col-xs-10 flex-row_nowrap">
+                          <div class="col-md-9 col-xs-12 flex-row_nowrap">
                             <span class="section-subtitle">
-                              <!-- soft skills academy sarajevo 2017 -->
-                              <!-- <input type="text" class="cool-input" value="soft skills academy sarajevo 2017"  /> -->
-                              {!! Form::text("radno_iskustvo[$loop->index][title]", old("radno_iskustvo[$loop->index][title]") ?? $experience->title, ['class' => 'cool-input']) !!}
+                              {!! Form::text("radno_iskustvo[$loop->index][title]", old("radno_iskustvo[$loop->index][title]") ?? $experience->title, ['class' => 'cool-input', 'placeholder' => 'Naziv', 'required']) !!}
                             </span>
                             &nbsp;&nbsp;&minus;&nbsp;&nbsp;
                             <span class="section-subtitle_second">
-                              <!-- Design Team Leader -->
-                              {!! Form::text("radno_iskustvo[$loop->index][position]", old("radno_iskustvo[$loop->index][position]") ?? $experience->position, ['class' => 'cool-input']) !!}
+                              {!! Form::text("radno_iskustvo[$loop->index][position]", old("radno_iskustvo[$loop->index][position]") ?? $experience->position, ['class' => 'cool-input', 'placeholder' => 'Pozicija']) !!}
                             </span>
                           </div>
-                          <div class="col-xs-2">
+                          <div class="col-md-3 col-sm-6 col-xs-12">
                             <button type="button" class="btn btn-large btn-red btn-block btn-radius btn-hide" data-id="{{ $loop->index }}" data-type="radno_iskustvo">
-                              <i class="fas fa-thrash"></i> Ukloni
+                              <i class="fas fa-unlink"></i> Ukloni
                             </button>
                           </div>
                         </div>
@@ -145,8 +142,7 @@
                         <div class="row">
                           <div class="col-xs-12">
                             <p class="section-content">
-                              <!-- Leading a team of experienced and new designers who came together to create a whole new visual identity for a workshop held in Sarajevo and designing material ranging from brochures to application and website UI -->
-                              <textarea rows="5" class="cool-input" name='{{ "radno_iskustvo[$loop->index][content]" }}'>{{ $experience->content }}</textarea>
+                              <textarea rows="5" class="cool-input" name='{{ "radno_iskustvo[$loop->index][content]" }}' placeholder="Detaljan opis" required>{{ $experience->content }}</textarea>
                             </p>
                           </div>
                         </div>
@@ -181,15 +177,15 @@
                         <input type="hidden" name='{{ "nvo[$loop->index][type]" }}' value="ngo">
                         <input type="hidden" name='{{ "nvo[$loop->index][id]" }}' value="{{ $experience->id }}">
                         <div class="row">
-                          <div class="col-xs-10">
+                          <div class="col-md-9 col-xs-12">
                             <span class="section-subtitle">
                               <!-- EESTEC LC SARAJEVO -->
-                              {!! Form::text("nvo[$loop->index][title]", old("nvo[$loop->index][title]") ?? $experience->title, ['class' => 'cool-input', 'placeholder' => 'Organizacija']) !!}
+                              {!! Form::text("nvo[$loop->index][title]", old("nvo[$loop->index][title]") ?? $experience->title, ['class' => 'cool-input', 'placeholder' => 'Organizacija', 'required']) !!}
                             </span>
                           </div>
-                          <div class="col-xs-2">
+                          <div class="col-md-3 col-sm-6 col-xs-12">
                             <button type="button" class="btn btn-large btn-red btn-block btn-radius btn-hide" data-id="{{ $loop->index }}" data-type="nvo">
-                              <i class="fas fa-thrash"></i> Ukloni
+                              <i class="fas fa-unlink"></i> Ukloni
                             </button>
                           </div>
                         </div>
@@ -197,7 +193,7 @@
                           <div class="col-xs-12">
                             <p class="section-content">
                               <!-- By being a member of this organization, I’ve been participating in creating visual identities and creating all sorts of designs for promotional material for this organizations’ events as well as being part of teams who created websites and applications dating back from July 2016. I’ve also been mentoring and educating younger and less experienced designers who wanted to learn more and are today considered to be a vital part of the designer climate in the organization. -->
-                              <textarea rows="5" class="cool-input" name='{{ "nvo[$loop->index][content]" }}'>{{ $experience->content }}</textarea>
+                              <textarea rows="5" class="cool-input" name='{{ "nvo[$loop->index][content]" }}' placeholder="Detaljan opis" required>{{ $experience->content }}</textarea>
                             </p>
                           </div>
                         </div>
@@ -213,55 +209,71 @@
 
                   <!-- ---------------------------- -->
 
-                  <section class="section">
+                  <section class="section" id="extra_educations">
                     <div class="row">
                       <div class="col-xs-12 flex-row_nowrap">
                         <span class="section-title">
-                          DODATNE EDUAKCIJE
+                          dodatne edukacije
                         </span>
                         <div class="section-title_line"></div>
                       </div>
                     </div>
-                    <div class="subsection">
-                      <div class="row">
-                        <div class="col-xs-12">
-                          <span class="section-subtitle">
-                            MICROSOFT SKILLS CENTER
-                          </span>
+                    <button type="button" class="btn btn-large btn-green_fill btn-radius" id="btnDodajExtraEducation"> 
+                      <i class="fas fa-plus"></i> Dodaj
+                    </button>
+                    @forelse ($experiences->where('type', 'extra_educations') as $experience)
+                      <div class="subsection" id="{{ 'extra_educations-' . $loop->index }}">
+                        <input type="hidden" name='{{ "extra_educations[$loop->index][method]" }}' value="update">
+                        <input type="hidden" name='{{ "extra_educations[$loop->index][type]" }}' value="extra_educations">
+                        <input type="hidden" name='{{ "extra_educations[$loop->index][id]" }}' value="{{ $experience->id }}">
+                        <div class="row">
+                          <div class="col-md-9 col-xs-12">
+                            <span class="section-subtitle">
+                              {!! Form::text("extra_educations[$loop->index][title]", old("extra_educations[$loop->index][title]") ?? $experience->title, ['class' => 'cool-input', 'placeholder' => 'Naziv', 'required']) !!}
+                            </span>
+                          </div>
+                          <div class="col-md-3 col-sm-6 col-xs-12">
+                            <button type="button" class="btn btn-large btn-red btn-block btn-radius btn-hide" data-id="{{ $loop->index }}" data-type="extra_educations">
+                              <i class="fas fa-unlink"></i> Ukloni
+                            </button>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-12">
+                            <p class="section-content">
+                              <textarea rows="5" class="cool-input" name='{{ "extra_educations[$loop->index][content]" }}' placeholder="Detaljan opis" required>{{ $experience->content }}</textarea>
+                            </p>
+                          </div>
+                          <div class="col-md-7">
+                            <div class="upload-btn-wrapper flex-row_wrap">
+                              <button type="button" class="btn btn-large btn-gray btn-radius btn-upload" style="margin: 0 10px 5px 0;">
+                                <i class="fas fa-file-pdf"></i> Upload certifikat
+                              </button>
+                              @if ($experience->certificate)
+                                <a href="{{ asset($experience->certificate->location) }}" target="_blank">Pogledaj certifikat</a>
+                                <input type="file" name='{{ "extra_educations[$loop->index][certifikat]" }}' class="file-upload" data-check="false">
+                              @else
+                                <input type="file" name='{{ "extra_educations[$loop->index][certifikat]" }}' class="file-upload">
+                              @endif
+                              
+                            </div>
+                            <span class="lead file-text" style="display: none;"></span>
+                          </div>
                         </div>
                       </div>
-                      <div class="row">
-                        <div class="col-xs-12">
-                          <p class="section-content">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nulla libero, feugiat at accumsan vitae, auctor quis metus. Aenean placerat augue nec aliquam blandit. Suspendisse faucibus erat congue, finibus leo sed, convallis libero.
-                          </p>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-5 col-sm-4 col-sm-offset-4 col-md-offset-0">
-                          <a class="btn btn-large btn-green btn-block btn-radius" href="#"><span class="glyphicon glyphicon-pencil"></span> certifikat</a>
-                        </div>
-                      </div>
-                    </div>
+                    @empty
+                      <br/>
+                      <span class="section-subtitle_second">
+                        Nema
+                      </span>
+                    @endforelse
                   </section>
-
                   <!-- ---------------------------- -->
-
-                  <section class="section">
-                    <div class="row">
-                      <div class="col-xs-12 flex-row_nowrap">
-                        <span class="section-title">
-                          ostalo
-                        </span>
-                        <div class="section-title_line"></div>
-                      </div>
-                    </div>
-                  </section>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12 text-center">
-                    <button type="submit" class="btn btn-large btn-green_fill btn-radius"> 
+                    <button type="submit" class="btn btn-large btn-green_fill btn-radius" id="submit-edit-profile_form"> 
                       <i class="fas fa-save"></i> Spasi
                     </button>
                 </div>

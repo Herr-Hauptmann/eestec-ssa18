@@ -11,7 +11,7 @@ return [
 		'Student', 
 		'Student Bachelor', 
 		'Student Master', 
-		'Doktor', 
+		'Doktor nauka', 
 		'Zaposlen/a'
 	],
 	'iskustva' => [

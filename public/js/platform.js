@@ -2,20 +2,20 @@
 	// $("#slika").change(function() { // bCheck is a input type button
 	let csrf_token = $('[name=csrf-token]').attr('content');
 
-	$('#btn-upload').click(function(e) {
+	$(document).on('click', '.btn-upload', function(e) {
 		e.preventDefault();
-		$('#slika').click();
-	})
+		$(this).siblings('.file-upload').click();
+	});
 
-	$('#slika').change(function() {
+	$(document).on('change', '.file-upload', function() {
 		let fileName = $(this).val();
 
 		if (fileName) {
 			let nameSplit = fileName.split(/[\\\/]/);
 			fileName = nameSplit[nameSplit.length - 1];
-			$('#slikaText').text(fileName).show('slow');
+			$(this).parent().parent().find('span.file-text').text(fileName).show('slow');
 		} else {
-			$('#slikaText').hide('slow');
+			$(this).parent().parent().find('span.file-text').hide('slow');
 		}
 	});
 
@@ -87,18 +87,18 @@
 			<input type="hidden" name="radno_iskustvo[${index}][method]" value="new"/>
 			<input type="hidden" name="radno_iskustvo[${index}][type]" value="work"/>
 		    <div class="row">
-		      <div class="col-xs-10 flex-row_nowrap">
+		      <div class="col-md-9 col-xs-12 flex-row_nowrap">
 		        <span class="section-subtitle">
-		          <input type="text" class="cool-input" name="radno_iskustvo[${index}][title]" placeholder="Naziv">
+		          <input type="text" class="cool-input" name="radno_iskustvo[${index}][title]" placeholder="Naziv" required>
 		        </span>
 		        &nbsp;&nbsp;−&nbsp;&nbsp;
 		        <span class="section-subtitle_second">
 		          <input type="text" class="cool-input" name="radno_iskustvo[${index}][position]" placeholder="Pozicija">
 		        </span>
 		      </div>
-		      <div class="col-xs-2">
+		      <div class="col-md-3 col-sm-6 col-xs-12">
 		      	<button type="button" class="btn btn-large btn-red btn-block btn-radius btn-hide" data-id="${index}" data-type="radno_iskustvo">
-                  <i class="fas fa-thrash"></i> Ukloni
+                  <i class="fas fa-unlink"></i> Ukloni
                 </button>
 		      </div>
 		    </div>
@@ -123,7 +123,7 @@
 		    <div class="row">
 		      <div class="col-xs-12">
 		        <p class="section-content">
-		          <textarea rows="5" class="cool-input" name="radno_iskustvo[${index}][content]" placeholder="Detaljan opis"></textarea>
+		          <textarea rows="5" class="cool-input" name="radno_iskustvo[${index}][content]" placeholder="Detaljan opis" required></textarea>
 		        </p>
 		      </div>
 		    </div>
@@ -141,27 +141,70 @@
                         <input type="hidden" name="nvo[${index}][method]" value="new">
                         <input type="hidden" name="nvo[${index}][type]" value="ngo"/>
                         <div class="row">
-                          <div class="col-xs-10">
+                          <div class="col-md-9 col-xs-12">
                             <span class="section-subtitle">
-                              <input class="cool-input" name="nvo[${index}][title]" placeholder="Organizacija">
+                              <input class="cool-input" name="nvo[${index}][title]" placeholder="Organizacija" required>
                             </span>
                           </div>
-                          <div class="col-xs-2">
+                          <div class="col-md-3 col-sm-6 col-xs-12">
                             <button type="button" class="btn btn-large btn-red btn-block btn-radius btn-hide" data-id="${index}" data-type="nvo">
-                              <i class="fas fa-thrash"></i> Ukloni
+                              <i class="fas fa-unlink"></i> Ukloni
                             </button>
                           </div>
                         </div>
                         <div class="row">
                           <div class="col-xs-12">
                             <p class="section-content">
-                              <textarea rows="5" class="cool-input" name="nvo[${index}][content]" placeholder="Detaljan opis"></textarea>
+                              <textarea rows="5" class="cool-input" name="nvo[${index}][content]" placeholder="Detaljan opis" required></textarea>
                             </p>
                           </div>
                         </div>
                       </div>`);
 
 		$('#nvoIskustva').append(item).find('.subsection:last-child').slideDown();
+
+	});
+
+	$('#btnDodajExtraEducation').click(function(e) {
+		e.preventDefault();
+		let index = $('#extra_educations').find('.subsection').length;
+		if (index === 0) {
+			$('#extra_educations').find('button.btn-green_fill').siblings('span.section-subtitle_second').hide('fast').remove();
+		}
+		let item = $(`<div class="subsection" style="display: none;" id="extra_educations-${index}">
+                        <input type="hidden" name="extra_educations[${index}][method]" value="new">
+                        <input type="hidden" name="extra_educations[${index}][type]" value="extra_educations"/>
+                        <div class="row">
+                          <div class="col-md-9 col-xs-12">
+                            <span class="section-subtitle">
+                              <input class="cool-input" name="extra_educations[${index}][title]" placeholder="Naziv" required>
+                            </span>
+                          </div>
+                          <div class="col-md-3 col-sm-6 col-xs-12">
+                            <button type="button" class="btn btn-large btn-red btn-block btn-radius btn-hide" data-id="${index}" data-type="extra_educations">
+                              <i class="fas fa-unlink"></i> Ukloni
+                            </button>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-12">
+                            <p class="section-content">
+                              <textarea rows="5" class="cool-input" name="extra_educations[${index}][content]" placeholder="Detaljan opis" required></textarea>
+                            </p>
+                          </div>
+                          <div class="col-md-7">
+                            <div class="upload-btn-wrapper flex-row_wrap">
+                              <button type="button" class="btn btn-large btn-gray btn-radius btn-upload" style="margin: 0 10px 5px 0;">
+                                <i class="fas fa-file-pdf"></i> Upload certifikat
+                              </button>
+                              <input type="file" name="extra_educations[${index}][certifikat]" class="file-upload" />
+                            </div>
+                            <span class="lead file-text" style="display: none;"></span>
+                          </div>
+                        </div>
+                      </div>`);
+
+		$('#extra_educations').append(item).find('.subsection:last-child').slideDown();
 
 	});
 
@@ -185,5 +228,60 @@
 			$checkbox.prev().prev().removeAttr('disabled');
 		}
 	});
+
+	$(document).on('click', '#submit-dedit-profile_form', function(e) {
+		e.preventDefault();
+		let $form = $('#edit-profile_form');
+
+		$form[0].checkValidity();
+		$form[0].reportValidity();
+
+		let submit = true;
+		$('input:regex(name, extra_educations\\[[0-9]*\\]\\[certifikat\\])').each(function(i, item) {
+			let $item = $(item);
+			if ($item.attr('data-check') !== 'false' && ! $item.val()) {
+				alert('Svaka dodatna edukacija mora sadržavati certifikat.');
+				// zaustavi petlju
+
+				submit = false;
+				return false;
+			}
+			
+		});
+		if (submit) {
+			$form.submit();
+		}
+	});
+
+	// Promjena defaultnih poruka za validacije
+
+	let invalid = function (e) {
+	    if (e.target.validity.valueMissing) {
+			e.target.setCustomValidity("Ovo polje je obavezno");
+			return;
+		}
+	};
+	// console.log(document.getElementsByTagName('input'));
+	let inputs = document.querySelectorAll('input,textarea');
+	for (let i = 0; i < inputs.length; i++) {
+		inputs[i].oninvalid = invalid;
+		inputs[i].oninput = function(e) {
+	    	e.target.setCustomValidity("");
+		};
+	}
+
+	// regex za jquery selector
+	jQuery.expr[':'].regex = function(elem, index, match) {
+	    var matchParams = match[3].split(','),
+	        validLabels = /^(data|css):/,
+	        attr = {
+	            method: matchParams[0].match(validLabels) ? 
+	                        matchParams[0].split(':')[0] : 'attr',
+	            property: matchParams.shift().replace(validLabels,'')
+	        },
+	        regexFlags = 'ig',
+	        regex = new RegExp(matchParams.join('').replace(/^\s+|\s+$/g,''), regexFlags);
+	    return regex.test(jQuery(elem)[attr.method](attr.property));
+	}
 
 })()

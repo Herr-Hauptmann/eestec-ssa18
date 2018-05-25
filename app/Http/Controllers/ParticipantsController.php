@@ -9,10 +9,12 @@ use App\Participant;
 use App\User;
 use App\Faculty;
 use App\Experience;
+use App\Certificate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class ParticipantsController extends Controller
 {
@@ -246,8 +248,11 @@ class ParticipantsController extends Controller
         // TODO: dodati polje id i method u formu, type
         if ($requestData['radno_iskustvo']) {
             $iskustva = $requestData['radno_iskustvo'];
-            if($requestData['nvo']) {
+            if ($requestData['nvo']) {
                 $iskustva = array_merge($iskustva, $requestData['nvo']);
+            }
+            if ($requestData['extra_educations']) {
+                $iskustva = array_merge($iskustva, $requestData['extra_educations']);
             }
 
             // dd($iskustva);
@@ -255,22 +260,70 @@ class ParticipantsController extends Controller
             foreach ($iskustva as $item) {
                 // dd($request->all());
                 if (isset($item['method'])) {
-                    if(isset($item['present'])) {
+                    if (isset($item['present'])) {
                         $item['to_month'] = null;
                         $item['to_year'] = null;
                     }
+
                     if ($item['method'] === 'new') {
-                        $participant->experiences()->save(new Experience($item));
+
+                        if (! isset($item['certifikat'])) {
+                            $request->session()->flash('flash_message', 'Svaka dodatna edukacija mora sadržavati certifikat.');
+                            break;
+                        } else {
+                            $newExperience = new Experience($item);
+                            $participant->experiences()->save($newExperience);
+                            
+                            $path = Storage::disk('public')
+                                ->putFileAs(
+                                    '/user_upload/user_id-' . $user->id . '/certifikati', 
+                                    $item['certifikat'], 
+                                    $item['certifikat']->getClientOriginalName()
+                                );
+
+                            $certificate = Certificate::create([
+                                'title'=> $item['certifikat']->getClientOriginalName(), 
+                                'location' => $path, 
+                                'experience_id' => $newExperience->id
+                            ]);
+                        }
+
                     } else if($item['method'] === 'update' && isset($item['id'])) {
-                        Experience::find($item['id'])->update($item);
+
+                        if (isset($item['certifikat'])) {
+                            $exp = Experience::find($item['id']);
+                            $exp->update($item);
+
+                            $currentCert = $exp->certificate;
+
+                            // delete old
+                            Storage::disk('public')->delete($currentCert->location);
+
+                            // store new
+                            $path = Storage::disk('public')->putFileAs('/user_upload/user_id-' . $user->id . '/certifikati', $item['certifikat'], $item['certifikat']->getClientOriginalName());
+
+                            $currentCert->update([
+                                'title'=> $item['certifikat']->getClientOriginalName(), 
+                                'location' => $path
+                            ]);
+                            // Certificate::create(['title'=> $item['certifikat']->getClientOriginalName(), 'location' => $path, 'experience_id' => $item['id']]);
+                        }
                     } else if($item['method'] === 'delete' && isset($item['id'])) {
-                        Experience::find($item['id'])->delete();
+                        $exp = Experience::find($item['id']);
+                        $currentCert = $exp->certificate;
+                        // delete old
+                        Storage::disk('public')->delete($currentCert->location);
+
+                        $exp->delete();
                     }
                 }
             }
         }
 
-        return redirect()->route('participant.edit')->with('flash_message', 'Cao musi');
+        if (! $request->session()->has('flash_message')) {
+            $request->session()->flash('flash_message', 'Podaci uspješno spašeni.');
+        }
+        return redirect()->route('participant.edit');
     }
 
 }

@@ -7,10 +7,11 @@
 
 body {
 	margin-top: 35px;
-	margin-left: 100px;
-	margin-right: 100px;
+	margin-left: 50px;
+	margin-right: 50px;
 	margin-bottom: 35px;
 	font-family: 'Mukta Malar';
+	max-width: 100%;
 }	
 
 @media (min-width: 1200px) {
@@ -20,7 +21,7 @@ body {
 	}	
 }
 
-@media (max-width: 450px) {
+@media (max-width: 767px) {
 	body {
 		margin-left: 20px;
 		margin-right: 20px;
@@ -64,6 +65,7 @@ a.btn,.btn {
 	box-sizing: border-box;
 	text-shadow: 0 1px 0 rgba(0,0,0,0.01);
 	text-transform: uppercase;
+	margin-top: 10px;
 }
 
 /* Radius */
@@ -98,8 +100,8 @@ a.btn,.btn {
 
 .btn-green_fill {
 	background: #1aa79e;
-  color: #fff;
-  border-color: #1aa79e;
+	  color: #fff;
+	  border-color: #1aa79e;
 }
 
 .btn-green_fill:hover {
@@ -139,13 +141,25 @@ a.btn,.btn {
 }
 
 .btn-gray {
-	color: #808080;
-	border-color: #808080;
+	color: #aaa;
+	border-color: #aaa;
+	background: transparent;
 }
 .btn-gray:hover {
-  background: #808080;
-  color: #fff;
-  border-color: #808080;	
+	background: #aaa;
+	color: #fff;
+	border-color: #aaa;	
+}
+
+.btn-gray_fill {
+	background: #aaa;
+	color: #fff;
+	border-color: #aaa;
+}
+
+.btn-gray_fill:hover {
+	background-color: transparent;
+	color: #aaa;
 }
 
 .section-heading {
@@ -201,6 +215,15 @@ a.btn,.btn {
 	display:flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: center;
+}
+
+.flex-row_wrap {
+	display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-content: flex-start;
     align-items: center;
@@ -290,6 +313,10 @@ a.btn,.btn {
 .cool-input:focus {
 	border-color: #1aa79e;
 	/*border-bottom-width: 2px;*/
+}
+
+textarea.cool-input {
+	border-width: 1px;
 }
 
 .upload-btn-wrapper input[type=file] {
