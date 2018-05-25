@@ -2,7 +2,7 @@
 /public/hot
 /public/storage
 /public/uploads
-/public/user_uploads
+/public/user_upload
 /storage/*.key
 /vendor
 /.idea
