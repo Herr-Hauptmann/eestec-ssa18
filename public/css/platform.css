@@ -60,7 +60,6 @@ a.btn,.btn {
 	font-weight: 300;
 	letter-spacing: 1px;
 	vertical-align: middle;
-	border: 1px solid;
 	transition: all 0.2s ease;
 	box-sizing: border-box;
 	text-shadow: 0 1px 0 rgba(0,0,0,0.01);
@@ -317,6 +316,8 @@ a.btn,.btn {
 
 textarea.cool-input {
 	border-width: 1px;
+	min-width: 100%;
+	max-width: 100%;
 }
 
 .upload-btn-wrapper input[type=file] {

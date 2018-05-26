@@ -18,7 +18,7 @@ return [
 		'work',
 		'ngo',
 		'extra_educations',
-		'extra'
+		'internship'
 	],
 	'godine' => $godine
 ];

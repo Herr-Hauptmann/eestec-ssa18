@@ -83,6 +83,7 @@
                 <h4 class="modal-title">Unesi email sa kojim si se prijavio/la na SSA:</h4>
             </div>
             <form action="{{ route('emailCheck') }}" method="POST" id="checkEmailForm">
+                {{ csrf_field() }}
                 <div class="modal-body">
                     <div class="form-group">
                         <input type="email" name="emailTry" class="cool-input" placeholder="Unesi mail .." id="emailTry" autofocus />

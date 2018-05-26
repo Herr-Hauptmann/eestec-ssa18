@@ -14,7 +14,7 @@ class AddAcceptedColumnToParticipants extends Migration
     public function up()
     {
         Schema::table('participanti', function(Blueprint $table) {
-            $table->boolean('accepted', false);
+            $table->boolean('accepted', false)->nullable();
         });
     }
 

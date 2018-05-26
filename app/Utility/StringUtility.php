@@ -52,4 +52,20 @@ class StringUtility
         // Maybe check if passed url is valid first?
         return ! \str_contains('http', $url) ? 'http://' . $url : $url;
     }
+
+    /**
+     * Create a random string
+     * @param $length the length of the string to create
+     * @return $str the string
+     */
+    public static function generateRandomString($length = 10) {
+        $str = '';
+        $characters = array_merge(range('A','Z'), range('a','z'), range('0','9'));
+        $max = count($characters) - 1;
+        for ($i = 0; $i < $length; $i++) {
+            $rand = mt_rand(0, $max);
+            $str .= $characters[$rand];
+        }
+        return $str;
+    }
 }

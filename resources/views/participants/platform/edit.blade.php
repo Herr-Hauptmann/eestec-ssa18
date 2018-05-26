@@ -1,13 +1,16 @@
 <!-- Modal -->
 @extends('layouts.participants')
 @section('content')
+  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+      {{ csrf_field() }}
+  </form>
           {!! Form::model($participant, ['route' => 'participant.update', 'id' => 'edit-profile_form', 'files' => true, 'method' => 'PUT']) !!}
             <input type="hidden" value="PUT" name="_method">
             <div class="row">
               <div class="col-md-4 col-xs-12">
                 <div class="row">
                   <div class="col-md-12 col-md-offset-0 col-sm-offset-3 col-xs-8 col-xs-offset-2 col-sm-6 match-height">
-                    <div class="profile-img" style="background-image: url({{ asset('img/tarik_sahinovic.jpg') }}); margin-bottom: 20px;">
+                    <div class="profile-img" style="background-image: url({{ asset($participant->slika ?? 'img/profile-placeholder.png') }}); margin-bottom: 20px;">
                     </div>
                   </div>
                   <div class="col-md-12 col-md-offset-0 col-sm-offset-3 col-xs-8 col-xs-offset-2 col-sm-6 match-height flex-center">
@@ -18,19 +21,29 @@
                       </button>
                       <input type="file" name="slika" class="file-upload" />
                     </div>
-
                     <span class="lead file-text" style="display: none;"></span>
-
+                    <a class="btn btn-large btn-gray_fill btn-block btn-radius" href="{{ route('logout') }}" 
+            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> 
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </a>
                   </div>
                 </div>
               </div>
               <div class="col-md-6 col-xs-12">
                 <div class="form-group row">
                   <div class="col-xs-4 text-right">
-                    <label for="ime_i_prezime">Ime i prezime:</label>
+                    <label for="ime_i_prezime">Ime:</label>
                   </div>
                   <div class="col-xs-8">
-                    <input type="text" class="cool-input" name="ime_i_prezime" id="ime_i_prezime" value="{{ old('ime_i_prezime') ?? $participant->ime . ' ' . $participant->prezime  }}" required/>
+                    <input type="text" class="cool-input" name="ime" id="ime" value="{{ old('ime_i_prezime') ?? $participant->ime  }}" required/>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-xs-4 text-right">
+                    <label for="prezime">Prezime:</label>
+                  </div>
+                  <div class="col-xs-8">
+                    <input type="text" class="cool-input" name="prezime" id="prezime" value="{{ old('prezime') ?? $participant->prezime  }}" required/>
                   </div>
                 </div>
                 <div class="form-group row">
@@ -70,7 +83,7 @@
                     <label for="status">Status:</label>
                   </div>
                   <div class="col-xs-8">
-                    {!! Form::select('status', config('platforma.statusi'), old('status') ?? $participant->status, ['class' => 'cool-input', 'required']) !!}
+                    {!! Form::select('status', config('platforma.statusi'), old('status') ?? array_search($participant->status, config('platforma.statusi')), ['class' => 'cool-input', 'required']) !!}
                   </div>
                 </div>
                 <div class="form-group row">
@@ -159,6 +172,79 @@
 
                   <!-- ---------------------------- -->
 
+                  <section class="section" id="prakse">
+                    <div class="row">
+                      <div class="col-xs-12 flex-row_nowrap">
+                        <span class="section-title">
+                          prakse
+                        </span>
+                        <div class="section-title_line"></div>
+                      </div>
+                    </div>
+
+                    <button type="button" class="btn btn-large btn-green_fill btn-radius" id="btnDodajPraksu"> 
+                      <i class="fas fa-plus"></i> Dodaj
+                    </button>
+
+                    @forelse ($experiences->where('type', 'internship') as $experience)
+                      <div class="subsection" id="{{ 'internship-' . $loop->index }}">
+                        <input type="hidden" name='{{ "internship[$loop->index][method]" }}' value="update">
+                        <input type="hidden" name='{{ "internship[$loop->index][type]" }}' value="internship">
+                        <input type="hidden" name='{{ "internship[$loop->index][id]" }}' value="{{ $experience->id }}">
+                        <div class="row">
+                          <div class="col-md-9 col-xs-12 flex-row_nowrap">
+                            <span class="section-subtitle">
+                              {!! Form::text("internship[$loop->index][title]", old("internship[$loop->index][title]") ?? $experience->title, ['class' => 'cool-input', 'placeholder' => 'Naziv', 'required']) !!}
+                            </span>
+                            &nbsp;&nbsp;&minus;&nbsp;&nbsp;
+                            <span class="section-subtitle_second">
+                              {!! Form::text("internship[$loop->index][position]", old("internship[$loop->index][position]") ?? $experience->position, ['class' => 'cool-input', 'placeholder' => 'Pozicija']) !!}
+                            </span>
+                          </div>
+                          <div class="col-md-3 col-sm-6 col-xs-12">
+                            <button type="button" class="btn btn-large btn-red btn-block btn-radius btn-hide" data-id="{{ $loop->index }}" data-type="internship">
+                              <i class="fas fa-unlink"></i> Ukloni
+                            </button>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-12">
+                            <span class="section-subtitle_period flex-row_nowrap">
+                              Od: &nbsp;&nbsp; 
+                              {!! Form::select("internship[$loop->index][from_month]", ['Januar', 'Februrar', 'Mart', 'April', 'Maj', 'Juni', 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'], old("internship[$loop->index][from_month]") ?? $experience->from_month, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
+
+                              {!! Form::select("internship[$loop->index][from_year]", config('platforma.godine'), old("internship[$loop->index][from_year]") ?? $experience->from_year, ['class' => 'cool-input', 'style' => 'width: auto']) !!}
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                Do: &nbsp;&nbsp; 
+                              {!! Form::select("internship[$loop->index][to_month]", [null, 'Januar', 'Februrar', 'Mart', 'April', 'Maj', 'Juni', 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'], old("internship[$loop->index][to_month]") ?? $experience->to_month, ['class' => 'cool-input', 'style' => 'width: auto', 'disabled' => $experience->to_month === null]) !!}
+
+                              {!! Form::select("internship[$loop->index][to_year]", [null] + config('platforma.godine'), old("internship[$loop->index][to_year]") ?? $experience->to_year, ['class' => 'cool-input', 'style' => 'width: auto', 'disabled' => $experience->to_year === null]) !!}
+                              &nbsp;&nbsp; 
+                              {!! Form::checkbox("internship[$loop->index][present]", old("internship[$loop->index][present]"), ! $experience->to_year && ! $experience->to_month, ['class' => 'cool-input work-check', 'style' => 'width: auto; margin: 0;'] ) !!}
+                              &nbsp;
+                              Traje
+                            </span>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-12">
+                            <p class="section-content">
+                              <textarea rows="5" class="cool-input" name='{{ "internship[$loop->index][content]" }}' placeholder="Detaljan opis" required>{{ $experience->content }}</textarea>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    @empty
+                    <br/>
+                      <span class="section-subtitle_second">
+                        Nema
+                      </span>
+                    @endforelse
+                  
+                  </section>
+
+                  <!-- ---------------------------------------------------------------- -->
+
                   <section class="section" id="nvoIskustva">
                     <div class="row">
                       <div class="col-xs-12 flex-row_nowrap">
@@ -192,7 +278,6 @@
                         <div class="row">
                           <div class="col-xs-12">
                             <p class="section-content">
-                              <!-- By being a member of this organization, I’ve been participating in creating visual identities and creating all sorts of designs for promotional material for this organizations’ events as well as being part of teams who created websites and applications dating back from July 2016. I’ve also been mentoring and educating younger and less experienced designers who wanted to learn more and are today considered to be a vital part of the designer climate in the organization. -->
                               <textarea rows="5" class="cool-input" name='{{ "nvo[$loop->index][content]" }}' placeholder="Detaljan opis" required>{{ $experience->content }}</textarea>
                             </p>
                           </div>

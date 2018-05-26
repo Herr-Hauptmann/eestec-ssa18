@@ -4,7 +4,7 @@
 		<div class="col-md-4 col-xs-12">
 			<div class="row">
 				<div class="col-md-12 col-md-offset-0 col-sm-offset-3 col-xs-8 col-xs-offset-2 col-sm-6 match-height">
-					<div class="profile-img" style="background-image: url({{ asset('img/tarik_sahinovic.jpg') }}); margin-bottom: 20px;">
+					<div class="profile-img" style="background-image: url({{ asset($participant->slika ?? 'img/profile-placeholder.png') }}); margin-bottom: 20px;">
 					</div>
 				</div>
 				<div class="col-md-12 col-md-offset-0 col-sm-offset-3 col-xs-8 col-xs-offset-2 col-sm-6 match-height flex-center">
@@ -14,9 +14,13 @@
 					<a class="btn btn-large btn-green_fill btn-block btn-radius" href="#"> 
 						<i class="fas fa-link"></i> Kopiraj link
 					</a>
-					<a class="btn btn-large btn-green_fill btn-block btn-radius" href="{{ route('logout') }}"> 
+					<a class="btn btn-large btn-gray_fill btn-block btn-radius" href="{{ route('logout') }}" 
+						onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> 
 						<i class="fas fa-sign-out-alt"></i> Logout
 					</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
 				</div>
 			</div>
 		</div>
@@ -30,8 +34,8 @@
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<i class="far fa-calendar-alt"></i> {{ date('d.m.Y.', strtotime($participant->datum_rodjenja)) }}<br/>
 					<i class="fas fa-map-marker"></i> &nbsp;{!! $participant->mjesto_prebivalista ?? '<i>Nije uneseno</i>' !!}<br/>
-					<i class="fas fa-phone"></i> {{ $participant->broj_telefona }}<br/>
-					<i class="far fa-envelope"></i> {{ $participant->email }}<br/>
+					<i class="fas fa-phone"></i> {!! $participant->broj_telefona ?? '<i>Nije uneseno</i>' !!}<br/>
+					<i class="far fa-envelope"></i> {!! $participant->email ?? '<i>Nije uneseno</i>' !!}<br/>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<div class="row">
@@ -39,15 +43,23 @@
 							Status:
 						</div>
 						<div class="col-sm-8 col-xs-9 text-left text-impact_blue">
-							{!! $participant->status ?? '<i>Nije uneseno</i>' !!}
+							@if (\is_numeric($participant->status))
+								{{ config('platforma.statusi')[$participant->status] }}
+							@else 
+								{!! $participant->status ?? '<i>Nije uneseno</i>' !!}
+							@endif
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-sm-4 col-xs-3 basic-info_special">
-							Fakultet:
+							Fakulteti:
 						</div>
 						<div class="col-sm-8 col-xs-9 text-left text-impact_blue">
-							{{ $participant->fakulteti->first()->naziv }}
+							@forelse ($participant->fakulteti as $fakultet)
+								{{ $fakultet->naziv . '; ' }}
+							@empty
+								<i>Nije uneseno</i>
+							@endforelse
 						</div>
 					</div>
 				</div>

@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
+use App\Utility\StringUtility;
 
 class ParticipantsController extends Controller
 {
@@ -130,11 +131,36 @@ class ParticipantsController extends Controller
 
     public function showRegistrationFormParticipant()
     {
+        session()->forget('emailRemembered');
         return view('participants.platform.register');
     }
 
     public function registerParticipant(Request $request)
     {
+        // provjera
+        $participant = $this->validateEmail($request->email);
+        if ($participant === null) {
+            $request->session()->flash('flash_message', 'Ne postoji participant sa ovom email adresom.');
+            return back();
+        }
+        if (! $participant->accepted) {
+            $request->session()->flash('flash_message', 'Pravo na pristup ostvaruju samo učesnici radionice.');
+            return back();
+        }
+
+        // provjera u kojoj se tabeli nalazi prijava
+        // ukoliko je u  'old_applications' trebamo napraviti Participanta u tabeli 'participanti'
+        // sa odgovarajucim podacima
+        if (! Participant::where('email', $participant->email)->first()) {
+            $old_participant = \DB::table('old_applications')
+                                    ->where('email', $participant->email)->first();
+            // prebacujemo u array jer metoda create zahtjeva array
+            $old_participant = (array)$old_participant;
+            $old_participant['ime'] = explode(' ', $old_participant['name'][0]);
+            $old_participant['prezime'] = explode(' ', $old_participant['name'][1]);
+            $participant = Participant::create((array)$old_participant);
+        }
+
         $messages = [
             'required' => 'Polje \':attribute\' je obavezno.',
             'max' => ':attribute ne smije sadržavati više od :max znakova.',
@@ -162,7 +188,7 @@ class ParticipantsController extends Controller
                         ->withErrors($validator)
                         ->withInput();
         }
-        session()->flush('emailRemembered');
+        session()->forget('emailRemembered');
 
         /** @var User $user */
         $user =  User::create([
@@ -170,7 +196,7 @@ class ParticipantsController extends Controller
             'email' => $request->email,
             'password' => bcrypt($request->password),
         ]);
-        $participant = Participant::where('email', $request->email)->first();
+
         $participant->update(['user_id' => $user->id]);
 
         $user->assignRole('participant');
@@ -182,16 +208,34 @@ class ParticipantsController extends Controller
 
     public function emailCheck(Request $request)
     {
-        $participant = Participant::select('email', \DB::raw('CONCAT(ime, \' \', prezime) as ime'))
-                ->where('email', $request->get('email'))->first();
-
-        // TODO: Dodati provjeru da li je prihvacena aplikacija bila (accepted kolona)
+        $participant = $this->validateEmail($request->get('email'));
 
         if ($participant) {
-            session(['emailRemembered' => true]);
+            if ($participant->accepted) {
+                session(['emailRemembered' => true]);
+            } else {
+                return response()->json(['error' => 'Pravo na pristup ostvaruju samo učesnici radionice.']);
+            }
         }
 
         return response()->json($participant ?? ['error' => 'Email adresa ne zadovoljava kriterije']);
+    }
+
+    private function validateEmail($email) {
+        $firstQuery = Participant::select('email', 'accepted', \DB::raw('CONCAT(ime, \' \', prezime) as ime'))
+                ->where('email', 'LIKE', "%$email%");
+
+        // $participant = Participant::select('email', \DB::raw('CONCAT(ime, \' \', prezime) as ime'))
+        //         ->where('email', $email)->first();
+
+
+        $participant = \DB::table('old_applications')->select('email', 'accepted', \DB::raw('name as ime'))
+                ->where('email', 'LIKE', "%$email%")
+                ->union($firstQuery)
+                ->first();
+                
+        // TODO: Dodati provjeru da li je prihvacena aplikacija bila (accepted kolona)
+        return $participant;
     }
 
     public function profile()
@@ -224,6 +268,7 @@ class ParticipantsController extends Controller
         // dd(\DateTime::createFromFormat('Y-m-d', $experiences->first()->from_month));
         $faculties = Faculty::pluck('naziv', 'id');
 
+        $participant->fakulteti()->detach();
         // dd($id);
         return view('participants.platform.edit', compact('faculties', 'user', 'participant', 'experiences'));
     }
@@ -239,20 +284,42 @@ class ParticipantsController extends Controller
         $participant = $user->participant;
         $experiences = $participant->experiences;
 
-        $participant->update($request->except(['fakulteti', 'radno_iskustvo']));
+        $participant->update($request->except(['fakulteti', 'radno_iskustvo', 'internship', 'slika']));
+        $participant->status = config('platforma.statusi')[$requestData['status']];
+        
+        // @TODO: Testirati
+
+        $participant->fakulteti()->sync($requestData['fakulteti']);
+
+        $user->name = $participant->ime . ' ' . $participant->prezime;
+        $user->save();
 
         if ($request->has('slika') && $requestData['slika']) {
-            //TODO: Spasi sliku
+            // delete old
+            Storage::disk('public')->delete($participant->slika);
+            // store new
+            $path = Storage::disk('public')->putFile(
+                '/user_upload/user_id-' . $user->id . '/profilna', 
+                $requestData['slika']
+            );            
+            // , 
+            //     // kreiramo unikatan naziv
+            //     StringUtility::generateRandomString(20) . '.' . $requestData['slika']->clientExtension()
+            $participant->slika = $path;
         }
+        
+        $participant->save();
 
-        // TODO: dodati polje id i method u formu, type
-        if ($requestData['radno_iskustvo']) {
+        if (isset($requestData['radno_iskustvo'])) {
             $iskustva = $requestData['radno_iskustvo'];
-            if ($requestData['nvo']) {
+            if (isset($requestData['nvo'])) {
                 $iskustva = array_merge($iskustva, $requestData['nvo']);
             }
-            if ($requestData['extra_educations']) {
+            if (isset($requestData['extra_educations'])) {
                 $iskustva = array_merge($iskustva, $requestData['extra_educations']);
+            }
+            if (isset($requestData['internship'])) {
+                $iskustva = array_merge($iskustva, $requestData['internship']);
             }
 
             // dd($iskustva);
@@ -267,33 +334,36 @@ class ParticipantsController extends Controller
 
                     if ($item['method'] === 'new') {
 
-                        if (! isset($item['certifikat'])) {
+                        if (! isset($item['certifikat']) && $item['type'] === 'extra_educations') {
                             $request->session()->flash('flash_message', 'Svaka dodatna edukacija mora sadržavati certifikat.');
                             break;
                         } else {
                             $newExperience = new Experience($item);
                             $participant->experiences()->save($newExperience);
                             
-                            $path = Storage::disk('public')
-                                ->putFileAs(
-                                    '/user_upload/user_id-' . $user->id . '/certifikati', 
-                                    $item['certifikat'], 
-                                    $item['certifikat']->getClientOriginalName()
-                                );
+                            if ($item['type'] === 'extra_educations') {
+                                $path = Storage::disk('public')
+                                    ->putFileAs(
+                                        '/user_upload/user_id-' . $user->id . '/certifikati', 
+                                        $item['certifikat'], 
+                                        $item['certifikat']->getClientOriginalName()
+                                    );
 
-                            $certificate = Certificate::create([
-                                'title'=> $item['certifikat']->getClientOriginalName(), 
-                                'location' => $path, 
-                                'experience_id' => $newExperience->id
-                            ]);
+                                $certificate = Certificate::create([
+                                    'title'=> $item['certifikat']->getClientOriginalName(), 
+                                    'location' => $path, 
+                                    'experience_id' => $newExperience->id
+                                ]);
+                            }
+                            
                         }
 
                     } else if($item['method'] === 'update' && isset($item['id'])) {
+                        $exp = Experience::find($item['id']);
+                        $exp->update($item);
 
-                        if (isset($item['certifikat'])) {
-                            $exp = Experience::find($item['id']);
-                            $exp->update($item);
-
+                        if (isset($item['certifikat']) && $item['type'] === 'extra_educations') {
+                            
                             $currentCert = $exp->certificate;
 
                             // delete old
@@ -310,10 +380,12 @@ class ParticipantsController extends Controller
                         }
                     } else if($item['method'] === 'delete' && isset($item['id'])) {
                         $exp = Experience::find($item['id']);
-                        $currentCert = $exp->certificate;
-                        // delete old
-                        Storage::disk('public')->delete($currentCert->location);
 
+                        if ($item['type'] === 'extra_educations') {
+                            $currentCert = $exp->certificate;
+                            // delete old
+                            Storage::disk('public')->delete($currentCert->location);
+                        }
                         $exp->delete();
                     }
                 }

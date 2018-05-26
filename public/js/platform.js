@@ -32,15 +32,18 @@
 			},
 			function(res) {
 				console.log(res, res.ime);
-				if (! res.error) {
+				if (res.ime) {
 					$('#name').val(res.ime);
 					$('#email').val(res.email);
 					$('#registrationModalEmail').fadeOut(500);
 					setTimeout(function() {
 						$('#registrationModalEmail').modal('hide');
 					}, 500);
-				} else {
+				} else if (res.error){
 					$('#emailTryError').html(`<b>${res.error}</b>`).show();
+					$('#emailTry').parent().addClass('has-error');
+				} else {
+					$('#emailTryError').html('<b>Došlo je do pogreške. Pokušajte ponovo.</b>').show();
 					$('#emailTry').parent().addClass('has-error');
 				}
 			}
@@ -129,6 +132,62 @@
 		    </div>
 		  </div>`);
 		$('#radnaIskustva').append(item).find('.subsection:last-child').slideDown();
+		changeDefaultValidatonMessages();
+	});
+
+	$('#btnDodajPraksu').click(function(e) {
+		e.preventDefault();
+		let index = $('#prakse').find('.subsection').length;
+		if (index === 0) {
+			$('#prakse').find('button.btn-green_fill').siblings('span.section-subtitle_second').hide('fast').remove();
+		}
+		let item = $(`<div class="subsection" style="display: none;" id="internship-${index}">
+			<input type="hidden" name="internship[${index}][method]" value="new"/>
+			<input type="hidden" name="internship[${index}][type]" value="internship"/>
+		    <div class="row">
+		      <div class="col-md-9 col-xs-12 flex-row_nowrap">
+		        <span class="section-subtitle">
+		          <input type="text" class="cool-input" name="internship[${index}][title]" placeholder="Naziv" required>
+		        </span>
+		        &nbsp;&nbsp;−&nbsp;&nbsp;
+		        <span class="section-subtitle_second">
+		          <input type="text" class="cool-input" name="internship[${index}][position]" placeholder="Pozicija">
+		        </span>
+		      </div>
+		      <div class="col-md-3 col-sm-6 col-xs-12">
+		      	<button type="button" class="btn btn-large btn-red btn-block btn-radius btn-hide" data-id="${index}" data-type="internship">
+                  <i class="fas fa-unlink"></i> Ukloni
+                </button>
+		      </div>
+		    </div>
+		    <div class="row">
+		      <div class="col-xs-12">
+		        <span class="section-subtitle_period flex-row_nowrap">
+		          Od: &nbsp;&nbsp; 
+		          <select class="cool-input" style="width: auto" name="internship[${index}][from_month]" required>${mjeseci}</select>
+		          <select class="cool-input" style="width: auto" name="internship[${index}][from_year]" required>${godine}</select>
+		            &nbsp;&nbsp;&nbsp;&nbsp;
+		            Do: &nbsp;&nbsp; 
+		          <select class="cool-input" style="width: auto" name="internship[${index}][to_month]" required>${mjeseci}</select>
+		          <select class="cool-input" style="width: auto" name="internship[${index}][to_year]" required>${godine}</select>
+		        	&nbsp;&nbsp;
+		        	<input class="cool-input work-check" style="width: auto; margin: 0;" 
+		        			name="internship[${index}][present]" type="checkbox">
+	                  &nbsp;
+	                  Traje
+		        </span>
+		      </div>
+		    </div>
+		    <div class="row">
+		      <div class="col-xs-12">
+		        <p class="section-content">
+		          <textarea rows="5" class="cool-input" name="internship[${index}][content]" placeholder="Detaljan opis" required></textarea>
+		        </p>
+		      </div>
+		    </div>
+		  </div>`);
+		$('#prakse').append(item).find('.subsection:last-child').slideDown();
+		changeDefaultValidatonMessages();
 	});
 
 	$('#btnDodajNvoIskustvo').click(function(e) {
@@ -162,6 +221,7 @@
                       </div>`);
 
 		$('#nvoIskustva').append(item).find('.subsection:last-child').slideDown();
+		changeDefaultValidatonMessages();
 
 	});
 
@@ -205,16 +265,22 @@
                       </div>`);
 
 		$('#extra_educations').append(item).find('.subsection:last-child').slideDown();
-
+		changeDefaultValidatonMessages();
 	});
 
 	$(document).on('click', '.btn-hide', function(e) {
 		e.preventDefault();
 		let id = $(this).attr('data-id');
-			let type = $(this).attr('data-type');
-		if (confirm('Sigurno želiš ukloniti \'' + $('input[name="' + type + '[' + id + '][title]"]').val() + '\'?')) {
+		let type = $(this).attr('data-type');
+		let remove = true;
+		if ($('input[name="' + type + '[' + id + '][title]"]').val() !== '') {
+			remove = confirm('Sigurno želiš ukloniti \'' + $('input[name="' + type + '[' + id + '][title]"]').val() + '\'?');
+		} 
+		
+		if (remove) {
 			$('#' + type + '-' + id).slideUp();
 			$('input[name="' + type + '[' + id + '][method]"]').val('delete');
+			$('#' + type + '-' + id).find('*').removeAttr('required');
 		}
 	});
 
@@ -261,14 +327,18 @@
 			return;
 		}
 	};
-	// console.log(document.getElementsByTagName('input'));
-	let inputs = document.querySelectorAll('input,textarea');
-	for (let i = 0; i < inputs.length; i++) {
-		inputs[i].oninvalid = invalid;
-		inputs[i].oninput = function(e) {
-	    	e.target.setCustomValidity("");
-		};
+
+	function changeDefaultValidatonMessages() {
+		let inputs = document.querySelectorAll('input,textarea,select');
+		for (let i = 0; i < inputs.length; i++) {
+			inputs[i].oninvalid = invalid;
+			inputs[i].oninput = function(e) {
+		    	e.target.setCustomValidity("");
+			};
+		}
 	}
+	
+	changeDefaultValidatonMessages();
 
 	// regex za jquery selector
 	jQuery.expr[':'].regex = function(elem, index, match) {

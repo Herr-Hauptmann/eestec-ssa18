@@ -17,7 +17,7 @@ class CreateCertificatesTable extends Migration
             $table->string('title')->nullable();
             $table->string('location')->nullable();
             $table->integer('experience_id')->unsigned();
-            $table->foreign('experience_id')->references('id')->on('experiences');
+            $table->foreign('experience_id')->references('id')->on('experiences')->onDelete('cascade');
             $table->timestamps();
             });
     }

@@ -23,7 +23,7 @@ class CreateExperiencesTable extends Migration
             $table->text('content')->nullable();
             $table->string('type')->nullable();
             $table->integer('participant_id')->unsigned();
-            $table->foreign('participant_id')->references('id')->on('participanti');
+            $table->foreign('participant_id')->references('id')->on('participanti')->onDelete('cascade');
             $table->timestamps();
             });
     }
