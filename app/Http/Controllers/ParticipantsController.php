@@ -156,8 +156,8 @@ class ParticipantsController extends Controller
                                     ->where('email', $participant->email)->first();
             // prebacujemo u array jer metoda create zahtjeva array
             $old_participant = (array)$old_participant;
-            $old_participant['ime'] = explode(' ', $old_participant['name'][0]);
-            $old_participant['prezime'] = explode(' ', $old_participant['name'][1]);
+            $old_participant['ime'] = explode(' ', $old_participant['name'])[0];
+            $old_participant['prezime'] = explode(' ', $old_participant['name'])[1];
             $participant = Participant::create((array)$old_participant);
         }
 
