@@ -268,7 +268,7 @@ class ParticipantsController extends Controller
         // dd(\DateTime::createFromFormat('Y-m-d', $experiences->first()->from_month));
         $faculties = Faculty::pluck('naziv', 'id');
 
-        $participant->fakulteti()->detach();
+        //$participant->fakulteti()->detach();
         // dd($id);
         return view('participants.platform.edit', compact('faculties', 'user', 'participant', 'experiences'));
     }
@@ -288,7 +288,7 @@ class ParticipantsController extends Controller
         $participant->status = config('platforma.statusi')[$requestData['status']];
         
         // @TODO: Testirati
-
+        //dd($requestData);
         if ($request->has('fakulteti') && ! empty($requestData['fakulteti'])) {
             $participant->fakulteti()->sync($requestData['fakulteti']);
         }
