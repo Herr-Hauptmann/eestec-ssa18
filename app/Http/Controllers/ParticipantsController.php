@@ -289,7 +289,9 @@ class ParticipantsController extends Controller
         
         // @TODO: Testirati
 
-        $participant->fakulteti()->sync($requestData['fakulteti']);
+        if ($request->has('fakulteti') && ! empty($requestData['fakulteti'])) {
+            $participant->fakulteti()->sync($requestData['fakulteti']);
+        }
 
         $user->name = $participant->ime . ' ' . $participant->prezime;
         $user->save();
