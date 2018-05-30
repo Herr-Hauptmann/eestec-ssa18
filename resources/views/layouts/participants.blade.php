@@ -18,7 +18,8 @@
     <script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body>
-    <div id="app container">
+    @include ('participants.platform.menu2')
+    <div class="main">
         @yield('content')
     </div>
 

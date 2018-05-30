@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default mainNavbar mainNavbar1">
+<nav class="navbar navbar-default mainNavbar mainNavbar1" id="mainNavbar1">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -20,7 +20,28 @@
                         <li><a href="{{ route('partneri') }}"> Partneri</a></li>
                         <li><a href="{{ route('galerija') }}">Galerija</a></li>
                         <li><a href="{{ route('kontakt') }}">Kontakt</a></li>
-
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                                Login <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{{ route('login') }}">
+                                        Admin panel
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('participant.login.show') }}">
+                                        Participanti
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('home') }}">
+                                        Kompanije
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
                     </ul>
                 </div>

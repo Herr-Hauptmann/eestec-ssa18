@@ -126,7 +126,7 @@
 		    <div class="row">
 		      <div class="col-xs-12">
 		        <p class="section-content">
-		          <textarea rows="5" class="cool-input" name="radno_iskustvo[${index}][content]" placeholder="Detaljan opis" required></textarea>
+		          <textarea rows="5" class="cool-input" name="radno_iskustvo[${index}][content]" placeholder="Detaljan opis"></textarea>
 		        </p>
 		      </div>
 		    </div>

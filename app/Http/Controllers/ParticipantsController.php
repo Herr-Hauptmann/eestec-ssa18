@@ -122,8 +122,11 @@ class ParticipantsController extends Controller
     public function loginParticipant(Request $request)
     {
         // get user by email
-        // $user = User::where('email', $request->email)->first();
-        // Auth::login($user);
+        $user = User::where('email', $request->email)->first();
+        if($user->participant === null) {
+            $request->session()->flash('flash_message', 'Moraš se registrovati kao participant da bi koristio platformu.');
+            return redirect()->route('participant.register.show');
+        }
         return $this->login($request);
         // dd($request->all());
 
@@ -236,6 +239,11 @@ class ParticipantsController extends Controller
                 
         // TODO: Dodati provjeru da li je prihvacena aplikacija bila (accepted kolona)
         return $participant;
+    }
+
+    public function logoutParticipant() {
+        \Auth::logout();
+        return redirect('/');
     }
 
     public function profile()

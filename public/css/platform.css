@@ -5,7 +5,7 @@
 }
 
 
-body {
+.main {
 	margin-top: 35px;
 	margin-left: 50px;
 	margin-right: 50px;
@@ -15,14 +15,14 @@ body {
 }	
 
 @media (min-width: 1200px) {
-	body {
+	.main {
 		margin-left: 120px;
 		margin-right: 120px;
 	}	
 }
 
 @media (max-width: 767px) {
-	body {
+	.main {
 		margin-left: 20px;
 		margin-right: 20px;
 	}	
@@ -333,4 +333,135 @@ textarea.cool-input {
 
 #edit-profile_form .subsection {
 	width: 100%;
+}
+
+.mainNavbar {
+
+    border-radius: 0px !important;
+    background: #1AA79E;
+    border: 0px;
+    margin-bottom: 0px;
+    box-shadow: none !important;
+    z-index: 1000 !important;
+}
+
+.navbarList {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.mainNavbar1 {
+    background-color: transparent !important;
+    background: #1AA79E;
+    height: 100px;
+}
+
+.mainNavbar .navbar-toggle {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 50px;
+    border-color: #1aa79e;
+}
+
+.mainNavbar1 .navbar-toggle {
+    margin-bottom: 50px;
+}
+
+.mainNavbar .navbar-toggle .icon-bar {
+    background-color: #1aa79e;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#platform-nav .navbarList > li > a {
+    text-transform: none;
+    color: #1aa79e;
+    font-size: 19px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-top: 15px;
+}
+
+#platform-nav .navbarList > li:before {
+	content:'';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0px;
+	height: 3px;
+	background: #1aa79e;
+	border-radius: 5px;
+	transition: all 0.5s ease;
+}
+
+#platform-nav .navbarList > li:hover:before {
+	width: 100%;
+}
+
+.logo-img {
+    width: 160px !important;
+    margin-left: 5%;
+    position: absolute;
+
+}
+
+@media only screen and (max-width: 767px) {
+    .mainNavbar1 .navbar-collapse {
+        background: rgb(26, 167, 158);
+        margin: 0 -9vw;
+    }
+
+    .navbarList {
+        margin-top: 0;
+    }
+
+    #platform-nav .navbarList > li > a {
+    	color: #fff;
+    }
+
+    #platform-nav .navbarList > li:before {
+		/*clear: all;*/
+		background: #fff;
+		left: 43%;
+	}
+
+	#platform-nav .navbarList > li:hover:before {
+		width: 14%;
+	}
+
+    .navbarList > li:hover {
+        padding-bottom: 0 !important;
+        border-bottom: none !important;
+    }
+
+    .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+        border-color: #fff;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .logo-img {
+        width: 120px !important;
+        margin-left: 5%;
+    }
+
+    .mainNavbar .navbar-toggle {
+        margin-top: 25px;
+        width: 30px;
+        height: 35px;
+        padding-top: 10px;
+    }
+
+    .mainNavbar .navbar-toggle .icon-bar {
+        background-color: white;
+        margin-left: -7px;
+    }
+}
+
+@media only screen and (max-width: 1100px) and (min-width: 400px) {
+    .logo-img {
+        width: 160px !important;
+        margin-left: 5%;
+    }
 }

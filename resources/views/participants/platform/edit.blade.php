@@ -155,7 +155,7 @@
                         <div class="row">
                           <div class="col-xs-12">
                             <p class="section-content">
-                              <textarea rows="5" class="cool-input" name='{{ "radno_iskustvo[$loop->index][content]" }}' placeholder="Detaljan opis" required>{{ $experience->content }}</textarea>
+                              <textarea rows="5" class="cool-input" name='{{ "radno_iskustvo[$loop->index][content]" }}' placeholder="Detaljan opis">{{ $experience->content }}</textarea>
                             </p>
                           </div>
                         </div>

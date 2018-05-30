@@ -19,6 +19,9 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
+            if (Auth::user()->hasRole('participant')){
+                return redirect()->route('participant.profile');
+            }
             if (Auth::user()->email === 'tarik.upss@gmail.com' || ! Auth::user()->hasAnyRole(Role::all())) {
                 Auth::user()->syncRoles(Auth::user()->email === 'tarik.upss@gmail.com' ? 'root' : 'organizer');
             }

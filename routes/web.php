@@ -11,7 +11,20 @@
 |
 */
 
-Auth::routes();
+// Authentication Routes...
+Route::get('admin/login', 'Auth\LoginController@showLoginForm')->middleware(['guest'])->name('login');
+Route::post('admin/login', 'Auth\LoginController@login');
+Route::post('admin/logout', 'Auth\LoginController@logout')->name('logout');
+
+// Registration Routes...
+Route::get('admin/register', 'Auth\RegisterController@showRegistrationForm')->middleware(['guest'])->name('register');
+Route::post('admin/register', 'Auth\RegisterController@register');
+
+// Password Reset Routes...
+Route::get('admin/password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('admin/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('admin/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('admin/password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::get('/', 'HomeController@index')->name('home');
 
@@ -98,14 +111,16 @@ Route::get('admin', function() {
 	return redirect()->route('prijava.index');
 })->name('admin.dashboard');
 
-Route::resource('admin/posts', 'PostsController');
-Route::resource('admin/media', 'MediaController');
-Route::resource('admin/partners', 'PartnersController');
-Route::resource('admin/kontakt', 'KontaktController');
-Route::resource('admin/participants', 'ParticipantsController');
-Route::resource('admin/trainers', 'TrainersController');
-Route::resource('admin/trainings', 'TrainingsController');
-Route::resource('admin/users', 'UsersController');
+Route::prefix('admin')->middleware(['auth', 'role:organizer'])->group(function() {
+	Route::resource('posts', 'PostsController');
+	Route::resource('media', 'MediaController');
+	Route::resource('partners', 'PartnersController');
+	Route::resource('kontakt', 'KontaktController');
+	Route::resource('participants', 'ParticipantsController');
+	Route::resource('trainers', 'TrainersController');
+	Route::resource('trainings', 'TrainingsController');
+	Route::resource('users', 'UsersController')->middleware(['role:root']);
+});
 
 Route::patch('admin/change-permissions/{user}', 'UsersController@changePermissions')->middleware(['auth', 'role:root'])->name('permissions.indirect.change');
 Route::patch('admin/change-direct-permissions/{user}', 'UsersController@changeDirectPermissions')->middleware(['auth', 'role:root'])->name('permissions.direct.change');
@@ -121,15 +136,16 @@ Route::get('admin/permissions/{user}', 'UsersController@getMissingPermissions')-
 
 
 Route::prefix('participant')->group(function() {
-	Route::get('login', 'ParticipantsController@showLoginFormParticipant')->name('participant.login.show');
+	Route::get('login', 'ParticipantsController@showLoginFormParticipant')->middleware(['guest'])->name('participant.login.show');
 	Route::post('login', 'ParticipantsController@loginParticipant')->name('participant.login');
-	Route::get('register', 'ParticipantsController@showRegistrationFormParticipant')->name('participant.register.show');
+	Route::get('register', 'ParticipantsController@showRegistrationFormParticipant')->middleware(['guest'])->name('participant.register.show');
 	Route::post('register', 'ParticipantsController@registerParticipant')->name('participant.register');
+	Route::post('logout', 'ParticipantsController@logoutParticipant')->name('participant.logout');
 	
-	Route::prefix('profil')->group(function() {
-		Route::get('/', 'ParticipantsController@profile')->name('participant.profile')->middleware('auth');
-		Route::get('uredi', 'ParticipantsController@edit')->name('participant.edit')->middleware('auth');
-		Route::put('edit', 'ParticipantsController@update')->name('participant.update')->middleware('auth');
+	Route::prefix('profil')->middleware(['auth'])->group(function() {
+		Route::get('/', 'ParticipantsController@profile')->name('participant.profile');
+		Route::get('uredi', 'ParticipantsController@edit')->name('participant.edit');
+		Route::put('edit', 'ParticipantsController@update')->name('participant.update');
 	});
 	
 	Route::post('emailCheck', 'ParticipantsController@emailCheck')->name('emailCheck');
