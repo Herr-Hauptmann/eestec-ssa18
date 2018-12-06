@@ -32,7 +32,7 @@
                                         Admin panel
                                     </a>
                                 </li>
-                                <li>
+                                {{-- <li>
                                     <a href="{{ route('participant.login.show') }}">
                                         Participanti
                                     </a>
@@ -41,7 +41,7 @@
                                     <a href="{{ route('home') }}">
                                         Kompanije
                                     </a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </li>
                     </ul>
