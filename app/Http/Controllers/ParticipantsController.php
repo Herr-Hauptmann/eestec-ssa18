@@ -38,6 +38,8 @@ class ParticipantsController extends Controller
         $keyword = $request->get('search');
         $perPage = 25;
 
+        
+
         if (!empty($keyword)) {
             $participants = Participant::whereYear('created_at', date('Y'))->paginate($perPage);
         } else {
@@ -123,7 +125,7 @@ class ParticipantsController extends Controller
     {
         // get user by email
         $user = User::where('email', $request->email)->first();
-        if($user->participant === null) {
+        if($user === null || $user->participant === null) {
             $request->session()->flash('flash_message', 'Moraš se registrovati kao participant da bi koristio platformu.');
             return redirect()->route('participant.register.show');
         }
@@ -165,18 +167,18 @@ class ParticipantsController extends Controller
         }
 
         $messages = [
-            'required' => 'Polje \':attribute\' je obavezno.',
-            'max' => ':attribute ne smije sadržavati više od :max znakova.',
-            'email.unique' => 'Već postoji korisnik sa ovom email adresom. ' . '<a href="' . route('participant.login.show') . '"> Login?</a>',
+            'required'           => 'Polje \':attribute\' je obavezno.',
+            'max'                => ':attribute ne smije sadržavati više od :max znakova.',
+            'email.unique'       => 'Već postoji korisnik sa ovom email adresom. ' . '<a href="' . route('participant.login.show') . '"> Login?</a>',
             'password.confirmed' => 'Unesene šifre se ne podudaraju.',
-            'password.min' => 'Šifra mora sazdržavati minimalno :min znakova.',
-            'name.required' => 'Polje \'Ime i prezime\' je obavezno.'
+            'password.min'       => 'Šifra mora sazdržavati minimalno :min znakova.',
+            'name.required'      => 'Polje \'Ime i prezime\' je obavezno.'
         ];
 
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'name'                  => 'required|string|max:255',
+            'email'                 => 'required|string|email|max:255|unique:users',
+            'password'              => 'required|string|min:6|confirmed',
             'password_confirmation' => 'required'
         ], $messages);
 
@@ -212,7 +214,7 @@ class ParticipantsController extends Controller
     public function emailCheck(Request $request)
     {
         $participant = $this->validateEmail($request->get('email'));
-
+        return response()->json(['participant' => $participant]);
         if ($participant) {
             if ($participant->accepted) {
                 session(['emailRemembered' => true]);

@@ -29,8 +29,7 @@
 			{
 				_token: csrf_token,
 				email: $('#emailTry').val()
-			},
-			function(res) {
+			}).then(function(res) {
 				console.log(res, res.ime);
 				if (res.ime) {
 					$('#name').val(res.ime);
@@ -46,8 +45,9 @@
 					$('#emailTryError').html('<b>Došlo je do pogreške. Pokušajte ponovo.</b>').show();
 					$('#emailTry').parent().addClass('has-error');
 				}
-			}
-		);
+			}).catch(function(res) {
+				console.warn(res);
+		})
 	});
 
 	// dodavanje iskustva
