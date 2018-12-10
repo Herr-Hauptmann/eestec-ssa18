@@ -111,7 +111,7 @@ Route::get('admin', function() {
 	return redirect()->route('prijava.index');
 })->name('admin.dashboard');
 
-Route::prefix('admin')->middleware(['auth', 'role:organizer'])->group(function() {
+Route::prefix('admin')->middleware(['auth', 'role:organizer|root'])->group(function() {
 	Route::resource('posts', 'PostsController');
 	Route::resource('media', 'MediaController');
 	Route::resource('partners', 'PartnersController');
@@ -122,11 +122,16 @@ Route::prefix('admin')->middleware(['auth', 'role:organizer'])->group(function()
 	Route::resource('users', 'UsersController')->middleware(['role:root']);
 });
 
-Route::patch('admin/change-permissions/{user}', 'UsersController@changePermissions')->middleware(['auth', 'role:root'])->name('permissions.indirect.change');
-Route::patch('admin/change-direct-permissions/{user}', 'UsersController@changeDirectPermissions')->middleware(['auth', 'role:root'])->name('permissions.direct.change');
+Route::prefix('admin')->middleware(['auth', 'role:root'])->group(function() {
+	Route::patch('change-permissions/{user}', 'UsersController@changePermissions')->middleware(['auth', 'role:root'])->name('permissions.indirect.change');
+	Route::patch('change-direct-permissions/{user}', 'UsersController@changeDirectPermissions')->middleware(['auth', 'role:root'])->name('permissions.direct.change');
 
-Route::get('admin/permissions/{user}', 'UsersController@getMissingPermissions')->middleware(['auth', 'role:root'])->name('permissions.getMissingJson');
+	Route::get('permissions/{user}', 'UsersController@getMissingPermissions')->middleware(['auth', 'role:root'])->name('permissions.getMissingJson');
 
+	######## Godine/Eventi #######
+
+	Route::resource('years', 'YearsController');
+});
 
 ###############################################################
 #######//////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\#########
