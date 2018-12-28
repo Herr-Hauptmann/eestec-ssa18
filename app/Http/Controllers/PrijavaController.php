@@ -32,6 +32,9 @@ class PrijavaController extends Controller
      */
     public function index(Request $request)
     {
+        // echo \json_encode(ssaconfig(['prijave_otvorene' => false]));
+        echo config(['ssa.prijave_otvorene' => false]);
+        die();
         $keyword = $request->get('search');
         $perPage = 25;
         $participants = Participant::whereYear('created_at', date('Y'));
@@ -275,6 +278,8 @@ class PrijavaController extends Controller
 
     protected function hasAppliedBefore($email)
     {
+        #TODO Treba mergat sa prijavama u 'participanti' tabeli
+        #Edit mozda ipak ne treba, pogledaj zatvoriPrijave()
         return \DB::table('old_applications')->where('email', '=', $email)->get()->last();
     }
 
@@ -336,16 +341,10 @@ class PrijavaController extends Controller
         $svePrijave = Participant::select(\DB::raw('CONCAT(ime, \' \', prezime) AS name'), 'email', 'created_at', 'accepted')
             ->get()->toArray();
 
-        \DB::table('old_applications')->insert($svePrijave);
+        // \DB::table('old_applications')->insert($svePrijave);
 
-        $data = file(config_path('ssa.php'));
 
-        foreach ($data as &$item) {
-            if (($pos = stripos($item, '\'prijave_otvorene\' => ')) !== FALSE) {
-                $item = str_replace('true', 'false', $item);
-            }
-        }
-        file_put_contents(config_path('ssa.php'), $data);
+        ssaconfig(['prijave_otvorene' => false]);
         return back();
     }
 
@@ -355,14 +354,7 @@ class PrijavaController extends Controller
             return back()->with('permission_missing', 'Treba ti jos pure');
         }
 
-        $data = file(config_path('ssa.php'));
-
-        foreach ($data as &$item) {
-            if (($pos = stripos($item, '\'prijave_otvorene\' => ')) !== FALSE) {
-                $item = str_replace('false', 'true', $item);
-            }
-        }
-        file_put_contents(config_path('ssa.php'), $data);
+        ssaconfig(['prijave_otvorene' => true]);
         return back();
     }
 
@@ -381,6 +373,7 @@ class PrijavaController extends Controller
             return back()->with('flash_message', 'Samo par osoba može koristiti ovu funkcionalnost');    
         }
 
+        #TODO Implementirati
         
     }
 }
