@@ -11,11 +11,11 @@
             <p class="aboutProjectTextHeader">Šta je SSA?</p>
             <p class="aboutProjectBottomRed"></p>
             <p class="aboutProjectTextTop">
-                Soft Skills Academy Sarajevo je besplatna trodnevna radionica ličnih i profesionalnih vještina za studente svih fakulteta u Sarajevu, koja podstiče studente na razvoj neformalnih vještina neophodnih za zapošljavanje i uspješnu karijeru, ali i za izazove modernog života, koje tradicionalan način studiranja ne može obezbijediti. Ovogodišnji SSA se održava u periodu od 10 - 12. 03. 2017. godine u prostorijama Academy387 Sarajevo.
+                Soft Skills Academy Sarajevo je besplatna trodnevna radionica ličnih i profesionalnih vještina za studente svih fakulteta u Sarajevu, koja podstiče studente na razvoj neformalnih vještina neophodnih za zapošljavanje i uspješnu karijeru, ali i za izazove modernog života, koje tradicionalan način studiranja ne može obezbijediti. Ovogodišnji SSA se održava u periodu od 8. do 10. marta 2019. godine.
 
             </p>
             <p class="aboutProjectTextBottom">
-                40 najambicioznijih studenata svih fakulteta u Sarajevu učestvovat će u treninzima kao što su prezentacijske vještine, liderstvo, motivacija i mnogi drugi na kojima će steći veoma važne vještine koje će im pomoći u daljem školovanju i poslovnom životu.
+                <!-- dodati teme kad budemo imali teme -->
             </p>
         </div>
     </div>

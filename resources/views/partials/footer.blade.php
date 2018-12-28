@@ -21,7 +21,7 @@
                     <img alt="Instagram" class="socialImage  img-responsive" src="{{ asset('img/instagramTest.png') }}" />
                 </a>
 
-                <a target="_blank" class="col-xs-3" href="https://ba.linkedin.com/in/eestec-lc-sarajevo-347390a0">
+                <a target="_blank" class="col-xs-3" href="https://www.linkedin.com/company/soft-skills-academy-sarajevo/">
                     <img alt="Linkedin" class="socialImage  img-responsive" src="{{ asset('img/linkedinTest.png') }}"  />
                 </a>
 
@@ -37,18 +37,18 @@
 
             <div class="kontaktOsobe">
                 <p class="kontaktIme">
-                    Zlatan Peleksić
+                    Adil Karadža
                 </p>
                 <p class="kontaktPozicija prvaKontakt">
                     Koordinator tima za odnose sa javnošću<br>
-                     <b>zlatan.peleksic@softskillsacademy.ba</b>
+                     <b>adil.karadza@softskillsacademy.ba</b>
                 </p>
                 <p class="kontaktIme">
-                    Marijana Udovčić
+                    Zehra Sikira
                 </p>
                 <p class="kontaktPozicija">
                     Glavna organizatorica<br>
-                    <b>marijana.udovcic@softskillsacademy.ba</b>
+                    <b>zehra.sikira@softskillsacademy.ba</b>
                 </p>
             </div>
 
