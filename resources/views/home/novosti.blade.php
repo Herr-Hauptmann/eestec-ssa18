@@ -17,7 +17,7 @@
                         </div>
                         <div class="newsMainDate">
                             <p class="newsDayMargin">{{ $post->created_at->day }}.</p>
-                            <p>{{ jdmonthname($post->created_at->month, 2) }}</p>
+                            <p>{{ jdmonthname($post->created_at->month, 0) }}</p>
                         </div>
                         <div>
                             <p class='newsArticleHeader'>{{ $post->title }}</p>
