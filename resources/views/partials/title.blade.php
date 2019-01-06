@@ -2,6 +2,7 @@
     <div class="container-fluid">
         @if (config('ssa.prijave_otvorene'))
             <div class="row countdown-timer text-center">
+                
                 <a class="ghost-button" href="{{ route('prijava.create') }}">Prijavi se</a>
                 <br/><br/>
                 <h3>Prijave traju do: <strong>19. 2.</strong></h3>
