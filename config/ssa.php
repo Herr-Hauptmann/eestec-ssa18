@@ -17,6 +17,6 @@ return [
         ]
     ],
 
-    
-    'prijave_otvorene' => false,
+
+    'prijave_otvorene' => true,
 ];
