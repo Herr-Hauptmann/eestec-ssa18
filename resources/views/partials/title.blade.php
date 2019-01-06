@@ -4,9 +4,9 @@
             <div class="row countdown-timer text-center">
                 <a class="ghost-button" href="{{ route('prijava.create') }}">Prijavi se</a>
                 <br/><br/>
-                <h3>Prijave traju do: <strong>23. 2.</strong></h3>
+                <h3>Prijave traju do: <strong>19. 2.</strong></h3>
                 <br/>
-                <h1 data-countdown="2018-02-23 00:00:00" id="countdown" style="font-weight: bolder;">
+                <h1 data-countdown="2018-02-19 00:00:00" id="countdown" style="font-weight: bolder;">
 
                 </h1>
             </div>
