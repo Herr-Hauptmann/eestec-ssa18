@@ -7,7 +7,7 @@
                 <br/><br/>
                 <h3>Prijave traju do: <strong>19. 2.</strong></h3>
                 <br/>
-                <h1 data-countdown="2018-02-19 00:00:00" id="countdown" style="font-weight: bolder;">
+                <!-- <h1 data-countdown="2018-02-19 00:00:00" id="countdown" style="font-weight: bolder;"> -->
 
                 </h1>
             </div>
