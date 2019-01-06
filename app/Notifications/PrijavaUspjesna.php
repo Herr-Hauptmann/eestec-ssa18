@@ -41,9 +41,9 @@ class PrijavaUspjesna extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->subject('[SSA \'' . date('y') . ']')
+                    ->subject('Soft Skills Academy \'' . date('Y') . ']')
                     ->greeting('Vaša prijava je uspješno pohranjena.')
-                    ->line("Hvala Vam na odvojenom vremenu i interesu za Soft Skills Academy Sarajevo. Za najnovije obavijesti pratite nas na <a target=\"_blank\" href=\"https://www.facebook.com/SoftSkillsAcademySarajevo\">facebook-u</a> i našoj <a target=\"_blank\" href=\"http://www.softskillsacademy.ba\">web stranici</a>.")
+                    ->line("Hvala Vam na odvojenom vremenu i interesu za Soft Skills Academy Sarajevo. Za najnovije obavijesti pratite nas na <a target=\"_blank\" href=\"https://www.facebook.com/SoftSkillsAcademySarajevo\">Facebook-u</a>, <a target=\"_blank\" href=\"https://www.instagram.com/softskillsacademy_sa\">Instagram-u</a>, <a target=\"_blank\" href=\"https://www.linkedin.com/company/soft-skills-academy-sarajevo\">LinkedIn-u</a> i našoj <a target=\"_blank\" href=\"http://www.softskillsacademy.ba\">web stranici</a>.")
                     ->line('Hvala Vam na ukazanom povjerenju.');
     }
 
