@@ -10,8 +10,8 @@
                         <img class="img-responsive newsImg" src="{{ asset($post->image_url) }}" />
                     </div>
                     <div class="newsMainDate">
-                        <p class="newsDayMargin">{{ $post->created_at->day }}.</p>
-                        <p>{{ jdmonthname($post->created_at->month, 0) }}</p>
+                        <p class="newsDayMargin">{{ $post->created_at->day }}.{{$post->created_at->month}}.</p>
+                        <!-- <p>{{ jdmonthname($post->created_at->month, 0) }}</p> -->
                     </div>
                     <div>
                         <p class="newsArticleHeader">{{ $post->title }}</p>
