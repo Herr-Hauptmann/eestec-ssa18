@@ -20,7 +20,7 @@ use App\Utility\StringUtility;
 class ParticipantsController extends Controller
 {
     use AuthenticatesUsers;
-
+    
     /**
      * Where to redirect users after login.
      *

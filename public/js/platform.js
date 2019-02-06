@@ -30,10 +30,11 @@
 				_token: csrf_token,
 				email: $('#emailTry').val()
 			}).then(function(res) {
-				console.log(res, res.ime);
-				if (res.ime) {
-					$('#name').val(res.ime);
-					$('#email').val(res.email);
+				let participant = res.participant;
+				console.log(res['participant']);
+				if (reparticipant.ime) {
+					$('#name').val(participant.ime);
+					$('#email').val(participant.email);
 					$('#registrationModalEmail').fadeOut(500);
 					setTimeout(function() {
 						$('#registrationModalEmail').modal('hide');

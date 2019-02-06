@@ -141,6 +141,9 @@ Route::prefix('admin')->middleware(['auth', 'role:root'])->group(function() {
 
 
 Route::prefix('participant')->group(function() {
+	Route::get('/', function() {
+		return redirect()->route('participant.login.show');
+	});
 	Route::get('login', 'ParticipantsController@showLoginFormParticipant')->middleware(['guest'])->name('participant.login.show');
 	Route::post('login', 'ParticipantsController@loginParticipant')->name('participant.login');
 	Route::get('register', 'ParticipantsController@showRegistrationFormParticipant')->middleware(['guest'])->name('participant.register.show');
