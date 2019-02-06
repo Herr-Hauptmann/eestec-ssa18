@@ -21,6 +21,7 @@
             <ul class="nav navbar-nav">
                 @role('root')
                     <li><a href="{{ route('users.index') }}">Korisnici</a></li>
+                    <li><a href="{{ route('years.index') }}">Eventi</a></li>
                 @endrole
             </ul>
 

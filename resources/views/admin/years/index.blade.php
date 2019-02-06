@@ -7,10 +7,10 @@
 
             <div class="col-md-9">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Partneri</div>
+                    <div class="panel-heading">SSA godine</div>
                     <div class="panel-body">
-                        <a href="{{ route('partners.create') }}" class="btn btn-success btn-sm" title="Add New Partner">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Dodaj novog 
+                        <a href="{{ route('years.create') }}" class="btn btn-success btn-sm" title="Dodaj novi SSA">
+                            <i class="fa fa-plus" aria-hidden="true"></i> Dodaj novi
                         </a>
 
                         <form method="GET" action="{{ url()->current() }}" accept-charset="UTF-8" class="navbar-form navbar-right" role="search">
@@ -31,33 +31,31 @@
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Naziv</th><th>Logo</th><th>Kategorija</th><th>Actions</th>
+                                        <th>#</th>
+                                        <th>Redni broj</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($partners as $item)
+                                @foreach($years as $item)
                                     <tr>
                                         <td>{{ $loop->iteration or $item->id }}</td>
-                                        <td>{{ $item->name }}</td>
+                                        <td>{{ $item->ordinal_number }}</td>
                                         <td>
-                                            <img src="{{ env('APP_URL') . $item->logo }}" class="img-responsive" style="height: 50px;" />
-                                        </td>
-                                        <td>{{ $item->category }}</td>
-                                        <td>
-                                            <a href="{{ route('partners.show', $item->id) }}" title="View Partner"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> Prikazi</button></a>
-                                            <a href="{{ route('partners.edit', $item->id) }}" title="Edit Partner"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Izmjeni</button></a>
+                                            <a href="{{ route('years.show', $item->id) }}" title="Pogledaj"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> Pogledaj</button></a>
+                                            <a href="{{ route('years.edit', $item->id) }}" title="Izmjeni"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Izmjeni</button></a>
 
-                                            <form method="POST" action="{{ route('partners.destroy', $item->id) }}" accept-charset="UTF-8" style="display:inline">
+                                            <form method="POST" action="{{ route('years.destroy', $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger btn-xs" title="Delete Partner" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Obrisi</button>
+                                                <button type="submit" class="btn btn-danger btn-xs" title="Obrisi" onclick="return confirm(&quot;Sigurno zelis izbrisati?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Obrisi</button>
                                             </form>
                                         </td>
                                     </tr>
                                 @endforeach
                                 </tbody>
                             </table>
-                            <div class="pagination-wrapper"> {!! $partners->appends(['search' => Request::get('search')])->render() !!} </div>
+                            <div class="pagination-wrapper"> {!! $years->appends(['search' => Request::get('search')])->render() !!} </div>
                         </div>
 
                     </div>

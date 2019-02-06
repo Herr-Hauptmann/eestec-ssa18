@@ -26,6 +26,7 @@
 
                         <br/>
                         <br/>
+                        <br>
                         <div class="table-responsive">
                             <table class="table table-borderless">
                                 <thead>
@@ -39,7 +40,7 @@
                                         <td>{{ $loop->iteration or $item->id }}</td>
                                         <td>{{ $item->name }}</td>
                                         <td>
-                                            <img src="{{ asset($item->logo) }}" class="img-responsive" style="height: 50px;" />
+                                            <img src="{{ env('APP_URL') . $item->logo }}" class="img-responsive" style="height: 50px;" />
                                         </td>
                                         <td>{{ $item->category }}</td>
                                         <td>

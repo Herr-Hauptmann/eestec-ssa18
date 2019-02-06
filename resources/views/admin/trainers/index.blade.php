@@ -26,6 +26,7 @@
 
                         <br/>
                         <br/>
+                        <br>
                         <div class="table-responsive">
                             <table class="table table-borderless">
                                 <thead>
@@ -46,7 +47,7 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <img src="{{ asset($item->image) }}" class="img-responsive" style="height: 50px;" />
+                                            <img src="{{ env('APP_URL') . $item->image }}" class="img-responsive" style="height: 50px;" />
                                         </td>
                                         <td>
                                             <a href="{{ route('trainers.show', $item->id) }}" title="View Trainer"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> Detaljnije</button></a>

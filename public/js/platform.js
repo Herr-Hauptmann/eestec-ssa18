@@ -29,12 +29,12 @@
 			{
 				_token: csrf_token,
 				email: $('#emailTry').val()
-			},
-			function(res) {
-				console.log(res, res.ime);
-				if (res.ime) {
-					$('#name').val(res.ime);
-					$('#email').val(res.email);
+			}).then(function(res) {
+				let participant = res.participant;
+				console.log(res['participant']);
+				if (reparticipant.ime) {
+					$('#name').val(participant.ime);
+					$('#email').val(participant.email);
 					$('#registrationModalEmail').fadeOut(500);
 					setTimeout(function() {
 						$('#registrationModalEmail').modal('hide');
@@ -46,8 +46,9 @@
 					$('#emailTryError').html('<b>Došlo je do pogreške. Pokušajte ponovo.</b>').show();
 					$('#emailTry').parent().addClass('has-error');
 				}
-			}
-		);
+			}).catch(function(res) {
+				console.warn(res);
+		})
 	});
 
 	// dodavanje iskustva

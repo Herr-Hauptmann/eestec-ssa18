@@ -36,7 +36,7 @@
                                         <td>{{ $counter++ }}</td>
                                         <td>{{ $item->ime }}</td><td>{{ $item->prezime }}</td><td>{{ $item->email }}</td>
                                         <td>
-                                            {{--<a href="{{ url('/admin/participants/' . $item->id) }}" title="View participant"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>--}}
+                                            <a href="{{ url('/admin/participants/' . $item->id) }}" title="View participant"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             {{--<a href="{{ url('/admin/participants/' . $item->id . '/edit') }}" title="Edit participant"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>--}}
 
                                             {{--<form method="POST" action="{{ url('/admin/participants' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">--}}
