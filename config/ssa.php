@@ -11,6 +11,6 @@ return [
         ]
     ],
 
-    'prijave_otvorene' => true,
+    'prijave_otvorene' => false,
     'trenutni_redni_broj_eventa' => 6
 ];
