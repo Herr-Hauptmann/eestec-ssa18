@@ -9,11 +9,11 @@
 return [
     'home' => [
         'landing' => [
-            'posts_pagination' => 3
+            'posts_pagination' => 4
         ],
 
         'posts' => [
-            'pagination' => 9
+            'pagination' => 10
         ]
     ],
     'prijave_otvorene' => false,

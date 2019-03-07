@@ -33,7 +33,7 @@ class HomeController extends Controller
     public function index()
     {
         /** @var LengthAwarePaginator $posts */
-        $posts = Post::paginate(config('ssa.home.landing.post_pagination', 3));
+        $posts = Post::orderBy("created_at", 'desc')->paginate(config('ssa.home.landing.post_pagination', 4));
 
         $posts->each(function ($post) {
            $post->content = StringUtility::shortenString($post->content, 48);
@@ -47,7 +47,7 @@ class HomeController extends Controller
     public function novosti() {
 
         /** @var LengthAwarePaginator $posts */
-        $posts = Post::paginate(config('ssa.home.landing.post_pagination', 3));
+        $posts = Post::orderBy("created_at", 'desc')->paginate(config('ssa.posts.pagination', 10));
 
         $posts->each(function ($post) {
             $post->content = StringUtility::shortenString($post->content, 48);
