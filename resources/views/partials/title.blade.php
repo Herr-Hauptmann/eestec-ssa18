@@ -5,9 +5,9 @@
                 
                 <a class="ghost-button" href="{{ route('prijava.create') }}">Prijavi se</a>
                 <br/><br/>
-                <h3>Prijave traju do: <strong>19. 2.</strong></h3>
+                <h3>Prijave traju do: <strong>16. 2.</strong></h3>
                 <br/>
-                <!-- <h1 data-countdown="2018-02-19 00:00:00" id="countdown" style="font-weight: bolder;"> -->
+                <h1 data-countdown="2020-02-16 23:59:59" id="countdown" style="font-weight: bolder;">
 
                 </h1>
             </div>
@@ -27,7 +27,7 @@
                     <p>Soft skills academy Sarajevo</p>
                 </div>
                 <div class="title-text-three">
-                    <p>8 - 10. mart 2019. godine</p>
+                    <p>06 - 08. mart 2020. godine</p>
                 </div>
             </div>
 

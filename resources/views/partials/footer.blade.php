@@ -37,18 +37,18 @@
 
             <div class="kontaktOsobe">
                 <p class="kontaktIme">
-                    Adil Karadža
+                    Neira Novalić
                 </p>
                 <p class="kontaktPozicija prvaKontakt">
                     Koordinator tima za odnose sa javnošću<br>
-                     <b>adil.karadza@softskillsacademy.ba</b>
+                     <b>neira.novalic@softskillsacademy.ba</b>
                 </p>
                 <p class="kontaktIme">
-                    Zehra Sikira
+                    Almedina Kerla
                 </p>
                 <p class="kontaktPozicija">
                     Glavna organizatorica<br>
-                    <b>zehra.sikira@softskillsacademy.ba</b>
+                    <b>almedina.kerla@softskillsacademy.ba</b>
                 </p>
             </div>
 
