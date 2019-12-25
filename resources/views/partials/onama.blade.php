@@ -10,7 +10,7 @@
                     Povezivanje studenata
                 </p>
                 <p class="onama-paragraph-text">
-                    EESTEC (engl. Electrical Engineering STudents' European assoCiation) je udruženje studenata elektrotehnike Evrope. Trenutno postoji 51 lokalni komitet na fakultetima u gradovima širom Evrope i taj broj se povećava. Osnovni cilj EESTEC-a je promocija
+                    EESTEC (engl. Electrical Engineering STudents' European assoCiation) je udruženje studenata elektrotehnike Evrope. Trenutno postoji 56 ogranaka na fakultetima u gradovima širom Evrope i taj broj se povećava. Osnovni cilj EESTEC-a je promocija
                     i razvoj međunarodnih kontakta između studenata i profesionalaca iz oblasti elektrotehnike. EESTEC pruža poslovne mogućnosti i internacionalnu karijeru svim članovima lokalnih komiteta, a jedan od koraka ka ostvarenju ovog cilja je
                     formiranje jedinstvene baze podataka studenata elektrotehnike iz cijele Evrope, kako bi internacionalne kompanije mogle specijalizirati studente u vrhunske inženjere kroz rad u njihovom poslovnom okruženju.
                 </p>
@@ -22,7 +22,7 @@
                     Višegodišnja tradicija i uspjesi
                 </p>
                 <p class="onama-paragraph-text">
-                    Tokom 10 godina aktivnog rada, EESTEC LC Sarajevo se može pohvaliti velikim brojem organizovanih projekata, kako na lokalnom nivou, tako i na internacionalnom. Naš lokalni komitet teži da pruži maksimalni doprinos poboljšanju situacije studenata u Bosni
+                    Tokom 12 godina aktivnog rada, EESTEC LC Sarajevo se može pohvaliti velikim brojem organizovanih projekata, kako na lokalnom nivou, tako i na internacionalnom. Naš lokalni komitet teži da pruži maksimalni doprinos poboljšanju situacije studenata u Bosni
                     i Hercegovini. Naš moto je da mladi ne trebaju čekati na prilike, već ih sami stvarati. Kroz naše lokalne projekte Soft Skills Academy Sarajevo i JobFAIR, trudimo se da motivišemo mlade da na vrijeme počnu razvijati lične i profesionalne
                     sposobnosti te im pružamo mogućnost direktnog kontakta sa vodećim kompanijama iz tehničko-tehnoloških oblasti i ekonomije.
 

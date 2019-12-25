@@ -40,7 +40,7 @@
                     Neira Novalić
                 </p>
                 <p class="kontaktPozicija prvaKontakt">
-                    Koordinator tima za odnose sa javnošću<br>
+                    Koordinatorica tima za odnose sa javnošću<br>
                      <b>neira.novalic@softskillsacademy.ba</b>
                 </p>
                 <p class="kontaktIme">
