@@ -41,7 +41,7 @@ class HomeController extends Controller
 
         });
 
-        return view('home.index', compact('posts'));
+        return view('home.index2020', compact('posts'));
     }
 
     public function novosti() {
