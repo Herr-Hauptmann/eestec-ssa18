@@ -24,6 +24,8 @@
     {{-- CSS FILEOVI SE DODAJU KAO NA LINIJI ISPOD. nalaze se u public/css/ folderu --}}
     {{-- <link href="{{ asset('css/ime-filea.css') }}" rel="stylesheet"> --}}
 
+        @yield('head');
+    
     @if(request()->route()->named('galerija'))
         <link href="{{ asset('css/galerija/galerijaMain.css') }}" rel="stylesheet">
         <link href="{{ asset('css/galerija/ihover.min.css') }}" rel="stylesheet">
@@ -41,9 +43,9 @@
 </head>
 <body>
 
-    <div>
-        @yield('content')
-    </div>
+   
+    @yield('content')
+    
 
     @if (Session::has('closed'))
         <script>
