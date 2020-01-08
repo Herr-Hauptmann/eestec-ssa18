@@ -24,7 +24,7 @@
     {{-- CSS FILEOVI SE DODAJU KAO NA LINIJI ISPOD. nalaze se u public/css/ folderu --}}
     {{-- <link href="{{ asset('css/ime-filea.css') }}" rel="stylesheet"> --}}
 
-        @yield('head');
+        @yield('head')
     
     @if(request()->route()->named('galerija'))
         <link href="{{ asset('css/galerija/galerijaMain.css') }}" rel="stylesheet">

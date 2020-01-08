@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap');
+* {
+    background-color: #ffffff;
+}
+
+
+#navigacioni-meni{
+    padding-bottom: 25px;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0;
+    opacity: 1;
+    
+}
