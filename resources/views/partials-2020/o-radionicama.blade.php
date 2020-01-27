@@ -1,12 +1,12 @@
-<div class="container">
+<div class="container-fluid">
 <div class="row">
-  <div class="col-2">
-    <svg class="oblak_sivi_278 img-fluid" xmlns="http://www.w3.org/2000/svg" width="548.442" height="1225.044" viewBox="400 0 448.442 525.044">
+  <div class="oblak_sivi_278 col-xl-2 col-lg-2 col-md-4 col-sm-4 col-4 ">
+    <svg class="img-fluid" xmlns="http://www.w3.org/2000/svg" width="1248.442" height="3525.044" viewBox="500 230 248.442 325.044">  
       <path id="Path_278" data-name="Path 278" d="M93.215-6.276s293.495-66.526,392.658,0-19.309,140.922,3.995,266.1c22.861,122.8,77.513,146.739,89.209,230.241S509.75,662.133,390.725,655.756s-297.51-68.095-297.51-68.095A93.215,93.215,0,0,1,0,494.446V86.939A93.215,93.215,0,0,1,93.215-6.276Z" transform="translate(9.88 194.378) rotate(-16)" fill="#54049a" opacity="0.1"/>
     </svg>
   </div>
 
-    <div class="col-4">
+    <div class="col-xl-4 col-lg-4 col-md-8 col-sm-8 col-8 cikac-crta">
         <svg class="img-fluid"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="586.411" height="578.61" viewBox="0 0 586.411 578.61">
   <defs>
     <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
@@ -115,13 +115,15 @@
   </g>
 </svg> 
     </div> 
-  <div class="col-6">
+  <div class="col-lg-6 align-items-center col-xl-6 radionice-opis">
     <h2 class="radionice-naslov">Motivation+</h2>
     <br>
     <p class="radionice-tekst">Volite da spavate? Uživate u gledanju serija? Volite da ispijate kafe? Ali vam je zato mrsko spremati ispite, seminarske, učiti jezike? Muči vas propala veza? Počinjete mršati od sljedećeg ponedjeljka? Nemate volje za promjene?
 <br><br>
 Ako vas ova pitanja muče, onda ste na pravom mjestu, jer su to teme koje ćemo obrađivati tokom četvoročasovne radionice na temu motivacije. Participanti će imati priliku da učestvuju u praktičnim vježbama i testovima prošaranim konkretnim primjerima iz svakodnevnog i poslovnog života.</p>
 </div>
+
+
 
 </div>
 </div>

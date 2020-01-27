@@ -4,29 +4,19 @@
 }
 
 .oblak_sivi_278{
-    position: absolute;
-    left: -40%;
     opacity: 1;
+    padding-left: 0% !important;
+
 }
 
-#cikac-crta{
-    /* position: relative; */
-    /* left: 7%; */
-    /* top: 3%; */
+.cikac-crta{
+   margin-bottom: 20px;
+   padding-bottom: 2%;
 }
-#tekst-lijevo{
-    position:relative;
-    /* bottom: 550px; */
-    /* margin-right: 500px; */
-    /* left:50%;     */
-}
-.radionice-naslov{
-    text-align: left;
-    font-family: 'Open Sans', sans-bold;
-    letter-spacing: 0;
-    color: #31384E;
-    opacity: 1;
-    /* position: relative; */
+
+.radionice-opis{
+    margin-top: 30px;
+    padding-top: 5%;
 }
 
 .radionice-tekst{
