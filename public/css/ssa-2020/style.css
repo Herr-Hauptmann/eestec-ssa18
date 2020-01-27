@@ -3,10 +3,40 @@
     background-color: #ffffff;
 }
 
-#oblak_sivi_278
-{
-   
+.oblak_sivi_278{
+    position: absolute;
+    left: -40%;
+    opacity: 1;
 }
+
+#cikac-crta{
+    /* position: relative; */
+    /* left: 7%; */
+    /* top: 3%; */
+}
+#tekst-lijevo{
+    position:relative;
+    /* bottom: 550px; */
+    /* margin-right: 500px; */
+    /* left:50%;     */
+}
+.radionice-naslov{
+    text-align: left;
+    font-family: 'Open Sans', sans-bold;
+    letter-spacing: 0;
+    color: #31384E;
+    opacity: 1;
+    /* position: relative; */
+}
+
+.radionice-tekst{
+    text-align: justify;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0;
+    color: #31384E;
+    opacity: 0.7;
+}
+
 
 #navigacioni-meni{
     padding-bottom: 25px;
