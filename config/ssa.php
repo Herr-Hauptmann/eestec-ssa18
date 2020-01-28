@@ -16,5 +16,5 @@ return [
             'pagination' => 10
         ]
     ],
-    'prijave_otvorene' => false,
+    'prijave_otvorene' => true,
 ];

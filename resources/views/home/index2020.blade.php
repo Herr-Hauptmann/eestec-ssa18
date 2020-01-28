@@ -12,8 +12,10 @@
     {{-- @include('ime-filea')  --}}
     {{-- NPR @include('partials-2020.naslovna_traka')   --}}
     @include('partials-2020.menu')
-    <p style="font-size:60px; font-family:Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color:#E52A30">
+    <!-- <p style="font-size:60px; font-family:Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color:#E52A30">
        Ako vidite ovaj tekst, onda sve radi kako treba :)
-    </p>
+    </p> -->
+    @include('partials-2020.welcome')
+    <br><br><br><br>
     @include('partials-2020.o-radionicama')
 @endsection
