@@ -3,10 +3,14 @@
     background-color: #ffffff;
 }
 
-.oblak_sivi_278{
+.oblak_sivi_lijevi{
     opacity: 1;
     padding-left: 0% !important;
 
+}
+.oblak_sivi_desni{
+    opacity: 1;
+    padding-right: 0% !important;
 }
 
 .cikac-crta{
