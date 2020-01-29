@@ -5,6 +5,7 @@
     {{-- <link href="{{ asset('css/ime-filea.css') }}" rel="stylesheet"> --}}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link  href="{{ asset('css/ssa-2020/style.css') }}" rel="stylesheet">
+    <link  href="{{ asset('css/ssa-2020/o-nama.css')}}" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -16,4 +17,5 @@
        Ako vidite ovaj tekst, onda sve radi kako treba :)
     </p>
     @include('partials-2020.o-radionicama')
+    @include('partials-2020.o-nama')
 @endsection
