@@ -1,6 +1,105 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap');
-* {
-    background-color: #ffffff;
+
+@media all and (max-width: 576px){
+    .status-prijava{
+        margin-top: 20%;
+        margin-bottom: 10%;
+        margin-left:3%;
+        padding-top: 10px;
+        background-color: transparent;
+    }
+    .prijava-dugme{
+        margin-left:3%;
+    }
+  }
+
+@media all and (max-width: 767px) and (min-width: 578px) {
+    .status-prijava{
+        margin-top: 10%;
+        margin-bottom: 10%;
+        margin-left:3%;
+        padding-top: 10px;
+        background-color: transparent;
+    }
+}
+
+@media all and (max-width: 992px) and (min-width: 768px) {
+    .status-prijava{
+        margin-top: 10%;
+        margin-bottom: 10%;
+        margin-left:3%;
+        padding-top: 10px;
+        background-color: transparent;
+    }
+}
+@media all and (max-width: 1119px) and (min-width: 993px) {
+    .status-prijava{
+        margin-top: 10%;
+        margin-bottom: 10%;
+        margin-left:3%;
+        padding-top: 10px;
+        background-color: transparent;
+    }
+}
+
+@media all and (min-width: 1120px) {
+    .status-prijava{
+        margin-top: 10%;
+        margin-bottom: 10%;
+        margin-left:3%;
+        padding-top: 10px;
+        background-color: transparent;
+    }
+}
+
+.menju{
+    background-color: transparent;
+    position:absolute;
+    
+}
+
+a.navigacioni-meni:link{
+    color: white !important;
+    font-family: 'Open Sans';
+    font-size: 16px;
+    letter-spacing: 0;
+    opacity: 1 !important;
+}
+
+.ljudina{
+    position:absolute;
+    top:0;
+    right: 0;
+}
+
+.tajmer{
+    text-align: left;
+    font: Bold "Open Sans";
+    letter-spacing: 1.62px;
+    font-size:5vw;
+    color: #33C3A9;
+    opacity: 1;
+}
+.naslovna-tekst2{
+    text-align: left;
+    font: Bold "Open Sans";
+    font-size:4vw;
+    letter-spacing: 1.62px;
+    color: #31384E;
+}
+.naslovna-tekst3{
+    text-align: left;
+    font: "Open Sans";
+    font-size:3vw;
+    letter-spacing: 1.14px;
+    color: #31384E;
+}
+.naslovna-tekst4{
+    text-align: left;
+    font: "Open Sans";
+    font-size:2vw;
+    letter-spacing: 1.14px;
+    color: #31384E;
 }
 
 .oblak_sivi_lijevi{
@@ -31,13 +130,31 @@
     opacity: 0.7;
 }
 
-
-#navigacioni-meni{
-    padding-bottom: 25px;
-    color: white;
-    font-family: 'Open Sans', sans-serif;
+.btn-outline-success{
+    color: #34C4A9 !important;
+    background: #FFF!important;
+    border-color: #34c4a9;
+}
+.btn-outline-success:hover{
+    background-color: #34C4A9!important;
+    color: white!important;
+    border-color: #34c4a9;
+}
+.prijava-dugme{
+    margin-left:27%;
+}
+a.prijava-dugme-link{
+    color: #34c4a9!important;
+    font-family: 'Open Sans';
     font-size: 16px;
     letter-spacing: 0;
-    opacity: 1;
-    
+    opacity: 1 !important;
+}
+
+a.prijava-dugme-link:hover{
+    color: white!important;
+    font-family: 'Open Sans';
+    font-size: 16px;
+    letter-spacing: 0;
+    opacity: 1 !important;
 }
