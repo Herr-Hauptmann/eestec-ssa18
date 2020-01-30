@@ -193,9 +193,6 @@
                 </g>
                 </g>
              </svg>        
-        </div>
-
-    </div>
 </div>
 
 <div class="containter-fluid">

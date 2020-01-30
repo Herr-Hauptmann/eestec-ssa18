@@ -2,7 +2,7 @@
 <br>
 <br>
 
-<div class="containter-fluid">
+<div class="containter-fluid" id ="o-nama">
     <div class="row">
         <div class="col-xl-6 col-lg-6 col-md-6 ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="344.75" height="854.738" viewBox="0 0 744.75 1254.738" class="img-fluid plavo ">
@@ -180,7 +180,7 @@
                   
                 <img src="{{ asset('img/o-nama/sijalica.png') }}" class="img-fluid sijalica" >
         </div>
-        <div class="col-xl-6 col-lg-6 col-md-6">
+        <div class="col-xl-6 col-lg-6 col-md-6 mt-xl-5 mt-lg-5 pt-md-6 pt-xl-5 pt-lg-5 pt-md-6">
             <p>
             stvari
             </p>

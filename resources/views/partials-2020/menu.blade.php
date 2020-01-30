@@ -3,7 +3,7 @@
         <img class="logo-img img-fluid" src="{{ asset('img/ssa20/green@2x.png') }}" width="42px" />
     </a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler dugme" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -13,7 +13,7 @@
             <a class="nav-link disabled navigacioni-meni" href="#"> Novosti </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link disabled navigacioni-meni" href="#"> O nama </a>
+            <a class="nav-link navigacioni-meni" href="#o-nama"> O nama </a>
         </li>
         <li class="nav-item">
             <a class="nav-link disabled navigacioni-meni" href="#"> O Projektu </a>
