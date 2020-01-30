@@ -17,7 +17,9 @@
        Ako vidite ovaj tekst, onda sve radi kako treba :)
     </p> -->
     @include('partials-2020.welcome')
-    <br><br><br><br>
-    @include('partials-2020.o-radionicama')
+    
     @include('partials-2020.o-nama')
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    @include('partials-2020.o-radionicama')
+    
 @endsection

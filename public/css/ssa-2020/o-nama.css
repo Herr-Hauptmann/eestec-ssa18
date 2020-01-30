@@ -1,31 +1,64 @@
-.parent 
-{
-    position: relative;
-    top: 0;
-    left: 0;
+@media all and (max-width: 576px){ 
+    /* extra Small */
+    .sijalica
+    {
+    position: absolute;
+    top: 2vw;
+    left: 0vw;
+    }
+
+  }
+
+@media all and (max-width: 767px) and (min-width: 578px) {
+    /* small */
+    .sijalica
+    {
+    position: absolute;
+    top: 5vw;
+    left: -5vw;
+    }
 }
 
-.sijalica 
-{
+@media all and (max-width: 992px) and (min-width: 768px) {
+    /* medium */
+    .sijalica
+    {
     position: absolute;
-    top: -100px;
-    left: -300px;
-    width: 1531px;
-    height: 1442px;
-    background: transparent;
+    top: 20vw;
+    left: 15vw;
+    }
+}
+@media all and (max-width: 1119px) and (min-width: 993px) {
+    /* large */
+    .sijalica
+    {
+    position: absolute;
+    top: 10vw;
+    left: 5vw;
+    }
+}
+
+@media all and (min-width: 1120px) {
+    /* extra large */
+    .sijalica
+    {
+    position: absolute;
+    top: 2vw;
+    left: 0vw;
+    }
 }
 
 .plavo 
 {
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
 }
 
 .dots
 {
-    position: absolute;
-    top: 330px;
-    left: 475px;
+    position: relative;
+    top: 10vw;
+    left: 10vw;
     background: transparent;
 }
