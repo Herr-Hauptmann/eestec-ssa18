@@ -1,0 +1,8 @@
+.oblak-kontakt{
+    transform: matrix(1, -0.05, 0.05, 1, 0, 0);
+    position:absolute;
+    left:-1vh;
+    opacity: 1;
+    overflow: hidden;
+}
+
