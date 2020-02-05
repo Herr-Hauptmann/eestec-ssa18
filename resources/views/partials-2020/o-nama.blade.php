@@ -2,13 +2,13 @@
 <br>
 <br>
 
-<div class="containter-fluid" id ="o-nama">
-    <div class="row">
-        <div class="col-xl-6 col-lg-6 col-md-6 ">
-                <svg xmlns="http://www.w3.org/2000/svg" width="344.75" height="854.738" viewBox="0 0 744.75 1254.738" class="img-fluid plavo ">
+<div class="containter-fluid parent">
+      <div class="row">
+            <div class="col-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="744.75" height="1254.738" viewBox="0 0 744.75 1254.738" class="plavo img-fluid">
                     <path id="Path_21856" data-name="Path 21856" d="M2676.17,3199.577s398.786,39.1,709.605-463.3c1.955-1.955,189.619-316.683-322.548-469.161,3.91,0-340.63-83.081-377.772-321.571C2687.41,1943.6,2676.17,3199.577,2676.17,3199.577Z" transform="translate(-2676.17 -1945.548)" fill="#34c4a9"/>
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="424" height="424" viewBox="0 0 424 424" class="dots img-fluid">
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="424" height="424" viewBox="0 0 424 424" class="dots img-fluid">
                     <g id="Group_1711" data-name="Group 1711" transform="translate(-683 -2443)" opacity="0.46">
                       <g id="Group_1094" data-name="Group 1094">
                         <circle id="Ellipse_67" data-name="Ellipse 67" cx="4.5" cy="4.5" r="4.5" transform="translate(683 2443)" fill="#b6b8bd"/>
@@ -177,13 +177,11 @@
                       </g>
                     </g>
                   </svg>
-                  
-                <img src="{{ asset('img/o-nama/sijalica.png') }}" class="img-fluid sijalica" >
-        </div>
-        <div class="col-xl-6 col-lg-6 col-md-6 mt-xl-5 mt-lg-5 pt-md-6 pt-xl-5 pt-lg-5 pt-md-6">
-            <p>
-            stvari
-            </p>
-        </div>
-    </div>
+                  <img src="{{ asset('img/o-nama/sijalica.png') }}" class="sijalica" >
+            </div>
+
+            <div class="col-6">
+                  tekst
+            </div>
+      </div>
 </div>
