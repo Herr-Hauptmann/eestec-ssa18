@@ -1,0 +1,64 @@
+@media all and (max-width: 576px){ 
+    /* extra Small */
+    .sijalica
+    {
+    position: absolute;
+    top: 2vw;
+    left: 0vw;
+    }
+
+  }
+
+@media all and (max-width: 767px) and (min-width: 578px) {
+    /* small */
+    .sijalica
+    {
+    position: absolute;
+    top: 5vw;
+    left: -5vw;
+    }
+}
+
+@media all and (max-width: 992px) and (min-width: 768px) {
+    /* medium */
+    .sijalica
+    {
+    position: absolute;
+    top: 20vw;
+    left: 15vw;
+    }
+}
+@media all and (max-width: 1119px) and (min-width: 993px) {
+    /* large */
+    .sijalica
+    {
+    position: absolute;
+    top: 10vw;
+    left: 5vw;
+    }
+}
+
+@media all and (min-width: 1120px) {
+    /* extra large */
+    .sijalica
+    {
+    position: absolute;
+    top: 2vw;
+    left: 0vw;
+    }
+}
+
+.plavo 
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.dots
+{
+    position: relative;
+    top: 10vw;
+    left: 10vw;
+    background: transparent;
+}
