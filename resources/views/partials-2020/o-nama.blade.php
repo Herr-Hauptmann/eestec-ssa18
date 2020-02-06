@@ -3,8 +3,8 @@
 <br>
 
 <div class="containter-fluid parent">
-      <div class="row">
-            <div class="col-6">
+      <div class="row parent">
+            <div class="col-6 parent">
                   <svg xmlns="http://www.w3.org/2000/svg" width="744.75" height="1254.738" viewBox="0 0 744.75 1254.738" class="plavo img-fluid">
                     <path id="Path_21856" data-name="Path 21856" d="M2676.17,3199.577s398.786,39.1,709.605-463.3c1.955-1.955,189.619-316.683-322.548-469.161,3.91,0-340.63-83.081-377.772-321.571C2687.41,1943.6,2676.17,3199.577,2676.17,3199.577Z" transform="translate(-2676.17 -1945.548)" fill="#34c4a9"/>
                   </svg>
