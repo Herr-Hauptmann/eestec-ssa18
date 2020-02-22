@@ -3,17 +3,18 @@
         
     </div>
     <div class="row">
-       <div class="col-4 pl-0 mr-4"> 
-            <svg xmlns="http://www.w3.org/2000/svg" width="350" height="140" viewBox=" 0 300 140">
+       <div class="col-2"> 
+        </div>  
+        <div class="col-5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="about img-fluid" width="350" height="140" viewBox=" 0 300 140">
                 <text id="about" transform="translate(0 105)" fill="#34c4a9" font-size="10vw" font-family="Poppins-Bold, Poppins" font-weight="700" letter-spacing="-0.02em"><tspan x="0" y="0">about</tspan></text>
             </svg>
             
-            <svg xmlns="http://www.w3.org/2000/svg" width="728" height="140" viewBox="0 0 728 140">
+            <svg xmlns="http://www.w3.org/2000/svg" class="tekstssa img-fluid" width="728" height="140" viewBox="0 0 728 140">
                 <text id="SSA_ant_others" data-name="SSA ant others" transform="translate(0 105)" fill="#34c4a9" font-size="10vw" font-family="Poppins-Bold, Poppins" font-weight="700" letter-spacing="-0.015em"><tspan x="0" y="0">SSA and others</tspan></text>
             </svg>
-            
-        </div>  
-        <div class="col-8">
+        </div>
+        <div class="col-1"> 
         </div>
         <div class="col-4">
              <svg id="Group" class="tacke img-fluid" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1006.314" height="464.943" viewBox="0 0 1006.314 464.943">
@@ -101,5 +102,8 @@
                 </g>
             </svg>
         </div>
+    </div>
+    <div class="row">
+        
     </div>
 </div>
