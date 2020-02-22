@@ -7,6 +7,7 @@
     <link  href="{{ asset('css/ssa-2020/style.css') }}" rel="stylesheet">
     <link  href="{{ asset('css/ssa-2020/o-nama.css')}}" rel="stylesheet">
     <link  href="{{ asset('css/ssa-2020/o-projektu.css')}}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4c9ea8fa84.js" crossorigin="anonymous"></script>
 @endsection
 
 @section('content')
@@ -19,7 +20,6 @@
     </p> -->
     @include('partials-2020.welcome')
     @include('partials-2020.o-nama')
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     @include('partials-2020.o-radionicama')
     
 @endsection
