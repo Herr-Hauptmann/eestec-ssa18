@@ -8,7 +8,6 @@
     }
     .sijalica 
     {
-        /* display: none; */
         position: absolute;
         top: 0;
         left: -36.98vw;
@@ -33,7 +32,7 @@
         height: 44.16vw;
         background: transparent;
     }
-    .ourstory
+    .tekst
     {
         
     }
@@ -74,8 +73,15 @@
         height: 22.08vw;
         background: transparent;   
     }
+    .tekst
+    {
+        margin-top: 21.88vw;
+    }
     .ourstory
     {
-        
+        width: 193px;
+        height: 56px;
+        letter-spacing: 0;
+        color: #181818;
     }
 }

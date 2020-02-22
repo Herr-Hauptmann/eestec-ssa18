@@ -179,10 +179,10 @@
                 <img src="{{ asset('img/o-nama/sijalica.png') }}" class="sijalica" >
             </div>
 
-            <div class="col-lg-6">
-              <div class="ourstory">
+            <div class="col-lg-6 align-items-center tekst">
+              <h2 class="ourstory">
                 Our Story
-              </div>
+              </h2>
             </div>
       </div>
 </div>
