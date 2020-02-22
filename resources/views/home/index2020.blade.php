@@ -17,13 +17,7 @@
     <!-- <p style="font-size:60px; font-family:Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color:#E52A30">
        Ako vidite ovaj tekst, onda sve radi kako treba :)
     </p> -->
-<<<<<<< HEAD
     @include('partials-2020.welcome')
-    @include('partials-2020.o-projektu')
-=======
-    {{-- @include('partials-2020.welcome') --}}
-    
->>>>>>> bfe7840725f7c77b7fcbf19ad873db13d62d72b3
     @include('partials-2020.o-nama')
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     @include('partials-2020.o-radionicama')
