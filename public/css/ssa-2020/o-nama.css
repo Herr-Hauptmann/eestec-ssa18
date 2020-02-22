@@ -3,36 +3,35 @@
     position: relative;
     top: 0;
     left: 0;
-    height: 122vh;
+    
+    height: 79.74vw;
 }
-
-
 
 .sijalica 
 {
     position: absolute;
     top: 0;
-    left: -36.98%;
-    width: 159.48%;
-    height: 100%;
+    left: -18.49vw;
+    width: 79.74vw;
+    height: 75.1vw;
     background: transparent;
 }
 
 .plavo 
 {
     position: relative;
-    top: 5.48%;
-    left: -3.125%;
-    width: 77.6%;
-    height: 87%;
+    top: 4.11vw;
+    left: -1.56vw;
+    width: 38.8vw;
+    height: 65.36vw;
 }
 
 .dots
 {
     position: absolute;
-    top: 29.6%;
-    left: 44.9%;
-    width: 44.2%;
-    height: 29.4%;
+    top: 22.24vw;
+    left: 22.45vw;
+    width: 22.08vw;
+    height: 22.08vw;
     background: transparent;
 }
