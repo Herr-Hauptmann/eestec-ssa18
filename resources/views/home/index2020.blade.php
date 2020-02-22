@@ -17,7 +17,7 @@
     <!-- <p style="font-size:60px; font-family:Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color:#E52A30">
        Ako vidite ovaj tekst, onda sve radi kako treba :)
     </p> -->
-    @include('partials-2020.welcome')
+    {{-- @include('partials-2020.welcome') --}}
     
     @include('partials-2020.o-nama')
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
