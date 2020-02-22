@@ -1,3 +1,5 @@
+
+<div class="containter-fluid"> 
  <div class = "ljudina"> <!-- CIKAC ZA LAPTOPOM-->
             <svg class="img-fluid" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1085.323" height="653.893" viewBox="50 600 1385.323 953.893">
                 <defs>
@@ -195,7 +197,6 @@
              </svg>        
 </div>
 
-<div class="containter-fluid">
     <div class="row">
         <div class="col-6 status-prijava"> <!-- Tajmer / Status prijava -->
             @if (config('ssa.prijave_otvorene'))
