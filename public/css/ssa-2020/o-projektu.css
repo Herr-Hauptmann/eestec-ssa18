@@ -16,6 +16,5 @@
     width:727px;
     height:140px;
 }
-div{
-    overflow: hidden;
-}
+/* NEMOJ STAVLJATI PROPERTIJE ZA "div" GENERALNO JER SE ODNOSI NA SVAKI DIV I SMETA. */
+/* Dugujes mi 15 min zivota */
