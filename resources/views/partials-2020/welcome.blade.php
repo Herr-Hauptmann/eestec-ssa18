@@ -17,7 +17,7 @@
                         </div>
                     </div> 
                     <div class="row">
-                            <div class="d-md-none">
+                            <div class="d-sm-none">
                                 <div class="dugme">
                                     <a href="{{ route('prijava.create') }}" class="btn btn-block btn-primary btn-info">&ensp;<i class="fas fa-pencil-alt"></i>&ensp;Prijavi se&emsp;</a>
                                 </div>

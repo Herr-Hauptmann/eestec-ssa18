@@ -1,6 +1,3 @@
-<br>
-<br>
-<br>
 <div class="containter-fluid parent">
       <div class="row parent">
             <div class="col-lg-6 parent">
