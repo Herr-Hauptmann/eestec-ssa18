@@ -35,9 +35,6 @@
     @include('partials-2020.o-radionicama')
     @include('partials-2020.organizatori')
     @include('partials-2020.kontakt')
-<<<<<<< HEAD
     @include ('partials-2020.drugi-o-nama')
-=======
     @include('partials-2020.footer')
->>>>>>> cb65f38c25a721fbd85fb1ab60fed40b65c33c51
 @endsection
