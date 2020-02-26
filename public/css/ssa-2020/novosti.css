@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap");
 
+.novosti-kontejner {
+    margin-top: 50px;
+}
 .news-heading {
     text-align: left;
     font: Bold 38px/60px Poppins;
