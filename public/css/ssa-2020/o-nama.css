@@ -1,9 +1,6 @@
 
     .parent 
     {
-        position: relative;
-        top: 0;
-        left: 0;
         height: 159.48vw;
     }
     .sijalica 
@@ -32,11 +29,38 @@
         height: 44.16vw;
         background: transparent;
     }
-    .tekst
+    .o-nama-naslov
     {
-        
+        font-weight: bold;
+        margin-top: 21.88vw;
+        color: #181818;
     }
-
+    .o-nama-tekst
+    {
+        font-size: 16px;
+        margin-top: 2.7vw;
+        text-align: justify;
+        font-family: 'Open Sans', sans-serif;
+        letter-spacing: 0;
+        color: #7A839E;
+        opacity: 0.7;
+    }
+    .o-nama-naslov1
+    {
+        font-weight: bold;
+        margin-top: 3.13vw;
+        color: #181818;
+    }
+    .o-nama-tekst1
+    {
+        font-size: 16px;
+        margin-top: 1.15vw;
+        text-align: justify;
+        font-family: 'Open Sans', sans-serif;
+        letter-spacing: 0;
+        color: #7A839E;
+        opacity: 0.7;
+    }
 
 @media (min-width: 992px)
 {
@@ -73,15 +97,36 @@
         height: 22.08vw;
         background: transparent;   
     }
-    .tekst
+    .o-nama-naslov
     {
+        font-weight: bold;
         margin-top: 21.88vw;
-    }
-    .ourstory
-    {
-        width: 193px;
-        height: 56px;
-        letter-spacing: 0;
         color: #181818;
+    }
+    .o-nama-tekst
+    {
+        font-size: 16px;
+        margin-top: 2.7vw;
+        text-align: justify;
+        font-family: 'Open Sans', sans-serif;
+        letter-spacing: 0;
+        color: #7A839E;
+        opacity: 0.7;
+    }
+    .o-nama-naslov1
+    {
+        font-weight: bold;
+        margin-top: 3.13vw;
+        color: #181818;
+    }
+    .o-nama-tekst1
+    {
+        font-size: 16px;
+        margin-top: 1.15vw;
+        text-align: justify;
+        font-family: 'Open Sans', sans-serif;
+        letter-spacing: 0;
+        color: #7A839E;
+        opacity: 0.7;
     }
 }
