@@ -1,0 +1,9 @@
+.footer {
+    width: 300px;
+    top: 0;
+    
+}
+.pozadina {
+    position: absolute;
+    bottom: 0;
+}
