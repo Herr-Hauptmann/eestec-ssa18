@@ -1,3 +1,37 @@
+
+<div class="containter-fluid"> 
+<div class="row">
+        <div class="col-6 status-prijava"> <!-- Tajmer / Status prijava -->
+            @if (config('ssa.prijave_otvorene'))
+                <div class = "container">
+                    <div class="row">
+                        <h1 class="tajmer" data-countdown="2021-02-16 23:59:59" id="countdown" style="font-weight: bolder;">
+                        <br/>
+                        <h2 class="naslovna-tekst2">Budi korak ispred!</h2>
+                        <h2 class="naslovna-tekst3">06.-08. Mart 2020 godine</h2>
+                        <h3 class="naslovna-tekst4">Besplatna trodnevna radionica ličnih i profesionalnih vještina</h3>
+                        <div class="d-none d-sm-flex justify-content-center">
+                            <div class="dugme">
+                                <a href="{{ route('prijava.create') }}" class="btn btn-primary btn-info">&ensp;<i class="fas fa-pencil-alt"></i>&ensp;Prijavi se&emsp;</a>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="row">
+                            <div class="d-sm-none">
+                                <div class="dugme">
+                                    <a href="{{ route('prijava.create') }}" class="btn btn-block btn-primary btn-info">&ensp;<i class="fas fa-pencil-alt"></i>&ensp;Prijavi se&emsp;</a>
+                                </div>
+                            </div> 
+                        </div>                 
+                </div>
+            @else
+                <div class = "prijava">
+                    <h2 class="naslovna-tekst2">Budi korak ispred!</h2>
+                    <h2 class="naslovna-tekst3">06.-08. Mart 2020 godine</h2>
+                    <h3 class="naslovna-tekst4">Besplatna trodnevna radionica ličnih i profesionalnih vještina</h3>
+                </div>
+            @endif
+        </div>
  <div class = "ljudina"> <!-- CIKAC ZA LAPTOPOM-->
             <svg class="img-fluid" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1085.323" height="653.893" viewBox="50 600 1385.323 953.893">
                 <defs>
@@ -195,30 +229,7 @@
              </svg>        
 </div>
 
-<div class="containter-fluid">
-    <div class="row">
-        <div class="col-6 status-prijava"> <!-- Tajmer / Status prijava -->
-            @if (config('ssa.prijave_otvorene'))
-                <div class = ".container">
-                    <h1 class="tajmer" data-countdown="2020-02-16 23:59:59" id="countdown" style="font-weight: bolder;">
-                    <br/>
-                    <h2 class="naslovna-tekst2">Budi korak ispred!</h2>
-                    <h2 class="naslovna-tekst3">06.-08. Mart 2020 godine</h2>
-                    <h3 class="naslovna-tekst4">Besplatna trodnevna radionica licnih i profesionalnih vjestina</h3>
-                    <div class="container">
-                        <div class="prijava-dugme">
-                            <button type="button" class="btn-lg btn-outline-success"><a class="prijava-dugme-link"href="{{ route('prijava.create') }}">Prijavi se</a></button>
-                        </div>
-                </div>                  
-                </div>
-            @else
-                <div class = "prijava">
-                    <h2 class="naslovna-tekst2">Budi korak ispred!</h2>
-                    <h2 class="naslovna-tekst3">06.-08. Mart 2020 godine</h2>
-                    <h3 class="naslovna-tekst4">Besplatna trodnevna radionica licnih i profesionalnih vjestina</h3>
-                </div>
-            @endif
-        </div>
+    
 </div>
         
 
