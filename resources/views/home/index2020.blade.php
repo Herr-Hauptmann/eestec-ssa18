@@ -8,6 +8,7 @@
     <link  href="{{ asset('css/ssa-2020/o-nama.css')}}" rel="stylesheet">
     <link  href="{{ asset('css/ssa-2020/o-projektu.css')}}" rel="stylesheet">
     <link  href="{{ asset('css/ssa-2020/kontakt.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/ssa-2020/kontakt.css')}}">
     <link  href="{{ asset('css/ssa-2020/novosti.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/organizatori.css')}}">
     <link  href="{{ asset('css/ssa-2020/galerija.css')}}" rel="stylesheet">
@@ -33,4 +34,5 @@
     @include('partials-2020.o-radionicama')
     @include('partials-2020.organizatori')
     @include('partials-2020.kontakt')
+    @include('partials-2020.footer')
 @endsection
