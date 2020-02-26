@@ -1,9 +1,16 @@
-.footer {
-    width: 300px;
-    top: 0;
-    
-}
+
 .pozadina {
-    position: absolute;
-    bottom: 0;
+    background-color: violet;
+    color: white;
+}
+
+.tekst {
+    color: white;
+}
+p {
+    color: white;
+}
+
+.fb {
+    padding-left: 50px;
 }

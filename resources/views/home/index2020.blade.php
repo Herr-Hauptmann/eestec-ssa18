@@ -14,6 +14,7 @@
     <link  href="{{ asset('css/ssa-2020/galerija.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/organizatori.css')}}">
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/postignuca.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/ssa-2020/footer.css')}}">
     <script src="https://kit.fontawesome.com/4c9ea8fa84.js" crossorigin="anonymous"></script>
 @endsection
 
