@@ -1,4 +1,4 @@
-<div class="container-fluid sve-postignuca">
+<div class="container-fluid sve-postignuca mt-5">
     <div class="row justify-content-center prvi-red pt-5">
         Dosadašnja postignuća
     </div>
