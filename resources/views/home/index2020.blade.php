@@ -9,6 +9,7 @@
     <link  href="{{ asset('css/ssa-2020/o-projektu.css')}}" rel="stylesheet">
     <link  href="{{ asset('css/ssa-2020/kontakt.css')}}" rel="stylesheet">
     <link  href="{{ asset('css/ssa-2020/novosti.css')}}" rel="stylesheet">
+    <link  href="{{ asset('css/ssa-2020/galerija.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/organizatori.css')}}">
     <script src="https://kit.fontawesome.com/4c9ea8fa84.js" crossorigin="anonymous"></script>
 @endsection
@@ -25,6 +26,7 @@
     @include('partials-2020.o-projektu')
     @include('partials-2020.o-nama')
     @include('partials-2020.novosti')
+    @include('partials-2020.galerija')
     @include('partials-2020.o-radionicama')
     @include('partials-2020.organizatori')
     @include('partials-2020.kontakt')
