@@ -41,7 +41,23 @@ class HomeController extends Controller
 
         });
 
-        return view('home.index2020', compact('posts'));
+        /** @var array $dirs */
+        $dirs = Storage::disk('public')->directories('img/galerija');
+
+
+        $albums = [];
+
+        foreach ($dirs as $dir) {
+            $name = explode('/', $dir)[2];
+            $files = Storage::disk('public')->allFiles($dir);
+            if (! empty($files)) {
+                // Mozda prvo provjeriti da li postoji
+                $albums[$name] = $dir . '/cover.jpg';
+            }
+        }
+
+
+        return view('home.index2020', compact('posts', 'albums'));
     }
 
     public function novosti() {
