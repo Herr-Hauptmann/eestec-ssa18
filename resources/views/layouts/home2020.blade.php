@@ -35,7 +35,8 @@
         <link href="{{ asset('css/galerija/galerijaMain.css') }}" rel="stylesheet">
         <link href="{{ asset('css/galerija/ihover.min.css') }}" rel="stylesheet">
     @endif
-
+    <link href="{{ asset('css/galerija/galerijaMain.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/galerija/ihover.min.css') }}" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <script src="{{ asset('js/app.js') }}"></script>
@@ -92,5 +93,6 @@
         h.style.height = (h.scrollHeight)+"px";
     }
     </script>
+    
 </body>
 </html>

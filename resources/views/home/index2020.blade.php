@@ -8,8 +8,16 @@
     <link  href="{{ asset('css/ssa-2020/o-nama.css')}}" rel="stylesheet">
     <link  href="{{ asset('css/ssa-2020/o-projektu.css')}}" rel="stylesheet">
     <link  href="{{ asset('css/ssa-2020/kontakt.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/ssa-2020/kontakt.css')}}">
+    <link  href="{{ asset('css/ssa-2020/novosti.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/organizatori.css')}}">
+<<<<<<< HEAD
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/drugi-o-nama.css')}}">
+=======
+    <link  href="{{ asset('css/ssa-2020/galerija.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/ssa-2020/organizatori.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/ssa-2020/postignuca.css')}}">
+>>>>>>> cb65f38c25a721fbd85fb1ab60fed40b65c33c51
     <script src="https://kit.fontawesome.com/4c9ea8fa84.js" crossorigin="anonymous"></script>
 @endsection
 
@@ -22,9 +30,17 @@
        Ako vidite ovaj tekst, onda sve radi kako treba :)
     </p> -->
     @include('partials-2020.welcome')
+    @include('partials-2020.o-projektu')
+    @include('partials-2020.postignuca')
     @include('partials-2020.o-nama')
+    @include('partials-2020.novosti')
+    @include('partials-2020.galerija')
     @include('partials-2020.o-radionicama')
     @include('partials-2020.organizatori')
     @include('partials-2020.kontakt')
+<<<<<<< HEAD
     @include ('partials-2020.drugi-o-nama')
+=======
+    @include('partials-2020.footer')
+>>>>>>> cb65f38c25a721fbd85fb1ab60fed40b65c33c51
 @endsection
