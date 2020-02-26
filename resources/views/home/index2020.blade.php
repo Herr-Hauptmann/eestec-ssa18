@@ -21,6 +21,7 @@
        Ako vidite ovaj tekst, onda sve radi kako treba :)
     </p> -->
     @include('partials-2020.welcome')
+    @include('partials-2020.o-projektu')
     @include('partials-2020.o-nama')
     @include('partials-2020.o-radionicama')
     @include('partials-2020.organizatori')
