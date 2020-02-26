@@ -11,11 +11,13 @@
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/kontakt.css')}}">
     <link  href="{{ asset('css/ssa-2020/novosti.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/organizatori.css')}}">
+<<<<<<< HEAD
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/drugi-o-nama.css')}}">
+=======
     <link  href="{{ asset('css/ssa-2020/galerija.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/organizatori.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/ssa-2020/partneri.css')}}">
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/postignuca.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/ssa-2020/footer.css')}}">
     <script src="https://kit.fontawesome.com/4c9ea8fa84.js" crossorigin="anonymous"></script>
 @endsection
 
@@ -28,6 +30,8 @@
        Ako vidite ovaj tekst, onda sve radi kako treba :)
     </p> -->
     @include('partials-2020.welcome')
+    @include('partials-2020.o-projektu')
+    @include('partials-2020.partneri')
     @include('partials-2020.postignuca')
     @include('partials-2020.o-nama')
     @include('partials-2020.novosti')
