@@ -8,11 +8,8 @@
     <link  href="{{ asset('css/ssa-2020/o-nama.css')}}" rel="stylesheet">
     <link  href="{{ asset('css/ssa-2020/o-projektu.css')}}" rel="stylesheet">
     <link  href="{{ asset('css/ssa-2020/kontakt.css')}}" rel="stylesheet">
-<<<<<<< HEAD
     <link  href="{{ asset('css/ssa-2020/novosti.css')}}" rel="stylesheet">
-=======
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/organizatori.css')}}">
->>>>>>> fed7b5286271e665ede4cfc4b3615baf92265356
     <script src="https://kit.fontawesome.com/4c9ea8fa84.js" crossorigin="anonymous"></script>
 @endsection
 
