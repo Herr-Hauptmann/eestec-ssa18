@@ -176,10 +176,52 @@
                 <img src="{{ asset('img/o-nama/sijalica.png') }}" class="sijalica" >
             </div>
 
-            <div class="col-lg-6 align-items-center tekst">
-              <h2 class="ourstory">
-                Our Story
-              </h2>
+            <div class="col-lg-6 align-items-center">
+                <h1 class="o-nama-naslov">
+                    Our Story
+                </h1>
+                <p class="o-nama-tekst">
+                    tekst
+                </p>
+                <div class="row">
+                  <div class="col-2">
+
+                  </div>
+                  <div class="col-5">
+                      <h4 class="o-nama-naslov1">
+                          Lorem Ipsum
+                      </h4>
+                      <p class="o-nama-tekst1">
+                          tekst
+                      </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-2">
+
+                  </div>
+                  <div class="col-5">
+                      <h4 class="o-nama-naslov1">
+                          Lorem Ipsum
+                      </h4>
+                      <p class="o-nama-tekst1">
+                          tekst
+                      </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-2">
+
+                  </div>
+                  <div class="col-5">
+                    <h4 class="o-nama-naslov1">
+                        Lorem Ipsum
+                    </h4>
+                    <p class="o-nama-tekst1">
+                        tekst
+                    </p>
+                  </div>
+                </div>
             </div>
       </div>
 </div>
