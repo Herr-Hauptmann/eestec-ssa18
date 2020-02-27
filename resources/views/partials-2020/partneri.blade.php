@@ -6,7 +6,7 @@
     <div class="row justify-content-center drugi_red pt-2">
         Soft Skills Academy su do sada podržali:
     </div>
-
+    
     <div class="row justify-content-center img-fluid glavni_dio pt-4 pb-5">
         <div class="col-2 kolona1">
             <div class="row justify-content-center kolona1_red1"><img src="https://images.footlocker.com/content/dam/final/champs/site/homepage/20191106-Brands-Nike-6up.jpg" ></div> 

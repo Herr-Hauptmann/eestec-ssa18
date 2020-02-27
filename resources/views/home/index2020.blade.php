@@ -11,9 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/kontakt.css')}}">
     <link  href="{{ asset('css/ssa-2020/novosti.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/organizatori.css')}}">
-<<<<<<< HEAD
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/drugi-o-nama.css')}}">
-=======
     <link  href="{{ asset('css/ssa-2020/galerija.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/organizatori.css')}}">
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/partneri.css')}}">
@@ -26,9 +24,6 @@
     {{-- @include('ime-filea')  --}}
     {{-- NPR @include('partials-2020.naslovna_traka')   --}}
     @include('partials-2020.menu')
-    <!-- <p style="font-size:60px; font-family:Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color:#E52A30">
-       Ako vidite ovaj tekst, onda sve radi kako treba :)
-    </p> -->
     @include('partials-2020.welcome')
     @include('partials-2020.o-projektu')
     @include('partials-2020.partneri')
