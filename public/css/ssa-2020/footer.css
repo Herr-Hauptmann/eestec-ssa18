@@ -2,10 +2,12 @@
 .pozadina {
     background-color: violet;
     color: white;
+   
 }
 
 .tekst {
     color: white;
+    
 }
 p {
     color: white;
@@ -13,4 +15,14 @@ p {
 
 .fb {
     padding-left: 50px;
+}
+.lokacija {
+    padding-left: 300px;
+}
+.get_in {
+    padding-top: 10px;
+    padding-left: 80px;
+}
+.linija {
+    padding-left: 12px;
 }
