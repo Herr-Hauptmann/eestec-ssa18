@@ -20,8 +20,8 @@ class HomeController extends Controller
 
     public function __construct() {
         // Trenutno beskorisno, mozda se iskoristi kasnije za footer
-        $this->pr = Kontakt::where('pozicija_short', 'PR')->first();
-        $this->glorg = Kontakt::where('pozicija_short', 'GLORG')->first();
+        // $this->pr = Kontakt::where('pozicija_short', 'PR')->first();
+        // $this->glorg = Kontakt::where('pozicija_short', 'GLORG')->first();
     }
 
     /**
@@ -56,8 +56,11 @@ class HomeController extends Controller
             }
         }
 
+        $generalni = Partner::where('category', 'generalni')->get();
+        $obicni = Partner::where('category', 'obicni')->get();
 
-        return view('home.index2020', compact('posts', 'albums'));
+
+        return view('home.index2020', compact('posts', 'albums', 'generalni', 'obicni'));
     }
 
     public function novosti() {

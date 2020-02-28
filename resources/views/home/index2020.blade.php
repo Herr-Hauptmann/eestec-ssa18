@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/organizatori.css')}}">
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/partneri.css')}}">
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/postignuca.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/ssa-2020/footer.css')}}">
     <script src="{{ asset('js/ssa20/kontakt.js') }}"></script>
     <script src="https://kit.fontawesome.com/4c9ea8fa84.js" crossorigin="anonymous"></script>
 @endsection
@@ -29,6 +30,7 @@
     @include('partials-2020.welcome')
     @include('partials-2020.o-projektu')
     @include('partials-2020.about')
+    @include('partials-2020.partneri')
     @include('partials-2020.postignuca')
     @include('partials-2020.o-nama')
     @include('partials-2020.novosti')
