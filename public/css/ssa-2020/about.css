@@ -1,0 +1,93 @@
+.about-heading
+{
+    text-align: center;
+    font: 20px/42px "Open Sans" !important; 
+    letter-spacing: 5.62px;
+    color: #000000;
+    opacity: 0.5;
+}
+.about-boldirano
+{
+    text-align: center;
+    font: Bold 35px/42px "Open Sans" !important;
+    letter-spacing: 0;
+    color: #31384E;
+    opacity: 1;
+}
+.about-tekst
+{
+    text-align: center;
+    font: 18px/25px "Open Sans" !important;
+    letter-spacing: 0.18px;
+    color: #697598;
+    opacity: 0.8;
+}
+
+.kartice{
+    border-radius: 5px 20px 5px 20px !important;
+
+}
+.card-header{
+    border-radius: 5px 20px 5px 20px !important;
+    background-color: inherit;
+    border-bottom: none;
+}
+.card{
+    background-color: white !important;
+}
+.card:hover{
+    background-color: #34C4A9 !important;
+    color: white !important;
+}
+.card-text{
+    color:inherit !important;
+}
+
+
+@media (min-width: 992px)
+{
+.about-heading
+{
+    text-align: center;
+    font: 20px/83px "Open Sans" !important; 
+    letter-spacing: 5.62px;
+    color: #000000;
+    opacity: 0.5;
+}
+.about-boldirano
+{
+    text-align: center;
+    font: Bold 35px/83px "Open Sans" !important;
+    letter-spacing: 0;
+    color: #31384E;
+    opacity: 1;
+}
+.about-tekst
+{
+    text-align: center;
+    font: 18px/83px "Open Sans" !important;
+    letter-spacing: 0.18px;
+    color: #697598;
+    opacity: 0.8;
+}
+.kartice{
+    border-radius: 5px 20px 5px 20px !important;
+
+}
+.card-header{
+    border-radius: 5px 20px 5px 20px !important;
+    background-color: inherit;
+    border-bottom: none;
+}
+.card{
+    background-color: white !important;
+}
+.card:hover{
+    background-color: #34C4A9 !important;
+    color: white !important;
+}
+.card-text{
+    color:inherit !important;
+}
+
+}
