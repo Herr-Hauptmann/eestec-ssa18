@@ -1,20 +1,15 @@
+.o-projektu-naslov{
+    text-align: left;
+    font: Bold 100px/89px Poppins;
+    letter-spacing: -1.5px;
+    color: #34C4A9 !important;
+    line-height:0.8;
+    opacity: 1;
+    font-size: 6.6vw;
+}
 .tacke{
-    top:1052px;
-    left:1100px;
-    width:700px;
-    height:265px;
-}
-.about{
-    top:1309px;
-    left:366px;
-    width:300px;
-    height:140px;
-}
-.tekstssa{
-    top:1405px;
-    left:366px;
-    width:727px;
-    height:140px;
+    width:100%;
+    height:100%;
 }
 /* NEMOJ STAVLJATI PROPERTIJE ZA "div" GENERALNO JER SE ODNOSI NA SVAKI DIV I SMETA. */
 /* Dugujes mi 15 min zivota */
