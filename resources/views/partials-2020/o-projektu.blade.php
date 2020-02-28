@@ -235,7 +235,7 @@
                         </div>
                     </div>
                 <!-- Treci red informacija -->
-                <div class="col-3 col-6 pl-5">
+                <div class="col-md-3 col-6 pl-5">
                     <div class="row">
                     <i class="fab fa-youtube"></i>
                             <div class="pl-3 naslov-informacije">
