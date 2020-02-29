@@ -32,7 +32,6 @@
     @include('partials-2020.about')
     @include('partials-2020.partneri')
     @include('partials-2020.postignuca')
-    @include('partials-2020.o-nama')
     @include('partials-2020.novosti')
     @include('partials-2020.galerija')
     @include('partials-2020.o-radionicama')

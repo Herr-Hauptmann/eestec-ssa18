@@ -15,7 +15,7 @@
   height: 90%;
   width: auto;
   position: absolute;
-  left: -200%;
+  left: -30vw;
 }
 .naslov-informacije {
   text-align: left;
@@ -27,10 +27,14 @@
 }
 
 .tekst-informacije {
-  text-align: justify;
+  text-align: left;
   font: Light 17px/27px Poppins;
   letter-spacing: 0;
   color: #000000;
   opacity: 1;
   font-size: 1.45vw;
+}
+
+.boja {
+  color: #00a393;
 }

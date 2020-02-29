@@ -104,8 +104,8 @@
         </div>
         <!-- KRAJ PRVOG REDA -->
     </div>
-    <div class="row pt-5 mt-5">
-        <div class="col-md-2 col-6">
+    <div class="row pt-md-5 mt-md-5">
+        <div class="col-md-2">
             <svg class="lijeve-tacke" id="Group" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1006.314" height="464.943" viewBox="0 0 1006.314 464.943">
                 <defs>
                     <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
@@ -193,68 +193,74 @@
         </div>
 
         <!-- Prvi red informacija -->
-        <div class="col-md-3 col-6">
+        <div class="col-md-3 col-12 pl-md-0 pl-5">
             <div class="row">
-                <i class="fas fa-desktop"></i>
-                <div class="pl-3 naslov-informacije">
-                    Lorem Ipsum
+                <div class="col-md-12 col-6">
+                    <div class="row pt-5 pt-md-0">
+                        <i class="fas fa-desktop boja"></i>
+                        <div class="pl-3 naslov-informacije">
+                            Lorem Ipsum
+                        </div>
+                    </div>
+                    <div class="row tekst-informacije">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, quasi doloremque?
+                    </div>
                 </div>
-            </div>
-            <div class="row tekst-informacije">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, quasi doloremque? 
-            </div>
-            <div class="row pt-5">
-                <i class="fas fa-book-open"></i>
-                <div class="pl-3 naslov-informacije">
-                    Lorem Ipsum
+                <div class="col-md-12 col-6 pl-4 pl-md-3">
+                    <div class="row pt-5">
+                        <i class="fas fa-book-open boja"></i>
+                        <div class="pl-3 naslov-informacije">
+                            Lorem Ipsum
+                        </div>
+                    </div>
+                    <div class="row tekst-informacije">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, quasi doloremque?
+                    </div>
                 </div>
-            </div>
-            <div class="row tekst-informacije">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, quasi doloremque? 
             </div>
         </div>
         <!-- Drugi red informacija -->
-        <div class="col-md-3 col-6 pl-5">
+        <div class="col-md-3 col-6 pl-5 pt-md-0 pt-5">
             <div class="row">
-                <i class="fas fa-pen-nib"></i>
+                <i class="fas fa-pen-nib boja"></i>
                 <div class="pl-3 naslov-informacije">
                     Lorem Ipsum
                 </div>
             </div>
-                        <div class="row tekst-informacije">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, quasi doloremque? 
-                        </div>
-                        <div class="row pt-5">
-                            <i class="far fa-window-maximize"></i>
-                            <div class="pl-3 naslov-informacije">
-                                Lorem Ipsum
-                            </div>
-                        </div>
-                        <div class="row tekst-informacije">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, quasi doloremque? 
-                        </div>
-                    </div>
-                <!-- Treci red informacija -->
-                <div class="col-md-3 col-6 pl-5">
-                    <div class="row">
-                    <i class="fab fa-youtube"></i>
-                            <div class="pl-3 naslov-informacije">
-                                Lorem Ipsum
-                            </div>
-                        </div>
-                        <div class="row tekst-informacije">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, quasi doloremque? 
-                        </div>
-                        <div class="row pt-5">
-                            <i class="fas fa-file"></i>
-                            <div class="pl-3 naslov-informacije">
-                                Lorem Ipsum
-                            </div>
-                        </div>
-                        <div class="row tekst-informacije">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, quasi doloremque? 
-                        </div>
-                    </div>
+            <div class="row tekst-informacije">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, quasi doloremque?
+            </div>
+            <div class="row pt-5">
+                <i class="far fa-window-maximize boja"></i>
+                <div class="pl-3 naslov-informacije">
+                    Lorem Ipsum
+                </div>
+            </div>
+            <div class="row tekst-informacije">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, quasi doloremque?
+            </div>
+        </div>
+        <!-- Treci red informacija -->
+        <div class="col-md-3 col-6 pl-5 pt-md-0 pt-5">
+            <div class="row">
+                <i class="fab fa-youtube boja"></i>
+                <div class="pl-3 naslov-informacije">
+                    Lorem Ipsum
+                </div>
+            </div>
+            <div class="row tekst-informacije">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, quasi doloremque?
+            </div>
+            <div class="row pt-5">
+                <i class="fas fa-file boja"></i>
+                <div class="pl-3 naslov-informacije">
+                    Lorem Ipsum
+                </div>
+            </div>
+            <div class="row tekst-informacije">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, quasi doloremque?
+            </div>
+        </div>
 
         <!-- Prostor s desne strane -->
         <div class="col-md-1">
