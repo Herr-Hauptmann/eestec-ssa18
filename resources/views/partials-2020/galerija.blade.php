@@ -3,19 +3,27 @@
         $galleriesCount= count($albums);
     @endphp
 
-    <div class="row " >
-        <i onclick="scrollLevlje()" class="far fa-arrow-alt-circle-left"></i>
-        <i onclick="scrollRight()"class="far fa-arrow-alt-circle-right"></i>
+    <div class="row novosti-kontejner" >
+        <div class="col-6 text-left">
+            <h1 class="news-heading">
+                Galerija Slika
+            </h1>
+        </div>
+        <div class="col-6 text-right">
+            <i onclick="scrollLevlje()" class="fas fa-long-arrow-alt-left strijele"></i>
+            <i onclick="scrollRight()"class="fas fa-long-arrow-alt-right strijele"></i>
+        </div>
+
     </div>
 
-    <div class="row flex-nowrap flex-row-reverse overflow-hidden">
+    <div class="row flex-nowrap flex-row-reverse overflow-hidden galerija-div">
         @foreach ($albums as $name => $cover)
             <div class="kartica col-3" style="transform:translateX({{$galleriesCount-4}}00%)">
                 <div class="ih-item square effect6 from_top_and_bottom">
                 <a href="{{ route('album', $name) }}">
                         <img src="{{ asset($cover) }}" style="width:100%"/>
                         <div class="info">
-                            <h3> SSA '{{ substr($name, 2) }}  </h3>
+                            <h3 class="gallery-title"> SSA '{{ substr($name, 2) }}  </h3>
                         </div>
                     </a>
                 </div>
