@@ -56,8 +56,12 @@ class HomeController extends Controller
             }
         }
 
+        $generalni = Partner::where('category', 'generalni')->get();
+        $obicni = Partner::where('category', 'obicni')->get();
 
-        return view('home.index2020', compact('posts', 'albums'));
+        $kontakti=Kontakt::all();
+
+        return view('home.index2020', compact('posts', 'albums', 'generalni', 'obicni', 'kontakti'));
     }
 
     public function novosti() {

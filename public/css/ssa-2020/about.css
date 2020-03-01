@@ -1,0 +1,134 @@
+.about-heading {
+  text-align: center;
+  font: 20px/42px "Open Sans" !important;
+  letter-spacing: 5.62px;
+  color: #000000;
+  opacity: 0.5;
+}
+.about-boldirano {
+  text-align: center;
+  font: Bold 35px/42px "Open Sans" !important;
+  letter-spacing: 0;
+  color: #31384e;
+  opacity: 1;
+}
+.about-tekst {
+  text-align: center;
+  font: 18px/25px "Open Sans" !important;
+  letter-spacing: 0.18px;
+  color: #697598;
+  opacity: 0.8;
+}
+
+.kartice {
+  border-radius: 5px 20px 5px 20px !important;
+}
+.card-header {
+  border-radius: 5px 20px 5px 20px !important;
+  background-color: inherit;
+  border-bottom: none;
+}
+.cart {
+  background-color: white !important;
+}
+.cart:hover {
+  background-color: #34c4a9 !important;
+  color: white !important;
+}
+.cart:hover path {
+  fill: white !important;
+  stroke: white !important;
+}
+.cart:hover line {
+  fill: white !important;
+  stroke: white !important;
+}
+.cart:hover rect {
+  fill: none !important;
+  stroke: white !important;
+}
+.card-text {
+  color: inherit !important;
+}
+
+.oblacic-ikona {
+  fill: #a3b4ef;
+}
+.osnovna-ikona {
+  fill: #2354f3;
+  /* border: 1px solid #2354F3; */
+}
+.sporedna-ikona {
+  fill: #0ee5c7;
+}
+.tekst-onama-kartica {
+  padding-top: 2em;
+  padding-bottom: 4em;
+  text-align: left;
+  font: Regular 18px/28px Open Sans;
+  letter-spacing: 0;
+  opacity: 1;
+  size: 1.5vh;
+}
+.naslov-onama-kartica {
+  text-align: left;
+  padding-top: 2em;
+  font: SemiBold 22px/83px Open Sans;
+  letter-spacing: 0.88px;
+  opacity: 1;
+  size: 2vh;
+}
+
+@media (min-width: 992px) {
+  .about-heading {
+    text-align: center;
+    font: 20px/83px "Open Sans" !important;
+    letter-spacing: 5.62px;
+    color: #000000;
+    opacity: 0.5;
+  }
+  .about-boldirano {
+    text-align: center;
+    font: Bold 35px/83px "Open Sans" !important;
+    letter-spacing: 0;
+    color: #31384e;
+    opacity: 1;
+  }
+  .about-tekst {
+    text-align: center;
+    font: 18px/83px "Open Sans" !important;
+    letter-spacing: 0.18px;
+    color: #697598;
+    opacity: 0.8;
+  }
+  .kartice {
+    border-radius: 5px 20px 5px 20px !important;
+  }
+  .card-header {
+    border-radius: 5px 20px 5px 20px !important;
+    background-color: inherit;
+    border-bottom: none;
+  }
+  .cart {
+    background-color: white !important;
+  }
+  .cart:hover {
+    background-color: #34c4a9 !important;
+    color: white !important;
+  }
+  .card-text {
+    color: inherit !important;
+  }
+  .cart:hover path {
+    fill: white !important;
+    stroke: white !important;
+  }
+  .cart:hover line {
+    fill: white !important;
+    stroke: white !important;
+  }
+  .cart:hover rect {
+    fill: none !important;
+    stroke: white !important;
+  }
+}

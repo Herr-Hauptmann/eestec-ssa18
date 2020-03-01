@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link  href="{{ asset('css/ssa-2020/style.css') }}" rel="stylesheet">
     <link  href="{{ asset('css/ssa-2020/o-nama.css')}}" rel="stylesheet">
+    <link  href="{{ asset('css/ssa-2020/about.css')}}" rel="stylesheet">
     <link  href="{{ asset('css/ssa-2020/o-projektu.css')}}" rel="stylesheet">
     <link  href="{{ asset('css/ssa-2020/kontakt.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/kontakt.css')}}">
@@ -28,8 +29,9 @@
     @include('partials-2020.menu')
     @include('partials-2020.welcome')
     @include('partials-2020.o-projektu')
+    @include('partials-2020.about')
+    @include('partials-2020.partneri')
     @include('partials-2020.postignuca')
-    @include('partials-2020.o-nama')
     @include('partials-2020.novosti')
     @include('partials-2020.galerija')
     @include('partials-2020.o-radionicama')
