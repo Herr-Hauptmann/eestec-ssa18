@@ -51,6 +51,17 @@
         background-color: transparent;
     }
 }
+body{
+    overflow-x: hidden;
+}
+
+.row1{
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    /* margin-right: -15px; */
+    margin-left: -15px;
+}
 
 .menju{
     background-color: transparent;
