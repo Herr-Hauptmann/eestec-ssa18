@@ -13,6 +13,7 @@
 
 .slike-oo {
     margin-top: 50px;
+    position: relative;
 }
 
 .veci-naslov {
@@ -62,3 +63,14 @@
     color: #1aa79e;
     opacity: 1;
 }
+
+
+#oo-svg-1-id {
+    height: 250px;
+    width: auto;
+    position: absolute;
+    right: 0;
+    margin-right: 5px;
+}
+
+
