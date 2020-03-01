@@ -1,28 +1,53 @@
 
 .pozadina {
-    background-color: violet;
+    background-color: #ee82ee;
     color: white;
    
 }
-
 .tekst {
     color: white;
+
+}
+.adresa {
+    padding-left: 20px;
+}
+.slika_ssa {
+    padding-left: 5px;
+}
+
+.ikonice {
     
+}
+.inf {
+    padding-left: 2px;
 }
 p {
     color: white;
 }
-
-.fb {
-    padding-left: 50px;
-}
 .lokacija {
-    padding-left: 300px;
+    padding-left: 25px;
 }
 .get_in {
-    padding-top: 10px;
+    padding-top: 18px;
+    padding-left: -10px;
+}
+.inf_lokacije {
+    padding-left: 2px;
+}
+.sat {
+    padding-left: 25px;
+}
+.email {
+    padding-left: 5px;
+}
+.tel {
+    padding-left: 5px;
+}
+.copyright {
+    text-align: center;
+}
+
+/*
+.adresa {
     padding-left: 80px;
-}
-.linija {
-    padding-left: 12px;
-}
+}*/
