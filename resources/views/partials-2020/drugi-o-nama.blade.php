@@ -303,31 +303,31 @@
 <script>
   var pixels = screen.width;
   if(pixels < 768) {
-    var max = 4;
+    var maks = 4;
   }else {
-    var max = 2;
+    var maks = 2;
   }
-  var page = 0;
+  var pag = 0;
   // treba ubaciti provjeru za zadnju stranu
 
   
 
   function skrolajLijevo () {
-      if(page > 0) {
+      if(pag > 0) {
           demoId = document.querySelectorAll('.karticaa');
-          --page;
+          --pag;
           demoId.forEach(element => {
-              element.style.transform = 'translateX(' + -(page) + '00%)';
+              element.style.transform = 'translateX(' + -(pag) + '00%)';
           });
       }
   }
 
   function skrolajDesno () {
-      if(page < max) {
+      if(pag < maks) {
           demoId2 = document.querySelectorAll('.karticaa');
-          ++page;
+          ++pag;
           demoId2.forEach(element => {
-              element.style.transform = 'translateX(' + -(page) + '00%)';
+              element.style.transform = 'translateX(' + -(pag) + '00%)';
           });
       }
   }
