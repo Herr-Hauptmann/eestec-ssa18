@@ -48,4 +48,6 @@
     width: 20%;
     height: 25px;
 }
-
+.karticaa {
+    transition-duration: 1s;
+}
