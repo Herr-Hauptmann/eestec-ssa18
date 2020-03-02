@@ -175,12 +175,31 @@
   </g>
 </svg>
 
+<div class="container  mb-1">
+  <div class="row">
+    <div class="col-12 col-sm-8 text-left">
+      <h1 class="drugi-o-nama-naslov">
+      What People Says About Us ?
+      </h1>
+    </div>
 
-<h class="drugi-o-nama-naslov">
-What People Says About Us ?
-</h>
+    <div class="col-12 col-sm-4 text-left text-sm-right ">
+      <i onclick="skrolajLijevo()" class="fas fa-long-arrow-alt-left strijele"></i>
+      <i onclick="skrolajDesno()"class="fas fa-long-arrow-alt-right strijele"></i>
+    </div>
 
-<svg class="strelice" xmlns="http://www.w3.org/2000/svg" width="188.096" height="33.786" viewBox="0 0 188.096 33.786">
+  </div>
+  <br>
+  <svg class="linija" xmlns="http://www.w3.org/2000/svg" width="100" height="5" viewBox="0 0 100 5">
+    <line id="Line_186" data-name="Line 186" x2="100" transform="translate(0 2.5)" fill="none" stroke="#34c4a9" stroke-width="5"/>
+  </svg>
+  <p  class="uvodni-tekst" >
+  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit enim beatae vitae tempore magni,
+  optio voluptate maiores odit quasi molestiae doloribus ex libero fugit id velit sed numquam quis nisi!
+  </p>
+</div>
+
+{{-- <svg class="strelice" xmlns="http://www.w3.org/2000/svg" width="188.096" height="33.786" viewBox="0 0 188.096 33.786">
   <g id="Group_1520" data-name="Group 1520" transform="translate(-1143 -2451)">
     <g id="arrow-long" transform="translate(1282 2409.084)">
       <path id="Path_3764" data-name="Path 3764" d="M48.427,57.195l-14.61-14.61a2.283,2.283,0,0,0-3.228,3.228L41.3,56.526H-37.717A2.283,2.283,0,0,0-40,58.809a2.283,2.283,0,0,0,2.283,2.283H41.3L30.589,71.805a2.283,2.283,0,0,0,3.228,3.228l14.61-14.61A2.283,2.283,0,0,0,48.427,57.195Z" transform="translate(0 0)" fill="#34c4a9"/>
@@ -189,20 +208,12 @@ What People Says About Us ?
       <path id="Path_3764-2" data-name="Path 3764" d="M48.427,57.195l-14.61-14.61a2.283,2.283,0,0,0-3.228,3.228L41.3,56.526H-7.717A2.283,2.283,0,0,0-10,58.809a2.283,2.283,0,0,0,2.283,2.283H41.3L30.589,71.805a2.283,2.283,0,0,0,3.228,3.228l14.61-14.61A2.283,2.283,0,0,0,48.427,57.195Z" transform="translate(0 0)" fill="#34c4a9"/>
     </g>
   </g>
-</svg>
-
-<br>
-<svg class="linija" xmlns="http://www.w3.org/2000/svg" width="100" height="5" viewBox="0 0 100 5">
-  <line id="Line_186" data-name="Line 186" x2="100" transform="translate(0 2.5)" fill="none" stroke="#34c4a9" stroke-width="5"/>
-</svg>
-
-<p  class="uvodni-tekst" >
-Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit enim beatae vitae tempore magni,
-optio voluptate maiores odit quasi molestiae doloribus ex libero fugit id velit sed numquam quis nisi!
-</p>
+</svg> --}}
 
 
-<div class="card-deck">
+
+
+{{-- <div class="card-deck">
 
   <div class="card">
     
@@ -232,7 +243,92 @@ optio voluptate maiores odit quasi molestiae doloribus ex libero fugit id velit 
       <p class="fax"><medium class="text-muted">ETF,Sarajevo</medium></p>
     </div>
   </div>
+</div> --}}
+
+<div class="container ">
+  <div class="row flex-nowrap  overflow-hidden ">
+    
+    <div class="col-12 col-sm-4 karticaa">
+      <div class="card">
+        <img class="card-img-top" src="{{ asset('img/drugi-o-nama/ss.jpg') }}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Selma Smlatić</h5>
+          <p class="card-text">Nemojte propustiti ovu priliku samo zbog straha od nepoznatog. Kad vam se pruži neka prilika, onda se ona zgrabi jer možda je već sutra neće biti. Ovaj projekat je dokaz da najljepše stvari ne kupuješ novcem. Budite motivisani, tragajte za novim znanjima i poznanstvima. Dajem vam riječ da se nećete pokajati. Na kraju krajeva, ako vi nećete raditi na sebi, ko će?</p>
+        </div>
+      </div>      
+    </div>
+    <div class="col-12 col-sm-4 karticaa">
+      <div class="card">
+        <img class="card-img-top" src="{{ asset('img/drugi-o-nama/lk.jpg') }}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Lamija Kuka</h5>
+          <p class="card-text">Neophodno je konstantno raditi na sebi da bi jednog dana imali priliku da plasiramo na pravi način ono naučeno na fakultetu, a da pri tome nemamo bespotrebne poteškoće.</p>
+        </div>
+      </div>      
+    </div>
+    <div class="col-12 col-sm-4 karticaa">
+      <div class="card">
+        <img class="card-img-top" src="{{ asset('img/drugi-o-nama/mn.jpg') }}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Mediha Nukić</h5>
+          <p class="card-text">Soft Skills Academy mi je definitivno otvorila nove vidike i poznanstva. Teme koje smo slušali su veoma kvalitetne i upoznavanje sa takvim stvarima čini život lakšim.</p>
+        </div>
+      </div>      
+    </div>
+    <div class="col-12 col-sm-4 karticaa">
+      <div class="card">
+        <img class="card-img-top" src="{{ asset('img/drugi-o-nama/hd.jpg') }}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Husein Džananović</h5>
+          <p class="card-text">Smatram da je uloga neformalnog obrazovanja u razvoju pojedinca izuzetno velika, ali nažalost i veoma marginalizirana u današnjem društvu. Formalno obrazovanje koje svi pojedinačno prolazimo ne pokriva dovoljno sve oblasti u ličnom razvoju pojedinca. Najveći dojam na mene je ostavila atmosfera koja je vladala na radionicama. Ekipa koja organizuje ovaj event zna šta radi i garantovano je da ćete ovu radionicu završiti sa lijepim uspomenama i novim poznanstvima.</p>
+        </div>
+      </div>      
+    </div>
+    <div class="col-12 col-sm-4 karticaa">
+      <div class="card">
+        <img class="card-img-top" src="{{ asset('img/drugi-o-nama/eu.jpg') }}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Emina Učambarlić</h5>
+          <p class="card-text">Možete biti najbolji u onome što radite, ali živimo u vremenu kada održavanje na površini u velikoj mjeri zavisi od vaših “soft” vještina. SSA će vam pomoći na vašem putu usavršavanja kako biste mogli odgovoriti na zahtjeve današnjeg društva ako želite biti dio istog.</p>
+        </div>
+      </div>      
+    </div>
+  
+  </div>
 </div>
 
 
 </div>
+
+<script>
+  var pixels = screen.width;
+  if(pixels < 768) {
+    var maks = 4;
+  }else {
+    var maks = 2;
+  }
+  var pag = 0;
+  // treba ubaciti provjeru za zadnju stranu
+
+  
+
+  function skrolajLijevo () {
+      if(pag > 0) {
+          demoId = document.querySelectorAll('.karticaa');
+          --pag;
+          demoId.forEach(element => {
+              element.style.transform = 'translateX(' + -(pag) + '00%)';
+          });
+      }
+  }
+
+  function skrolajDesno () {
+      if(pag < maks) {
+          demoId2 = document.querySelectorAll('.karticaa');
+          ++pag;
+          demoId2.forEach(element => {
+              element.style.transform = 'translateX(' + -(pag) + '00%)';
+          });
+      }
+  }
+</script>
