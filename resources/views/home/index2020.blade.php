@@ -29,7 +29,6 @@
     @include('partials-2020.menu')
     @include('partials-2020.welcome')
     @include('partials-2020.o-projektu')
-    @include('partials-2020.about')
     @include('partials-2020.o-nama')
     @include('partials-2020.partneri')
     @include('partials-2020.postignuca')

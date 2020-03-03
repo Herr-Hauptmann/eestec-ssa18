@@ -46,6 +46,7 @@ p {
     height: auto;
     z-index: -101;
 }
+
 @media (min-width: 992px) {
   .pozadina {
     position: absolute;

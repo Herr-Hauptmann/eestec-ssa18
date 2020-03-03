@@ -18,8 +18,8 @@
             <div class="row justify-content-center kolone_red2">Partneri</div>
         </div>
         <div class="col-5 col-md-2 kolone">
-            <div class="row justify-content-center kolone_red13">50+</div>
-            <div class="row justify-content-center kolone_red2">Mediji</div>
+            <div class="row justify-content-center kolone_red13">7000+</div>
+            <div class="row justify-content-center kolone_red2">Online reach</div>
         </div>
         <div class="col-5 col-md-2 kolone">
             <div class="row justify-content-center kolone_red14">100+</div>

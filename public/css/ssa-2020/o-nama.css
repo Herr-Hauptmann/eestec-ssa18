@@ -2,7 +2,7 @@
     position: relative;
     top: 0;
     left: 0;
-    height: 239.22vw;
+    height: auto;
   }
   .sirina
   {
@@ -71,7 +71,7 @@
     position: relative;
     top: 0;
     left: 0;
-    height: 79.74vw;
+    height: auto;
   }
   .sijalica {
     position: absolute;
@@ -98,7 +98,7 @@
   }
   .o-nama-naslov {
     font-weight: bold;
-    margin-top: 21.88vw;
+    margin-top: 5.88vw;
     color: #181818;
   }
   .o-nama-tekst {
