@@ -1,4 +1,4 @@
-<div class="containter-fluid pt-5 mt-5 pl-5 overflow-fix">
+<div class="containter-fluid pt-5 mt-5 pl-5 overflow-fix" id="drugi-o-nama">
 
   <svg class="slicica overflow-fix" xmlns="http://www.w3.org/2000/svg" width="721.08" height="1254.738" viewBox="0 0 721.08 1254.738">
     <path id="Path_3818" data-name="Path 3818" d="M3397.25,3199.577s-386.112,39.1-687.052-463.3c-1.893-1.955-183.593-316.683,312.3-469.161-3.785,0,329.8-83.081,365.765-321.571C3386.366,1943.6,3397.25,3199.577,3397.25,3199.577Z" transform="translate(-2676.17 -1945.548)" fill="#34c4a9" />

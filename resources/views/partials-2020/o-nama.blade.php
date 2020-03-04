@@ -1,4 +1,4 @@
-<div class="containter-fluid parent">
+<div class="containter-fluid parent" id="o-nama">
   <div class="row sirina">
     <div class="col-lg-6">
       <svg xmlns="http://www.w3.org/2000/svg" width="744.75" height="1254.738" viewBox="0 0 744.75 1254.738" class="plavo img-fluid">
@@ -180,7 +180,7 @@
       <h1 class="o-nama-naslov">
         O EESTEC-u
       </h1>
-      <p class="o-nama-tekst">
+      <p class="o-nama-tekst pr-2 mr-2">
         Osnovano 1986. godine u Eindhovenu (Nizozemska), Udruženje studenata
         elektrotehnike Evrope - EESTEC (eng. Electrical Engineering STudents’
         European assoCiation) je neprofitna, nevladina, nepolitička organizacija čija je
@@ -232,7 +232,7 @@
             LC Sarajevo
           </h4>
           <p class="o-nama-tekst1">
-          Jedan od najvažnijih ciljeva Udruženja je, kroz organizaciju velikog broja visokokvalitetnih projekata, omogućiti studentima da razvijaju svoje društvene i profesionalne sposobnosti, ali i da upoznaju studente i ugledne poslovne ljude iz svih dijelova Evrope.
+            Jedan od najvažnijih ciljeva Udruženja je, kroz organizaciju velikog broja visokokvalitetnih projekata, omogućiti studentima da razvijaju svoje društvene i profesionalne sposobnosti, ali i da upoznaju studente i ugledne poslovne ljude iz svih dijelova Evrope.
           </p>
         </div>
       </div>
@@ -258,7 +258,7 @@
             Putovanja i razmjena iskustava
           </h4>
           <p class="o-nama-tekst1">
-          Razmjena ideja i iskustava iz oblasti elektrotehnike i kompjuterskih nauka te unapređenje tehničkog znanja studenata elektrotehnike omogućeno je kroz stručne radionice, razmjene, stručne prakse i slične aktivnosti u organizaciji različitih lokalnih komiteta. Studenti imaju priliku da posjete bilo koji od gradova u kojima EESTEC ima lokalni komitet te se upoznaju sa kulturom i običajima države u kojoj borave. U toku boravka u drugim gradovima stvaraju prijateljstva, koja su često za čitav život.
+            Razmjena ideja i iskustava iz oblasti elektrotehnike i kompjuterskih nauka te unapređenje tehničkog znanja studenata elektrotehnike omogućeno je kroz stručne radionice, razmjene, stručne prakse i slične aktivnosti u organizaciji različitih lokalnih komiteta. Studenti imaju priliku da posjete bilo koji od gradova u kojima EESTEC ima lokalni komitet te se upoznaju sa kulturom i običajima države u kojoj borave. U toku boravka u drugim gradovima stvaraju prijateljstva, koja su često za čitav život.
           </p>
         </div>
       </div>

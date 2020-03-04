@@ -1,4 +1,4 @@
-<div class="container svi_partneri mt-5">
+<div class="container svi_partneri mt-5" id="partneri">
 
     <div class="row justify-content-center prvi_red pt-5">
         Partneri

@@ -1,8 +1,8 @@
-<div class="container-fluid">
-    <div class="row neblak">
+<div class="container-fluid" id="kontakt">
+    <div class="row">
         <!-- SVG oblaci -->
-        <div class="col-lg-4 col-md-4 col-xl-4 col-sm-2 col-2">
-            <svg class="img-fluid oblak-kontakt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="846.294" height="1870.774" viewBox="200 620 946.294 940.774">
+        <div class="col-md-4 col-2">
+            <svg class="oblak-kontakt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="846.294" height="1870.774" viewBox="200 620 946.294 940.774">
                 <defs>
                     <linearGradient id="linear-gradient" x1="0.473" y1="-0.214" x2="0.389" y2="0.893" gradientUnits="objectBoundingBox">
                         <stop offset="0" stop-color="#19e8c1" />
@@ -16,42 +16,53 @@
             </svg>
         </div>
         <!-- forma -->
-        <div class="col-md-4 pl-md-1">
-            <div class="wrap-contact100 pozicija-forme">
-                <form class="contact100-form validate-form">
-                    <div class="wrap-input100 validate-input" data-validate="Potrebno je unijeti ime i prezime">
-                        <span class="label-input100">Ime i prezime</span>
-                        <input class="input100" type="text" name="name" placeholder="John Doe" />
-                        <span class="focus-input100"></span>
-                    </div>
+        <div class="col-4">
+            <div>
+                <form class="kontakt-forma pt-5" action="{{ route('posalji-mail') }}" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
 
-                    <div class="wrap-input100 validate-input" data-validate="Potreban je adekvatan format emaila">
-                        <span class="label-input100">Email</span>
-                        <input class="input100" type="text" name="email" placeholder="john.doe@email.gov" />
-                        <span class="focus-input100"></span>
-                    </div>
+                                <label for="name">
+                                    Ime i prezime*</label>
+                                <input type="text" class="form-control{{ $errors->has('ime') ? ' has-error' : ''}}" id="name" name="ime" minlength="3" value="{{ old('ime') }}" autofocus required />
 
-                    <div class="wrap-input100 validate-input" data-validate="Potrebno je unijeti poruku">
-                        <span class="label-input100">Poruka</span>
-                        <textarea class="input100" id="cin" name="message" placeholder="Ovdje unesite vašu poruku..."></textarea>
-                        <span class="focus-input100"></span>
-                    </div>
+                                <p class="error"></p>
 
-                    <div class="container-contact100-form-btn">
-                        <div class="wrap-contact100-form-btn">
-                            <div class="contact100-form-bgbtn"></div>
-                            <button class="contact100-form-btn">
-                                <span>
-                                    Pošalji
-                                    <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-                                </span>
-                            </button>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">
+                                    Email*</label>
+                                <input type="email" class="form-control " id="email" name="email" value="{{ old('email') }}" required="" />
+
+                                <p class="error"></p>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="name">
+                                    Poruka*</label>
+                                <textarea name="poruka" id="message" class="form-control " rows="7" cols="25" required>{{ old('poruka') }}</textarea>
+
+                                <p class="error"></p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-12">
+                            <button type="submit" name="send" class="btn btn-primary pull-right" id="btnContactUs">
+                                Pošalji</button>
                         </div>
                     </div>
                 </form>
             </div>
+            @if ($message = Session::get('success'))
+            <p class="confMessage">{{ $message }}</p>
+            @endif
         </div>
 
+        <!-- DESNI TEKST -->
         <div class="col-4">
 
             <div class="kontakt-tekst">

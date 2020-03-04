@@ -109,7 +109,7 @@ a.navigacioni-meni:visited{
     position:absolute;
     top:0;
     right: 0;
-    z-index: -1;
+    z-index: -500;
 }
 
 .tajmer{

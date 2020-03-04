@@ -1,4 +1,4 @@
-<div class="container novosti-kontejner">
+<div class="container novosti-kontejner" id="novosti">
     <div class="row">
         <h1 class="news-heading">
             Novosti

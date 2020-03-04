@@ -1,5 +1,5 @@
 <!-- Dio CSSa za ovaj partial se nalazi unutar about.css sheeta, jer je ovaj partial prvobitno bio dva odvojena. -->
-<div class="container-fluid">
+<div class="container-fluid" id="o-projektu">
     <div class="row">
         <!-- Razmak s lijeve strane -->
         <div class="col-1 col-md-1"></div>
@@ -315,7 +315,7 @@
             <div class="row">
                 <div class="col-md-12 col-6">
                     <div class="row pt-5 pt-md-0">
-                        <i class="fas fa-desktop boja"></i>
+                        <i class="fas fa-desktop boja pt-1"></i>
                         <div class="pl-3 naslov-informacije">
                             Prijave
                         </div>
@@ -325,8 +325,8 @@
                     </div>
                 </div>
                 <div class="col-md-12 col-6 pl-4 pl-md-3">
-                    <div class="row pt-5">
-                        <i class="fas fa-book-open boja"></i>
+                    <div class="row pt-5 pt-lg-3">
+                        <i class="fas fa-book-open boja pt-1"></i>
                         <div class="pl-3 naslov-informacije">
                             Organizacija
                         </div>
@@ -340,7 +340,7 @@
         <!-- Drugi red informacija -->
         <div class="col-md-3 col-6 pl-5 pt-md-0 pt-5">
             <div class="row">
-                <i class="fas fa-map-pin boja"></i>
+                <i class="fas fa-map-pin boja pt-1"></i>
                 <div class="pl-3 naslov-informacije">
                     Gdje
                 </div>
@@ -349,8 +349,8 @@
                 tershouse, Sarajevo
             </div>
             <div class="row pt-5">
-                <i class="far fa-window-maximize boja"></i>
-                <div class="pl-3 naslov-informacije">
+                <i class="far fa-window-maximize boja pt-1"></i>
+                <div class=" pl-3 naslov-informacije">
                     Treninzi
                 </div>
             </div>
@@ -361,7 +361,7 @@
         <!-- Treci red informacija -->
         <div class="col-md-3 col-6 pl-5 pt-md-0 pt-5">
             <div class="row">
-                <i class="fab fa-clock boja"></i>
+                <i class="far fa-clock boja pt-1"></i>
                 <div class="pl-3 naslov-informacije">
                     Kada?
                 </div>
@@ -370,7 +370,7 @@
                 Od 6. do 8. marta 2020. godine
             </div>
             <div class="row pt-5">
-                <i class="fas fa-money-bill-alt boja"></i>
+                <i class="fas fa-money-bill-alt boja pt-1"></i>
                 <div class="pl-3 naslov-informacije">
                     Cijena
                 </div>

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="galerija">
     @php
         $galleriesCount= count($albums);
     @endphp

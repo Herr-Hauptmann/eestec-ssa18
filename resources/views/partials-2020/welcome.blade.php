@@ -232,7 +232,7 @@
 
     </div>
 
-
+</div>
     <script>
         // Set the date we're counting down to
         var vrijemeZatvaranjaPrijava = $('#countdown').data('countdown');

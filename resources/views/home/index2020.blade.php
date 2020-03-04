@@ -18,8 +18,7 @@
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/partneri.css')}}">
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/postignuca.css')}}">
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/footer.css')}}">
-    <script src="{{ asset('js/ssa20/kontakt.js') }}"></script>
-    <script src="https://kit.fontawesome.com/4c9ea8fa84.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ asset('css/ssa-2020/menu.css')}}">
 @endsection
 
 @section('content')
@@ -37,5 +36,5 @@
     @include('partials-2020.o-radionicama')
     @include('partials-2020.organizatori')
     @include('partials-2020.drugi-o-nama')
-    @include('partials-2020.footer')
+    @include('partials-2020.kontakt')
 @endsection

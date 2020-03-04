@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
   <svg class="pozadina d-none d-lg-block" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="1944 -426.4 4229.2 1614.3" style="enable-background:new 1944 -426.4 4229.2 1614.3;" xml:space="preserve">
     <style type="text/css">
       .st0 {
@@ -46,7 +46,7 @@
     </g>
   </svg>
 
-  <div class="container spusti-me">
+  <div class="container mt-auto">
     <div class="row">
       <div class="col-4">
         <div class="row">

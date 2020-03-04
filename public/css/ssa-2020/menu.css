@@ -1,0 +1,21 @@
+@media all and (min-width: 993px) {
+  a.nav-link {
+    font: SemiBold 16px/22px Open Sans !important;
+    letter-spacing: 0;
+    color: #ffffff !important;
+    opacity: 1;
+  }
+}
+
+.push-front {
+  position: absolute;
+  z-index: 99999;
+}
+.hamburger {
+  fill: white;
+  stroke: white;
+  color: white;
+}
+a.nav-link {
+  font: SemiBold 16px/22px Open Sans;
+}
