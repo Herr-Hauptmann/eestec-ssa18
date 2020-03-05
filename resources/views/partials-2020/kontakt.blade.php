@@ -1,4 +1,4 @@
-<div class="container-fluid" id="kontakt">
+<div class="container-fluid mb-5" id="kontakt">
     <div class="row">
         <!-- SVG oblaci -->
         <div class="col-md-4 col-5 order-1">
@@ -27,7 +27,7 @@
 
                                 <label for="name">
                                     Ime i prezime*</label>
-                                <input type="text" class="form-control{{ $errors->has('ime') ? ' has-error' : ''}}" id="name" name="ime" minlength="3" value="{{ old('ime') }}" autofocus required />
+                                <input type="text" class="form-control{{ $errors->has('ime') ? ' has-error' : ''}}" id="name" name="ime" minlength="3" value="{{ old('ime') }}"  required />
 
                                 <p class="error"></p>
 
@@ -52,7 +52,7 @@
                         </div>
 
                         <div class="col-md-12">
-                            <button type="submit" name="send" class="btn btn-primary pull-right" id="btnContactUs">
+                            <button type="submit" name="send" class="btn btn-primary btn-info" id="btnContactUs">
                                 Pošalji</button>
                         </div>
                     </div>

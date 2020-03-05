@@ -71,7 +71,7 @@ body{
 
 .btn-info {
     color: #fff;
-    background-color: #17a2b8;
+    background-image: linear-gradient(to right, #54049a, #0059cd, #0084d4, #00a7bf, #34c4a9);
     border-color: #17a2b8;
     border-radius: 40px;
     font-family: 'Open Sans';
@@ -101,7 +101,7 @@ body{
 .naslovna-tekst2{
     text-align: left;
     font: Bold "Open Sans";
-    font-size:4vw;
+    font-size:4vh;
     letter-spacing: 1.62px;
     color: #31384E;
 }
@@ -148,3 +148,40 @@ body{
     opacity: 0.7;
 }
 
+#topBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 2em; /* Place the button at the bottom of the page */
+    right: 1.5em; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 1.2em; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+    width: 5px;
+    height: 5px;
+    opacity: 0.7;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+
+#topBtn:hover {
+    opacity: 1;
+    transition: 1s;
+    font-family: 'Roboto', sans-serif;
+    border: 3px solid #696969;
+    background-color: #505050;
+    border-radius: 5px;
+    width: 5px;
+    height: 5px;
+}
+#topBtn i {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    right: 18px;
+    bottom: 18px;
+}

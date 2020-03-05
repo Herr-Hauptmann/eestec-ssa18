@@ -14,6 +14,7 @@
             <li class="nav-item"><a class="nav-link" href="#galerija">Galerija</a></li>
             <li class="nav-item"><a class="nav-link" href="#drugi-o-nama">Drugi o nama</a></li>
             <li class="nav-item"><a class="nav-link" href="#kontakt">Kontakt</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
         </ul>
     </div>
 
@@ -21,3 +22,7 @@
 
 
 </nav>
+
+
+{{-- <a href="" onclick="topFunction()" id="topBtn"><img src= {{asset('img/uparrow.png')}} /></a> --}}
+<a href="" onclick="topFunction()" id="topBtn"><i style="font-size:40px;color:#34c4a9 " class="fas fa-chevron-up"></i></a>
