@@ -17,10 +17,11 @@
 
                         <!-- <li><a href="#">Novosti</a></li> -->
 {{--                        <li><a href="{{ route('treninzi-i-treneri') }}">Treninzi i treneri</a></li>--}}
-                        <li><a href="{{ route('mediji') }}">Mediji</a></li>
+                        {{-- <li><a href="{{ route('mediji') }}">Mediji</a></li>
                         <li><a href="{{ route('partneri') }}"> Partneri</a></li>
                         <li><a href="{{ route('galerija') }}">Galerija</a></li>
-                        <li><a href="{{ route('kontakt') }}">Kontakt</a></li>
+                        <li><a href="{{ route('kontakt') }}">Kontakt</a></li> --}}
+                        <li><a href="{{ route('home') }}">Home</a></li>
 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">

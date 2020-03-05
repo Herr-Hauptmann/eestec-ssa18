@@ -5,7 +5,7 @@
   </svg>
 
 
-  <svg class="tackice overflow-fix" xmlns="http://www.w3.org/2000/svg" width="424" height="424" viewBox="0 0 424 424">
+  {{-- <svg class="tackice overflow-fix" xmlns="http://www.w3.org/2000/svg" width="424" height="424" viewBox="0 0 424 424">
     <g id="Group_1711" data-name="Group 1711" transform="translate(-683 -2443)" opacity="0.46">
       <g id="Group_1094" data-name="Group 1094">
         <circle id="Ellipse_67" data-name="Ellipse 67" cx="4.5" cy="4.5" r="4.5" transform="translate(683 2443)" fill="#b6b8bd" />
@@ -173,7 +173,7 @@
         <circle id="Ellipse_79-11" data-name="Ellipse 79" cx="4.5" cy="4.5" r="4.5" transform="translate(1098 2443)" fill="#b6b8bd" />
       </g>
     </g>
-  </svg>
+  </svg> --}}
 
   <div class="container  mb-1">
     <div class="row">

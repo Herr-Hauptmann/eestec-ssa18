@@ -31,6 +31,8 @@
         </div>
         @endforeach
     </div>
+</div>
+<div class="container svi_partneri mt-5" id="mediji">
 
 
     <div class="row justify-content-center prvi_red pt-5">
