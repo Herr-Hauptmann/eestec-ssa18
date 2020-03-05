@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/postignuca.css')}}">
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/footer.css')}}">
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/menu.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/ssa-2020/menu.css')}}">
 @endsection
 
 @section('content')
@@ -37,4 +38,5 @@
     @include('partials-2020.organizatori')
     @include('partials-2020.drugi-o-nama')
     @include('partials-2020.kontakt')
+    
 @endsection
