@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-offset-1 col-md-4">
             <div>
-                <form action="{{ route('posalji-mail') }}" method="post" enctype="multipart/form-data">
+                <form class = "lijepa-forma"action="{{ route('posalji-mail') }}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="row">
                         <div class="col-md-12">

@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap");
+.kartica {
+    transition-duration: 1s;
+}
+
+.gallery-title {
+    font-family: Rubik;
+}
+
+.news-heading {
+    text-align: left;
+    font: Bold 38px/60px Poppins;
+    letter-spacing: 0;
+    color: #475677;
+    opacity: 1;
+}
+
+.strijele {
+    font-size: 50px;
+    color: #34C4A9;
+    margin-left: 10px;
+    margin-right: 10px;
+    opacity: 0.5;
+}
+
+.strijele:hover {
+    opacity: 1;
+}
+
+.galerija-div {
+    margin-bottom: 50px;
+}

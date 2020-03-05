@@ -1,0 +1,10 @@
+
+@media (min-width: 992px) {
+  .pozadina {
+    position: absolute;
+    left: 0;
+    z-index: -100;
+    width: 100%;
+    height: auto;
+  }
+}

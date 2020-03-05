@@ -1,0 +1,40 @@
+.o-projektu-naslov {
+  text-align: left;
+  font: Bold 100px/89px Poppins;
+  letter-spacing: -1.5px;
+  color: #34c4a9 !important;
+  line-height: 0.8;
+  opacity: 1;
+  font-size: 6.6vw;
+}
+.tacke {
+  width: 100%;
+  height: 100%;
+}
+.lijeve-tacke {
+  height: 90%;
+  width: auto;
+  position: absolute;
+  left: -35vw;
+}
+.naslov-informacije {
+  text-align: left;
+  font: Bold 18px/27px Poppins;
+  letter-spacing: 0;
+  color: #000000;
+  opacity: 1;
+  font-size: 2vw;
+}
+
+.tekst-informacije {
+  text-align: left;
+  font: Light 17px/27px Poppins;
+  letter-spacing: 0;
+  color: #000000;
+  opacity: 1;
+  font-size: 1.45vw;
+}
+
+.boja {
+  color: #00a393;
+}

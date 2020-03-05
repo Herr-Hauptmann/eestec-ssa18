@@ -20,8 +20,8 @@ class HomeController extends Controller
 
     public function __construct() {
         // Trenutno beskorisno, mozda se iskoristi kasnije za footer
-        $this->pr = Kontakt::where('pozicija_short', 'PR')->first();
-        $this->glorg = Kontakt::where('pozicija_short', 'GLORG')->first();
+        // $this->pr = Kontakt::where('pozicija_short', 'PR')->first();
+        // $this->glorg = Kontakt::where('pozicija_short', 'GLORG')->first();
     }
 
     /**
@@ -41,7 +41,30 @@ class HomeController extends Controller
 
         });
 
-        return view('home.index', compact('posts'));
+        /** @var array $dirs */
+        $dirs = Storage::disk('public')->directories('img/galerija');
+
+
+        $albums = [];
+
+        foreach ($dirs as $dir) {
+            $name = explode('/', $dir)[2];
+            $files = Storage::disk('public')->allFiles($dir);
+            if (! empty($files)) {
+                // Mozda prvo provjeriti da li postoji
+                $albums[$name] = $dir . '/cover.jpg';
+            }
+        }
+
+        $generalni = Partner::where('category', 'generalni')->get();
+        $obicni = Partner::where('category', 'obicni')->get();
+
+        $kontakti=Kontakt::all();
+
+        $generalniMedij = Medium::where('category', 'generalni')->get();
+        $obicniMedij = Medium::where('category', 'obicni')->get();
+
+        return view('home.index2020', compact('posts', 'albums', 'generalni', 'obicni', 'kontakti', 'generalniMedij', 'obicniMedij'));
     }
 
     public function novosti() {
