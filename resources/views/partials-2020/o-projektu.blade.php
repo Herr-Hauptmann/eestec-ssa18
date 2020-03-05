@@ -321,7 +321,7 @@
                         </div>
                     </div>
                     <div class="row tekst-informacije">
-                        Nazalost, prijave za ovogodisnji SSA su zatvorene :(
+                        Prijave traju do 16.02.2020. godine
                     </div>
                 </div>
                 <div class="col-md-12 col-6 pl-4 pl-md-3">
@@ -332,7 +332,7 @@
                         </div>
                     </div>
                     <div class="row tekst-informacije">
-                        SSA iza sebe ima sedam uspješnih edicija, mnoštvo zadovoljnih participanata i veliki broj zadovoljnih saradnika.
+                        SSA iza sebe ima sedam uspješnih edicija, mnoštvo zadovoljnih participanata i veliki broj zadovoljnih saradnika
                     </div>
                 </div>
             </div>
@@ -346,7 +346,7 @@
                 </div>
             </div>
             <div class="row tekst-informacije">
-                tershouse, Sarajevo
+                tershouse, Kolodvorska 5, Sarajevo
             </div>
             <div class="row pt-5">
                 <i class="far fa-window-maximize boja pt-1"></i>
@@ -355,7 +355,7 @@
                 </div>
             </div>
             <div class="row tekst-informacije">
-                Treninge drže certificirani EESTEC soft skills treneri iz svih dijelova Evrope.
+                Treninge drže certificirani EESTEC soft skills treneri iz svih dijelova Evrope
             </div>
         </div>
         <!-- Treci red informacija -->
@@ -376,7 +376,7 @@
                 </div>
             </div>
             <div class="row tekst-informacije">
-                Apsolutno besplatno, dovoljno je da se naoružate osmijehom i dobrim raspoloženjem.
+                Apsolutno besplatno, dovoljno je da se naoružate osmijehom i dobrim raspoloženjem
             </div>
         </div>
 
