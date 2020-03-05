@@ -71,7 +71,7 @@ body{
 
 .btn-info {
     color: #fff;
-    background-color: #17a2b8;
+    background-image: linear-gradient(to right, #54049a, #0059cd, #0084d4, #00a7bf, #34c4a9);
     border-color: #17a2b8;
     border-radius: 40px;
     font-family: 'Open Sans';
@@ -123,7 +123,7 @@ a.navigacioni-meni:visited{
 .naslovna-tekst2{
     text-align: left;
     font: Bold "Open Sans";
-    font-size:4vw;
+    font-size:4vh;
     letter-spacing: 1.62px;
     color: #31384E;
 }

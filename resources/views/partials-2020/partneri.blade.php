@@ -54,7 +54,7 @@
     </div>
     @endif
     <div class="row justify-content-center treci_red pt-2">
-        Obični smrtnici
+        Step-up pokrovitelji
     </div>
 
     <div class="logoContainer center-hv row">

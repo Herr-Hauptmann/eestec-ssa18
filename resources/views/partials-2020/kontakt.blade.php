@@ -52,7 +52,7 @@
                         </div>
 
                         <div class="col-md-12">
-                            <button type="submit" name="send" class="btn btn-primary pull-right" id="btnContactUs">
+                            <button type="submit" name="send" class="btn btn-primary btn-info" id="btnContactUs">
                                 Pošalji</button>
                         </div>
                     </div>
