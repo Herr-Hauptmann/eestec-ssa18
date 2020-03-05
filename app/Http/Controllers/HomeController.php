@@ -61,7 +61,10 @@ class HomeController extends Controller
 
         $kontakti=Kontakt::all();
 
-        return view('home.index2020', compact('posts', 'albums', 'generalni', 'obicni', 'kontakti'));
+        $generalniMedij = Medium::where('category', 'generalni')->get();
+        $obicniMedij = Medium::where('category', 'obicni')->get();
+
+        return view('home.index2020', compact('posts', 'albums', 'generalni', 'obicni', 'kontakti', 'generalniMedij', 'obicniMedij'));
     }
 
     public function novosti() {
