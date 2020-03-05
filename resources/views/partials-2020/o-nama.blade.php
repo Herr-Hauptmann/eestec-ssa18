@@ -177,10 +177,10 @@
     </div>
 
     <div class="col-lg-6 align-items-center">
-      <h1 class="o-nama-naslov">
+      <h1 class="o-nama-naslov pl-2 ml-2 pl-md-0 ml-md-0">
         O EESTEC-u
       </h1>
-      <p class="o-nama-tekst pr-2 mr-2">
+      <p class="o-nama-tekst pr-2 mr-2 pl-2 ml-2 pl-md-0 ml-md-0">
         Osnovano 1986. godine u Eindhovenu (Nizozemska), Udruženje studenata
         elektrotehnike Evrope - EESTEC (eng. Electrical Engineering STudents’
         European assoCiation) je neprofitna, nevladina, nepolitička organizacija čija je

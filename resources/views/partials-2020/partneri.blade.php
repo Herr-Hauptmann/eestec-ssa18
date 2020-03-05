@@ -10,7 +10,7 @@
     </div>
     <div class="row logoContainer center-hv">
         @foreach ($generalni as $item)
-        <div class="logoDiv-medij col-md-4 col-sm-4 col-6">
+        <div class="logoDiv-medij col-md-3 col-4">
             <a href="{{ $item->website }}" target="_blank">
                 <div alt="{{ $item->name }}" class="div-responsive_img" style="background-image: url({{ asset($item->logo) }}) }}"></div>
             </a>
@@ -24,7 +24,7 @@
 
     <div class="logoContainer center-hv row">
         @foreach ($obicni as $item)
-        <div class="logoDiv-medij col-md-4 col-sm-4 col-6">
+        <div class="logoDiv-medij col-md-2  col-3">
             <a href="{{ $item->website }}" target="_blank">
                 <div alt="{{ $item->name }}" class="div-responsive_img" style="background-image: url({{ asset($item->logo) }})"></div>
             </a>
