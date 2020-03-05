@@ -83,28 +83,6 @@ body{
 }
 
 
-a.navigacioni-meni:link{
-    color: white !important;
-    font-family: 'Open Sans';
-    font-size: 16px;
-    letter-spacing: 0;
-    opacity: 1 !important;
-}
-a.navigacioni-meni:active{
-    color: white !important;
-    font-family: 'Open Sans';
-    font-size: 16px;
-    letter-spacing: 0;
-    opacity: 1 !important;
-}
-a.navigacioni-meni:visited{
-    color: white !important;
-    font-family: 'Open Sans';
-    font-size: 16px;
-    letter-spacing: 0;
-    opacity: 1 !important;
-}
-
 .ljudina{
     position:absolute;
     top:0;
