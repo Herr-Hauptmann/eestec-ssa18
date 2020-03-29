@@ -24,7 +24,7 @@
                     <div class="novost-div">
 
                         <div class="novost-image-div">
-                            <img class="novost-thumb" src="{{ asset($post->image_url) }}" alt="fali slika bajo moj">
+                            <img class="novost-thumb" src="{{ asset($post->image_url) }}" alt="">
                         </div>
                         
                         <div class="novost-tekst-div p-3">
