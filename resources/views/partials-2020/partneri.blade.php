@@ -6,7 +6,7 @@
 
     @if (count($generalni) > 0)
     <div class="row justify-content-center drugi_red pt-2">
-        Generalni godišnji partneri
+        Godišnji partner udruženja
     </div>
     <div class="row logoContainer center-hv">
         @foreach ($generalni as $item)
@@ -54,7 +54,7 @@
     </div>
     @endif
     <div class="row justify-content-center treci_red pt-2">
-        Step-up pokrovitelji
+        Medijski pokrovitelji
     </div>
 
     <div class="logoContainer center-hv row">

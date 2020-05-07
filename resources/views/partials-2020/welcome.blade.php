@@ -7,7 +7,7 @@
                 <h1 class="tajmer" data-countdown="2021-02-16 23:59:59" id="countdown" style="font-weight: bolder;">
                     <br />
                     <h2 class="naslovna-tekst2">Budi korak ispred!</h2>
-                    <h2 class="naslovna-tekst3">06.-08. Mart 2020 godine</h2>
+                    <h2 class="naslovna-tekst3">06.-08. mart 2020. godine</h2>
                     <h3 class="naslovna-tekst4">Besplatna trodnevna radionica ličnih i profesionalnih vještina</h3>
                     <div class="d-none d-sm-flex justify-content-center">
                         <div class="dugme">
