@@ -25,7 +25,7 @@
             @else
             <div class="row status-prijava pb-5">
                 <h2 class="naslovna-tekst2">Budi korak ispred!</h2>
-                <h2 class="naslovna-tekst3">06.-08. Mart 2020 godine</h2>
+                <h2 class="naslovna-tekst3">06.-08. mart 2020. godine</h2>
                 <h3 class="naslovna-tekst4">Besplatna trodnevna radionica ličnih i profesionalnih vještina</h3>
             </div>
 
