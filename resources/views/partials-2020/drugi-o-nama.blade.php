@@ -282,7 +282,7 @@
           <img class="card-img-top" src="{{ asset('img/drugi-o-nama/2020IrenaZaric.jpg') }}" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">Irena Žarić</h5>
-            <p class="card-text">SAA je sjajna prilika za sve mlade ljude koji ne žele da se uklope u konvencionalni sistem. Mlade koji su ambiciozni, jedinstveni, uporni i spremni da iskoče iz zone komfora. Svako će sa SAA uzeti onoliko koliko sebi dopusti, a pošto je prilika zaista odlična, prepustite se u avanturu neformalnog učenja, koje bih vrednovala jednako kao formalno. Soft skills su nešto što nas ne uče na fakultetu, ali su jako poželjne na tržištu rada. Savladajte ih i budite korak ispred!</p>
+            <p class="card-text">SSA je sjajna prilika za sve mlade ljude koji ne žele da se uklope u konvencionalni sistem. Mlade koji su ambiciozni, jedinstveni, uporni i spremni da iskoče iz zone komfora. Svako će sa SSA uzeti onoliko koliko sebi dopusti, a pošto je prilika zaista odlična, prepustite se u avanturu neformalnog učenja, koje bih vrednovala jednako kao formalno. Soft skills su nešto što nas ne uče na fakultetu, ali su jako poželjne na tržištu rada. Savladajte ih i budite korak ispred!</p>
           </div>
         </div>
       </div>
