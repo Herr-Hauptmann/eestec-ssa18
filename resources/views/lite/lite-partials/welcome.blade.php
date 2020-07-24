@@ -1,12 +1,15 @@
-<div>
+<div class="container-fluid">
     <div class="row">
-        <div class="col-6 pl-3">
-            @if (config('ssa.lite-prijave-otvorene'))
-            <div class="row">
+        <div class="col-6 pl-2 ml-4">
+            @if (config('ssa.prijave_otvorene'))
+            <div class="row pt-6 mt-3">
                 <h1 class="tajmer" data-countdown="2020-08-10 23:59:59" id="countdown" style="font-weight: bolder;">
-                    <br />
+                    <br/>
             </div>
-            <div class="row">
+            <div class="row pr-4">
+                <br/>
+            </div>
+            <div class="row pt-4">
                 <h2 class="naslovna-tekst2">Budi korak ispred!</h2>
                 <h2 class="naslovna-tekst3">22.-23. august 2020. godine</h2>
                 <h3 class="naslovna-tekst4">Besplatna dvodnevna radionica ličnih i profesionalnih vještina</h3>
@@ -24,17 +27,10 @@
             </div>
             @endif
         </div>
-        <div class="row">
-            <div class="d-sm-none">
-                <div class="dugme">
-                    <a href="{{ route('prijava.create') }}" class="btn btn-block btn-primary btn-info">&ensp;<i class="fas fa-pencil-alt"></i>&ensp;Prijavi se&emsp;</a>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 <div class="img-fluid ljetna-ljudina">
-    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="737 -430.9 2085.3 1653.9" style="enable-background:new 737 -430.9 2085.3 1653.9;" xml:space="preserve">
+    <svg version="1.1" id="Layer_1" x="100px" y="1500px" viewBox="237 -230.9 2385.3 1953.9" style="enable-background:new 737 -430.9 2085.3 1653.9;" xml:space="preserve">
         <style type="text/css">
             .st0 {
                 fill: url(#Path_85_1_);

@@ -1,5 +1,5 @@
 <style>
-    .nav > li > a:hover {
+    .nav>li>a:hover {
         background-color: inherit;
     }
 </style>
@@ -15,25 +15,34 @@
                 <li role="presentation">
                     <div class="row" style="border-bottom: 1px solid #ddd; margin-bottom: 5px; padding-bottom: 5px;">
                         @if (config('ssa.prijave_otvorene'))
-                            <form method="POST" action="{{ route('zatvori.prijave') }}" accept-charset="UTF-8" class="col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 5px;">
-                                {{ method_field('PATCH') }}
-                                {{ csrf_field() }}
-                                <button type="submit" class="btn btn-danger btn-sm btn-block" title="Zatvori prijave"
-                                        onclick="return confirm('Sigurno zelis zatvoriti prijave?')">
-                                    <i class="fa fa-ban" aria-hidden="true"></i> Zatvori prijave
-                                </button>
-                            </form>
+                        <form method="POST" action="{{ route('zatvori.prijave') }}" accept-charset="UTF-8" class="col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 5px;">
+                            {{ method_field('PATCH') }}
+                            {{ csrf_field() }}
+                            <button type="submit" class="btn btn-danger btn-sm btn-block" title="Zatvori prijave" onclick="return confirm('Sigurno zelis zatvoriti prijave?')">
+                                <i class="fa fa-ban" aria-hidden="true"></i> Zatvori prijave
+                            </button>
+                        </form>
                         @else
-                            <form method="POST" action="{{ route('otvori.prijave') }}" accept-charset="UTF-8" class="col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 5px;">
-                                {{ method_field('PATCH') }}
-                                {{ csrf_field() }}
-                                <button type="submit" class="btn btn-success btn-sm btn-block" title="Otvori prijave"
-                                        onclick="return confirm('Sigurno zelis otvoriti prijave?')">
-                                    <i class="fa fa-play" aria-hidden="true"></i> Otvori prijave
-                                </button>
-                            </form>
+                        <form method="POST" action="{{ route('otvori.prijave') }}" accept-charset="UTF-8" class="col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 5px;">
+                            {{ method_field('PATCH') }}
+                            {{ csrf_field() }}
+                            <button type="submit" class="btn btn-success btn-sm btn-block" title="Otvori prijave" onclick="return confirm('Sigurno zelis otvoriti prijave?')">
+                                <i class="fa fa-play" aria-hidden="true"></i> Otvori prijave
+                            </button>
+                        </form>
                         @endif
                     </div>
+                    {{-- <div class="row" style="border-bottom: 1px solid #ddd; margin-bottom: 5px; padding-bottom: 5px;">
+                        @if (config('ssa.lite-verzija'))
+                        <form method="POST" action="{{ route('zatvori.prijave') }}" accept-charset="UTF-8" class="col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 5px;">
+                            {{ method_field('PATCH') }}
+                            {{ csrf_field() }}
+                            <button type="submit" class="btn btn-danger btn-sm btn-block" title="Zatvori prijave" onclick="return confirm('Sigurno zelis zatvoriti prijave?')">
+                                <i class="fa fa-ban" aria-hidden="true"></i> Zatvori prijave
+                            </button>
+                        </form>
+
+                    </div> --}}
                     <button class="btn btn-success btn-block" onclick="location.href = '{{ route('posts.index') }}'">
                         Novosti
                     </button>
@@ -41,12 +50,12 @@
                         Kontakt
                     </button>
                     @can('pregledaj prijave')
-                        <button class="btn btn-info btn-block" onclick="location.href = '{{ route('prijava.index') }}'">
-                            Prijave
-                        </button>
-                        <button class="btn btn-info btn-block" onclick="location.href = '{{ route('prijava.bodovi') }}'">
-                            Ranking lista
-                        </button>
+                    <button class="btn btn-info btn-block" onclick="location.href = '{{ route('prijava.index') }}'">
+                        Prijave
+                    </button>
+                    <button class="btn btn-info btn-block" onclick="location.href = '{{ route('prijava.bodovi') }}'">
+                        Ranking lista
+                    </button>
                     @endcan
                     <button class="btn btn-default btn-block" onclick="location.href = '{{ route('partners.index') }}'">
                         Partneri
@@ -60,16 +69,16 @@
                     </button>
 
                     <?php
-                        $treneri = \App\Trainer::all();
+                    $treneri = \App\Trainer::all();
                     ?>
                     @if ($treneri->isNotEmpty())
-                        <button class="btn btn-primary btn-block" onclick="location.href = '{{ route('trainings.index') }}'">
-                            Treninzi
-                        </button>
+                    <button class="btn btn-primary btn-block" onclick="location.href = '{{ route('trainings.index') }}'">
+                        Treninzi
+                    </button>
                     @else
-                        <button class="btn btn-primary btn-block" onclick="alert('A ko ce ti drzat trening?');">
-                            Treninzi
-                        </button>
+                    <button class="btn btn-primary btn-block" onclick="alert('A ko ce ti drzat trening?');">
+                        Treninzi
+                    </button>
                     @endif
 
                 </li>

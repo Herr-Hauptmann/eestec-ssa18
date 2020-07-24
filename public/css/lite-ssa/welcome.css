@@ -1,8 +1,13 @@
 .ljetna-ljudina {
+    overflow: hidden !important;
     position: absolute;
-    top: -45%;
-    left: 32%;
-    width: 90%;
+    top: 0;
+    right: 0;
+    width: 80%;
     height: auto;
     z-index: -1;
+}
+
+.sjena-naslov {
+    font-weight: 600;
 }

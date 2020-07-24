@@ -26,11 +26,14 @@
 @endsection
 
 @section('content')
+<div class="container-fluid">
+
+
     {{-- blade komponente koje se nalaze u resources/views/2020_partials/ folderu se dodaju na sljedeci nacin --}}
     {{-- @include('ime-filea')  --}}
     {{-- NPR @include('partials-2020.naslovna_traka')   --}}
-    @include('partials-2020.menu')
+    @include('lite.lite-partials.menu')
     @include('lite.lite-partials.welcome')
 
-    
+</div>
 @endsection
