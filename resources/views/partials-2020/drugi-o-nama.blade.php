@@ -179,7 +179,7 @@
     <div class="row">
       <div class="col-12 col-sm-8 text-left">
         <h1 class="drugi-o-nama-naslov">
-          What People Says About Us ?
+          What People Say About Us?
         </h1>
       </div>
 
@@ -247,6 +247,57 @@
   <div class="container ">
     <div class="row flex-nowrap  overflow-hidden ">
 
+    <div class="col-12 col-sm-4 karticaa">
+        <div class="card">
+          <img class="card-img-top" src="{{ asset('img/drugi-o-nama/2020AzraHeric.jpg') }}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Azra Herić</h5>
+            <p class="card-text">Želite da budete uspješni u bilo kojem poslu, da budete dobro organizovani, da znate maksimalno da iskoristite svoje vrijeme, da budete timski igrač i pri tome dobro motivisani? Prijavite se! Upoznat ćete sami sebe, steći mnogo novih poznanstava, naučiti mnogo korisnih stvari i puno se zabaviti u odličnoj atmosferi koja vlada od početka do kraja.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-4 karticaa">
+        <div class="card">
+          <img class="card-img-top" src="{{ asset('img/drugi-o-nama/2020FarisHeganovic.jpg') }}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Faris Heganović</h5>
+            <p class="card-text">SSA je idealna prilika za sve koji žele da rade na sebi, uče neke nove stvari i stvaraju nova poznanstva i prijateljstva. Na današnjem tržištu rada morate imati nešto što će vas izdvajati u odnosu na konkurenciju, a "soft skills" su vještine koje će sigurno praviti tu razliku. Iskoristite priliku koja vam se nudi i prijavite se na SSA.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-4 karticaa">
+        <div class="card">
+          <img class="card-img-top" src="{{ asset('img/drugi-o-nama/2020HannaHelac.jpg') }}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Hanna Helać</h5>
+            <p class="card-text">SSA je odlična prilika svakom studentu da stekne vještine koje će ga, kada za to dođe vrijeme, izdvojiti na tržištu rada. Ovim radionicama upoznajete sebe i naučite stvari koje vam olakšaju život. Treba izaći iz comfort zone i svakim novim danom napredovati, naučiti nešto novo i napraviti barem mali korak na putu ličnog razvoja, a SSA je odlična prilika da budete korak ispred ostalih + druženje je odlično i mislim da se niko neće pokajati ako se prijavi. </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-4 karticaa">
+        <div class="card">
+          <img class="card-img-top" src="{{ asset('img/drugi-o-nama/2020IrenaZaric.jpg') }}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Irena Žarić</h5>
+            <p class="card-text">SSA je sjajna prilika za sve mlade ljude koji ne žele da se uklope u konvencionalni sistem. Mlade koji su ambiciozni, jedinstveni, uporni i spremni da iskoče iz zone komfora. Svako će sa SSA uzeti onoliko koliko sebi dopusti, a pošto je prilika zaista odlična, prepustite se u avanturu neformalnog učenja, koje bih vrednovala jednako kao formalno. Soft skills su nešto što nas ne uče na fakultetu, ali su jako poželjne na tržištu rada. Savladajte ih i budite korak ispred!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-4 karticaa">
+        <div class="card">
+          <img class="card-img-top" src="{{ asset('img/drugi-o-nama/2020ElmaOpacin.jpg') }}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Elma Opačin</h5>
+            <p class="card-text">U svakome od nas kriju se vještine koje traže vrijeme i mjesto da se probude. Soft Skills Academy 2020 mi je pomogao da probudim te vještine, da ih nadogradim i učinim boljima, te da nastavim koračati sigurnijim koracima. To je ujedno i razlog zašto bih preporučila drugim studentima SSA - osjetit ćete buđenje! </p>
+          </div>
+        </div>
+      </div>
+
+
       <div class="col-12 col-sm-4 karticaa">
         <div class="card">
           <img class="card-img-top" src="{{ asset('img/drugi-o-nama/ss.jpg') }}" alt="Card image cap">
@@ -295,21 +346,17 @@
 
     </div>
   </div>
-
-
 </div>
 
 <script>
   var pixels = screen.width;
   if (pixels < 768) {
-    var maks = 4;
+    var maks = 9;
   } else {
-    var maks = 2;
+    var maks = 7;
   }
   var pag = 0;
   // treba ubaciti provjeru za zadnju stranu
-
-
 
   function skrolajLijevo() {
     if (pag > 0) {
@@ -325,6 +372,14 @@
     if (pag < maks) {
       demoId2 = document.querySelectorAll('.karticaa');
       ++pag;
+      demoId2.forEach(element => {
+        element.style.transform = 'translateX(' + -(pag) + '00%)';
+      });
+    }
+    else if (pag == maks)
+    {
+      demoId2 = document.querySelectorAll('.karticaa');
+      pag = 0;
       demoId2.forEach(element => {
         element.style.transform = 'translateX(' + -(pag) + '00%)';
       });

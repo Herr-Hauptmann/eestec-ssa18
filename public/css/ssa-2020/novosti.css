@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap");
 
+
+.novostba {
+    transition-duration: 1s;
+}
 .novosti-kontejner {
     margin-top: 50px;
 }

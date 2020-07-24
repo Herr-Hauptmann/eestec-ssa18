@@ -33,11 +33,12 @@ class HomeController extends Controller
     public function index()
     {
         /** @var LengthAwarePaginator $posts */
-        $posts = Post::orderBy("created_at", 'desc')->paginate(config('ssa.home.landing.post_pagination', 4));
+        // $posts = Post::orderBy("created_at", 'desc')->paginate(config('ssa.posts.pagination', 10));
+        $posts = Post::orderBy("created_at", 'desc')->get();
 
         $posts->each(function ($post) {
-           $post->content = StringUtility::shortenString($post->content, 48);
-           $post->title = StringUtility::shortenString($post->title, 17);
+            $post->content = StringUtility::shortenString($post->content, 48);
+            $post->title = StringUtility::shortenString($post->title, 17);
 
         });
 
