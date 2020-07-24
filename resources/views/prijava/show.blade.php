@@ -93,13 +93,13 @@
                                             <td>
                                                 <input type="hidden" name="engleski" 
                                                 value="{{ ($participant->engleski_razumijevanje + $participant->engleski_govor) / 2 }}" />
-                                                {{ ($participant->engleski_razumijevanje + $participant->engleski_govor) / 2 }}
+                                                {{ $participant->engleski_razumijevanje + $participant->engleski_govor }}
                                             </td>
                                         </tr>
                                         <tr>
                                             <th>Motivaciono pismo</th>
                                             <td>{{ $participant->motivaciono }}</td>
-                                            <td><input type="number" min="1" max="20" step="1" class="form-control" name="motivaciono" required /></td>
+                                            <td><input type="number" min="0" max="70" step="1" class="form-control" name="motivaciono" required /></td>
                                         </tr>
                                         <tr>
                                             <th>Ranije učešće na SSA</th>

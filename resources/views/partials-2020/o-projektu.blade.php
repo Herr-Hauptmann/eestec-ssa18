@@ -181,7 +181,7 @@
                     </svg>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title naslov-onama-kartica">Ko može učestvovati na Soft Skills Academy?</h5>
+                    <h5 class="card-title naslov-onama-kartica">Ko može učestvovati na Soft Skills Academy Sarajevo?</h5>
                     <p class="card-text tekst-onama-kartica">Priliku za učešće na ovoj radionici ima 40 ambicioznih studenata koji su se istakli svojom motivacijom za učešće, ali i u radu u nevladinim organizacijama.</p>
                 </div>
             </div>
@@ -317,22 +317,22 @@
                     <div class="row pt-5 pt-md-0">
                         <i class="fas fa-desktop boja pt-1"></i>
                         <div class="pl-3 naslov-informacije">
-                            Prijave
+                            Rok za prijave
                         </div>
                     </div>
                     <div class="row tekst-informacije">
-                        Nazalost, prijave za ovogodisnji SSA su zatvorene :(
+                        Prijave traju do 16.02.2020. godine
                     </div>
                 </div>
                 <div class="col-md-12 col-6 pl-4 pl-md-3">
                     <div class="row pt-5 pt-lg-3">
-                        <i class="fas fa-book-open boja pt-1"></i>
-                        <div class="pl-3 naslov-informacije">
+                        <i class="pt-lg-5 fas fa-book-open boja pt-1"></i>
+                        <div class="pt-lg-5 pl-3 naslov-informacije">
                             Organizacija
                         </div>
                     </div>
                     <div class="row tekst-informacije">
-                        SSA iza sebe ima sedam uspješnih edicija, mnoštvo zadovoljnih participanata i veliki broj zadovoljnih saradnika.
+                        SSA iza sebe ima sedam uspješnih edicija, mnoštvo zadovoljnih participanata i veliki broj zadovoljnih saradnika
                     </div>
                 </div>
             </div>
@@ -342,11 +342,11 @@
             <div class="row">
                 <i class="fas fa-map-pin boja pt-1"></i>
                 <div class="pl-3 naslov-informacije">
-                    Gdje
+                    Gdje?
                 </div>
             </div>
             <div class="row tekst-informacije">
-                tershouse, Sarajevo
+                tershouse, Kolodvorska 5, Sarajevo
             </div>
             <div class="row pt-5">
                 <i class="far fa-window-maximize boja pt-1"></i>
@@ -355,7 +355,7 @@
                 </div>
             </div>
             <div class="row tekst-informacije">
-                Treninge drže certificirani EESTEC soft skills treneri iz svih dijelova Evrope.
+                Treninge drže certificirani EESTEC soft skills treneri iz svih dijelova Evrope
             </div>
         </div>
         <!-- Treci red informacija -->
@@ -376,7 +376,7 @@
                 </div>
             </div>
             <div class="row tekst-informacije">
-                Apsolutno besplatno, dovoljno je da se naoružate osmijehom i dobrim raspoloženjem.
+                Apsolutno besplatno, dovoljno je da se naoružate osmijehom i dobrim raspoloženjem
             </div>
         </div>
 
