@@ -15,3 +15,90 @@
 #o-projektu-lite {
     margin-top: 11vw;
 }
+
+.socialMedia {
+    margin-bottom: 120px;
+}
+
+.socialWrapper {
+    margin: auto !important;
+}
+
+.socialImage {
+    width: 70px;
+    display: inline-block;
+}
+
+.footerNaslov {
+    border-bottom: 1px solid white;
+    margin-bottom: 5%;
+}
+
+.footerNaslov>p {
+    text-transform: uppercase;
+    color: white;
+    font-family: 'Open Sans';
+    font-size: 14pt;
+}
+
+.kontaktIme,
+.kontaktPozicija {
+    color: white;
+    font-family: 'Open Sans';
+}
+
+.kontaktIme,
+.subFooter-wrapper>p {
+    font-weight: bold;
+    font-size: 12pt;
+}
+
+.subFooter-wrapper>p {
+    text-align: center;
+    color: white;
+    vertical-align: middle;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0;
+    font-weight: bold;
+    font-size: 12pt;
+}
+
+.subFooter-wrapper>p {
+    text-align: center;
+    color: white;
+    vertical-align: middle;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0;
+}
+
+.kontaktPozicija {
+    font-size: 10pt;
+}
+
+.prvaKontakt {
+    margin-bottom: 30px;
+}
+
+.socialWrapper a:hover {
+    cursor: pointer;
+}
+
+.subFooter {
+    background-color: rgb(20, 20, 20);
+    border-radius: none;
+}
+
+.subFooter {
+    background-color: rgb(20, 20, 20);
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.footer {
+    background-color: rgb(50, 50, 50);
+    margin-top: 150px;
+    padding-top: 20px;
+    font-family: 'Open Sans';
+}

@@ -45,7 +45,9 @@
     {{-- Ili napraviti opet organizatore ili napraviti footer da znaju da treba kontaktirati Merjemu --}}
     @include('partials-2020.drugi-o-nama')
     @include('partials-2020.kontakt')
-    {{-- Napraviti footer s merjeminim i UO podatcima --}}
+    @include('lite.lite-partials.footer')
+
+    {{-- Srediti footer s merjeminim i UO podatcima --}}
 
 
 </div>
