@@ -1,61 +1,60 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap');
-
-@media all and (max-width: 576px){
-    .status-prijava{
+@media all and (max-width: 576px) {
+    .status-prijava {
         margin-top: 23%;
         margin-bottom: 10%;
-        margin-left:3%;
+        margin-left: 3%;
         padding-top: 10px;
         background-color: transparent;
     }
-    .prijava-dugme{
-        margin-left:3%;
+    .prijava-dugme {
+        margin-left: 3%;
     }
-  }
+}
 
 @media all and (max-width: 767px) and (min-width: 578px) {
-    .status-prijava{
+    .status-prijava {
         margin-top: 23%;
         margin-bottom: 10%;
-        margin-left:3%;
+        margin-left: 3%;
         padding-top: 10px;
         background-color: transparent;
     }
 }
 
 @media all and (max-width: 992px) and (min-width: 768px) {
-    .status-prijava{
+    .status-prijava {
         margin-top: 23%;
         margin-bottom: 10%;
-        margin-left:3%;
+        margin-left: 3%;
         padding-top: 10px;
         background-color: transparent;
     }
 }
+
 @media all and (max-width: 1119px) and (min-width: 993px) {
-    .status-prijava{
+    .status-prijava {
         margin-top: 23%;
         margin-bottom: 10%;
-        margin-left:3%;
+        margin-left: 3%;
         padding-top: 10px;
         background-color: transparent;
     }
 }
 
 @media all and (min-width: 1120px) {
-    .status-prijava{
-        margin-top: 10%;
-        margin-bottom: 10%;
-        margin-left:3%;
+    .status-prijava {
+        margin-left: 3%;
         padding-top: 10px;
         background-color: transparent;
     }
 }
-body{
+
+body {
     overflow-x: hidden;
 }
 
-.row1{
+.row1 {
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -63,10 +62,9 @@ body{
     margin-left: -15px;
 }
 
-.menju{
+.menju {
     background-color: transparent;
-    position:absolute;
-    
+    position: absolute;
 }
 
 .btn-info {
@@ -78,69 +76,71 @@ body{
     font-size: 1.5em;
 }
 
-.dugme{
+.dugme {
     padding-top: 20px;
 }
 
-
-.ljudina{
-    position:absolute;
-    top:0;
+.ljudina {
+    position: absolute;
+    top: 0;
     right: 0;
     z-index: -500;
 }
 
-.tajmer{
+.tajmer {
     text-align: left;
     font: Bold "Open Sans";
     letter-spacing: 1.62px;
-    font-size:5vw;
+    font-size: 5vw;
     color: #33C3A9;
     opacity: 1;
 }
-.naslovna-tekst2{
+
+.naslovna-tekst2 {
     text-align: left;
     font: Bold "Open Sans";
-    font-size:4vh;
+    font-size: 4vh;
     letter-spacing: 1.62px;
     color: #31384E;
 }
-.naslovna-tekst3{
+
+.naslovna-tekst3 {
     text-align: left;
     font: "Open Sans";
-    font-size:3vw;
-    letter-spacing: 1.14px;
-    color: #31384E;
-}
-.naslovna-tekst4{
-    text-align: left;
-    font: "Open Sans";
-    font-size:2vw;
+    font-size: 3vw;
     letter-spacing: 1.14px;
     color: #31384E;
 }
 
-.oblak_sivi_lijevi{
+.naslovna-tekst4 {
+    text-align: left;
+    font: "Open Sans";
+    font-size: 2vw;
+    letter-spacing: 1.14px;
+    color: #31384E;
+}
+
+.oblak_sivi_lijevi {
     opacity: 1;
     padding-left: 0% !important;
-
 }
-.oblak_sivi_desni{
+
+.oblak_sivi_desni {
     opacity: 1;
     padding-right: 0% !important;
 }
 
-.cikac-crta{
-   margin-bottom: 20px;
-   padding-bottom: 2%;
+.cikac-crta {
+    margin-bottom: 20px;
+    padding-bottom: 2%;
 }
 
-.radionice-opis{
+.radionice-opis {
     margin-top: 30px;
     padding-top: 5%;
 }
 
-.radionice-tekst{
+.radionice-tekst {
     text-align: justify;
     font-family: 'Open Sans', sans-serif;
     letter-spacing: 0;
@@ -149,18 +149,30 @@ body{
 }
 
 #topBtn {
-    display: none; /* Hidden by default */
-    position: fixed; /* Fixed/sticky position */
-    bottom: 2em; /* Place the button at the bottom of the page */
-    right: 1.5em; /* Place the button 30px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
-    color: white; /* Text color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 1.2em; /* Some padding */
-    border-radius: 10px; /* Rounded corners */
-    font-size: 18px; /* Increase font size */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Fixed/sticky position */
+    bottom: 2em;
+    /* Place the button at the bottom of the page */
+    right: 1.5em;
+    /* Place the button 30px from the right */
+    z-index: 99;
+    /* Make sure it does not overlap */
+    border: none;
+    /* Remove borders */
+    outline: none;
+    /* Remove outline */
+    color: white;
+    /* Text color */
+    cursor: pointer;
+    /* Add a mouse pointer on hover */
+    padding: 1.2em;
+    /* Some padding */
+    border-radius: 10px;
+    /* Rounded corners */
+    font-size: 18px;
+    /* Increase font size */
     width: 5px;
     height: 5px;
     opacity: 0.7;
@@ -178,6 +190,7 @@ body{
     width: 5px;
     height: 5px;
 }
+
 #topBtn i {
     position: relative;
     width: 35px;

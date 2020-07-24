@@ -35,6 +35,18 @@
     @include('lite.lite-partials.menu')
     @include('lite.lite-partials.welcome')
     @include('lite.lite-partials.o-projektu')
+    @include('partials-2020.o-nama')
+    {{-- Potrebno izmjeniti radionice, staviti opise i slike --}}
+    {{-- @include('partials-2020.o-radionicama') --}}
+    {{-- Treba ubaciti partnere --}}
+    @include('partials-2020.postignuca')
+    @include('partials-2020.novosti')
+    @include('partials-2020.galerija')
+    {{-- Ili napraviti opet organizatore ili napraviti footer da znaju da treba kontaktirati Merjemu --}}
+    @include('partials-2020.drugi-o-nama')
+    @include('partials-2020.kontakt')
+    {{-- Napraviti footer s merjeminim i UO podatcima --}}
+
 
 </div>
 @endsection

@@ -1,12 +1,14 @@
 <div class="containter-fluid">
-    <div class="row1">
+    <div class="row">
         <div class="col-6 status-prijava">
 			@if (config('ssa.lite-verzija'))
                 <div class="row status-prijava pb-5">
-                    <div class="row">
-                        <h1><a href="{{ route('lite-stranica')}}">SSA-LITE VERZIJA</a></h1>
+                    <div class="d-none d-sm-flex justify-content-center">
+                        <div class="dugme">
+                            <a href="{{ route('lite-stranica') }}" class="btn btn-primary btn-info">&ensp;<i class="fas fa-question"></i>&ensp;Saznaj više o SSA-LITE verziji&emsp;</a>
+                        </div>
                     </div>
-                    <div class="row">
+                    <div class="row pt-5 mt-5 bt-5">
                         <h2 class="naslovna-tekst2">Budi korak ispred!</h2>
                         <h2 class="naslovna-tekst3">06.-08. Mart 2020 godine</h2>
                         <h3 class="naslovna-tekst4">Besplatna trodnevna radionica ličnih i profesionalnih vještina</h3>

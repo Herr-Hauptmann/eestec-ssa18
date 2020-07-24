@@ -349,7 +349,7 @@
                 </div>
             </div>
             <div class="row tekst-informacije">
-                tershouse, Kolodvorska 5, Sarajevo
+                Historijski muzej BiH, Zmaja od Bosne 5, Sarajevo
             </div>
             <div class="row pt-5">
                 <i class="far fa-window-maximize boja pt-1"></i>
