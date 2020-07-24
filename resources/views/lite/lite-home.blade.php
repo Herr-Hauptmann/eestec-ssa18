@@ -34,6 +34,7 @@
     {{-- NPR @include('partials-2020.naslovna_traka')   --}}
     @include('lite.lite-partials.menu')
     @include('lite.lite-partials.welcome')
+    @include('lite.lite-partials.o-projektu')
 
 </div>
 @endsection

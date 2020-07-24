@@ -13,7 +13,7 @@ class LiteController extends Controller
     }
     public function otvoriLite()
     {
-
+        
     }
     public function zatvoriLite()
     {
