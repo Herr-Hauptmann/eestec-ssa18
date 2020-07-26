@@ -182,7 +182,7 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title naslov-onama-kartica">Ko može učestvovati na Soft Skills Academy Sarajevo LITE?</h5>
-                    <p class="card-text tekst-onama-kartica pb-5 mb-5">Priliku za učešće na ovoj radionici ima 40 ambicioznih studenata koji su se istakli svojom motivacijom za učešće, ali i u radu u nevladinim organizacijama.</p>
+                    <p class="card-text tekst-onama-kartica pb-5 mb-5">Priliku za učešće na ovoj radionici ima 30 ambicioznih studenata koji su se istakli svojom motivacijom za učešće, ali i u radu u nevladinim organizacijama.</p>
                     <br class="pb-5 mb-5 pt-5 mt-5">
                     
                 </div>
@@ -324,7 +324,7 @@
                         </div>
                     </div>
                     <div class="row tekst-informacije">
-                        Prijave traju do 03.08.2020. godine
+                        Prijave traju do 07.08.2020. godine
                     </div>
                 </div>
                 <div class="col-md-12 col-6 pl-4 pl-md-3">
@@ -370,7 +370,7 @@
                 </div>
             </div>
             <div class="row tekst-informacije">
-                Od 22. do 23. augusta 2020. godine
+                22. i 23. august 2020. godine
             </div>
             <div class="row pt-5">
                 <i class="fas fa-money-bill-alt boja pt-1"></i>

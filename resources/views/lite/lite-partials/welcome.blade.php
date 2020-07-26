@@ -4,14 +4,14 @@
         <div class="row order-md-3 bt-md-5 mt-md-5 pt-md-5 pl-2 sredjen-red">
             <div class="col-6">
                 <div class="row pt-6 mt-3">
-                    <h1 class="tajmer" data-countdown="2020-08-10 23:59:59" id="countdown" style="font-weight: bolder;">
+                    <h1 class="tajmer" data-countdown="2020-08-07 23:59:59" id="countdown" style="font-weight: bolder;">
                         <br />
                 </div>
                 {{-- Informacije o eventu --}}
                 <div class="row">
                     <h2 class="naslovna-tekst2">Budi korak ispred!</h2>
-                    <h2 class="naslovna-tekst3">22 i 23 august 2020. godine</h2>
-                    <h3 class="naslovna-tekst4">Besplatna trodnevna radionica ličnih i profesionalnih vještina</h3>
+                    <h2 class="naslovna-tekst3">22. i 23. august 2020. godine</h2>
+                    <h3 class="naslovna-tekst4">Besplatna dvodnevna radionica ličnih i profesionalnih vještina</h3>
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
                 <div class="col-9 col-md-12">
                     <h2 class="naslovna-tekst2">Budi korak ispred!</h2>
                     <h2 class="naslovna-tekst3">22. i 23. august 2020. godine</h2>
-                    <h3 class="naslovna-tekst4">Besplatna trodnevna radionica ličnih i profesionalnih vještina</h3>
+                    <h3 class="naslovna-tekst4">Besplatna dvodnevna radionica ličnih i profesionalnih vještina</h3>
                 </div>
             </div>
         </div>
