@@ -155,11 +155,4 @@ class HomeController extends Controller
         return view('home.album', compact('images', 'dan'));
     }
 
-    public function kontakt(Request $request)
-    { 
-        
-      $kontakti=Kontakt::all();
-        return view('home.kontakt',compact('kontakti'));
-    }
-
 }

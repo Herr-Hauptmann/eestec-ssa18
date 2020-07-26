@@ -30,6 +30,17 @@ Route::get('/', 'HomeController@index')->name('home');
 
 ###############################################################
 ########/////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\########
+########\\\\\\( SSA LITE RUTE I OSTALE BUDALASTINE )////#######
+########\\\\\\\\\\\\\\\\\\\\\//////////////////////////########
+###############################################################
+
+Route::get('/lite', 'LiteController@lite')->name('lite-stranica');
+
+// Route::patch('admin/otvori-prijave', 'PrijavaController@otvoriPrijave')->name('otvori.prijave');
+// Route::patch('admin/zatvori-prijave', 'PrijavaController@zatvoriPrijave')->name('zatvori.prijave');
+
+###############################################################
+########/////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\########
 #######( Rute za novosti, nemaju veze sa admin panelom )#######
 ########\\\\\\\\\\\\\\\\\\\\\//////////////////////////########
 ###############################################################
@@ -77,7 +88,6 @@ Route::get('album/{godina}/{dan}', 'HomeController@dan')->name('dan');
 #######\\\\\\\\\\\\\\\\\\\\\\/////////////////////////#########
 ###############################################################
 
-Route::get('kontakt', 'HomeController@kontakt')->name('kontakt');
 Route::post('posalji-mail', 'KontaktController@sendMail')->name('posalji-mail');
 
 

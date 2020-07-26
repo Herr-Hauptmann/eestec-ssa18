@@ -17,4 +17,5 @@ return [
         ]
     ],
     'prijave_otvorene' => true ,
+    'lite-verzija' => true,
 ];
