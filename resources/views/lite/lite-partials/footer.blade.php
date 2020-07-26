@@ -18,11 +18,13 @@
                 </a>
 
                 <a target="_blank" class="col-xs-3" href="https://www.instagram.com/softskillsacademy_sa">
-                    <img alt="Instagram" class="socialImage  img-responsive" src="{{ asset('img/instagramTest.png') }}" />
+                    <img alt="Instagram" class="socialImage  img-responsive"
+                        src="{{ asset('img/instagramTest.png') }}" />
                 </a>
 
-                <a target="_blank" class="col-xs-3" href="https://www.linkedin.com/company/soft-skills-academy-sarajevo/">
-                    <img alt="Linkedin" class="socialImage  img-responsive" src="{{ asset('img/linkedinTest.png') }}"  />
+                <a target="_blank" class="col-xs-3"
+                    href="https://www.linkedin.com/company/soft-skills-academy-sarajevo/">
+                    <img alt="Linkedin" class="socialImage  img-responsive" src="{{ asset('img/linkedinTest.png') }}" />
                 </a>
 
             </div>
@@ -41,7 +43,7 @@
                 </p>
                 <p class="kontaktPozicija prvaKontakt">
                     Potpredsjednica za odnose sa javnošću<br>
-                     <b>neira.novalic@softskillsacademy.ba</b>
+                    <b>pr@eestec-sa.ba</b>
                 </p>
                 <p class="kontaktIme">
                     Merjema Šetić
@@ -52,28 +54,24 @@
                 </p>
             </div>
 
-				
 
 
-			</div>
 
-		
+        </div>
 
-	</div>
+
+
+    </div>
 
 </div>
 
 
 <div class="container-fluid subFooter">
-	<div class="row justify-content-center">
-		<div class="subFooter-wrapper col-xs-12">
-<p>Copyright (C) EESTEC LC Sarajevo {{ date('Y') }}</p>
+    <div class="row justify-content-center">
+        <div class="subFooter-wrapper col-xs-12">
+            <p>Copyright (C) EESTEC LC Sarajevo {{ date('Y') }}</p>
 
+        </div>
+    </div>
 </div>
-</div>
-</div>
-
-</body>
-</html>
-        
 

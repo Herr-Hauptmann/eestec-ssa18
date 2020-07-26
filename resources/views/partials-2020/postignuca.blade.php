@@ -4,7 +4,7 @@
     </div>
 
     <div class="row justify-content-center drugi-red pt-2">
-        Iza nas je sedam uspješno održanih radionica za studente svih fakulteta u Sarajevu. </br> 
+        Iza nas je osam uspješno održanih radionica za studente svih fakulteta u Sarajevu. </br> 
         O našem uspjehu govore sljedeće brojke:
     </div>
 
