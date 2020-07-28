@@ -10,7 +10,7 @@
     <meta property="og:description" content="Soft Skills Academy Sarajevo - Besplatna trodnevna radionica ličnih i profesionalnih vještina za studente svih fakulteta u Sarajevu" />
     <meta property="og:image" content="{{ asset('img/greenLogo.jpg') }}" />
     <meta property="og:url" content="." />
-
+    <meta name="google-site-verification" content="xY0iJHkxjc_dSuKte1trmj2N46f4UNO-ZV7wUYK8l6w" />
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
