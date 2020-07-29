@@ -38,13 +38,14 @@ class ParticipantsController extends Controller
         $keyword = $request->get('search');
         $perPage = 25;
 
-        
-
+    
         if (!empty($keyword)) {
             $participants = Participant::whereYear('created_at', date('Y'))->paginate($perPage);
         } else {
             $participants = Participant::whereYear('created_at', date('Y'))->paginate($perPage);
         }
+        
+        
 
         return view('prijava.index', compact('participants', 'perPage'));
     }

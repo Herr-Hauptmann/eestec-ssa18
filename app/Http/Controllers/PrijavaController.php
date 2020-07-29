@@ -34,7 +34,12 @@ class PrijavaController extends Controller
     {
         $keyword = $request->get('search');
         $perPage = 25;
-        $participants = Participant::whereYear('created_at', date('Y'));
+
+        // ovo radi za 1 ssa godisnje
+        // $participants = Participant::whereYear('created_at', date('Y'));
+
+        // Dodano za SSA LITE - Summer 2020
+        $participants = Participant::whereBetween('created_at', array('2020-07-01', '2020-09-01'))->paginate($perPage);
 
         if (!empty($keyword)) {
             $participants = $participants
@@ -43,11 +48,11 @@ class PrijavaController extends Controller
                     ->orWhere('email', 'LIKE', "%$keyword%");
         } 
 
-        $participants = $participants->paginate($perPage);
+        // $participants = $participants->paginate($perPage);
 
         foreach ($participants as $key => $participant) {
             $glasano = Point::where('participant_id', $participant->id)
-                    ->where('user_id', \Auth::user()->id)->count() ? true : false;
+                    ->where('user_id', Auth::user()->id)->count() ? true : false;
             if ($request->has('hide_scored') && $glasano) {
                 $participants->forget($key);
             } else {
