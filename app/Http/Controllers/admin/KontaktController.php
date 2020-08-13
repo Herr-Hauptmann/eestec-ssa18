@@ -132,45 +132,4 @@ class KontaktController extends Controller
         return redirect('admin/kontakt')->with('flash_message', 'Kontakt deleted!');
     }
     
-    public function sendMail(Request $request)
-    {
-
-        $request->validate([
-            'ime' => 'required|min:3',
-            'email' => 'required|email',
-            'poruka' => 'required'
-        ]);
-
-        $kontakti = Kontakt::all();
-
-        if ($kontakti->isEmpty()) {
-
-            $primi = 'info@softskillsacademy.ba';
-
-            $subject = '[SSA] Kontakt forma';
-            $eol = PHP_EOL;
-
-            $message = '<html><body>';
-            $message .= 'Od '.$request->ime.'<br />';
-            $message .= 'Email: '.$request->email.'<br /><br />';
-            $message .= $request->poruka;
-            $message .= '</body></html>';
-
-            $headers = 'From: Soft Skills Academy Sarajevo <noreply@softskillsacademy.ba> ' . "\r\n" .
-                            'Reply-To: softskillsacademy.ba <noreply@softskillsacademy.ba>' . "\r\n" .
-                            'X-Mailer: PHP/' . phpversion();
-            $headers .= "MIME-Version: 1.0\r\n";
-            $headers .= "Content-Type: text/html; charset=\"UTF-8\"".$eol;
-            $headers .= "Content-Transfer-Encoding: 8bit".$eol.$eol;
-
-            
-            mail($primi, $subject, $message, $headers);
-        } else {
-            foreach ($kontakti as $kontakt) {
-                $kontakt->notify(new KontaktFormaEmail($request->ime, $request->email, $request->poruka));
-            }
-        }
-
-        return back()->with('success', 'Hvala što ste nas kontaktirali. Naš tim će nastojati da u što kraćem roku odgovori na Vašu poruku.');
-    }
 }

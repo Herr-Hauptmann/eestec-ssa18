@@ -88,7 +88,7 @@ Route::get('album/{godina}/{dan}', 'HomeController@dan')->name('dan');
 #######\\\\\\\\\\\\\\\\\\\\\\/////////////////////////#########
 ###############################################################
 
-Route::post('posalji-mail', 'KontaktController@sendMail')->name('posalji-mail');
+Route::post('posalji-mail', 'HomeController@sendMail')->name('posalji-mail');
 
 
 ###############################################################
