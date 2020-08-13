@@ -110,7 +110,6 @@ Route::get('admin/prijave/bodovi', 'PrijavaController@bodovi')->name('prijava.bo
 Route::get('admin/prijave/{participant}', 'PrijavaController@show')->name('prijava.show')->middleware('can:pregledaj prijave');
 Route::post('admin/prijave/{participant}', 'PrijavaController@boduj')->name('prijava.boduj')->middleware('can:pregledaj prijave');
 
-
 ###############################################################
 #######//////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\#########
 ######(                ADMIN PANEL                    )########
