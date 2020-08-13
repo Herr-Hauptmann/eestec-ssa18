@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid pb-md-5 mb-md-5 bb-md-5">
     @if(config('ssa.prijave_otvorene'))
         {{-- Tajmer/odbrojavanje do kraja prijava --}}
         <div class="row order-md-3 bt-md-5 mt-md-5 pt-md-5 pl-2 sredjen-red">
@@ -36,6 +36,7 @@
                 </div>
             </div>
         </div>
+        <div class="mb-md-5 pb-md-5"></div>
     @endif
 </div>
 </div>
