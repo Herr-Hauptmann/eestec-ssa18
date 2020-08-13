@@ -11,6 +11,7 @@ use App\Partner;
 use App\Medium;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Storage;
+use App\Notifications\KontaktFormaEmail;
 
 class HomeController extends Controller
 {
