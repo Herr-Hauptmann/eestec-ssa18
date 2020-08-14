@@ -28,27 +28,18 @@
 @section('content')
 <div class="container-fluid">
 
-
-    {{-- blade komponente koje se nalaze u resources/views/2020_partials/ folderu se dodaju na sljedeci nacin --}}
-    {{-- @include('ime-filea')  --}}
-    {{-- NPR @include('partials-2020.naslovna_traka')   --}}
     @include('lite.lite-partials.menu')
     @include('lite.lite-partials.welcome')
     @include('lite.lite-partials.o-projektu')
     @include('partials-2020.o-nama')
     {{-- Potrebno izmjeniti radionice, staviti opise i slike --}}
     {{-- @include('partials-2020.o-radionicama') --}}
-    {{-- Treba ubaciti partnere --}}
+    @include('lite.lite-partials.partneri')
     @include('partials-2020.postignuca')
     @include('partials-2020.novosti')
     @include('partials-2020.galerija')
-    {{-- Ili napraviti opet organizatore ili napraviti footer da znaju da treba kontaktirati Merjemu --}}
     @include('partials-2020.drugi-o-nama')
     @include('partials-2020.kontakt')
     @include('lite.lite-partials.footer')
-
-    {{-- Srediti footer s merjeminim i UO podatcima --}}
-
-
 </div>
 @endsection

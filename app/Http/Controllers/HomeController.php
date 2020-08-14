@@ -196,6 +196,6 @@ class HomeController extends Controller
         }
 
         return back()->with('success', 'Hvala što ste nas kontaktirali. Naš tim će nastojati da u što kraćem roku odgovori na Vašu poruku.');
-    }
+    }//Dodati da te vrati na dno (kontakt)
 
 }
