@@ -20,14 +20,11 @@
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/footer.css')}}">
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/menu.css')}}">
     <link rel="stylesheet" href="{{ asset('css/ssa-2020/menu.css')}}">
-
-
     <link rel="stylesheet" href="{{ asset('css/lite-ssa/welcome.css')}}">
 @endsection
 
 @section('content')
 <div class="container-fluid">
-
     @include('lite.lite-partials.menu')
     @include('lite.lite-partials.welcome')
     @include('lite.lite-partials.o-projektu')
@@ -35,6 +32,7 @@
     {{-- Potrebno izmjeniti radionice, staviti opise i slike --}}
     {{-- @include('partials-2020.o-radionicama') --}}
     @include('lite.lite-partials.partneri')
+    @include('lite.lite-partials.mediji')
     @include('partials-2020.postignuca')
     @include('partials-2020.novosti')
     @include('partials-2020.galerija')
