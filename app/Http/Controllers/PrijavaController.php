@@ -39,7 +39,7 @@ class PrijavaController extends Controller
         // $participants = Participant::whereYear('created_at', date('Y'));
 
         // Dodano za SSA LITE - Summer 2020
-        $participants = Participant::whereBetween('created_at', array('2020-07-01', '2020-09-01'))->paginate($perPage);
+        $participants = Participant::whereBetween('created_at', array('2020-10-01', '2021-01-01'))->paginate($perPage);
         if (!empty($keyword)) {
             $participants = $participants
                     ->where('ime', 'LIKE', "%$keyword%")
