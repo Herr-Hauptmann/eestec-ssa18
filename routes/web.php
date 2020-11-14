@@ -34,7 +34,7 @@ Route::get('/', 'HomeController@index')->name('home');
 ########\\\\\\\\\\\\\\\\\\\\\//////////////////////////########
 ###############################################################
 
-Route::get('/lite', 'LiteController@lite')->name('lite-stranica');
+Route::get('/winterlite', 'LiteController@lite')->name('lite-stranica');
 
 // Route::patch('admin/otvori-prijave', 'PrijavaController@otvoriPrijave')->name('otvori.prijave');
 // Route::patch('admin/zatvori-prijave', 'PrijavaController@zatvoriPrijave')->name('zatvori.prijave');
