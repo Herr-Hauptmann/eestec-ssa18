@@ -41,9 +41,9 @@
 </div>
 </div>
 </div>
+
 <div class="img-fluid ljetna-ljudina">
-    <?xml version="1.0" encoding="utf-8"?>
-    <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+    
     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="80 150 2085.3 1653.9" style="enable-background:new 503 -286.9 2085.3 1653.9;" xml:space="preserve">
     <style type="text/css">
@@ -12097,6 +12097,6 @@
     <rect x="2264" y="1310.1" class="st15" width="1654" height="52"/>
     <rect x="2176" y="1127.3" class="st15" width="58" height="136.8"/>
     </svg>
-    
+
 </div>
 </div>
