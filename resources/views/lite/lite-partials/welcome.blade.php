@@ -4,7 +4,7 @@
         <div class="row order-md-3 bt-md-5 mt-md-5 pt-md-5 pl-2 sredjen-red">
             <div class="col-6">
                 <div class="row pt-6 mt-3">
-                    <h1 class="tajmer" data-countdown="2020-08-07 23:59:59" id="countdown" style="font-weight: bolder;">
+                    <h1 class="tajmer" data-countdown="2020-12-05 23:59:59" id="countdown" style="font-weight: bolder;">
                         <br />
                 </div>
                 {{-- Informacije o eventu --}}
