@@ -164,7 +164,7 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title naslov-onama-kartica">Šta je Soft Skills Academy Sarajevo LITE?</h5>
-                    <p class="card-text tekst-onama-kartica1">Dvodnevna ljetna edicija radionice za usavršavanje ličnih i profesionalnih vještina za studente svih fakulteta u Sarajevu. Radionica za cilj ima podsticanje studenata na razvoj neformalnih vještina neophodnih za zapošljavanje i uspješnu karijeru, ali i za izazove modernog života, koje tradicionalan način studiranja ne može obezbijediti.
+                    <p class="card-text tekst-onama-kartica1">Dvodnevna zimska online edicija radionice za usavršavanje ličnih i profesionalnih vještina za studente svih fakulteta u Sarajevu. Radionica za cilj ima podsticanje studenata na razvoj neformalnih vještina neophodnih za zapošljavanje i uspješnu karijeru, ali i za izazove modernog života, koje tradicionalan način studiranja ne može obezbijediti.
                     </p>
                 </div>
             </div>
@@ -324,7 +324,7 @@
                         </div>
                     </div>
                     <div class="row tekst-informacije">
-                        Prijave traju do 07.08.2020. godine
+                        Prijave traju do 05.12.2020. godine
                     </div>
                 </div>
                 <div class="col-md-12 col-6 pl-4 pl-md-3">
@@ -335,7 +335,7 @@
                         </div>
                     </div>
                     <div class="row tekst-informacije">
-                        SSA iza sebe ima osam uspješnih edicija, mnoštvo zadovoljnih participanata i veliki broj zadovoljnih saradnika
+                        SSA iza sebe ima devet uspješnih edicija, mnoštvo zadovoljnih participanata i veliki broj zadovoljnih saradnika
                     </div>
                 </div>
             </div>
@@ -349,7 +349,7 @@
                 </div>
             </div>
             <div class="row tekst-informacije">
-                Historijski muzej BiH, Zmaja od Bosne 5, Sarajevo
+                Online
             </div>
             <div class="row pt-5">
                 <i class="far fa-window-maximize boja pt-1"></i>
@@ -370,7 +370,7 @@
                 </div>
             </div>
             <div class="row tekst-informacije">
-                22. i 23. august 2020. godine
+                19. i 20. decembar 2020. godine
             </div>
             <div class="row pt-5">
                 <i class="fas fa-money-bill-alt boja pt-1"></i>

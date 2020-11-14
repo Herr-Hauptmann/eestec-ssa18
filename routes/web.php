@@ -174,10 +174,6 @@ Route::prefix('kompanija')->group(function() {
 
 
 
-
-
-
-
 Route::get('/admin/temp', function(\Illuminate\Http\Request $request) {
 
 	// funkcija migrira podatke iz dvije stare baze o prijavama kako bi mogli znati ko se nekad prijavio

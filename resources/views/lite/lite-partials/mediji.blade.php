@@ -1,6 +1,6 @@
 <div class="container svi_partneri mt-5">
     <div class="row justify-content-center prvi_red pt-5">
-        SSA LITE Medijski pokrovitelji
+        SSA LITE Summer 2020 - Medijski pokrovitelji
     </div>
     <div class="row logoContainer center-hv">
         <div class="logoDiv-medij col-md-3 col-4">

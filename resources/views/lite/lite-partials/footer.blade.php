@@ -39,18 +39,18 @@
 
             <div class="kontaktOsobe">
                 <p class="kontaktIme">
-                    Arijana Čolak
-                </p>
-                <p class="kontaktPozicija prvaKontakt">
-                    Potpredsjednica za odnose sa javnošću<br>
-                    <b>pr@eestec-sa.ba</b>
-                </p>
-                <p class="kontaktIme">
-                    Merjema Šetić
+                    Muhamed Opačin
                 </p>
                 <p class="kontaktPozicija">
-                    Glavna organizatorica<br>
-                    <b>merjema.setic@softskillsacademy.ba</b>
+                    Glavni organizator<br>
+                    <b>muhamed.opacin@softskillsacademy.ba</b>
+                </p>
+                <p class="kontaktIme">
+                    Merjema Hasagic
+                </p>
+                <p class="kontaktPozicija prvaKontakt">
+                    Koordinatorica tima za odnose sa javnošću<br>
+                    <b>merjema.hasagic@eestec-sa.ba</b>
                 </p>
             </div>
 
