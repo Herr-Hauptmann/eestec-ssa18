@@ -164,7 +164,7 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title naslov-onama-kartica">Šta je Soft Skills Academy Sarajevo LITE?</h5>
-                    <p class="card-text tekst-onama-kartica1">Dvodnevna zimska online edicija radionice za usavršavanje ličnih i profesionalnih vještina za studente svih fakulteta u Sarajevu. Radionica za cilj ima podsticanje studenata na razvoj neformalnih vještina neophodnih za zapošljavanje i uspješnu karijeru, ali i za izazove modernog života, koje tradicionalan način studiranja ne može obezbijediti.
+                    <p class="card-text tekst-onama-kartica1">Dvodnevna zimska online edicija radionice za usavršavanje ličnih i profesionalnih vještina za studente svih fakulteta u BiH. Radionica za cilj ima podsticanje studenata na razvoj neformalnih vještina neophodnih za zapošljavanje i uspješnu karijeru, ali i za izazove modernog života, koje tradicionalan način studiranja ne može obezbijediti.
                     </p>
                 </div>
             </div>
