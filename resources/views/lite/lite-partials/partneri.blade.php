@@ -1,13 +1,13 @@
 <div class="container svi_partneri mt-5" id="partneri">
     <div class="row justify-content-center prvi_red pt-5">
-        SSA LITE - Summer 2020 Partneri
+        SSA LITE - Winter 2020 Partneri
     </div>
     <div class="row logoContainer center-hv">
         <div class="logoDiv-medij col-md-3 col-4">
             <a href="https://www.marketmakers.ba" target="_blank">
                 <div alt="marketMakers" class="div-responsive_img"
                     style="background-image: url({{ asset('/img/lite/partneri/MarketMakers.png') }})"></div>
-            </a>
+            </a>g
         </div>
         <div class="logoDiv-medij col-md-3 col-4">
             <a href="https://www.shl.ba/lat/" target="_blank">
