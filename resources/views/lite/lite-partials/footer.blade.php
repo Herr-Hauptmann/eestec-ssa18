@@ -2,12 +2,9 @@
     <div class="row">
 
         <div class="socialMedia col-xs-12 col-md-3">
-
             <div class="footerNaslov">
                 <p>Social Media</p>
-
             </div>
-
             <div class="socialWrapper">
                 <a target="_blank" class="col-xs-3" href="https://www.facebook.com/SoftSkillsAcademySarajevo/">
                     <img alt="Facebook" class="socialImage img-responsive" src="{{ asset('img/facebookTest.png') }}" />
