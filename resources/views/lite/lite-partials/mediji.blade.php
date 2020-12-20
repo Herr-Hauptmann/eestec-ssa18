@@ -24,8 +24,6 @@
             </a>
         </div>
     
-        
-
         <div class="logoDiv-medij col-md-3 col-4">
             <a href="https://studomat.ba/" target="_blank">
                 <div alt="studomat" class="div-responsive_img"
