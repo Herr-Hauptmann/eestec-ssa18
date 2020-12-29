@@ -1,6 +1,6 @@
 <div class="container svi_partneri mt-5" id="partneri">
     <div class="row justify-content-center prvi_red pt-5">
-        SSA LITE - Winter 2020 Srebreni partner
+        SSA LITE - Winter 2020 Premium partner
     </div>
     <div class="row logoContainer center-hv">
         <div class="logoDiv-medij col-md-3 col-4">
