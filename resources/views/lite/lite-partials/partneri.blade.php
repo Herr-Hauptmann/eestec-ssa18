@@ -1,18 +1,36 @@
 <div class="container svi_partneri mt-5" id="partneri">
     <div class="row justify-content-center prvi_red pt-5">
+        SSA LITE - Winter 2020 Srebreni partner
+    </div>
+    <div class="row logoContainer center-hv">
+        <div class="logoDiv-medij col-md-3 col-4">
+            <a href="https://bhtelecom.ba" target="_blank">
+                <div alt="https://bhtelecom.ba" class="div-responsive_img"
+                    style="background-image: url({{ asset('/img/lite/partneri/bhtelekom.png') }})"></div>
+            </a>
+        </div>
+    </div>
+    <div class="row justify-content-center prvi_red pt-5">
         SSA LITE - Winter 2020 Partneri
     </div>
+
     <div class="row logoContainer center-hv">
         <div class="logoDiv-medij col-md-3 col-4">
             <a href="https://www.marketmakers.ba" target="_blank">
                 <div alt="marketMakers" class="div-responsive_img"
                     style="background-image: url({{ asset('/img/lite/partneri/MarketMakers.png') }})"></div>
-            </a>g
+            </a>
         </div>
         <div class="logoDiv-medij col-md-3 col-4">
             <a href="https://www.shl.ba/lat/" target="_blank">
                 <div alt="https://www.shl.ba/lat/" class="div-responsive_img"
                     style="background-image: url({{ asset('/img/lite/partneri/shl2.png') }})"></div>
+            </a>
+        </div>
+        <div class="logoDiv-medij col-md-3 col-4">
+            <a href="https://www.swissinbih.ba/ba" target="_blank">
+                <div alt="https://www.swissinbih.ba/ba" class="div-responsive_img"
+                    style="background-image: url({{ asset('/img/lite/partneri/swiss.png') }})"></div>
             </a>
         </div>
     </div>
