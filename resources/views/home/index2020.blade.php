@@ -35,7 +35,8 @@
     @include('partials-2020.novosti')
     @include('partials-2020.galerija')
     {{-- @include('partials-2020.o-radionicama') --}}
-    @include('partials-2020.organizatori')
+    {{-- Zakomentarisano dok nam Amer ne isjece slike --}}
+    {{-- @include('partials-2020.organizatori') --}}
     @include('partials-2020.drugi-o-nama')
     @include('partials-2020.kontakt')
     

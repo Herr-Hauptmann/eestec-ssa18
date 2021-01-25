@@ -50,7 +50,7 @@
             </div>
         </div>
     @else
-        <div class="col-6 status-prijava">
+        <div class="col-6 status-prijava pt-5 mt-5">
             <div class="row status-prijava">
                 <h2 class="naslovna-tekst2">Budi korak ispred!</h2>
                 <h2 class="naslovna-tekst3">26.-28. mart 2020. godine</h2>

@@ -326,7 +326,7 @@
                         </div>
                     </div>
                     <div class="row tekst-informacije">
-                        Prijave traju do 16.02.2020. godine
+                        Prijave traju do 25.02.2020. godine
                     </div>
                 </div>
                 <div class="col-md-12 col-6 pl-4 pl-md-3">
@@ -337,7 +337,7 @@
                         </div>
                     </div>
                     <div class="row tekst-informacije">
-                        SSA iza sebe ima sedam uspješnih edicija, mnoštvo zadovoljnih participanata i veliki broj zadovoljnih saradnika
+                        SSA iza sebe ima deset uspješnih edicija, mnoštvo zadovoljnih participanata i veliki broj zadovoljnih saradnika
                     </div>
                 </div>
             </div>
@@ -351,7 +351,7 @@
                 </div>
             </div>
             <div class="row tekst-informacije">
-                tershouse, Kolodvorska 5, Sarajevo
+                Lokacija će uskoro biti poznata...
             </div>
             <div class="row pt-5">
                 <i class="far fa-window-maximize boja pt-1"></i>
@@ -372,7 +372,7 @@
                 </div>
             </div>
             <div class="row tekst-informacije">
-                Od 6. do 8. marta 2020. godine
+                Od 26. do 28. marta 2020. godine
             </div>
             <div class="row pt-5">
                 <i class="fas fa-money-bill-alt boja pt-1"></i>
