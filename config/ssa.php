@@ -16,6 +16,6 @@ return [
             'pagination' => 10
         ]
     ],
-    'prijave_otvorene' => true ,
-    'lite-verzija' => true,
+    'prijave_otvorene' => false ,
+    'lite-verzija' => false,
 ];

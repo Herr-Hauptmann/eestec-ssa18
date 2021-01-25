@@ -1,6 +1,11 @@
 <!-- Dio CSSa za ovaj partial se nalazi unutar about.css sheeta, jer je ovaj partial prvobitno bio dva odvojena. -->
 <div class="container-fluid" id="o-projektu">
-    <div class="row">
+    @if(!config('ssa.prijave_otvorene'))
+    <div class="row mt-5 pt-5 bt-5">
+
+    </div>
+    @endif
+    <div class="row pt-5 mt-5 bt-5">
         <!-- Razmak s lijeve strane -->
         <div class="col-1 col-md-1"></div>
         <!-- Naslov -->

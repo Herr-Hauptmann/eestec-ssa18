@@ -5,7 +5,7 @@
             <div class="col-6">
                 <div class="col-9 col-md-12">
                     <h2 class="naslovna-tekst2">Budi korak ispred!</h2>
-                    <h2 class="naslovna-tekst3">06.-08. Mart 2020 godine</h2>
+                    <h2 class="naslovna-tekst3">26.-28. mart 2020 godine</h2>
                     <h3 class="naslovna-tekst4">Besplatna trodnevna radionica ličnih i profesionalnih vještina</h3>
                 </div>
             </div>
@@ -24,11 +24,13 @@
         <!-- Tajmer / Status prijava -->
     @elseif (config('ssa.prijave_otvorene'))
         <div class="col-6 status-prijava">
-            <div class="row">
-                <h1 class="tajmer" data-countdown="2021-02-16 23:59:59" id="countdown" style="font-weight: bolder;">
-                    <br />
+            <div class="row pt-5 mt-3">
+                <div class="row">
+                    <h1 class="tajmer" data-countdown="2021-02-25 23:59:59" id="countdown" style="font-weight: bolder;">
+                </div>
+                <div class="row">
                     <h2 class="naslovna-tekst2">Budi korak ispred!</h2>
-                    <h2 class="naslovna-tekst3">06.-08. mart 2020. godine</h2>
+                    <h2 class="naslovna-tekst3">26.-28. mart 2020. godine</h2>
                     <h3 class="naslovna-tekst4">Besplatna trodnevna radionica ličnih i profesionalnih vještina</h3>
                     <div class="d-none d-sm-flex justify-content-center">
                         <div class="dugme">
@@ -36,6 +38,7 @@
                                     class="fas fa-pencil-alt"></i>&ensp;Prijavi se&emsp;</a>
                         </div>
                     </div>
+                </div>
             </div>
             <div class="row">
                 <div class="d-sm-none">
@@ -48,9 +51,9 @@
         </div>
     @else
         <div class="col-6 status-prijava">
-            <div class="row status-prijava pb-5">
+            <div class="row status-prijava">
                 <h2 class="naslovna-tekst2">Budi korak ispred!</h2>
-                <h2 class="naslovna-tekst3">06.-08. mart 2020. godine</h2>
+                <h2 class="naslovna-tekst3">26.-28. mart 2020. godine</h2>
                 <h3 class="naslovna-tekst4">Besplatna trodnevna radionica ličnih i profesionalnih vještina</h3>
             </div>
         </div>
