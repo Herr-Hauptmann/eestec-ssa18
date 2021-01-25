@@ -26,7 +26,7 @@
         <div class="col-6 status-prijava">
             <div class="row pt-5 mt-3">
                 <div class="row">
-                    <h1 class="tajmer" data-countdown="2021-02-25 23:59:59" id="countdown" style="font-weight: bolder;">
+                    <h1 class="tajmer" data-countdown="2021-03-07 23:59:59" id="countdown" style="font-weight: bolder;">
                 </div>
                 <div class="row">
                     <h2 class="naslovna-tekst2">Budi korak ispred!</h2>
