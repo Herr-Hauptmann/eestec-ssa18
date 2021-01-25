@@ -41,7 +41,7 @@ class PrijavaController extends Controller
         // Dodano za SSA LITE - Summer 2020
         $participants = null;
         if (!empty($keyword)) {
-            $participants = Participant::whereBetween('created_at', array('2020-10-01', '2021-01-01'))
+            $participants = Participant::whereBetween('created_at', array('2021-01-01', '2021-12-31'))
                     ->where('ime', 'LIKE', "%$keyword%")
                     ->orWhere('prezime', 'LIKE', "%$keyword%")
                     ->orWhere('email', 'LIKE', "%$keyword%")
@@ -49,7 +49,7 @@ class PrijavaController extends Controller
         } 
         else
         {
-            $participants = Participant::whereBetween('created_at', array('2020-10-01', '2021-01-01'))->paginate($perPage);
+            $participants = Participant::whereBetween('created_at', array('2021-01-01', '2021-12-31'))->paginate($perPage);
         }
 
         foreach ($participants as $key => $participant) {
@@ -249,7 +249,7 @@ class PrijavaController extends Controller
         $keyword = $request->get('search');
         $perPage = 25;
 
-        $participants = Participant::whereBetween('created_at', array('2020-10-01', '2021-01-01'))
+        $participants = Participant::whereBetween('created_at', array('2021-01-01', '2021-12-31'))
                 ->orderBy('ukupno_bodova', 'DESC');
 
         if ($request->has('show_with_asterix')) {
