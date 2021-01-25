@@ -326,7 +326,7 @@
                         </div>
                     </div>
                     <div class="row tekst-informacije">
-                        Prijave traju do 25.02.2020. godine
+                        Prijave traju do 07.03.2021. godine
                     </div>
                 </div>
                 <div class="col-md-12 col-6 pl-4 pl-md-3">
@@ -372,7 +372,7 @@
                 </div>
             </div>
             <div class="row tekst-informacije">
-                Od 26. do 28. marta 2020. godine
+                Od 26. do 28. marta 2021. godine
             </div>
             <div class="row pt-5">
                 <i class="fas fa-money-bill-alt boja pt-1"></i>

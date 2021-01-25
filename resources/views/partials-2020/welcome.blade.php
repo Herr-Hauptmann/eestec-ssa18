@@ -5,7 +5,7 @@
             <div class="col-6">
                 <div class="col-9 col-md-12">
                     <h2 class="naslovna-tekst2">Budi korak ispred!</h2>
-                    <h2 class="naslovna-tekst3">26.-28. mart 2020 godine</h2>
+                    <h2 class="naslovna-tekst3">26.-28. mart 2021 godine</h2>
                     <h3 class="naslovna-tekst4">Besplatna trodnevna radionica ličnih i profesionalnih vještina</h3>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                 </div>
                 <div class="row">
                     <h2 class="naslovna-tekst2">Budi korak ispred!</h2>
-                    <h2 class="naslovna-tekst3">26.-28. mart 2020. godine</h2>
+                    <h2 class="naslovna-tekst3">26.-28. mart 2021. godine</h2>
                     <h3 class="naslovna-tekst4">Besplatna trodnevna radionica ličnih i profesionalnih vještina</h3>
                     <div class="d-none d-sm-flex justify-content-center">
                         <div class="dugme">
@@ -53,7 +53,7 @@
         <div class="col-6 status-prijava pt-5 mt-5">
             <div class="row status-prijava">
                 <h2 class="naslovna-tekst2">Budi korak ispred!</h2>
-                <h2 class="naslovna-tekst3">26.-28. mart 2020. godine</h2>
+                <h2 class="naslovna-tekst3">26.-28. mart 2021. godine</h2>
                 <h3 class="naslovna-tekst4">Besplatna trodnevna radionica ličnih i profesionalnih vještina</h3>
             </div>
         </div>
