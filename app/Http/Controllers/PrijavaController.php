@@ -45,11 +45,13 @@ class PrijavaController extends Controller
                     ->where('ime', 'LIKE', "%$keyword%")
                     ->orWhere('prezime', 'LIKE', "%$keyword%")
                     ->orWhere('email', 'LIKE', "%$keyword%")
+                    ->groupby('motivaciono')
+                    ->orderBy('id')
                     ->paginate($perPage);
         } 
         else
         {
-            $participants = Participant::whereBetween('created_at', array('2021-01-01', '2021-12-31'))->paginate($perPage);
+            $participants = Participant::whereBetween('created_at', array('2021-01-01', '2021-12-31'))->groupby('motivaciono')->orderby('id')->paginate($perPage);
         }
 
         foreach ($participants as $key => $participant) {
