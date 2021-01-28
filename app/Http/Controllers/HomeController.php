@@ -180,15 +180,15 @@ class HomeController extends Controller
             $message .= $request->poruka;
             $message .= '</body></html>';
 
-            $headers = 'From: Soft Skills Academy Sarajevo <noreply@softskillsacademy.ba> ' . "\r\n" .
-                            'Reply-To: softskillsacademy.ba <noreply@softskillsacademy.ba>' . "\r\n" .
-                            'X-Mailer: PHP/' . phpversion();
-            $headers .= "MIME-Version: 1.0\r\n";
-            $headers .= "Content-Type: text/html; charset=\"UTF-8\"".$eol;
-            $headers .= "Content-Transfer-Encoding: 8bit".$eol.$eol;
+            // $headers = 'From: Soft Skills Academy Sarajevo <noreply@softskillsacademy.ba> ' . "\r\n" .
+            //                 'Reply-To: softskillsacademy.ba <noreply@softskillsacademy.ba>' . "\r\n" .
+            //                 'X-Mailer: PHP/' . phpversion();
+            // $headers .= "MIME-Version: 1.0\r\n";
+            // $headers .= "Content-Type: text/html; charset=\"UTF-8\"".$eol;
+            // $headers .= "Content-Transfer-Encoding: 8bit".$eol.$eol;
 
             
-            mail($primi, $subject, $message, $headers);
+            mail($primi, $subject, $message);
         } else {
             foreach ($kontakti as $kontakt) {
                 $kontakt->notify(new KontaktFormaEmail($request->ime, $request->email, $request->poruka));
