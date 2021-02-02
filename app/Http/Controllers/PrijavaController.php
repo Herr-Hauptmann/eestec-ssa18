@@ -138,7 +138,7 @@ class PrijavaController extends Controller
 
         // $participant->notify(new PrijavaUspjesna());
 
-        return redirect()->route('home')->with('success', 'Prijava je uspješno pohranjena.');
+        return redirect()->route('home')->with('alert', 'Prijava je uspješno pohranjena.');
     }
 
     /**
