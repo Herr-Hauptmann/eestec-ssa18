@@ -51,7 +51,12 @@ class PrijavaController extends Controller
         } 
         else
         {
-            $participants = Participant::whereBetween('created_at', array('2021-01-01', '2021-12-31'))->groupby('motivaciono')->orderby('id')->paginate($perPage);
+            $participants = Participant::whereBetween('created_at', array('2021-01-01', '2021-12-31'))
+                            ->where('ime', 'not like', '%test%')
+                            ->groupby('motivaciono')
+                            ->orderby('id')
+                            ->paginate($perPage);
+        
         }
 
         foreach ($participants as $key => $participant) {
