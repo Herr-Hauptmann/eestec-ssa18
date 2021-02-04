@@ -39,15 +39,25 @@ class PrijavaController extends Controller
         // $participants = Participant::whereYear('created_at', date('Y'));
 
         // Dodano za SSA LITE - Summer 2020
-        $participants = Participant::whereBetween('created_at', array('2020-07-01', '2020-09-01'))->paginate($perPage);
+        $participants = null;
         if (!empty($keyword)) {
-            $participants = $participants
+            $participants = Participant::whereBetween('created_at', array('2021-01-01', '2021-12-31'))
                     ->where('ime', 'LIKE', "%$keyword%")
                     ->orWhere('prezime', 'LIKE', "%$keyword%")
-                    ->orWhere('email', 'LIKE', "%$keyword%");
+                    ->orWhere('email', 'LIKE', "%$keyword%")
+                    ->groupby('motivaciono')
+                    ->orderBy('id')
+                    ->paginate($perPage);
         } 
-
-        // $participants = $participants->paginate($perPage);
+        else
+        {
+            $participants = Participant::whereBetween('created_at', array('2021-01-01', '2021-12-31'))
+                            ->where('ime', 'not like', '%test%')
+                            ->groupby('motivaciono')
+                            ->orderby('id')
+                            ->paginate($perPage);
+        
+        }
 
         foreach ($participants as $key => $participant) {
             $glasano = Point::where('participant_id', $participant->id)
@@ -131,9 +141,9 @@ class PrijavaController extends Controller
             ]);
         }
 
-        $participant->notify(new PrijavaUspjesna());
+        // $participant->notify(new PrijavaUspjesna());
 
-        return back()->with('success', 'Prijava je uspješno pohranjena.');
+        return redirect()->route('home')->with('alert', 'Prijava je uspješno pohranjena.');
     }
 
     /**
@@ -246,7 +256,7 @@ class PrijavaController extends Controller
         $keyword = $request->get('search');
         $perPage = 25;
 
-        $participants = Participant::whereBetween('created_at', array('2020-07-01', '2020-09-01'))
+        $participants = Participant::whereBetween('created_at', array('2021-01-01', '2021-12-31'))
                 ->orderBy('ukupno_bodova', 'DESC');
 
         if ($request->has('show_with_asterix')) {

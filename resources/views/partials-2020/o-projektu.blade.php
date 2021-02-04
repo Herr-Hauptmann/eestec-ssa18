@@ -1,6 +1,11 @@
 <!-- Dio CSSa za ovaj partial se nalazi unutar about.css sheeta, jer je ovaj partial prvobitno bio dva odvojena. -->
 <div class="container-fluid" id="o-projektu">
-    <div class="row">
+    @if(!config('ssa.prijave_otvorene'))
+    <div class="row mt-5 pt-5 bt-5">
+
+    </div>
+    @endif
+    <div class="row pt-5 mt-5 bt-5">
         <!-- Razmak s lijeve strane -->
         <div class="col-1 col-md-1"></div>
         <!-- Naslov -->
@@ -321,7 +326,7 @@
                         </div>
                     </div>
                     <div class="row tekst-informacije">
-                        Prijave traju do 16.02.2020. godine
+                        Prijave traju do 07.03.2021. godine
                     </div>
                 </div>
                 <div class="col-md-12 col-6 pl-4 pl-md-3">
@@ -332,7 +337,7 @@
                         </div>
                     </div>
                     <div class="row tekst-informacije">
-                        SSA iza sebe ima sedam uspješnih edicija, mnoštvo zadovoljnih participanata i veliki broj zadovoljnih saradnika
+                        SSA iza sebe ima deset uspješnih edicija, mnoštvo zadovoljnih participanata i veliki broj zadovoljnih saradnika
                     </div>
                 </div>
             </div>
@@ -346,7 +351,7 @@
                 </div>
             </div>
             <div class="row tekst-informacije">
-                tershouse, Kolodvorska 5, Sarajevo
+                Lokacija će uskoro biti poznata...
             </div>
             <div class="row pt-5">
                 <i class="far fa-window-maximize boja pt-1"></i>
@@ -367,7 +372,7 @@
                 </div>
             </div>
             <div class="row tekst-informacije">
-                Od 6. do 8. marta 2020. godine
+                Od 26. do 28. marta 2021. godine
             </div>
             <div class="row pt-5">
                 <i class="fas fa-money-bill-alt boja pt-1"></i>

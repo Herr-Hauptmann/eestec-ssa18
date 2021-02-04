@@ -1,11 +1,11 @@
 <div class="containter-fluid">
-    @if(config('ssa.lite-verzija'))
+    @if (config('ssa.lite-verzija'))
         {{-- Informacije o redovnom SSA --}}
         <div class="row order-md-3 bt-md-5 mt-md-5 pt-md-5 pl-2 sredjen-red">
             <div class="col-6">
                 <div class="col-9 col-md-12">
                     <h2 class="naslovna-tekst2">Budi korak ispred!</h2>
-                    <h2 class="naslovna-tekst3">06.-08. Mart 2020 godine</h2>
+                    <h2 class="naslovna-tekst3">26.-28. mart 2021 godine</h2>
                     <h3 class="naslovna-tekst4">Besplatna trodnevna radionica ličnih i profesionalnih vještina</h3>
                 </div>
             </div>
@@ -21,36 +21,36 @@
                 </div>
             </div>
         </div>
-        <!-- Tajmer / Status prijava -->
     @elseif (config('ssa.prijave_otvorene'))
-        <div class="col-6 status-prijava">
-            <div class="row">
-                <h1 class="tajmer" data-countdown="2021-02-16 23:59:59" id="countdown" style="font-weight: bolder;">
-                    <br />
-                    <h2 class="naslovna-tekst2">Budi korak ispred!</h2>
-                    <h2 class="naslovna-tekst3">06.-08. mart 2020. godine</h2>
-                    <h3 class="naslovna-tekst4">Besplatna trodnevna radionica ličnih i profesionalnih vještina</h3>
-                    <div class="d-none d-sm-flex justify-content-center">
-                        <div class="dugme">
-                            <a href="{{ route('prijava.create') }}" class="btn btn-primary btn-info">&ensp;<i
-                                    class="fas fa-pencil-alt"></i>&ensp;Prijavi se&emsp;</a>
-                        </div>
-                    </div>
+        <!-- Tajmer / Status prijava -->
+        <div class="row2 pt-md-5 mt-md-5">
+            <div class="col-12 pl-4 pr-0 ml-0 br-0">
+                <h1 class="tajmer" data-countdown="2021-03-07 23:59:59" id="countdown"  style="font-weight: bolder;">
             </div>
-            <div class="row">
-                <div class="d-sm-none">
+        </div>
+        {{-- Informacije o radionici --}}
+        <div class="row2">
+            <div class="col-6 pl-4 pr-0 ml-0 br-0">
+                <h2 class="naslovna-tekst2">Budi korak ispred!</h2>
+                <h2 class="naslovna-tekst3">26.-28. mart 2021. godine</h2>
+                <h3 class="naslovna-tekst4">Besplatna trodnevna radionica ličnih i profesionalnih vještina</h3>
+            </div>
+        </div>
+        <div class="row2 px-3">
+            <div class="col-12 col-md-6 pr-0 ml-0 br-0">
+                <div class="d-block">
                     <div class="dugme">
-                        <a href="{{ route('prijava.create') }}" class="btn btn-block btn-primary btn-info">&ensp;<i
+                        <a href="{{ route('prijava.create') }}" class="btn btn-primary btn-info d-block d-md-inline">&ensp;<i
                                 class="fas fa-pencil-alt"></i>&ensp;Prijavi se&emsp;</a>
                     </div>
                 </div>
             </div>
         </div>
     @else
-        <div class="col-6 status-prijava">
-            <div class="row status-prijava pb-5">
+        <div class="col-6 status-prijava pt-5 mt-5">
+            <div class="row status-prijava">
                 <h2 class="naslovna-tekst2">Budi korak ispred!</h2>
-                <h2 class="naslovna-tekst3">06.-08. mart 2020. godine</h2>
+                <h2 class="naslovna-tekst3">26.-28. mart 2021. godine</h2>
                 <h3 class="naslovna-tekst4">Besplatna trodnevna radionica ličnih i profesionalnih vještina</h3>
             </div>
         </div>

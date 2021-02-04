@@ -36,7 +36,7 @@ class LiteController extends Controller
 
         });
 
-        return view('lite/lite-home', compact('albums', 'posts'));
+        return view('lite.lite-home', compact('albums', 'posts'));
     }
     public function otvoriLite()
     {
