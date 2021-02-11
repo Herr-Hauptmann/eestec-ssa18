@@ -81,6 +81,31 @@
                                 <p class="error" id="errorTelefon"></p>
                             </div>
                             <div class="form-group prvaForma col-xs-12 col-md-6">
+                                <label for="brojgodina">
+                                    Broj godina*</label>
+                                <input type="number" value="{{ old('brojgodina') }}" class="form-control" id="brojgodina" name="brojgodina" maxlength="2" min="1"/>
+                                {{--<input type="text" class="form-control" id="brojgodina" name="brojgodina" maxlength="2" min="1"/>--}}
+                                <p class="error" id="errorBrojGodina"></p>
+                            </div>
+                            <div class="form-group  prvaForma col-xs-12 col-md-6">
+                                <label for="spol">
+                                    Spol</label>
+                                <a id="spolLista" class=" listbox btn btn-info btn-select btn-select-light @if ($errors->any()) tbError @endif">
+                                    <input type="hidden" value="{{ old('spol', ' ') }}" class="btn-select-input" id="spol" name="spol"/>
+                                    <span class="btn-select-value">Izaberi</span>
+                                    <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
+                                    <ul class="selectLista">
+                                        <li class="selected listItem">Muški</li>
+                                        <li class="majica listItem">Ženski</li>
+                                    </ul>
+                                </a>
+                                <p class="error" id="errorMajica">
+                                    @if ($errors->any())
+                                        Ponovite unos
+                                    @endif
+                                </p>
+                            </div>
+                            <div class="form-group prvaForma col-xs-12 col-md-6">
                                 <label for="email">
                                     Email*</label>
                                 <input type="text"  value="{{ old('email') }}" class="form-control" id="email" name="email"/>

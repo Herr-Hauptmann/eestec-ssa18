@@ -95,7 +95,8 @@ class PrijavaController extends Controller
             'prezime' => 'required',
             'datum' => 'required|date|before:today',
             'email' => 'required|email',
-            'pismo' => 'required|filled'
+            'pismo' => 'required|filled',
+            'brojgodina' => 'required'
         ]);
         
         $data = $request->all();
@@ -118,6 +119,8 @@ class PrijavaController extends Controller
             'ucesce_na_seminarima' => $request->seminari,
             'nvo_iskustvo' => $request->nvo,
             'dodatne_napomene' => $request->dodatne,
+            'broj_godina' => $request->brojgodina,
+            'spol' => $request->spol,
             ###### naknadno odraditi za user_id #######
         
         ]);
@@ -131,7 +134,7 @@ class PrijavaController extends Controller
             ]);
         }
 
-        $participant->notify(new PrijavaUspjesna());
+       // $participant->notify(new PrijavaUspjesna());
 
         return back()->with('success', 'Prijava je uspješno pohranjena.');
     }
