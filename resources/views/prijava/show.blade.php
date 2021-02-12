@@ -81,10 +81,13 @@
                                             <th> Fakultet(i) </th>
                                             <td colspan="2"> 
                                                 @foreach($participant->fakulteti as $fakultet)
-                                                    {{ $fakultet->naziv . '; ' }}
+                                                    Naziv fakulteta: {{ $fakultet->naziv}} <br>
+                                                    Smijer: {{ $smijer}} <br>
+                                                    Godina studija: {{ $godina}} <br>
                                                 @endforeach
                                             </td>
-                                        <tr>
+                                        </tr>
+                                            <tr>
                                             <td colspan="100%" style="text-align: center;"><h2>YAAY! Bodovanje :3 </h2></td>
                                         </tr>
                                         <tr>

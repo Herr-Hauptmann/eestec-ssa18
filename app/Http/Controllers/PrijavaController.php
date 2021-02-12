@@ -180,7 +180,15 @@ class PrijavaController extends Controller
         // sluzi za view
         $glasano = Point::where('participant_id', $participant->id)->where('user_id', \Auth::user()->id)->first();
 
-        return view('prijava.show', compact('participant', 'glasano', 'postojiPrijava'));
+
+        //Geniji prije nisu nikad pokazivali godinu studija i smijer, sto je sustinski jako bitna informacija
+        $godina = DB::table('fakultet_participant')->where('participant_id', $participant->id)->first()->godina;
+        $smijer = DB::table('fakultet_participant')->where('participant_id', $participant->id)->first()->odsjek;
+
+        if (is_null($smijer))
+            $smijer = "Nije unesen smijer";
+
+        return view('prijava.show', compact('participant', 'glasano', 'postojiPrijava', 'godina', 'smijer'));
     }
 
     public function boduj(Request $request, Participant $participant, $automaticDiscard = false)
