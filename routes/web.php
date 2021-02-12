@@ -103,6 +103,9 @@ Route::patch('admin/otvori-prijave', 'PrijavaController@otvoriPrijave')->name('o
 Route::patch('admin/zatvori-prijave', 'PrijavaController@zatvoriPrijave')->name('zatvori.prijave');
 
 ############# ADMIN PANEL PRIJAVE ##############
+
+Route::get('admin/mejlovi', 'EmailController@index')->name('email.index')->middleware('can:pregledaj prijave');
+
 Route::get('admin/prijave', 'PrijavaController@index')->name('prijava.index')->middleware('can:pregledaj prijave');
 
 Route::get('admin/prijave/bodovi', 'PrijavaController@bodovi')->name('prijava.bodovi')->middleware('can:pregledaj prijave');
@@ -168,10 +171,6 @@ Route::prefix('kompanija')->group(function() {
 	Route::get('pretraga', 'CompaniesController@index')->name('company.index');
 	Route::get('profil', 'CompaniesController@profile')->name('company.profile');
 });
-
-
-
-
 
 
 

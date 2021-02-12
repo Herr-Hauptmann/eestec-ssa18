@@ -54,12 +54,6 @@ return [
     | used globally for all e-mails that are sent by your application.
     |
     */
-
-    'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'noreply@softskillsacademy.ba'),
-        'name' => env('MAIL_FROM_NAME', 'Soft Skills Academy Sarajevo'),
-    ],
-
     /*
     |--------------------------------------------------------------------------
     | E-Mail Encryption Protocol
