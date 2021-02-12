@@ -62,6 +62,14 @@
                                             <td colspan="2"> {{ $participant->broj_telefona }} </td>
                                         </tr>
                                         <tr>
+                                            <th> Broj godina </th>
+                                            <td colspan="2"> {{ $participant->broj_godina }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th> Spol </th>
+                                            <td colspan="2"> {{ $participant->spol }} </td>
+                                        </tr>
+                                        <tr>
                                             <th> Email </th>
                                             <td colspan="2"> {{ $participant->email }} </td>
                                         </tr>
