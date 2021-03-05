@@ -105,6 +105,7 @@ Route::patch('admin/zatvori-prijave', 'PrijavaController@zatvoriPrijave')->name(
 ############# ADMIN PANEL PRIJAVE ##############
 
 Route::get('admin/mejlovi', 'EmailController@index')->name('email.index')->middleware('can:pregledaj prijave');
+Route::get('admin/godine', 'NoviController@index')->name('godine.index')->middleware('can:pregledaj prijave');
 
 Route::get('admin/prijave', 'PrijavaController@index')->name('prijava.index')->middleware('can:pregledaj prijave');
 

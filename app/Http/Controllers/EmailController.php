@@ -21,7 +21,7 @@ class EmailController extends Controller
      */
     public function index()
     {
-        $participants = Participant::whereBetween('created_at', array('2018-07-01', '2020-09-01'))->get();
+        $participants = Participant::whereBetween('created_at', array('2020-09-01', '2020-12-25'))->get();
         $radi = false;
         return view('email.index', compact('participants', 'radi'));
     }
