@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Soft Skills Academy Sarajevo '21" />
+    <meta property="og:title" content="Soft Skills Academy Sarajevo '22" />
     <meta property="og:description" content="Soft Skills Academy Sarajevo - Besplatna trodnevna radionica ličnih i profesionalnih vještina za studente svih fakulteta u Sarajevu" />
     <meta property="og:image" content="{{ asset('img/greenLogo.jpg') }}" />
     <meta property="og:url" content="." />

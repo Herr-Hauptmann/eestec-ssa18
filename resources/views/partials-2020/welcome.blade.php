@@ -32,7 +32,7 @@
         <div class="row2">
             <div class="col-6 pl-4 pr-0 ml-0 br-0">
                 <h2 class="naslovna-tekst2">Budi korak ispred!</h2>
-                <h2 class="naslovna-tekst3">26.-28. mart 2021. godine</h2>
+                <h2 class="naslovna-tekst3">25.-27. mart 2022. godine</h2>
                 <h3 class="naslovna-tekst4">Besplatna trodnevna radionica ličnih i profesionalnih vještina</h3>
             </div>
         </div>
@@ -50,7 +50,7 @@
         <div class="col-6 status-prijava pt-5 mt-5">
             <div class="row status-prijava">
                 <h2 class="naslovna-tekst2">Budi korak ispred!</h2>
-                <h2 class="naslovna-tekst3">26.-28. mart 2021. godine</h2>
+                <h2 class="naslovna-tekst3">25.-27. mart 2022. godine</h2>
                 <h3 class="naslovna-tekst4">Besplatna trodnevna radionica ličnih i profesionalnih vještina</h3>
             </div>
         </div>

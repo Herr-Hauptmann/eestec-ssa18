@@ -1,5 +1,21 @@
 <?php
 
+use App\hpp\Controllers\Controller;
+use App\http\Controllers\HomeController;
+use App\http\Controllers\PrijavaRegistracijaController;
+use App\http\Controllers\EdicijaController;
+use App\http\Controllers\IzjavaController;
+use App\http\Controllers\KategorijaController;
+use App\http\Controllers\MedijController;
+use App\http\Controllers\NovostController;
+use App\http\Controllers\OrganizatorController;
+use App\http\Controllers\PartnerController;
+use App\http\Controllers\PostignuceController;
+use App\http\Controllers\PozicijaController;
+use App\http\Controllers\PrijavaUcesnikaController;
+use App\http\Controllers\TrenerController;
+use App\http\Controllers\TreningController;
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes

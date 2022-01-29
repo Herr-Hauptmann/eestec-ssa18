@@ -326,7 +326,7 @@
                         </div>
                     </div>
                     <div class="row tekst-informacije">
-                        Prijave traju do 07.03.2021. godine
+                        Prijave traju do 04.03.2022. godine
                     </div>
                 </div>
                 <div class="col-md-12 col-6 pl-4 pl-md-3">
@@ -351,7 +351,7 @@
                 </div>
             </div>
             <div class="row tekst-informacije">
-                Hotel Holiday, Zmaja od Bosne 4
+                Lokacija će uskoro biti poznata ... 
             </div>
             <div class="row pt-5">
                 <i class="far fa-window-maximize boja pt-1"></i>
@@ -372,7 +372,7 @@
                 </div>
             </div>
             <div class="row tekst-informacije">
-                Od 26. do 28. marta 2021. godine
+                Od 25. do 27. marta 2022. godine
             </div>
             <div class="row pt-5">
                 <i class="fas fa-money-bill-alt boja pt-1"></i>
