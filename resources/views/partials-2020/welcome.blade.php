@@ -25,7 +25,7 @@
         <!-- Tajmer / Status prijava -->
         <div class="row2 pt-md-5 mt-md-5">
             <div class="col-12 pl-4 pr-0 ml-0 br-0">
-                <h1 class="tajmer" data-countdown="2022-03-04 23:59:59" id="countdown"  style="font-weight: bolder;">
+                <h1 class="tajmer" data-countdown="2022-03-06 23:59:59" id="countdown"  style="font-weight: bolder;">
             </div>
         </div>
         {{-- Informacije o radionici --}}
