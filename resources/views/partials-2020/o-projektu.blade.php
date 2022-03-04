@@ -211,7 +211,7 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title naslov-onama-kartica">Zašto se prijaviti?</h5>
-                    <p class="card-text tekst-onama-kartica">Po završetku radionice svi učesnici dobijaju certifikat i CV suplement. Studeni imaju priliku steći nove vještine, ali i poboljšati već postojeće, odnosno aktivno raditi na svom samopouzdanju i samosvijesti.</p>
+                    <p class="card-text tekst-onama-kartica">Po završetku radionice svi učesnici dobijaju certifikat i CV suplement. Studenti imaju priliku steći nove vještine, ali i poboljšati već postojeće, odnosno aktivno raditi na svom samopouzdanju i samosvijesti.</p>
                 </div>
             </div>
         </div>
