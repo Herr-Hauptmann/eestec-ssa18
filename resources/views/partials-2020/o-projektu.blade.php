@@ -351,7 +351,7 @@
                 </div>
             </div>
             <div class="row tekst-informacije">
-                Lokacija će uskoro biti poznata ... 
+                Hotel Holiday, Zmaja od Bosne 4 
             </div>
             <div class="row pt-5">
                 <i class="far fa-window-maximize boja pt-1"></i>
